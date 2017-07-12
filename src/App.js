@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 
 export default class App extends Component {
   state = {
-    listSize: 7776,
-    passwordSize: 6
+    length: 6,
+    wordlistLength: 7776
   }
 
   static bits (size) {
@@ -15,18 +15,26 @@ export default class App extends Component {
   }
 
   render () {
-    const size = this.state.listSize ** this.state.passwordSize
+    const size = this.state.wordlistLength ** this.state.length
     return (
-      <div>
+      <form>
         <h1>Password Entropy</h1>
-        <h2>Diceware</h2>
-        <p>
-          <input value={this.state.passwordSize} onChange={this.numberSetter('passwordSize')} type="number" min="1" required/>
-          words from a set of
-          <input value={this.state.listSize} onChange={this.numberSetter('listSize')} type="number" min="1" required/>
-        </p>
-        <p>Roughly {size.toPrecision(4)} passwords ({this.constructor.bits(size)} bits of entropy)</p>
-      </div>
+
+        <label>
+          <h2>Length</h2>
+          <input value={this.state.length} onChange={this.numberSetter('length')} type="number" min="1" required/>
+        </label>
+
+        <h2>Options</h2>
+
+        <label>
+          <h3>Wordlist Length</h3>
+          <input value={this.state.wordlistLength} onChange={this.numberSetter('wordlistLength')} type="number" min="1" required/>
+        </label>
+
+        <h2>Possible Passwords</h2>
+        Roughly {size.toPrecision(4)} ({this.constructor.bits(size)} bits of entropy)
+      </form>
     )
   }
 }
