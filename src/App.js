@@ -16,15 +16,17 @@ export default class App extends Component {
 
   render () {
     const size = this.state.listSize ** this.state.passwordSize
-    return <div>
-      <h1>Password Entropy</h1>
-      <h2>Diceware</h2>
-      <p>
-        <input value={this.state.passwordSize} onChange={this.numberSetter('passwordSize')} type="number" min="1" required/>
-        words from a set of
-        <input value={this.state.listSize} onChange={this.numberSetter('listSize')} type="number" min="1" required/>
-      </p>
-      <p>Roughly {size.toPrecision(4)} passwords ({this.constructor.bits(size)} bits of entropy)</p>
-    </div>
+    return (
+      <div>
+        <h1>Password Entropy</h1>
+        <h2>Diceware</h2>
+        <p>
+          <input value={this.state.passwordSize} onChange={this.numberSetter('passwordSize')} type="number" min="1" required/>
+          words from a set of
+          <input value={this.state.listSize} onChange={this.numberSetter('listSize')} type="number" min="1" required/>
+        </p>
+        <p>Roughly {size.toPrecision(4)} passwords ({this.constructor.bits(size)} bits of entropy)</p>
+      </div>
+    )
   }
 }
