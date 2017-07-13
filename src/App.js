@@ -11,6 +11,7 @@ export default class App extends PureComponent {
 
   render () {
     const possiblePasswords = this.state.possibleItems ** this.state.length
+    const approximatePrefix = possiblePasswords > Number.MAX_SAFE_INTEGER && '~ '
 
     return (
       <form>
@@ -25,7 +26,7 @@ export default class App extends PureComponent {
         <DicewareOptions onChange={this.handlePossibleItemsChange}/>
 
         <h2>Possible Passwords</h2>
-        Roughly {possiblePasswords.toPrecision(4)} ({Math.floor(Math.log2(possiblePasswords)) + 1} bits of entropy)
+        {approximatePrefix}{possiblePasswords.toLocaleString()} ({approximatePrefix}{Math.log2(possiblePasswords).toFixed(2)} bits of entropy)
       </form>
     )
   }
