@@ -2,10 +2,6 @@ import DicewareOptions from './DicewareOptions'
 import React, { PureComponent } from 'react'
 
 export default class App extends PureComponent {
-  static bits (size) {
-    return Math.floor(Math.log2(size)) + 1
-  }
-
   state = {
     length: 6
   }
@@ -29,7 +25,7 @@ export default class App extends PureComponent {
         <DicewareOptions onChange={this.handlePossibleItemsChange}/>
 
         <h2>Possible Passwords</h2>
-        Roughly {possiblePasswords.toPrecision(4)} ({this.constructor.bits(possiblePasswords)} bits of entropy)
+        Roughly {possiblePasswords.toPrecision(4)} ({Math.floor(Math.log2(possiblePasswords)) + 1} bits of entropy)
       </form>
     )
   }
