@@ -10,7 +10,17 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "pretest": "eslint .",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app",
+    "rules": {
+      "react/default-props-match-prop-types": 2,
+      "react/forbid-prop-types": 2,
+      "react/no-unused-prop-types": 2,
+      "react/prop-types": 2
+    }
   }
 }

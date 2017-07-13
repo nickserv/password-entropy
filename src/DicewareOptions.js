@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import React, { PureComponent } from 'react'
 
 export default class DicewareOptions extends PureComponent {
@@ -26,4 +27,8 @@ export default class DicewareOptions extends PureComponent {
       </div>
     )
   }
+}
+
+DicewareOptions.propTypes = {
+  onChange: PropTypes.func.isRequired
 }
