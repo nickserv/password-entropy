@@ -3,6 +3,7 @@ import React, { PureComponent } from 'react'
 
 export default class Options extends PureComponent {
   static propTypes = {
+    children: PropTypes.node,
     onChange: PropTypes.func.isRequired,
     possiblePasswords: PropTypes.func.isRequired
   }

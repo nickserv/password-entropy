@@ -19,7 +19,6 @@
     "rules": {
       "react/default-props-match-prop-types": 2,
       "react/forbid-prop-types": 2,
-      "react/no-unused-prop-types": 2,
       "react/prop-types": 2
     }
   }
