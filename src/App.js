@@ -1,4 +1,4 @@
-import DicewareOptions from './DicewareOptions'
+import CustomOptions from './CustomOptions'
 import React, { PureComponent } from 'react'
 
 export default class App extends PureComponent {
@@ -23,7 +23,7 @@ export default class App extends PureComponent {
         </label>
 
         <h2>Options</h2>
-        <DicewareOptions onChange={this.handlePossibleItemsChange}/>
+        <CustomOptions onChange={this.handlePossibleItemsChange}/>
 
         <h2>Possible Passwords</h2>
         {approximatePrefix}{possiblePasswords.toLocaleString()} ({approximatePrefix}{Math.log2(possiblePasswords).toFixed(2)} bits of entropy)

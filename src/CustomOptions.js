@@ -2,7 +2,7 @@ import Options from './Options'
 import PropTypes from 'prop-types'
 import React, { PureComponent } from 'react'
 
-export default class DicewareOptions extends PureComponent {
+export default class CustomOptions extends PureComponent {
   static propTypes = {
     onChange: PropTypes.func.isRequired
   }
