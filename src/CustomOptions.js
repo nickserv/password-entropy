@@ -8,19 +8,19 @@ export default class CustomOptions extends PureComponent {
   }
 
   state = {
-    wordlistLength: 7776
+    possibleItems: 1
   }
 
-  handleChange = event => this.setState({ wordlistLength: parseInt(event.target.value, 10) })
-  possiblePasswords = () => this.state.wordlistLength
+  handleChange = event => this.setState({ possibleItems: parseInt(event.target.value, 10) })
+  possiblePasswords = () => this.state.possibleItems
 
   render () {
     return (
       <Options possiblePasswords={this.possiblePasswords} {...this.props}>
-        <h3>Diceware</h3>
+        <h3>Custom</h3>
         <label>
-          <h4>Wordlist Length</h4>
-          <input value={this.state.wordlistLength} onChange={this.handleChange} type="number" min="1" required/>
+          <h4>Possible Items</h4>
+          <input value={this.state.possibleItems} onChange={this.handleChange} type="number" min="1" required/>
         </label>
       </Options>
     )
