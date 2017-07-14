@@ -1,16 +1,20 @@
 import PropTypes from 'prop-types'
-import { PureComponent } from 'react'
+import React, { PureComponent } from 'react'
 
 export default class Options extends PureComponent {
   static propTypes = {
-    onChange: PropTypes.func.isRequired
+    onChange: PropTypes.func.isRequired,
+    possiblePasswords: PropTypes.func.isRequired
   }
 
-  componentDidMount () {
-    this.props.onChange(this.possiblePasswords(this.state))
+  componentDidMount = this.change
+  componentDidUpdate = this.change
+
+  change () {
+    this.props.onChange(this.props.possiblePasswords())
   }
 
-  componentWillUpdate (props, state) {
-    this.props.onChange(this.possiblePasswords(state))
+  render () {
+    return <div>{this.props.children}</div>
   }
 }

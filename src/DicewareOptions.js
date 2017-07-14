@@ -1,26 +1,28 @@
 import Options from './Options'
-import React from 'react'
+import PropTypes from 'prop-types'
+import React, { PureComponent } from 'react'
 
-export default class DicewareOptions extends Options {
+export default class DicewareOptions extends PureComponent {
+  static propTypes = {
+    onChange: PropTypes.func.isRequired
+  }
+
   state = {
     wordlistLength: 7776
   }
 
   handleChange = event => this.setState({ wordlistLength: parseInt(event.target.value, 10) })
-
-  possiblePasswords (state) {
-    return state.wordlistLength
-  }
+  possiblePasswords = () => this.state.wordlistLength
 
   render () {
     return (
-      <div>
+      <Options possiblePasswords={this.possiblePasswords} {...this.props}>
         <h3>Diceware</h3>
         <label>
           <h4>Wordlist Length</h4>
           <input value={this.state.wordlistLength} onChange={this.handleChange} type="number" min="1" required/>
         </label>
-      </div>
+      </Options>
     )
   }
 }
