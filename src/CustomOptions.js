@@ -1,11 +1,8 @@
 import Options from './Options'
-import PropTypes from 'prop-types'
 import React, { PureComponent } from 'react'
 
 export default class CustomOptions extends PureComponent {
-  static propTypes = {
-    onChange: PropTypes.func.isRequired
-  }
+  static propTypes = Options.sharedPropTypes
 
   state = {
     possibleItems: 1
