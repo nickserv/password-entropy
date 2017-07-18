@@ -1,6 +1,7 @@
 import CustomOptions from './CustomOptions'
 import DicewareOptions from './DicewareOptions'
 import GenericOptions from './GenericOptions'
+import handleChange from './handleChange'
 import React, { PureComponent } from 'react'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 import 'react-tabs/style/react-tabs.css'
@@ -10,7 +11,7 @@ export default class PasswordEntropy extends PureComponent {
     length: 6
   }
 
-  handleLengthChange = event => this.setState({ length: parseInt(event.target.value, 10) })
+  handleChange = handleChange.bind(this)
   handlePossibleItemsChange = possibleItems => this.setState({ possibleItems })
 
   render () {
@@ -23,7 +24,7 @@ export default class PasswordEntropy extends PureComponent {
 
         <label>
           <h2>Length</h2>
-          <input value={this.state.length} onChange={this.handleLengthChange} type="number" min="1" required/>
+          <input name="length" value={this.state.length} onChange={this.handleChange} type="number" min="1" required/>
         </label>
 
         <h2>Options</h2>

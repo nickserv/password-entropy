@@ -1,3 +1,4 @@
+import handleChange from './handleChange'
 import Options from './Options'
 import React, { PureComponent } from 'react'
 
@@ -8,7 +9,7 @@ export default class CustomOptions extends PureComponent {
     possibleItems: 1
   }
 
-  handleChange = event => this.setState({ possibleItems: parseInt(event.target.value, 10) })
+  handleChange = handleChange.bind(this)
   possiblePasswords = () => this.state.possibleItems
 
   render () {
@@ -17,7 +18,7 @@ export default class CustomOptions extends PureComponent {
         <h3>Custom</h3>
         <label>
           <h4>Possible Items</h4>
-          <input value={this.state.possibleItems} onChange={this.handleChange} type="number" min="1" required/>
+          <input name="possibleItems" value={this.state.possibleItems} onChange={this.handleChange} type="number" min="1" required/>
         </label>
       </Options>
     )

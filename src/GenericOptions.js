@@ -1,3 +1,4 @@
+import handleChange from './handleChange'
 import Options from './Options'
 import React, { PureComponent } from 'react'
 
@@ -18,7 +19,7 @@ export default class GenericOptions extends PureComponent {
     symbols: true
   }
 
-  handleChange = ({ target }) => this.setState({ [target.name]: target.checked})
+  handleChange = handleChange.bind(this)
 
   possiblePasswords = () => {
     const keys = Object.entries(this.state)
