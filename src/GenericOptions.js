@@ -18,7 +18,7 @@ export default class GenericOptions extends PureComponent {
     symbols: true
   }
 
-  handleChange = event => this.setState({ [event.target.name]: event.target.checked})
+  handleChange = ({ target }) => this.setState({ [target.name]: target.checked})
 
   possiblePasswords = () => {
     const keys = Object.entries(this.state)
