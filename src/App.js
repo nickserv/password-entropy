@@ -1,5 +1,8 @@
 import CustomOptions from './CustomOptions'
+import DicewareOptions from './DicewareOptions'
 import React, { PureComponent } from 'react'
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
+import 'react-tabs/style/react-tabs.css'
 
 export default class App extends PureComponent {
   state = {
@@ -23,7 +26,21 @@ export default class App extends PureComponent {
         </label>
 
         <h2>Options</h2>
-        <CustomOptions onChange={this.handlePossibleItemsChange}/>
+
+        <Tabs>
+          <TabList>
+            <Tab>Diceware</Tab>
+            <Tab>Custom</Tab>
+          </TabList>
+
+          <TabPanel>
+            <DicewareOptions onChange={this.handlePossibleItemsChange}/>
+          </TabPanel>
+
+          <TabPanel>
+            <CustomOptions onChange={this.handlePossibleItemsChange}/>
+          </TabPanel>
+        </Tabs>
 
         <h2>Possible Passwords</h2>
         {approximatePrefix}{possiblePasswords.toLocaleString()} ({approximatePrefix}{Math.log2(possiblePasswords).toFixed(2)} bits of entropy)
