@@ -5,7 +5,7 @@ import React, { PureComponent } from 'react'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 import 'react-tabs/style/react-tabs.css'
 
-export default class App extends PureComponent {
+export default class PasswordEntropy extends PureComponent {
   state = {
     length: 6
   }
