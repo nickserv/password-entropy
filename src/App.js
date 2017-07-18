@@ -1,5 +1,6 @@
 import CustomOptions from './CustomOptions'
 import DicewareOptions from './DicewareOptions'
+import GenericOptions from './GenericOptions'
 import React, { PureComponent } from 'react'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 import 'react-tabs/style/react-tabs.css'
@@ -13,7 +14,7 @@ export default class App extends PureComponent {
   handlePossibleItemsChange = possibleItems => this.setState({ possibleItems })
 
   render () {
-    const possiblePasswords = this.state.possibleItems ** this.state.length
+    const possiblePasswords = (this.state.possibleItems || 1) ** this.state.length
     const approximatePrefix = possiblePasswords > Number.MAX_SAFE_INTEGER && '~ '
 
     return (
@@ -31,6 +32,7 @@ export default class App extends PureComponent {
           <TabList>
             <Tab>Diceware</Tab>
             <Tab>Custom</Tab>
+            <Tab>Generic</Tab>
           </TabList>
 
           <TabPanel>
@@ -39,6 +41,10 @@ export default class App extends PureComponent {
 
           <TabPanel>
             <CustomOptions onChange={this.handlePossibleItemsChange}/>
+          </TabPanel>
+
+          <TabPanel>
+            <GenericOptions onChange={this.handlePossibleItemsChange}/>
           </TabPanel>
         </Tabs>
 
