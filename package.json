@@ -29,6 +29,12 @@
     }
   },
   "jest": {
+    "collectCoverageFrom" : [
+      "**/*.js",
+      "!src/(index|registerServiceWorker).js",
+      "!**/coverage/**",
+      "!**/node_modules/**"
+    ],
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
     ]

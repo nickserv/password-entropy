@@ -3,3 +3,4 @@ node_js: node
 cache:
   directories:
     - node_modules
+script: npm test -- --coverage
