@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders 1`] = `
+<Options
+  onChange={[Function]}
+  possiblePasswords={[Function]}
+>
+  <h3>
+    Diceware
+  </h3>
+</Options>
+`;

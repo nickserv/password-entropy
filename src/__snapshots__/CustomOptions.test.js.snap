@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders 1`] = `
+<Options
+  onChange={[Function]}
+  possiblePasswords={[Function]}
+>
+  <h3>
+    Custom
+  </h3>
+  <label>
+    <h4>
+      Possible Items
+    </h4>
+    <input
+      min="1"
+      name="possibleItems"
+      onChange={[Function]}
+      required={true}
+      type="number"
+      value={1}
+    />
+  </label>
+</Options>
+`;

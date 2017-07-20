@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders 1`] = `
+<Options
+  onChange={[Function]}
+  possiblePasswords={[Function]}
+>
+  <h3>
+    Generic
+  </h3>
+  <label>
+    <input
+      checked={true}
+      name="letters"
+      onChange={[Function]}
+      type="checkbox"
+    />
+    Letters
+  </label>
+  <label>
+    <input
+      checked={true}
+      name="capitalLetters"
+      onChange={[Function]}
+      type="checkbox"
+    />
+    Capital Letters
+  </label>
+  <label>
+    <input
+      checked={true}
+      name="numbers"
+      onChange={[Function]}
+      type="checkbox"
+    />
+    Numbers
+  </label>
+  <label>
+    <input
+      checked={true}
+      name="symbols"
+      onChange={[Function]}
+      type="checkbox"
+    />
+    Symbols
+  </label>
+</Options>
+`;
