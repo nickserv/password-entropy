@@ -1,17 +1,13 @@
 import DicewareOptions from './DicewareOptions'
-import { mount, shallow } from 'enzyme'
+import { shallow } from 'enzyme'
 import React from 'react'
 
-const callback = jest.fn()
-const node = (<DicewareOptions onChange={callback}/>)
-
-beforeEach(callback.mockReset)
+const wrapper = shallow(<DicewareOptions onChange={() => {}}/>)
 
 it('renders', () => {
-  expect(shallow(node)).toMatchSnapshot()
+  expect(wrapper).toMatchSnapshot()
 })
 
-it('calls onChange prop', () => {
-  mount(node)
-  expect(callback).toHaveBeenCalledWith(7776)
+it('provides possiblePasswords', () => {
+  expect(wrapper.instance().possiblePasswords()).toBe(7776)
 })

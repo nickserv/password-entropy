@@ -1,34 +1,29 @@
 import change from './change'
-import { mount, shallow } from 'enzyme'
+import { shallow } from 'enzyme'
 import GenericOptions from './GenericOptions'
 import React from 'react'
 
-const callback = jest.fn()
-const node = (<GenericOptions onChange={callback}/>)
-
-beforeEach(callback.mockReset)
+const wrapper = shallow(<GenericOptions onChange={() => {}}/>)
 
 it('renders', () => {
-  expect(shallow(node)).toMatchSnapshot()
+  expect(wrapper).toMatchSnapshot()
 })
 
-it('calls onChange prop', () => {
-  const wrapper = mount(node)
-  expect(callback).toHaveBeenCalledWith(70)
+it('sets state and provides possiblePasswords', () => {
   expect(wrapper.state()).toEqual({
     "letters": true,
     "capitalLetters": true,
     "numbers": true,
     "symbols": true
   })
+  expect(wrapper.instance().possiblePasswords()).toBe(70)
 
-  callback.mockReset()
   change(wrapper.find({ name: 'letters' }), { checked: false })
-  expect(callback).toHaveBeenCalledWith(44)
   expect(wrapper.state()).toEqual({
     "letters": false,
     "capitalLetters": true,
     "numbers": true,
     "symbols": true
   })
+  expect(wrapper.instance().possiblePasswords()).toBe(44)
 })

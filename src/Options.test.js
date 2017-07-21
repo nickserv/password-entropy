@@ -1,25 +1,23 @@
-import { mount, shallow } from 'enzyme'
+import { shallow } from 'enzyme'
 import Options from './Options'
 import React from 'react'
 
 const callback = jest.fn()
-const node = (
+const wrapper = shallow(
   <Options onChange={callback} possiblePasswords={() => true}>
     Hello, world!
   </Options>
 )
 
-beforeEach(callback.mockReset)
-
 it('renders', () => {
-  expect(shallow(node)).toMatchSnapshot()
+  expect(wrapper).toMatchSnapshot()
 })
 
 it('calls onChange prop', () => {
-  const wrapper = mount(node)
+  wrapper.instance().componentDidMount()
   expect(callback).toHaveBeenCalledWith(true)
 
   callback.mockReset()
-  wrapper.setState({})
+  wrapper.instance().componentDidUpdate()
   expect(callback).toHaveBeenCalledWith(true)
 })
