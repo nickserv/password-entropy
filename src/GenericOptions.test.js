@@ -4,6 +4,7 @@ import GenericOptions from './GenericOptions'
 import React from 'react'
 
 const wrapper = shallow(<GenericOptions onChange={() => {}}/>)
+const instance = wrapper.instance()
 
 it('renders', () => {
   expect(wrapper).toMatchSnapshot()
@@ -16,7 +17,7 @@ it('sets state and provides possiblePasswords', () => {
     "numbers": true,
     "symbols": true
   })
-  expect(wrapper.instance().possiblePasswords()).toBe(70)
+  expect(instance.possiblePasswords()).toBe(70)
 
   change(wrapper.find({ name: 'letters' }), { checked: false })
   expect(wrapper.state()).toEqual({
@@ -25,5 +26,5 @@ it('sets state and provides possiblePasswords', () => {
     "numbers": true,
     "symbols": true
   })
-  expect(wrapper.instance().possiblePasswords()).toBe(44)
+  expect(instance.possiblePasswords()).toBe(44)
 })

@@ -8,16 +8,17 @@ const wrapper = shallow(
     Hello, world!
   </Options>
 )
+const instance = wrapper.instance()
 
 it('renders', () => {
   expect(wrapper).toMatchSnapshot()
 })
 
 it('calls onChange prop', () => {
-  wrapper.instance().componentDidMount()
+  instance.componentDidMount()
   expect(callback).toHaveBeenCalledWith(true)
 
   callback.mockReset()
-  wrapper.instance().componentDidUpdate()
+  instance.componentDidUpdate()
   expect(callback).toHaveBeenCalledWith(true)
 })

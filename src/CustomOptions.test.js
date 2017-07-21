@@ -4,6 +4,7 @@ import { shallow } from 'enzyme'
 import React from 'react'
 
 const wrapper = shallow(<CustomOptions onChange={() => {}}/>)
+const instance = wrapper.instance()
 
 it('renders', () => {
   expect(wrapper).toMatchSnapshot()
@@ -11,9 +12,9 @@ it('renders', () => {
 
 it('sets state and provides possiblePasswords', () => {
   expect(wrapper.state()).toEqual({ possibleItems: 1 })
-  expect(wrapper.instance().possiblePasswords()).toBe(1)
+  expect(instance.possiblePasswords()).toBe(1)
 
   change(wrapper.find({ name: 'possibleItems' }), { value: 2 })
   expect(wrapper.state()).toEqual({ possibleItems: 2 })
-  expect(wrapper.instance().possiblePasswords()).toBe(2)
+  expect(instance.possiblePasswords()).toBe(2)
 })
