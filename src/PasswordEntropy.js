@@ -7,12 +7,25 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 import 'react-tabs/style/react-tabs.css'
 
 export default class PasswordEntropy extends PureComponent {
-  state = {
-    length: 6
-  }
+  static optionsComponents = [
+    DicewareOptions,
+    CustomOptions,
+    GenericOptions
+  ]
+  static tabs = PasswordEntropy.optionsComponents.map(({ name }) => (
+    <Tab key={name}>{name.replace(/Options$/, '')}</Tab>
+  ))
 
   handleChange = handleChange.bind(this)
   handlePossibleItemsChange = possibleItems => this.setState({ possibleItems })
+  state = {
+    length: 6
+  }
+  tabPanels = PasswordEntropy.optionsComponents.map(Component => (
+    <TabPanel key={Component.name}>
+      <Component onChange={this.handlePossibleItemsChange}/>
+    </TabPanel>
+  ))
 
   render () {
     const possiblePasswords = (this.state.possibleItems || 1) ** this.state.length
@@ -30,23 +43,8 @@ export default class PasswordEntropy extends PureComponent {
         <h2>Options</h2>
 
         <Tabs>
-          <TabList>
-            <Tab>Diceware</Tab>
-            <Tab>Custom</Tab>
-            <Tab>Generic</Tab>
-          </TabList>
-
-          <TabPanel>
-            <DicewareOptions onChange={this.handlePossibleItemsChange}/>
-          </TabPanel>
-
-          <TabPanel>
-            <CustomOptions onChange={this.handlePossibleItemsChange}/>
-          </TabPanel>
-
-          <TabPanel>
-            <GenericOptions onChange={this.handlePossibleItemsChange}/>
-          </TabPanel>
+          <TabList>{this.constructor.tabs}</TabList>
+          {this.tabPanels}
         </Tabs>
 
         <h2>Possible Passwords</h2>
