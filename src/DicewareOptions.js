@@ -3,6 +3,7 @@ import React, { PureComponent } from 'react'
 
 export default class DicewareOptions extends PureComponent {
   static propTypes = Options.sharedPropTypes
+  static shortName = 'Diceware'
 
   possiblePasswords = () => 7776
 
