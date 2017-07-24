@@ -4,6 +4,7 @@ import React, { PureComponent } from 'react'
 
 export default class CustomOptions extends PureComponent {
   static propTypes = Options.sharedPropTypes
+  static shortName = 'Custom'
 
   state = {
     possibleItems: 1

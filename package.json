@@ -29,10 +29,11 @@
       "react/prop-types": 2
     }
   },
+  "homepage": "http://nickmccurdy.com/password-entropy",
   "jest": {
     "collectCoverageFrom": [
       "**/*.js",
-      "!src/(index|registerServiceWorker).js",
+      "!src/index.js",
       "!**/coverage/**",
       "!**/node_modules/**"
     ],

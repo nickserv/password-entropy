@@ -1,4 +1,4 @@
-# password-entropy
+# [Password Entropy](http://nickmccurdy.com/password-entropy/)
 [![Build Status](https://travis-ci.org/nickmccurdy/password-entropy.svg?branch=master)](https://travis-ci.org/nickmccurdy/password-entropy)
 
 A simple entropy calculator for evaluating password security.
