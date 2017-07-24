@@ -13,8 +13,8 @@ export default class PasswordEntropy extends PureComponent {
     CustomOptions,
     GenericOptions
   ]
-  static tabs = PasswordEntropy.optionsComponents.map(({ name }) => (
-    <Tab key={name}>{name.replace(/Options$/, '')}</Tab>
+  static tabs = PasswordEntropy.optionsComponents.map(({ shortName }) => (
+    <Tab key={shortName}>{shortName}</Tab>
   ))
 
   handleChange = handleChange.bind(this)
@@ -23,7 +23,7 @@ export default class PasswordEntropy extends PureComponent {
     length: 6
   }
   tabPanels = PasswordEntropy.optionsComponents.map(Component => (
-    <TabPanel key={Component.name}>
+    <TabPanel key={Component.shortName}>
       <Component onChange={this.handlePossibleItemsChange}/>
     </TabPanel>
   ))

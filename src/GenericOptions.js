@@ -4,6 +4,7 @@ import React, { PureComponent } from 'react'
 
 export default class GenericOptions extends PureComponent {
   static propTypes = Options.sharedPropTypes
+  static shortName = 'Generic'
 
   static stateToPossibilities =  {
     letters: 26,
