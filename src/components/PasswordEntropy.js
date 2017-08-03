@@ -3,11 +3,11 @@ import DicewareOptions from './DicewareOptions'
 import GenericOptions from './GenericOptions'
 import handleChange from '../handleChange'
 import PossiblePasswords from './PossiblePasswords'
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 import 'react-tabs/style/react-tabs.css'
 
-export default class PasswordEntropy extends Component {
+export default class PasswordEntropy extends PureComponent {
   static options = [
     DicewareOptions,
     CustomOptions,

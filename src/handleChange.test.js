@@ -1,10 +1,10 @@
 import change from './change'
 import { shallow } from 'enzyme'
 import handleChange from './handleChange'
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 
 it('sets input state', () => {
-  class Fixture extends Component {
+  class Fixture extends PureComponent {
     render () {
       return <input name="default" onChange={handleChange.bind(this)}/>
     }
@@ -16,7 +16,7 @@ it('sets input state', () => {
 })
 
 it('sets number state', () => {
-  class Fixture extends Component {
+  class Fixture extends PureComponent {
     render () {
       return <input type="number" name="number" onChange={handleChange.bind(this)}/>
     }
@@ -28,7 +28,7 @@ it('sets number state', () => {
 })
 
 it('sets checkbox state', () => {
-  class Fixture extends Component {
+  class Fixture extends PureComponent {
     render () {
       return <input type="checkbox" name="checkbox" onChange={handleChange.bind(this)}/>
     }
