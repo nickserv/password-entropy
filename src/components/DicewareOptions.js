@@ -1,7 +1,7 @@
 import Options from './Options'
-import React, { PureComponent } from 'react'
+import React, { Component } from 'react'
 
-export default class DicewareOptions extends PureComponent {
+export default class DicewareOptions extends Component {
   static propTypes = Options.sharedPropTypes
   static shortName = 'Diceware'
 

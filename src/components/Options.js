@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
-import React, { PureComponent } from 'react'
+import React, { Component } from 'react'
 
-export default class Options extends PureComponent {
+export default class Options extends Component {
   static sharedPropTypes = {
     onChange: PropTypes.func.isRequired,
   }

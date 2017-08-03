@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
-import React, { PureComponent } from 'react'
+import React, { Component } from 'react'
 
-export default class PossiblePasswords extends PureComponent {
+export default class PossiblePasswords extends Component {
   static propTypes = {
     length: PropTypes.number.isRequired,
     possibleItems: PropTypes.number

@@ -1,8 +1,8 @@
 import handleChange from '../handleChange'
 import Options from './Options'
-import React, { PureComponent } from 'react'
+import React, { Component } from 'react'
 
-export default class GenericOptions extends PureComponent {
+export default class GenericOptions extends Component {
   static propTypes = Options.sharedPropTypes
   static shortName = 'Generic'
 
