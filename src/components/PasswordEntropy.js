@@ -1,7 +1,7 @@
 import CustomOptions from './CustomOptions'
 import DicewareOptions from './DicewareOptions'
 import GenericOptions from './GenericOptions'
-import handleChange from './handleChange'
+import handleChange from '../handleChange'
 import PossiblePasswords from './PossiblePasswords'
 import React, { PureComponent } from 'react'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'

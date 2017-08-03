@@ -1,4 +1,4 @@
-import change from './change'
+import change from '../change'
 import CustomOptions from './CustomOptions'
 import { shallow } from 'enzyme'
 import React from 'react'
