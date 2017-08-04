@@ -1,4 +1,4 @@
-import handleChange from './handleChange'
+import handleChange from '../handleChange'
 import Options from './Options'
 import React, { PureComponent } from 'react'
 

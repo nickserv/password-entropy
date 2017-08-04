@@ -14,8 +14,8 @@ export default class PossiblePasswords extends PureComponent {
 
     return (
       <div>
-        <h2>Possible Passwords</h2>
-        {approximatePrefix}{possiblePasswords.toLocaleString()}
+      <h2>Possible Passwords</h2>
+      {approximatePrefix}{possiblePasswords.toLocaleString()}
         ({approximatePrefix}{entropyBits} bits of entropy)
       </div>
     )

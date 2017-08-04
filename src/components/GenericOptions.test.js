@@ -1,4 +1,4 @@
-import change from './change'
+import change from '../change'
 import { shallow } from 'enzyme'
 import GenericOptions from './GenericOptions'
 import React from 'react'
