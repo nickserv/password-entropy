@@ -8,10 +8,11 @@ exports[`renders 1`] = `
   <h3>
     Custom
   </h3>
-  <label>
-    <h4>
-      Possible Items
-    </h4>
+  <FormGroup
+    icon="question-circle"
+    id="possibleItems"
+    label="Possible Items"
+  >
     <input
       min="1"
       name="possibleItems"
@@ -20,6 +21,6 @@ exports[`renders 1`] = `
       type="number"
       value={1}
     />
-  </label>
+  </FormGroup>
 </Options>
 `;

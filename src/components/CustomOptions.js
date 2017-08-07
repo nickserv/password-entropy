@@ -1,3 +1,4 @@
+import FormGroup from './FormGroup'
 import handleChange from '../handleChange'
 import Options from './Options'
 import React, { PureComponent } from 'react'
@@ -17,10 +18,10 @@ export default class CustomOptions extends PureComponent {
     return (
       <Options possiblePasswords={this.possiblePasswords} {...this.props}>
         <h3>Custom</h3>
-        <label>
-          <h4>Possible Items</h4>
+
+        <FormGroup id="possibleItems" label="Possible Items" icon="question-circle">
           <input name="possibleItems" value={this.state.possibleItems} onChange={this.handleChange} type="number" min="1" required/>
-        </label>
+        </FormGroup>
       </Options>
     )
   }
