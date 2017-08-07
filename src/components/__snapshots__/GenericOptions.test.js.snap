@@ -16,6 +16,12 @@ exports[`renders 1`] = `
       type="checkbox"
     />
     Letters
+     
+    <small>
+      (
+      a-z
+      )
+    </small>
   </label>
   <label>
     <input
@@ -25,6 +31,12 @@ exports[`renders 1`] = `
       type="checkbox"
     />
     Capital Letters
+     
+    <small>
+      (
+      A-Z
+      )
+    </small>
   </label>
   <label>
     <input
@@ -34,6 +46,12 @@ exports[`renders 1`] = `
       type="checkbox"
     />
     Numbers
+     
+    <small>
+      (
+      0-9
+      )
+    </small>
   </label>
   <label>
     <input
@@ -43,6 +61,12 @@ exports[`renders 1`] = `
       type="checkbox"
     />
     Symbols
+     
+    <small>
+      (
+      !@#$%^&*
+      )
+    </small>
   </label>
 </Options>
 `;
