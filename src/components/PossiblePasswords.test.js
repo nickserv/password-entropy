@@ -2,18 +2,22 @@ import { shallow } from 'enzyme'
 import PossiblePasswords from './PossiblePasswords'
 import React from 'react'
 
-function getWrapper (possibleItems) {
-  return shallow(<PossiblePasswords length={6} possibleItems={possibleItems}/>)
+function getWrapper (length) {
+  return shallow(<PossiblePasswords length={length} possibleItems={2}/>)
 }
 
-it('renders without valid possibleItems', () => {
+it('renders with invalid or very weak possibleItems', () => {
   expect(getWrapper(0)).toMatchSnapshot()
 })
 
-it('renders with few possibleItems', () => {
-  expect(getWrapper(10)).toMatchSnapshot()
+it('renders with weak possiblePasswords', () => {
+  expect(getWrapper(32)).toMatchSnapshot()
 })
 
-it('renders with many possibleItems', () => {
-  expect(getWrapper(7776)).toMatchSnapshot()
+it('renders with strong possiblePasswords', () => {
+  expect(getWrapper(64)).toMatchSnapshot()
+})
+
+it('renders with very strong possiblePasswords', () => {
+  expect(getWrapper(128)).toMatchSnapshot()
 })
