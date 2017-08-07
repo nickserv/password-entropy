@@ -9,18 +9,22 @@ export default class GenericOptions extends PureComponent {
   static toggles = {
     letters: {
       label: 'Letters',
+      example: 'a-z',
       possibleItems: 26
     },
     capitalLetters: {
       label: 'Capital Letters',
+      example: 'A-Z',
       possibleItems: 26
     },
     numbers: {
       label: 'Numbers',
+      example: '0-9',
       possibleItems: 10
     },
     symbols: {
       label: 'Symbols',
+      example: '!@#$%^&*',
       possibleItems: 8
     }
   }
@@ -51,7 +55,7 @@ export default class GenericOptions extends PureComponent {
                .map(([name, { label, example }]) => (
                  <label key={name}>
                    <input type="checkbox" name={name} checked={this.state[name]} onChange={this.handleChange}/>
-                   { label }
+                   { label } <small>({ example })</small>
                  </label>
                ))}
       </Options>
