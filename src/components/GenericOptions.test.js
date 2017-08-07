@@ -21,7 +21,6 @@ it('sets state and provides possiblePasswords', () => {
 
   change(wrapper.find({ name: 'letters' }), { checked: false })
   expect(wrapper.state()).toEqual({
-    "letters": false,
     "capitalLetters": true,
     "numbers": true,
     "symbols": true
