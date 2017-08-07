@@ -6,11 +6,23 @@ export default class GenericOptions extends PureComponent {
   static propTypes = Options.sharedPropTypes
   static shortName = 'Generic'
 
-  static stateToPossibilities =  {
-    letters: 26,
-    capitalLetters: 26,
-    numbers: 10,
-    symbols: 8
+  static toggles = {
+    letters: {
+      label: 'Letters',
+      possibleItems: 26
+    },
+    capitalLetters: {
+      label: 'Capital Letters',
+      possibleItems: 26
+    },
+    numbers: {
+      label: 'Numbers',
+      possibleItems: 10
+    },
+    symbols: {
+      label: 'Symbols',
+      possibleItems: 8
+    }
   }
 
   state = {
@@ -24,35 +36,24 @@ export default class GenericOptions extends PureComponent {
 
   possiblePasswords = () => {
     const keys = Object.entries(this.state)
-          .filter(([key, value]) => value)
-          .map(([key, value]) => key)
+                       .filter(([key, value]) => value)
+                       .map(([key, value]) => key)
 
-    return keys.reduce((memo, key) => memo + this.constructor.stateToPossibilities[key], 0)
+    return keys.reduce((memo, key) => memo + this.constructor.toggles[key].possibleItems, 0)
   }
 
   render () {
     return (
       <Options possiblePasswords={this.possiblePasswords} {...this.props}>
         <h3>Generic</h3>
-        <label>
-          <input type="checkbox" name="letters" checked={this.state.letters} onChange={this.handleChange}/>
-          Letters
-        </label>
 
-        <label>
-          <input type="checkbox" name="capitalLetters" checked={this.state.capitalLetters} onChange={this.handleChange}/>
-          Capital Letters
-        </label>
-
-        <label>
-          <input type="checkbox" name="numbers" checked={this.state.numbers} onChange={this.handleChange}/>
-          Numbers
-        </label>
-
-        <label>
-          <input type="checkbox" name="symbols" checked={this.state.symbols} onChange={this.handleChange}/>
-          Symbols
-        </label>
+        {Object.entries(this.constructor.toggles)
+               .map(([name, { label, example }]) => (
+                 <label key={name}>
+                   <input type="checkbox" name={name} checked={this.state[name]} onChange={this.handleChange}/>
+                   { label }
+                 </label>
+               ))}
       </Options>
     )
   }
