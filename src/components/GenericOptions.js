@@ -1,6 +1,7 @@
 import handleChange from '../handleChange'
 import Options from './Options'
 import React, { PureComponent } from 'react'
+import { Checkbox } from 'react-bootstrap'
 
 export default class GenericOptions extends PureComponent {
   static propTypes = Options.sharedPropTypes
@@ -49,15 +50,14 @@ export default class GenericOptions extends PureComponent {
   render () {
     return (
       <Options possiblePasswords={this.possiblePasswords} {...this.props}>
-        <h3>Generic</h3>
+      <h3>Generic</h3>
 
-        {Object.entries(this.constructor.toggles)
-               .map(([name, { label, example }]) => (
-                 <label key={name}>
-                   <input type="checkbox" name={name} checked={this.state[name]} onChange={this.handleChange}/>
-                   { label } <small>({ example })</small>
-                 </label>
-               ))}
+      {Object.entries(this.constructor.toggles)
+             .map(([name, { label, example }]) => (
+               <Checkbox key={name} name={name} checked={this.state[name]} onChange={this.handleChange}>
+                 { label } <small>({ example })</small>
+               </Checkbox>
+             ))}
       </Options>
     )
   }
