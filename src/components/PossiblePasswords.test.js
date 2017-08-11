@@ -2,9 +2,7 @@ import { shallow } from 'enzyme'
 import PossiblePasswords from './PossiblePasswords'
 import React from 'react'
 
-function getWrapper (length) {
-  return shallow(<PossiblePasswords length={length} possibleItems={2}/>)
-}
+const getWrapper = length => shallow(<PossiblePasswords length={length} possibleItems={2}/>)
 
 it('renders with invalid or very weak possibleItems', () => {
   expect(getWrapper(0)).toMatchSnapshot()
