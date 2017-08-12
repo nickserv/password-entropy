@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types'
+import { findLast } from 'ramda'
 import React, { PureComponent } from 'react'
 import { ProgressBar } from 'react-bootstrap'
 
@@ -35,8 +36,8 @@ export default class PossiblePasswords extends PureComponent {
     const possiblePasswords = (this.props.possibleItems || 1) ** this.props.length
     const approximatePrefix = possiblePasswords > Number.MAX_SAFE_INTEGER && '~ '
     const entropyBits = Math.log2(possiblePasswords)
-    const entropyTip = this.constructor.entropyTips
-                         .reduce((memo, tip) => entropyBits >= tip.minimum ? tip : memo)
+    const entropyTip = findLast(tip => entropyBits >= tip.minimum,
+                                this.constructor.entropyTips)
 
     return (
       <dl className="dl-horizontal">

@@ -1,5 +1,6 @@
 import handleChange from '../handleChange'
 import Options from './Options'
+import { filter, identity, keys, map, pipe, sum } from 'ramda'
 import React, { PureComponent } from 'react'
 import { Checkbox } from 'react-bootstrap'
 
@@ -39,25 +40,22 @@ export default class GenericOptions extends PureComponent {
 
   handleChange = handleChange.bind(this)
 
-  possiblePasswords = () => {
-    const keys = Object.entries(this.state)
-                       .filter(([key, value]) => value)
-                       .map(([key, value]) => key)
-
-    return keys.reduce((memo, key) => memo + this.constructor.toggles[key].possibleItems, 0)
-  }
+  possiblePasswords = () => pipe(filter(identity),
+                                 keys,
+                                 map(key => this.constructor.toggles[key].possibleItems),
+                                 sum)(this.state)
 
   render () {
     return (
       <Options possiblePasswords={this.possiblePasswords} {...this.props}>
-      <h3>Generic</h3>
+        <h3>Generic</h3>
 
-      {Object.entries(this.constructor.toggles)
-             .map(([name, { label, example }]) => (
-               <Checkbox key={name} name={name} checked={this.state[name]} onChange={this.handleChange}>
-                 { label } <small>({ example })</small>
-               </Checkbox>
-             ))}
+        {Object.entries(this.constructor.toggles)
+               .map(([name, { label, example }]) => (
+                 <Checkbox key={name} name={name} checked={this.state[name]} onChange={this.handleChange}>
+                   { label } <small>({ example })</small>
+                 </Checkbox>
+               ))}
       </Options>
     )
   }
