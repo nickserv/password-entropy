@@ -1,6 +1,6 @@
 import handleChange from '../handleChange'
 import Options from './Options'
-import { filter, identity, keys, map, pipe, sum } from 'ramda'
+import { filter, identity, keys, map, pipe, sum, T } from 'ramda'
 import React, { PureComponent } from 'react'
 import { Checkbox } from 'react-bootstrap'
 
@@ -31,12 +31,7 @@ export default class GenericOptions extends PureComponent {
     }
   }
 
-  state = {
-    letters: true,
-    capitalLetters: true,
-    numbers: true,
-    symbols: true
-  }
+  state = map(T, this.constructor.toggles)
 
   handleChange = handleChange.bind(this)
 
