@@ -1,14 +1,14 @@
-import CustomOptions from './CustomOptions'
-import DicewareOptions from './DicewareOptions'
-import FormGroup from './FormGroup'
-import GenericOptions from './GenericOptions'
-import Icon from './Icon'
+import CustomOptions from '../options/CustomOptions'
+import DicewareOptions from '../options/DicewareOptions'
+import FormGroup from '../ui/FormGroup'
+import GenericOptions from '../options/GenericOptions'
+import Icon from '../ui/Icon'
 import PossiblePasswords from './PossiblePasswords'
 import React, { PureComponent } from 'react'
 import { Form, PageHeader } from 'react-bootstrap'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 import 'react-tabs/style/react-tabs.css'
-import { handleChange } from '../util'
+import { handleChange } from '../../util'
 
 export default class PasswordEntropy extends PureComponent {
   static options = [
