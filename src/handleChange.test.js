@@ -3,22 +3,22 @@ import { shallow } from 'enzyme'
 import handleChange from './handleChange'
 import React, { createElement, PureComponent } from 'react'
 
-function getState (target, type = 'text') {
+function getWrapper (target, type = 'text') {
   return change(shallow(createElement(class extends PureComponent {
     render () {
       return <input type={type} name="name" onChange={handleChange.bind(this)}/>
     }
-  })), target).state('name')
+  })), target)
 }
 
 it('sets input state', () => {
-  expect(getState({ value: 'string' })).toBe('string')
+  expect(getWrapper({ value: 'string' })).toHaveState('name', 'string')
 })
 
 it('sets number state', () => {
-  expect(getState({ value: '1' }, 'number')).toBe(1)
+  expect(getWrapper({ value: '1' }, 'number')).toHaveState('name', 1)
 })
 
 it('sets checkbox state', () => {
-  expect(getState({ checked: true }, 'checkbox')).toBe(true)
+  expect(getWrapper({ checked: true }, 'checkbox')).toHaveState('name', true)
 })

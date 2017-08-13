@@ -11,19 +11,13 @@ it('renders', () => {
 })
 
 it('sets state and provides possiblePasswords', () => {
-  expect(wrapper.state()).toEqual({
-    "letters": true,
-    "capitalLetters": true,
-    "numbers": true,
-    "symbols": true
-  })
+  expect(wrapper).toHaveState('letters', true)
+  expect(wrapper).toHaveState('capitalLetters', true)
+  expect(wrapper).toHaveState('numbers', true)
+  expect(wrapper).toHaveState('symbols', true)
   expect(instance.possiblePasswords()).toBe(70)
 
   change(wrapper.find({ name: 'letters' }), { checked: false })
-  expect(wrapper.state()).toEqual({
-    "capitalLetters": true,
-    "numbers": true,
-    "symbols": true
-  })
+  expect(wrapper).not.toHaveState('letters', true)
   expect(instance.possiblePasswords()).toBe(44)
 })

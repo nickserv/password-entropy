@@ -11,10 +11,10 @@ it('renders', () => {
 })
 
 it('sets state and provides possiblePasswords', () => {
-  expect(wrapper.state('possibleItems')).toBe(1)
+  expect(wrapper).toHaveState('possibleItems', 1)
   expect(instance.possiblePasswords()).toBe(1)
 
   change(wrapper.find({ name: 'possibleItems' }), { value: 2 })
-  expect(change(wrapper).state('possibleItems')).toBe(2)
+  expect(wrapper).toHaveState('possibleItems', 2)
   expect(instance.possiblePasswords()).toBe(2)
 })
