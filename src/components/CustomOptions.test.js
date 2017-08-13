@@ -1,7 +1,7 @@
-import change from '../change'
 import CustomOptions from './CustomOptions'
 import { shallow } from 'enzyme'
 import React from 'react'
+import { change } from '../util'
 
 const wrapper = shallow(<CustomOptions onChange={() => {}}/>)
 const instance = wrapper.instance()

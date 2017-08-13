@@ -1,8 +1,8 @@
-import handleChange from '../handleChange'
 import Options from './Options'
 import { filter, identity, keys, map, pipe, sum, T } from 'ramda'
 import React, { PureComponent } from 'react'
 import { Checkbox } from 'react-bootstrap'
+import { handleChange } from '../util'
 
 export default class GenericOptions extends PureComponent {
   static propTypes = Options.sharedPropTypes

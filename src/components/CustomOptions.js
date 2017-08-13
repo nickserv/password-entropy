@@ -1,7 +1,7 @@
 import FormGroup from './FormGroup'
-import handleChange from '../handleChange'
 import Options from './Options'
 import React, { PureComponent } from 'react'
+import { handleChange } from '../util'
 
 export default class CustomOptions extends PureComponent {
   static propTypes = Options.sharedPropTypes
