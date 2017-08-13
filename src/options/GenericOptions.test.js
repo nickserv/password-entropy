@@ -1,7 +1,7 @@
 import { shallow } from 'enzyme'
 import GenericOptions from './GenericOptions'
 import React from 'react'
-import { change } from '../../util'
+import { change } from '../util'
 
 const wrapper = shallow(<GenericOptions onChange={() => {}}/>)
 const instance = wrapper.instance()

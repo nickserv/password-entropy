@@ -8,7 +8,7 @@ import React, { PureComponent } from 'react'
 import { Form, PageHeader } from 'react-bootstrap'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 import 'react-tabs/style/react-tabs.css'
-import { handleChange } from '../../util'
+import { handleChange } from '../util'
 
 export default class PasswordEntropy extends PureComponent {
   static options = [
