@@ -2,6 +2,17 @@ import { shallow } from 'enzyme'
 import React, { createElement, PureComponent } from 'react'
 import { change, handleChange } from './util'
 
+describe('change', () => {
+  const callback = jest.fn()
+  const wrapper = shallow(createElement(() => <input onChange={callback}/>))
+  const target = { value: 'string' }
+
+  it('calls the wrapped Component\'s onChange callback', () => {
+    change(wrapper, target)
+    expect(callback).toHaveBeenCalledWith({ target: { onChange: callback, ...target } })
+  })
+})
+
 describe('handleChange', () => {
   function getWrapper (target, type = 'text') {
     return change(shallow(createElement(class extends PureComponent {
