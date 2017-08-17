@@ -1,7 +1,7 @@
-import Icon from './Icon'
 import PropTypes from 'prop-types'
 import React, { PureComponent } from 'react'
 import { Col, ControlLabel, FormGroup as BootstrapFormGroup } from 'react-bootstrap'
+import Icon from 'react-fa'
 
 export default class FormGroup extends PureComponent {
   static propTypes = {
