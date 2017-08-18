@@ -6,11 +6,9 @@ import PossiblePasswords from './PossiblePasswords'
 import PropTypes from 'prop-types'
 import { pick } from 'ramda'
 import React, { PureComponent } from 'react'
-import { Form, PageHeader } from 'react-bootstrap'
+import { Form, PageHeader, Tab, Tabs } from 'react-bootstrap'
 import Icon from 'react-fa'
 import { connect } from 'react-redux'
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
-import 'react-tabs/style/react-tabs.css'
 
 export class PasswordEntropy extends PureComponent {
   static options = [
@@ -52,16 +50,11 @@ export class PasswordEntropy extends PureComponent {
 
           <h2><Icon name="cog"/> Options</h2>
 
-          <Tabs onSelect={this.props.onSelect} selectedIndex={this.props.optionsIndex}>
-            <TabList>
-              {this.constructor.options.map(({ Component: { shortName }, icon }) => (
-                <Tab key={shortName}><Icon name={icon}/> {shortName}</Tab>
-              ))}
-            </TabList>
-            {this.constructor.options.map(({ Component }) => (
-              <TabPanel key={Component.shortName}>
+          <Tabs activeKey={this.props.optionsIndex} onSelect={this.props.onSelect} id="options">
+            {this.constructor.options.map(({ Component, icon }, index) => (
+              <Tab key={Component.shortName} eventKey={index} title={<div><Icon name={icon}/> {Component.shortName}</div>}>
                 <Component/>
-              </TabPanel>
+              </Tab>
             ))}
           </Tabs>
 
