@@ -25,12 +25,12 @@ export class CustomOptions extends PureComponent {
   }
 }
 
-const mapStateToProps = pipe(prop('options'), pick(['custom']))
+export const mapStateToProps = pipe(prop('options'), pick(['custom']))
 
-const mapDispatchToProps = {
+export const mapDispatchToProps = {
   onChange: possibleItems => ({
     type: 'SET_CUSTOM_POSSIBLE_ITEMS',
-    payload: possibleItems
+    payload: parseInt(possibleItems, 10)
   })
 }
 

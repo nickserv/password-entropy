@@ -72,9 +72,9 @@ export class PasswordEntropy extends PureComponent {
   }
 }
 
-const mapStateToProps = pick(['length'])
+export const mapStateToProps = pick(['length'])
 
-const mapDispatchToProps = {
+export const mapDispatchToProps = {
   onChange: length => ({
     type: 'SET_LENGTH',
     payload: parseInt(length, 10)

@@ -50,9 +50,9 @@ export class GenericOptions extends PureComponent {
   }
 }
 
-const mapStateToProps = path(['options', 'generic'])
+export const mapStateToProps = path(['options', 'generic'])
 
-const mapDispatchToProps = {
+export const mapDispatchToProps = {
   onChange: ({ target: { checked, name } }) => ({
     type: 'TOGGLE_GENERIC',
     payload: {

@@ -52,7 +52,7 @@ export class PossiblePasswords extends PureComponent {
   }
 }
 
-function mapStateToProps ({ options: { custom, generic }, optionsIndex }) {
+export function mapStateToProps ({ options: { custom, generic }, optionsIndex }) {
   return {
     possibleItems: [
       () => 7776,
