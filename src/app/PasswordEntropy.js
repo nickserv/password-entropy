@@ -31,7 +31,8 @@ export class PasswordEntropy extends PureComponent {
   static propTypes = {
     length: PropTypes.number.isRequired,
     onChange: PropTypes.func.isRequired,
-    onSelect: PropTypes.func.isRequired
+    onSelect: PropTypes.func.isRequired,
+    optionsIndex: PropTypes.number.isRequired
   }
 
   render () {
@@ -51,7 +52,7 @@ export class PasswordEntropy extends PureComponent {
 
           <h2><Icon name="cog"/> Options</h2>
 
-          <Tabs onSelect={this.props.onSelect}>
+          <Tabs onSelect={this.props.onSelect} selectedIndex={this.props.optionsIndex}>
             <TabList>
               {this.constructor.options.map(({ Component: { shortName }, icon }) => (
                 <Tab key={shortName}><Icon name={icon}/> {shortName}</Tab>
