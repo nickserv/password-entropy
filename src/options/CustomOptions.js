@@ -1,28 +1,37 @@
 import FormGroup from '../ui/FormGroup'
-import Options from './Options'
+import PropTypes from 'prop-types'
+import { pick, pipe, prop } from 'ramda'
 import React, { PureComponent } from 'react'
-import { handleChange } from '../util'
+import { connect } from 'react-redux'
 
-export default class CustomOptions extends PureComponent {
-  static propTypes = Options.sharedPropTypes
+export class CustomOptions extends PureComponent {
   static shortName = 'Custom'
 
-  state = {
-    possibleItems: 1
+  static propTypes = {
+    onChange: PropTypes.func.isRequired,
+    possibleItems: PropTypes.number.isRequired
   }
-
-  handleChange = handleChange.bind(this)
-  possiblePasswords = () => this.state.possibleItems
 
   render () {
     return (
-      <Options possiblePasswords={this.possiblePasswords} {...this.props}>
+      <div>
         <h3>Custom</h3>
 
         <FormGroup id="possibleItems" label="Possible Items" icon="question-circle">
-          <input name="possibleItems" value={this.state.possibleItems} onChange={this.handleChange} type="number" min="1" required/>
+          <input name="possibleItems" value={this.props.possibleItems} onChange={this.props.onChange} type="number" min="1" required/>
         </FormGroup>
-      </Options>
+      </div>
     )
   }
 }
+
+const mapStateToProps = pipe(prop('options'), pick(['custom']))
+
+const mapDispatchToProps = {
+  onChange: possibleItems => ({
+    type: 'SET_CUSTOM_POSSIBLE_ITEMS',
+    payload: possibleItems
+  })
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(CustomOptions)

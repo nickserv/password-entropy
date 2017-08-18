@@ -3,14 +3,16 @@ import DicewareOptions from '../options/DicewareOptions'
 import FormGroup from '../ui/FormGroup'
 import GenericOptions from '../options/GenericOptions'
 import PossiblePasswords from './PossiblePasswords'
+import PropTypes from 'prop-types'
+import { pick } from 'ramda'
 import React, { PureComponent } from 'react'
 import { Form, PageHeader } from 'react-bootstrap'
 import Icon from 'react-fa'
+import { connect } from 'react-redux'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 import 'react-tabs/style/react-tabs.css'
-import { handleChange } from '../util'
 
-export default class PasswordEntropy extends PureComponent {
+export class PasswordEntropy extends PureComponent {
   static options = [
     {
       Component: DicewareOptions,
@@ -26,10 +28,9 @@ export default class PasswordEntropy extends PureComponent {
     }
   ]
 
-  handleChange = handleChange.bind(this)
-  handlePossibleItemsChange = possibleItems => this.setState({ possibleItems })
-  state = {
-    length: 6
+  static propTypes = {
+    length: PropTypes.number.isRequired,
+    onChange: PropTypes.func.isRequired
   }
 
   render () {
@@ -44,7 +45,7 @@ export default class PasswordEntropy extends PureComponent {
 
         <Form horizontal>
           <FormGroup id="length" label="Length" icon="arrows-h">
-            <input name="length" value={this.state.length} onChange={this.handleChange} type="number" min="1" required/>
+            <input name="length" value={this.props.length} onChange={this.props.onChange} type="number" min="1" required/>
           </FormGroup>
 
           <h2><Icon name="cog"/> Options</h2>
@@ -57,16 +58,27 @@ export default class PasswordEntropy extends PureComponent {
             </TabList>
             {this.constructor.options.map(({ Component }) => (
               <TabPanel key={Component.shortName}>
-                <Component onChange={this.handlePossibleItemsChange}/>
+                <Component/>
               </TabPanel>
             ))}
           </Tabs>
 
           <FormGroup id="results" label="Results" icon="info-circle">
-            <PossiblePasswords {...this.state}/>
+            <PossiblePasswords length={this.props.length}/>
           </FormGroup>
         </Form>
       </div>
     )
   }
 }
+
+const mapStateToProps = pick(['length'])
+
+const mapDispatchToProps = {
+  onChange: length => ({
+    type: 'SET_LENGTH',
+    payload: parseInt(length, 10)
+  })
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(PasswordEntropy)

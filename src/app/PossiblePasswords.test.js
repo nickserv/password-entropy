@@ -1,5 +1,5 @@
 import { shallow } from 'enzyme'
-import PossiblePasswords from './PossiblePasswords'
+import { PossiblePasswords } from './PossiblePasswords'
 import React from 'react'
 
 const getWrapper = length => shallow(<PossiblePasswords length={length} possibleItems={2}/>)
