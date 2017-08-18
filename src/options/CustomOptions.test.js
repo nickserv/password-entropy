@@ -9,14 +9,13 @@ it('renders', () => {
   expect(wrapper).toMatchSnapshot()
 })
 
-
 test('mapStateToProps', () => {
   const state = createStore(reducers).getState()
-  expect(mapStateToProps(state)).toEqual({ custom: 1 })
+  expect(mapStateToProps(state)).toEqual({ possibleItems: 1 })
 })
 
 test('mapDispatchToProps', () => {
-  expect(mapDispatchToProps.onChange('1')).toEqual({
+  expect(mapDispatchToProps.onChange({ target: { value: '1' } })).toEqual({
     type: 'SET_CUSTOM_POSSIBLE_ITEMS',
     payload: 1
   })

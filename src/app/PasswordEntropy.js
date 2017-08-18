@@ -30,7 +30,8 @@ export class PasswordEntropy extends PureComponent {
 
   static propTypes = {
     length: PropTypes.number.isRequired,
-    onChange: PropTypes.func.isRequired
+    onChange: PropTypes.func.isRequired,
+    onSelect: PropTypes.func.isRequired
   }
 
   render () {
@@ -50,7 +51,7 @@ export class PasswordEntropy extends PureComponent {
 
           <h2><Icon name="cog"/> Options</h2>
 
-          <Tabs>
+          <Tabs onSelect={this.props.onSelect}>
             <TabList>
               {this.constructor.options.map(({ Component: { shortName }, icon }) => (
                 <Tab key={shortName}><Icon name={icon}/> {shortName}</Tab>
@@ -72,12 +73,16 @@ export class PasswordEntropy extends PureComponent {
   }
 }
 
-export const mapStateToProps = pick(['length'])
+export const mapStateToProps = pick(['length', 'optionsIndex'])
 
 export const mapDispatchToProps = {
-  onChange: length => ({
+  onChange: ({ target: { value } }) => ({
     type: 'SET_LENGTH',
-    payload: parseInt(length, 10)
+    payload: parseInt(value, 10)
+  }),
+  onSelect: index => ({
+    type: 'SET_OPTIONS_INDEX',
+    payload: index
   })
 }
 

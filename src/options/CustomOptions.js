@@ -1,6 +1,6 @@
 import FormGroup from '../ui/FormGroup'
 import PropTypes from 'prop-types'
-import { pick, pipe, prop } from 'ramda'
+import { path } from 'ramda'
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 
@@ -25,12 +25,14 @@ export class CustomOptions extends PureComponent {
   }
 }
 
-export const mapStateToProps = pipe(prop('options'), pick(['custom']))
+export const mapStateToProps = state => ({
+  possibleItems: path(['options', 'custom'], state)
+})
 
 export const mapDispatchToProps = {
-  onChange: possibleItems => ({
+  onChange: ({ target: { value }}) => ({
     type: 'SET_CUSTOM_POSSIBLE_ITEMS',
-    payload: parseInt(possibleItems, 10)
+    payload: parseInt(value, 10)
   })
 }
 
