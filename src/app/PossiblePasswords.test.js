@@ -1,6 +1,5 @@
 import { shallow } from 'enzyme'
 import { PossiblePasswords, mapStateToProps } from './PossiblePasswords'
-import { assoc } from 'ramda'
 import React from 'react'
 import reducers from '../reducers'
 import { createStore } from 'redux'
