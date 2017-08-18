@@ -10,7 +10,8 @@
     "react-redux": "^5.0.6",
     "react-scripts": "1.0.11",
     "react-tabs": "^1.1.0",
-    "redux": "^3.7.2"
+    "redux": "^3.7.2",
+    "redux-devtools-extension": "^2.13.2"
   },
   "devDependencies": {
     "enzyme": "^2.9.1",
