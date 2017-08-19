@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`reducers handle SET_CUSTOM_POSSIBLE_ITEMS 1`] = `
+exports[`reducers handle SET_CUSTOM 1`] = `
 Object {
   "length": 6,
   "options": Object {

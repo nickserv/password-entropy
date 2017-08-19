@@ -16,7 +16,7 @@ test('mapStateToProps', () => {
 
 test('mapDispatchToProps', () => {
   expect(mapDispatchToProps.onChange({ target: { value: '1' } })).toEqual({
-    type: 'SET_CUSTOM_POSSIBLE_ITEMS',
+    type: 'SET_CUSTOM',
     payload: 1
   })
 })

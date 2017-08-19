@@ -11,11 +11,11 @@ describe('reducers', () => {
     return reducers(undefined, { type, payload })
   }
 
-  it('handle SET_CUSTOM_POSSIBLE_ITEMS', () => {
-    expect(dispatch('SET_CUSTOM_POSSIBLE_ITEMS', NaN)).toEqual(initialState)
-    expect(dispatch('SET_CUSTOM_POSSIBLE_ITEMS', -1)).toEqual(initialState)
-    expect(dispatch('SET_CUSTOM_POSSIBLE_ITEMS', 0)).not.toEqual(initialState)
-    expect(dispatch('SET_CUSTOM_POSSIBLE_ITEMS', 2)).toMatchSnapshot()
+  it('handle SET_CUSTOM', () => {
+    expect(dispatch('SET_CUSTOM', NaN)).toEqual(initialState)
+    expect(dispatch('SET_CUSTOM', -1)).toEqual(initialState)
+    expect(dispatch('SET_CUSTOM', 0)).not.toEqual(initialState)
+    expect(dispatch('SET_CUSTOM', 2)).toMatchSnapshot()
   })
 
   it('handle SET_LENGTH', () => {

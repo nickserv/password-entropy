@@ -14,9 +14,7 @@ function createReducer(actionType, initialState, { callback = identity, validato
 export default combineReducers({
   length: createReducer('SET_LENGTH', 6, { validator: n => n >= 1 }),
   options: combineReducers({
-    custom: createReducer('SET_CUSTOM_POSSIBLE_ITEMS', 1, {
-      validator: n => n >= 0
-    }),
+    custom: createReducer('SET_CUSTOM', 1, { validator: n => n >= 0 }),
     generic: createReducer ('TOGGLE_GENERIC', map(T, GenericOptions.toggles), {
       callback: ({ checked, name }, state) => assoc(name, checked, state)
     })

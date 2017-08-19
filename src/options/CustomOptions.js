@@ -32,7 +32,7 @@ export const mapStateToProps = state => ({
 
 export const mapDispatchToProps = {
   onChange: ({ target: { value }}) => ({
-    type: 'SET_CUSTOM_POSSIBLE_ITEMS',
+    type: 'SET_CUSTOM',
     payload: parseInt(value, 10)
   })
 }
