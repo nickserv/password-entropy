@@ -6,7 +6,7 @@ import PossiblePasswords from './PossiblePasswords'
 import PropTypes from 'prop-types'
 import { pick } from 'ramda'
 import React, { PureComponent } from 'react'
-import { Form, PageHeader, Tab, Tabs } from 'react-bootstrap'
+import { Form, FormControl, PageHeader, Tab, Tabs } from 'react-bootstrap'
 import Icon from 'react-fa'
 import { connect } from 'react-redux'
 
@@ -45,7 +45,7 @@ export class PasswordEntropy extends PureComponent {
 
         <Form horizontal>
           <FormGroup id="length" label="Length" icon="arrows-h">
-            <input value={this.props.length} onChange={this.props.onChange} type="number" min="1" required/>
+            <FormControl value={this.props.length} onChange={this.props.onChange} type="number" min="1" required/>
           </FormGroup>
 
           <h2><Icon name="cog"/> Options</h2>

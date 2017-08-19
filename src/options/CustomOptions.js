@@ -2,6 +2,7 @@ import FormGroup from '../ui/FormGroup'
 import PropTypes from 'prop-types'
 import { path } from 'ramda'
 import React, { PureComponent } from 'react'
+import { FormControl } from 'react-bootstrap'
 import { connect } from 'react-redux'
 
 export class CustomOptions extends PureComponent {
@@ -18,7 +19,7 @@ export class CustomOptions extends PureComponent {
         <h3>Custom</h3>
 
         <FormGroup id="possibleItems" label="Possible Items" icon="question-circle">
-          <input value={this.props.possibleItems} onChange={this.props.onChange} type="number" min="0" required/>
+          <FormControl value={this.props.possibleItems} onChange={this.props.onChange} type="number" min="0" required/>
         </FormGroup>
       </div>
     )
