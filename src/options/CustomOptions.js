@@ -18,7 +18,7 @@ export class CustomOptions extends PureComponent {
         <h3>Custom</h3>
 
         <FormGroup id="possibleItems" label="Possible Items" icon="question-circle">
-          <input value={this.props.possibleItems} onChange={this.props.onChange} type="number" min="1" required/>
+          <input value={this.props.possibleItems} onChange={this.props.onChange} type="number" min="0" required/>
         </FormGroup>
       </div>
     )

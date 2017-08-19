@@ -11,7 +11,7 @@ exports[`renders 1`] = `
     label="Possible Items"
   >
     <input
-      min="1"
+      min="0"
       onChange={[Function]}
       required={true}
       type="number"
