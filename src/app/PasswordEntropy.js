@@ -45,7 +45,7 @@ export class PasswordEntropy extends PureComponent {
 
         <Form horizontal>
           <FormGroup id="length" label="Length" icon="arrows-h">
-            <input name="length" value={this.props.length} onChange={this.props.onChange} type="number" min="1" required/>
+            <input value={this.props.length} onChange={this.props.onChange} type="number" min="1" required/>
           </FormGroup>
 
           <h2><Icon name="cog"/> Options</h2>
