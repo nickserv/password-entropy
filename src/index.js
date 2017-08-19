@@ -1,6 +1,6 @@
 import PasswordEntropy from './app/PasswordEntropy'
-import React from 'react';
-import { render } from 'react-dom';
+import React from 'react'
+import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import reducers from './reducers'
 import { createStore } from 'redux'
