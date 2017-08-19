@@ -1,6 +1,6 @@
 import { GenericOptions } from '../options/GenericOptions'
 import PropTypes from 'prop-types'
-import { filter, findLast, identity, keys, map, pipe, sum } from 'ramda'
+import { always, filter, findLast, identity, keys, map, pipe, sum } from 'ramda'
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import { ProgressBar } from 'react-bootstrap'
@@ -52,16 +52,18 @@ export class PossiblePasswords extends PureComponent {
   }
 }
 
-export function mapStateToProps ({ options: { custom, generic }, optionsIndex }) {
-  return {
-    possibleItems: [
-      () => 7776,
-      () => custom,
-      () => pipe(filter(identity),
+const possibleItems = {
+  diceware: always(7776),
+  custom: identity,
+  generic: pipe(filter(identity),
                  keys,
                  map(key => GenericOptions.toggles[key].possibleItems),
-                 sum)(generic)
-    ][optionsIndex]()
+                sum)
+}
+
+export function mapStateToProps ({ options, optionsKey }) {
+  return {
+    possibleItems: possibleItems[optionsKey](options[optionsKey])
   }
 }
 

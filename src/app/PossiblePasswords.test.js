@@ -31,12 +31,12 @@ it('renders with very strong possiblePasswords', () => {
 })
 
 test('mapStateToProps', () => {
-  function mapStateToPropsWithIndex (optionsIndex) {
+  function mapStateToPropsWithKey (optionsKey) {
     const state = createStore(reducers).getState()
-    return mapStateToProps({ ...state, optionsIndex })
+    return mapStateToProps({ ...state, optionsKey })
   }
 
-  expect(mapStateToPropsWithIndex(0)).toEqual({ possibleItems: 7776 })
-  expect(mapStateToPropsWithIndex(1)).toEqual({ possibleItems: 1 })
-  expect(mapStateToPropsWithIndex(2)).toEqual({ possibleItems: 70 })
+  expect(mapStateToPropsWithKey('diceware')).toEqual({ possibleItems: 7776 })
+  expect(mapStateToPropsWithKey('custom')).toEqual({ possibleItems: 1 })
+  expect(mapStateToPropsWithKey('generic')).toEqual({ possibleItems: 70 })
 })

@@ -1,9 +1,5 @@
-import React, { PureComponent } from 'react'
+import React from 'react'
 
-export default class DicewareOptions extends PureComponent {
-  static shortName = 'Diceware'
-
-  render () {
-    return <h3>Diceware</h3>
-  }
+export default function DicewareOptions () {
+  return <h3>Diceware</h3>
 }

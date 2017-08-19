@@ -19,5 +19,5 @@ export default combineReducers({
       callback: ({ checked, name }, state) => assoc(name, checked, state)
     })
   }),
-  optionsIndex: createReducer('SET_OPTIONS_INDEX', 0)
+  optionsKey: createReducer('SET_OPTIONS_KEY', 'diceware')
 })

@@ -4,14 +4,18 @@ import React from 'react'
 import reducers from '../reducers'
 import { createStore } from 'redux'
 
+test('capitalize', () => {
+  expect(PasswordEntropy.capitalize('word')).toEqual('Word')
+})
+
 it('renders', () => {
-  const wrapper = shallow(<PasswordEntropy length={6} onChange={() => {}} onSelect={() => {}} optionsIndex={0}/>)
+  const wrapper = shallow(<PasswordEntropy length={6} onChange={() => {}} onSelect={() => {}} optionsKey="diceware"/>)
   expect(wrapper).toMatchSnapshot()
 })
 
 test('mapStateToProps', () => {
   const state = createStore(reducers).getState()
-  expect(mapStateToProps(state)).toEqual({ length: 6, optionsIndex: 0 })
+  expect(mapStateToProps(state)).toEqual({ length: 6, optionsKey: 'diceware' })
 })
 
 test('mapDispatchToProps', () => {
@@ -21,7 +25,7 @@ test('mapDispatchToProps', () => {
   })
 
   expect(mapDispatchToProps.onSelect(0)).toEqual({
-    type: 'SET_OPTIONS_INDEX',
+    type: 'SET_OPTIONS_KEY',
     payload: 0
   })
 })

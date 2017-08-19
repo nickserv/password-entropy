@@ -9,8 +9,6 @@ export class GenericOptions extends PureComponent {
     onChange: PropTypes.func.isRequired
   }
 
-  static shortName = 'Generic'
-
   static toggles = {
     letters: {
       label: 'Letters',

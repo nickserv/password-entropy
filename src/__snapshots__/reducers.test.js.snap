@@ -12,7 +12,7 @@ Object {
       "symbols": true,
     },
   },
-  "optionsIndex": 0,
+  "optionsKey": "diceware",
 }
 `;
 
@@ -28,11 +28,11 @@ Object {
       "symbols": true,
     },
   },
-  "optionsIndex": 0,
+  "optionsKey": "diceware",
 }
 `;
 
-exports[`reducers handle SET_OPTIONS_INDEX 1`] = `
+exports[`reducers handle SET_OPTIONS_KEY 1`] = `
 Object {
   "length": 6,
   "options": Object {
@@ -44,7 +44,7 @@ Object {
       "symbols": true,
     },
   },
-  "optionsIndex": 1,
+  "optionsKey": "custom",
 }
 `;
 
@@ -60,7 +60,7 @@ Object {
       "symbols": true,
     },
   },
-  "optionsIndex": 0,
+  "optionsKey": "diceware",
 }
 `;
 
@@ -76,6 +76,6 @@ Object {
       "symbols": true,
     },
   },
-  "optionsIndex": 0,
+  "optionsKey": "diceware",
 }
 `;

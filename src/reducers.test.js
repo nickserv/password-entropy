@@ -25,8 +25,8 @@ describe('reducers', () => {
     expect(dispatch('SET_LENGTH', 7)).toMatchSnapshot()
   })
 
-  it('handle SET_OPTIONS_INDEX', () => {
-    expect(dispatch('SET_OPTIONS_INDEX', 1)).toMatchSnapshot()
+  it('handle SET_OPTIONS_KEY', () => {
+    expect(dispatch('SET_OPTIONS_KEY', 'custom')).toMatchSnapshot()
   })
 
   it('handle TOGGLE_GENERIC', () => {

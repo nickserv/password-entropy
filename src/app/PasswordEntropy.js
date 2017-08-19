@@ -11,26 +11,30 @@ import Icon from 'react-fa'
 import { connect } from 'react-redux'
 
 export class PasswordEntropy extends PureComponent {
-  static options = [
-    {
+  static capitalize (string) {
+    return string.charAt(0).toUpperCase() + string.slice(1)
+  }
+
+  static options = {
+    diceware: {
       Component: DicewareOptions,
       icon: 'book'
     },
-    {
+    custom: {
       Component: CustomOptions,
       icon: 'question-circle'
     },
-    {
+    generic: {
       Component: GenericOptions,
       icon: 'check-square'
     }
-  ]
+  }
 
   static propTypes = {
     length: PropTypes.number.isRequired,
     onChange: PropTypes.func.isRequired,
     onSelect: PropTypes.func.isRequired,
-    optionsIndex: PropTypes.number.isRequired
+    optionsKey: PropTypes.string.isRequired
   }
 
   render () {
@@ -42,7 +46,6 @@ export class PasswordEntropy extends PureComponent {
           <small>A simple entropy calculator for evaluating password security.</small>
         </PageHeader>
 
-
         <Form horizontal>
           <FormGroup id="length" label="Length" icon="arrows-h">
             <FormControl value={this.props.length} onChange={this.props.onChange} type="number" min="1" required/>
@@ -50,9 +53,9 @@ export class PasswordEntropy extends PureComponent {
 
           <h2><Icon name="cog"/> Options</h2>
 
-          <Tabs activeKey={this.props.optionsIndex} onSelect={this.props.onSelect} id="options">
-            {this.constructor.options.map(({ Component, icon }, index) => (
-              <Tab key={Component.shortName} eventKey={index} title={<div><Icon name={icon}/> {Component.shortName}</div>}>
+          <Tabs activeKey={this.props.optionsKey} onSelect={this.props.onSelect} id="options">
+            {Object.entries(this.constructor.options).map(([name, { Component, icon }]) => (
+              <Tab key={name} eventKey={name} title={<div><Icon name={icon}/> {this.constructor.capitalize(name)}</div>}>
                 <Component/>
               </Tab>
             ))}
@@ -67,16 +70,16 @@ export class PasswordEntropy extends PureComponent {
   }
 }
 
-export const mapStateToProps = pick(['length', 'optionsIndex'])
+export const mapStateToProps = pick(['length', 'optionsKey'])
 
 export const mapDispatchToProps = {
   onChange: ({ target: { value } }) => ({
     type: 'SET_LENGTH',
     payload: parseInt(value, 10)
   }),
-  onSelect: index => ({
-    type: 'SET_OPTIONS_INDEX',
-    payload: index
+  onSelect: key => ({
+    type: 'SET_OPTIONS_KEY',
+    payload: key
   })
 }
 

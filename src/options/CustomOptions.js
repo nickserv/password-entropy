@@ -6,8 +6,6 @@ import { FormControl } from 'react-bootstrap'
 import { connect } from 'react-redux'
 
 export class CustomOptions extends PureComponent {
-  static shortName = 'Custom'
-
   static propTypes = {
     onChange: PropTypes.func.isRequired,
     possibleItems: PropTypes.number.isRequired
