@@ -56,8 +56,8 @@ const possibleItems = {
   diceware: always(7776),
   custom: identity,
   generic: pipe(filter(identity),
-                 keys,
-                 map(key => GenericOptions.toggles[key].possibleItems),
+                keys,
+                map(key => GenericOptions.toggles[key].possibleItems),
                 sum)
 }
 

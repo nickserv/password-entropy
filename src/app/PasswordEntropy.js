@@ -1,3 +1,4 @@
+import { setLength, setOptionsKey} from '../actions'
 import CustomOptions from '../options/CustomOptions'
 import DicewareOptions from '../options/DicewareOptions'
 import FormGroup from '../ui/FormGroup'
@@ -32,9 +33,9 @@ export class PasswordEntropy extends PureComponent {
 
   static propTypes = {
     length: PropTypes.number.isRequired,
-    onChange: PropTypes.func.isRequired,
-    onSelect: PropTypes.func.isRequired,
-    optionsKey: PropTypes.string.isRequired
+    optionsKey: PropTypes.string.isRequired,
+    setLength: PropTypes.func.isRequired,
+    setOptionsKey: PropTypes.func.isRequired
   }
 
   render () {
@@ -48,12 +49,12 @@ export class PasswordEntropy extends PureComponent {
 
         <Form horizontal>
           <FormGroup id="length" label="Length" icon="arrows-h">
-            <FormControl value={this.props.length} onChange={this.props.onChange} type="number" min="1" required/>
+            <FormControl value={this.props.length} onChange={this.props.setLength} type="number" min="1" required/>
           </FormGroup>
 
           <h2><Icon name="cog"/> Options</h2>
 
-          <Tabs activeKey={this.props.optionsKey} onSelect={this.props.onSelect} id="options">
+          <Tabs activeKey={this.props.optionsKey} onSelect={this.props.setOptionsKey} id="options">
             {Object.entries(this.constructor.options).map(([name, { Component, icon }]) => (
               <Tab key={name} eventKey={name} title={<div><Icon name={icon}/> {this.constructor.capitalize(name)}</div>}>
                 <Component/>
@@ -72,15 +73,4 @@ export class PasswordEntropy extends PureComponent {
 
 export const mapStateToProps = pick(['length', 'optionsKey'])
 
-export const mapDispatchToProps = {
-  onChange: ({ target: { value } }) => ({
-    type: 'SET_LENGTH',
-    payload: parseInt(value, 10)
-  }),
-  onSelect: key => ({
-    type: 'SET_OPTIONS_KEY',
-    payload: key
-  })
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(PasswordEntropy)
+export default connect(mapStateToProps, { setLength, setOptionsKey })(PasswordEntropy)

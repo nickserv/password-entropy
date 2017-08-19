@@ -1,3 +1,4 @@
+import { toggleGeneric } from '../actions'
 import PropTypes from 'prop-types'
 import { path } from 'ramda'
 import React, { PureComponent } from 'react'
@@ -6,7 +7,7 @@ import { connect } from 'react-redux'
 
 export class GenericOptions extends PureComponent {
   static propTypes = {
-    onChange: PropTypes.func.isRequired
+    toggleGeneric: PropTypes.func.isRequired
   }
 
   static toggles = {
@@ -39,7 +40,7 @@ export class GenericOptions extends PureComponent {
 
         {Object.entries(this.constructor.toggles)
                .map(([name, { label, example }]) => (
-                 <Checkbox key={name} name={name} checked={this.props[name]} onChange={this.props.onChange}>
+                 <Checkbox key={name} name={name} checked={this.props[name]} onChange={this.props.toggleGeneric}>
                    { label } <small>({ example })</small>
                  </Checkbox>
                ))}
@@ -50,14 +51,4 @@ export class GenericOptions extends PureComponent {
 
 export const mapStateToProps = path(['options', 'generic'])
 
-export const mapDispatchToProps = {
-  onChange: ({ target: { checked, name } }) => ({
-    type: 'TOGGLE_GENERIC',
-    payload: {
-      checked,
-      name
-    }
-  })
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(GenericOptions)
+export default connect(mapStateToProps, { toggleGeneric })(GenericOptions)

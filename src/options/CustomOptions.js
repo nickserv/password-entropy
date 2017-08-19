@@ -1,3 +1,4 @@
+import { setCustom } from '../actions'
 import FormGroup from '../ui/FormGroup'
 import PropTypes from 'prop-types'
 import { path } from 'ramda'
@@ -7,8 +8,8 @@ import { connect } from 'react-redux'
 
 export class CustomOptions extends PureComponent {
   static propTypes = {
-    onChange: PropTypes.func.isRequired,
-    possibleItems: PropTypes.number.isRequired
+    possibleItems: PropTypes.number.isRequired,
+    setCustom: PropTypes.func.isRequired
   }
 
   render () {
@@ -17,7 +18,7 @@ export class CustomOptions extends PureComponent {
         <h3>Custom</h3>
 
         <FormGroup id="possibleItems" label="Possible Items" icon="question-circle">
-          <FormControl value={this.props.possibleItems} onChange={this.props.onChange} type="number" min="0" required/>
+          <FormControl value={this.props.possibleItems} onChange={this.props.setCustom} type="number" min="0" required/>
         </FormGroup>
       </div>
     )
@@ -28,11 +29,4 @@ export const mapStateToProps = state => ({
   possibleItems: path(['options', 'custom'], state)
 })
 
-export const mapDispatchToProps = {
-  onChange: ({ target: { value }}) => ({
-    type: 'SET_CUSTOM',
-    payload: parseInt(value, 10)
-  })
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(CustomOptions)
+export default connect(mapStateToProps, { setCustom })(CustomOptions)
