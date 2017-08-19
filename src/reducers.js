@@ -2,19 +2,24 @@ import GenericOptions from './options/GenericOptions'
 import { assoc, identity, map, T } from 'ramda'
 import { combineReducers } from 'redux'
 
-function createReducer(actionType, initialState, callback = identity) {
+function createReducer(actionType, initialState, { callback = identity, validator } = {}) {
   return (state = initialState, { payload, type }) => {
-    return type === actionType ? callback(payload, state) : state
+    const matchesAction = type === actionType
+    const isValid = !validator || validator(payload)
+
+    return matchesAction && isValid ? callback(payload, state) : state
   }
 }
 
 export default combineReducers({
-  length: createReducer('SET_LENGTH', 6),
+  length: createReducer('SET_LENGTH', 6, { validator: n => n >= 1 }),
   options: combineReducers({
-    custom: createReducer('SET_CUSTOM_POSSIBLE_ITEMS', 1),
-    generic: createReducer ('TOGGLE_GENERIC',
-                            map(T, GenericOptions.toggles),
-                            ({ checked, name }, state) => assoc(name, checked, state))
+    custom: createReducer('SET_CUSTOM_POSSIBLE_ITEMS', 1, {
+      validator: n => n >= 0
+    }),
+    generic: createReducer ('TOGGLE_GENERIC', map(T, GenericOptions.toggles), {
+      callback: ({ checked, name }, state) => assoc(name, checked, state)
+    })
   }),
   optionsIndex: createReducer('SET_OPTIONS_INDEX', 0)
 })
