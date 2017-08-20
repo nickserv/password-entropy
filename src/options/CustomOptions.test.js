@@ -5,8 +5,12 @@ import reducers from '../reducers'
 import { createStore } from 'redux'
 
 it('renders', () => {
-  const wrapper = shallow(<CustomOptions possibleItems={1} setCustom={() => {}}/>)
+  const setCustom = jest.fn()
+  const wrapper = shallow(<CustomOptions possibleItems={1} setCustom={setCustom}/>)
+  wrapper.find('FormControl').simulate('change')
+
   expect(wrapper).toMatchSnapshot()
+  expect(setCustom).toHaveBeenCalled()
 })
 
 test('mapStateToProps', () => {

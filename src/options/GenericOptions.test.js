@@ -8,8 +8,12 @@ import { createStore } from 'redux'
 const toggles = map(T, GenericOptions.toggles)
 
 it('renders', () => {
-  const wrapper = shallow(<GenericOptions toggleGeneric={() => {}} {...toggles}/>)
+  const toggleGeneric = jest.fn()
+  const wrapper = shallow(<GenericOptions toggleGeneric={toggleGeneric} {...toggles}/>)
+  wrapper.find({ name: 'letters' }).simulate('change')
+
   expect(wrapper).toMatchSnapshot()
+  expect(toggleGeneric).toHaveBeenCalled()
 })
 
 test('mapStateToProps', () => {

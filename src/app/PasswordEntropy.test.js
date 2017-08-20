@@ -9,8 +9,15 @@ test('capitalize', () => {
 })
 
 it('renders', () => {
-  const wrapper = shallow(<PasswordEntropy length={6} optionsKey="diceware" setLength={() => {}} setOptionsKey={() => {}}/>)
+  const setLength = jest.fn()
+  const setOptionsKey = jest.fn()
+  const wrapper = shallow(<PasswordEntropy length={6} optionsKey="diceware" setLength={setLength} setOptionsKey={setOptionsKey}/>)
+  wrapper.find('FormControl').simulate('change')
+  wrapper.find('Uncontrolled(Tabs)').simulate('select')
+
   expect(wrapper).toMatchSnapshot()
+  expect(setLength).toHaveBeenCalled()
+  expect(setOptionsKey).toHaveBeenCalled()
 })
 
 test('mapStateToProps', () => {
