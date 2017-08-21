@@ -1,35 +1,31 @@
-import reducers from './reducers'
+import { createReducer, toggleGenericCallback, toggleGenericInitialState } from './reducers'
 
-describe('reducers', () => {
-  const initialState = reducers(undefined, {})
+test('createReducer', () => {
+  const reducer = createReducer('ACTION', false)
+  expect(reducer(undefined, {})).toBe(false)
+  expect(reducer(undefined, { type: 'ACTION', payload: true })).toBe(true)
+})
 
-  it('return initial state', () => {
-    expect(initialState).toMatchSnapshot()
-  })
+test('createReducer with callback', () => {
+  const reducer = createReducer('ACTION', 'extra ', { callback: (payload, state) => state + payload})
+  expect(reducer(undefined, {})).toBe('extra ')
+  expect(reducer(undefined, { type: 'ACTION', payload: true })).toBe('extra true')
+})
 
-  function dispatch (type, payload) {
-    return reducers(undefined, { type, payload })
-  }
+test('createReducer with min', () => {
+  const reducer = createReducer('ACTION', false, { min: 0 })
+  expect(reducer(undefined, {})).toBe(false)
+  expect(reducer(undefined, { type: 'ACTION', payload: NaN })).toBe(false)
+  expect(reducer(undefined, { type: 'ACTION', payload: -1 })).toBe(false)
+  expect(reducer(undefined, { type: 'ACTION', payload: 0 })).toBe(0)
+  expect(reducer(undefined, { type: 'ACTION', payload: 1 })).toBe(1)
+})
 
-  it('handle SET_CUSTOM', () => {
-    expect(dispatch('SET_CUSTOM', NaN)).toEqual(initialState)
-    expect(dispatch('SET_CUSTOM', -1)).toEqual(initialState)
-    expect(dispatch('SET_CUSTOM', 0)).not.toEqual(initialState)
-    expect(dispatch('SET_CUSTOM', 2)).toMatchSnapshot()
-  })
-
-  it('handle SET_LENGTH', () => {
-    expect(dispatch('SET_LENGTH', NaN)).toEqual(initialState)
-    expect(dispatch('SET_LENGTH', 0)).toEqual(initialState)
-    expect(dispatch('SET_LENGTH', 1)).not.toEqual(initialState)
-    expect(dispatch('SET_LENGTH', 7)).toMatchSnapshot()
-  })
-
-  it('handle SET_OPTIONS_KEY', () => {
-    expect(dispatch('SET_OPTIONS_KEY', 'custom')).toMatchSnapshot()
-  })
-
-  it('handle TOGGLE_GENERIC', () => {
-    expect(dispatch('TOGGLE_GENERIC', { name: 'letters', checked: false })).toMatchSnapshot()
+test('toggleGenericCallback', () => {
+  expect(toggleGenericCallback({ name: 'letters', checked: false }, toggleGenericInitialState)).toEqual({
+    capitalLetters: true,
+    letters: false,
+    numbers: true,
+    symbols: true
   })
 })
