@@ -31,7 +31,7 @@ export class PossiblePasswords extends PureComponent {
 
   static propTypes = {
     length: PropTypes.number.isRequired,
-    possibleItems: PropTypes.number
+    possibleItems: PropTypes.number.isRequired
   }
 
   render () {
