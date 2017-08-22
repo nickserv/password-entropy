@@ -1,23 +1,22 @@
 import { shallow } from 'enzyme'
-import GenericOptions from './GenericOptions'
+import { GenericOptions, mapStateToProps } from './GenericOptions'
+import { map, T } from 'ramda'
 import React from 'react'
-import { change } from '../util'
+import reducers from '../reducers'
+import { createStore } from 'redux'
 
-const wrapper = shallow(<GenericOptions onChange={() => {}}/>)
-const instance = wrapper.instance()
+const toggles = map(T, GenericOptions.toggles)
 
 it('renders', () => {
+  const toggleGeneric = jest.fn()
+  const wrapper = shallow(<GenericOptions toggleGeneric={toggleGeneric} {...toggles}/>)
+  wrapper.find({ name: 'letters' }).simulate('change')
+
   expect(wrapper).toMatchSnapshot()
+  expect(toggleGeneric).toHaveBeenCalled()
 })
 
-it('sets state and provides possiblePasswords', () => {
-  expect(wrapper).toHaveState('letters', true)
-  expect(wrapper).toHaveState('capitalLetters', true)
-  expect(wrapper).toHaveState('numbers', true)
-  expect(wrapper).toHaveState('symbols', true)
-  expect(instance.possiblePasswords()).toBe(70)
-
-  change(wrapper.find({ name: 'letters' }), { checked: false })
-  expect(wrapper).not.toHaveState('letters', true)
-  expect(instance.possiblePasswords()).toBe(44)
+test('mapStateToProps', () => {
+  const state = createStore(reducers).getState()
+  expect(mapStateToProps(state)).toEqual(toggles)
 })

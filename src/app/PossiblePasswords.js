@@ -1,9 +1,11 @@
+import { GenericOptions } from '../options/GenericOptions'
 import PropTypes from 'prop-types'
-import { findLast } from 'ramda'
+import { always, filter, findLast, identity, keys, map, pipe, sum } from 'ramda'
 import React, { PureComponent } from 'react'
+import { connect } from 'react-redux'
 import { ProgressBar } from 'react-bootstrap'
 
-export default class PossiblePasswords extends PureComponent {
+export class PossiblePasswords extends PureComponent {
   static entropyTips = [
     {
       minimum: 0,
@@ -29,7 +31,7 @@ export default class PossiblePasswords extends PureComponent {
 
   static propTypes = {
     length: PropTypes.number.isRequired,
-    possibleItems: PropTypes.number
+    possibleItems: PropTypes.number.isRequired
   }
 
   render () {
@@ -49,3 +51,20 @@ export default class PossiblePasswords extends PureComponent {
     )
   }
 }
+
+const possibleItems = {
+  diceware: always(7776),
+  custom: identity,
+  generic: pipe(filter(identity),
+                keys,
+                map(key => GenericOptions.toggles[key].possibleItems),
+                sum)
+}
+
+export function mapStateToProps ({ options, optionsKey }) {
+  return {
+    possibleItems: possibleItems[optionsKey](options[optionsKey])
+  }
+}
+
+export default connect(mapStateToProps)(PossiblePasswords)

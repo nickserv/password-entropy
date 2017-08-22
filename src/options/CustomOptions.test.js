@@ -1,20 +1,19 @@
-import CustomOptions from './CustomOptions'
+import { CustomOptions, mapStateToProps } from './CustomOptions'
 import { shallow } from 'enzyme'
 import React from 'react'
-import { change } from '../util'
-
-const wrapper = shallow(<CustomOptions onChange={() => {}}/>)
-const instance = wrapper.instance()
+import reducers from '../reducers'
+import { createStore } from 'redux'
 
 it('renders', () => {
+  const setCustom = jest.fn()
+  const wrapper = shallow(<CustomOptions possibleItems={1} setCustom={setCustom}/>)
+  wrapper.find('FormControl').simulate('change')
+
   expect(wrapper).toMatchSnapshot()
+  expect(setCustom).toHaveBeenCalled()
 })
 
-it('sets state and provides possiblePasswords', () => {
-  expect(wrapper).toHaveState('possibleItems', 1)
-  expect(instance.possiblePasswords()).toBe(1)
-
-  change(wrapper.find({ name: 'possibleItems' }), { value: 2 })
-  expect(wrapper).toHaveState('possibleItems', 2)
-  expect(instance.possiblePasswords()).toBe(2)
+test('mapStateToProps', () => {
+  const state = createStore(reducers).getState()
+  expect(mapStateToProps(state)).toEqual({ possibleItems: 1 })
 })

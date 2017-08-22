@@ -1,35 +1,41 @@
+import { setLength, setOptionsKey} from '../actions'
 import CustomOptions from '../options/CustomOptions'
 import DicewareOptions from '../options/DicewareOptions'
 import FormGroup from '../ui/FormGroup'
 import GenericOptions from '../options/GenericOptions'
 import PossiblePasswords from './PossiblePasswords'
+import PropTypes from 'prop-types'
+import { pick } from 'ramda'
 import React, { PureComponent } from 'react'
-import { Form, PageHeader } from 'react-bootstrap'
+import { Form, FormControl, PageHeader, Tab, Tabs } from 'react-bootstrap'
 import Icon from 'react-fa'
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
-import 'react-tabs/style/react-tabs.css'
-import { handleChange } from '../util'
+import { connect } from 'react-redux'
 
-export default class PasswordEntropy extends PureComponent {
-  static options = [
-    {
+export class PasswordEntropy extends PureComponent {
+  static capitalize (string) {
+    return string.charAt(0).toUpperCase() + string.slice(1)
+  }
+
+  static options = {
+    diceware: {
       Component: DicewareOptions,
       icon: 'book'
     },
-    {
+    custom: {
       Component: CustomOptions,
       icon: 'question-circle'
     },
-    {
+    generic: {
       Component: GenericOptions,
       icon: 'check-square'
     }
-  ]
+  }
 
-  handleChange = handleChange.bind(this)
-  handlePossibleItemsChange = possibleItems => this.setState({ possibleItems })
-  state = {
-    length: 6
+  static propTypes = {
+    length: PropTypes.number.isRequired,
+    optionsKey: PropTypes.string.isRequired,
+    setLength: PropTypes.func.isRequired,
+    setOptionsKey: PropTypes.func.isRequired
   }
 
   render () {
@@ -41,32 +47,30 @@ export default class PasswordEntropy extends PureComponent {
           <small>A simple entropy calculator for evaluating password security.</small>
         </PageHeader>
 
-
         <Form horizontal>
           <FormGroup id="length" label="Length" icon="arrows-h">
-            <input name="length" value={this.state.length} onChange={this.handleChange} type="number" min="1" required/>
+            <FormControl value={this.props.length} onChange={this.props.setLength} type="number" min="1" required/>
           </FormGroup>
 
           <h2><Icon name="cog"/> Options</h2>
 
-          <Tabs>
-            <TabList>
-              {this.constructor.options.map(({ Component: { shortName }, icon }) => (
-                <Tab key={shortName}><Icon name={icon}/> {shortName}</Tab>
-              ))}
-            </TabList>
-            {this.constructor.options.map(({ Component }) => (
-              <TabPanel key={Component.shortName}>
-                <Component onChange={this.handlePossibleItemsChange}/>
-              </TabPanel>
+          <Tabs activeKey={this.props.optionsKey} onSelect={this.props.setOptionsKey} id="options">
+            {Object.entries(this.constructor.options).map(([name, { Component, icon }]) => (
+              <Tab key={name} eventKey={name} title={<div><Icon name={icon}/> {this.constructor.capitalize(name)}</div>}>
+                <Component/>
+              </Tab>
             ))}
           </Tabs>
 
           <FormGroup id="results" label="Results" icon="info-circle">
-            <PossiblePasswords {...this.state}/>
+            <PossiblePasswords length={this.props.length}/>
           </FormGroup>
         </Form>
       </div>
     )
   }
 }
+
+export const mapStateToProps = pick(['length', 'optionsKey'])
+
+export default connect(mapStateToProps, { setLength, setOptionsKey })(PasswordEntropy)

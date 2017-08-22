@@ -1,12 +1,14 @@
-import Options from './Options'
-import { filter, identity, keys, map, pipe, sum, T } from 'ramda'
+import { toggleGeneric } from '../actions'
+import PropTypes from 'prop-types'
+import { path } from 'ramda'
 import React, { PureComponent } from 'react'
 import { Checkbox } from 'react-bootstrap'
-import { handleChange } from '../util'
+import { connect } from 'react-redux'
 
-export default class GenericOptions extends PureComponent {
-  static propTypes = Options.sharedPropTypes
-  static shortName = 'Generic'
+export class GenericOptions extends PureComponent {
+  static propTypes = {
+    toggleGeneric: PropTypes.func.isRequired
+  }
 
   static toggles = {
     letters: {
@@ -31,27 +33,22 @@ export default class GenericOptions extends PureComponent {
     }
   }
 
-  state = map(T, this.constructor.toggles)
-
-  handleChange = handleChange.bind(this)
-
-  possiblePasswords = () => pipe(filter(identity),
-                                 keys,
-                                 map(key => this.constructor.toggles[key].possibleItems),
-                                 sum)(this.state)
-
   render () {
     return (
-      <Options possiblePasswords={this.possiblePasswords} {...this.props}>
+      <div>
         <h3>Generic</h3>
 
         {Object.entries(this.constructor.toggles)
                .map(([name, { label, example }]) => (
-                 <Checkbox key={name} name={name} checked={this.state[name]} onChange={this.handleChange}>
+                 <Checkbox key={name} name={name} checked={this.props[name]} onChange={this.props.toggleGeneric}>
                    { label } <small>({ example })</small>
                  </Checkbox>
                ))}
-      </Options>
+      </div>
     )
   }
 }
+
+export const mapStateToProps = path(['options', 'generic'])
+
+export default connect(mapStateToProps, { toggleGeneric })(GenericOptions)
