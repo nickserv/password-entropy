@@ -12,13 +12,23 @@ export class CustomOptions extends PureComponent {
     setCustom: PropTypes.func.isRequired
   }
 
-  render () {
+  render() {
     return (
       <div>
         <h3>Custom</h3>
 
-        <FormGroup id="possibleItems" label="Possible Items" icon="question-circle">
-          <FormControl value={this.props.possibleItems} onChange={this.props.setCustom} type="number" min="0" required/>
+        <FormGroup
+          id="possibleItems"
+          label="Possible Items"
+          icon="question-circle"
+        >
+          <FormControl
+            value={this.props.possibleItems}
+            onChange={this.props.setCustom}
+            type="number"
+            min="0"
+            required
+          />
         </FormGroup>
       </div>
     )

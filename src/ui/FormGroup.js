@@ -1,6 +1,10 @@
 import PropTypes from 'prop-types'
 import React, { PureComponent } from 'react'
-import { Col, ControlLabel, FormGroup as BootstrapFormGroup } from 'react-bootstrap'
+import {
+  Col,
+  ControlLabel,
+  FormGroup as BootstrapFormGroup
+} from 'react-bootstrap'
 import Icon from 'react-fa'
 
 export default class FormGroup extends PureComponent {
@@ -11,15 +15,19 @@ export default class FormGroup extends PureComponent {
     icon: PropTypes.string.isRequired
   }
 
-  render () {
+  render() {
     const { children, id, label, icon } = this.props
 
     return (
       <BootstrapFormGroup controlId={id}>
         <Col sm={2}>
-          <ControlLabel><Icon name={icon}/> {label}</ControlLabel>
+          <ControlLabel>
+            <Icon name={icon} /> {label}
+          </ControlLabel>
         </Col>
-        <Col sm={10}>{children}</Col>
+        <Col sm={10}>
+          {children}
+        </Col>
       </BootstrapFormGroup>
     )
   }

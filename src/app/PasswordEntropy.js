@@ -1,4 +1,4 @@
-import { setLength, setOptionsKey} from '../actions'
+import { setLength, setOptionsKey } from '../actions'
 import CustomOptions from '../options/CustomOptions'
 import DicewareOptions from '../options/DicewareOptions'
 import FormGroup from '../ui/FormGroup'
@@ -12,7 +12,7 @@ import Icon from 'react-fa'
 import { connect } from 'react-redux'
 
 export class PasswordEntropy extends PureComponent {
-  static capitalize (string) {
+  static capitalize(string) {
     return string.charAt(0).toUpperCase() + string.slice(1)
   }
 
@@ -38,32 +38,56 @@ export class PasswordEntropy extends PureComponent {
     setOptionsKey: PropTypes.func.isRequired
   }
 
-  render () {
+  render() {
     return (
       <div>
         <PageHeader>
-          <Icon name="lock"/> Password Entropy
-          <br/>
-          <small>A simple entropy calculator for evaluating password security.</small>
+          <Icon name="lock" /> Password Entropy
+          <br />
+          <small>
+            A simple entropy calculator for evaluating password security.
+          </small>
         </PageHeader>
 
         <Form horizontal>
           <FormGroup id="length" label="Length" icon="arrows-h">
-            <FormControl value={this.props.length} onChange={this.props.setLength} type="number" min="1" required/>
+            <FormControl
+              value={this.props.length}
+              onChange={this.props.setLength}
+              type="number"
+              min="1"
+              required
+            />
           </FormGroup>
 
-          <h2><Icon name="cog"/> Options</h2>
+          <h2>
+            <Icon name="cog" /> Options
+          </h2>
 
-          <Tabs activeKey={this.props.optionsKey} onSelect={this.props.setOptionsKey} id="options">
-            {Object.entries(this.constructor.options).map(([name, { Component, icon }]) => (
-              <Tab key={name} eventKey={name} title={<div><Icon name={icon}/> {this.constructor.capitalize(name)}</div>}>
-                <Component/>
+          <Tabs
+            activeKey={this.props.optionsKey}
+            onSelect={this.props.setOptionsKey}
+            id="options"
+          >
+            {Object.entries(
+              this.constructor.options
+            ).map(([name, { Component, icon }]) =>
+              <Tab
+                key={name}
+                eventKey={name}
+                title={
+                  <div>
+                    <Icon name={icon} /> {this.constructor.capitalize(name)}
+                  </div>
+                }
+              >
+                <Component />
               </Tab>
-            ))}
+            )}
           </Tabs>
 
           <FormGroup id="results" label="Results" icon="info-circle">
-            <PossiblePasswords length={this.props.length}/>
+            <PossiblePasswords length={this.props.length} />
           </FormGroup>
         </Form>
       </div>
@@ -73,4 +97,6 @@ export class PasswordEntropy extends PureComponent {
 
 export const mapStateToProps = pick(['length', 'optionsKey'])
 
-export default connect(mapStateToProps, { setLength, setOptionsKey })(PasswordEntropy)
+export default connect(mapStateToProps, { setLength, setOptionsKey })(
+  PasswordEntropy
+)

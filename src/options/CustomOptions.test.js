@@ -6,7 +6,9 @@ import { createStore } from 'redux'
 
 it('renders', () => {
   const setCustom = jest.fn()
-  const wrapper = shallow(<CustomOptions possibleItems={1} setCustom={setCustom}/>)
+  const wrapper = shallow(
+    <CustomOptions possibleItems={1} setCustom={setCustom} />
+  )
   wrapper.find('FormControl').simulate('change')
 
   expect(wrapper).toMatchSnapshot()

@@ -34,19 +34,33 @@ export class PossiblePasswords extends PureComponent {
     possibleItems: PropTypes.number.isRequired
   }
 
-  render () {
-    const possiblePasswords = (this.props.possibleItems || 1) ** this.props.length
-    const approximatePrefix = possiblePasswords > Number.MAX_SAFE_INTEGER && '~ '
+  render() {
+    const possiblePasswords =
+      (this.props.possibleItems || 1) ** this.props.length
+    const approximatePrefix =
+      possiblePasswords > Number.MAX_SAFE_INTEGER && '~ '
     const entropyBits = Math.log2(possiblePasswords)
-    const entropyTip = findLast(tip => entropyBits >= tip.minimum,
-                                this.constructor.entropyTips)
+    const entropyTip = findLast(
+      tip => entropyBits >= tip.minimum,
+      this.constructor.entropyTips
+    )
 
     return (
       <dl className="dl-horizontal">
         <dt>Possible Passwords</dt>
-        <dd>{approximatePrefix}{possiblePasswords.toLocaleString()}</dd>
+        <dd>
+          {approximatePrefix}
+          {possiblePasswords.toLocaleString()}
+        </dd>
         <dt>Entropy</dt>
-        <dd><ProgressBar bsStyle={entropyTip.style} max={128} now={entropyBits} label={`${entropyBits.toFixed(2)} bits (${entropyTip.strength})`}/></dd>
+        <dd>
+          <ProgressBar
+            bsStyle={entropyTip.style}
+            max={128}
+            now={entropyBits}
+            label={`${entropyBits.toFixed(2)} bits (${entropyTip.strength})`}
+          />
+        </dd>
       </dl>
     )
   }
@@ -55,13 +69,15 @@ export class PossiblePasswords extends PureComponent {
 const possibleItems = {
   diceware: always(7776),
   custom: identity,
-  generic: pipe(filter(identity),
-                keys,
-                map(key => GenericOptions.toggles[key].possibleItems),
-                sum)
+  generic: pipe(
+    filter(identity),
+    keys,
+    map(key => GenericOptions.toggles[key].possibleItems),
+    sum
+  )
 }
 
-export function mapStateToProps ({ options, optionsKey }) {
+export function mapStateToProps({ options, optionsKey }) {
   return {
     possibleItems: possibleItems[optionsKey](options[optionsKey])
   }

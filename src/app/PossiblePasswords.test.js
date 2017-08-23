@@ -4,10 +4,13 @@ import React from 'react'
 import reducers from '../reducers'
 import { createStore } from 'redux'
 
-const getWrapper = length => shallow(<PossiblePasswords length={length} possibleItems={2}/>)
+const getWrapper = length =>
+  shallow(<PossiblePasswords length={length} possibleItems={2} />)
 
 it('renders with invalid possibleItems', () => {
-  expect(shallow(<PossiblePasswords length={1} possibleItems={0}/>)).toMatchSnapshot()
+  expect(
+    shallow(<PossiblePasswords length={1} possibleItems={0} />)
+  ).toMatchSnapshot()
 })
 
 it('renders with invalid or very weak possiblePasswords', () => {
@@ -27,7 +30,7 @@ it('renders with very strong possiblePasswords', () => {
 })
 
 test('mapStateToProps', () => {
-  function mapStateToPropsWithKey (optionsKey) {
+  function mapStateToPropsWithKey(optionsKey) {
     const state = createStore(reducers).getState()
     return mapStateToProps({ ...state, optionsKey })
   }

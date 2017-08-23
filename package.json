@@ -34,10 +34,7 @@
       "react/prop-types": 2
     }
   },
-  "eslintIgnore": [
-    "build",
-    "coverage"
-  ],
+  "eslintIgnore": ["build", "coverage"],
   "homepage": "http://nickmccurdy.com/password-entropy",
   "jest": {
     "collectCoverageFrom": [

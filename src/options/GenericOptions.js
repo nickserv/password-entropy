@@ -33,17 +33,23 @@ export class GenericOptions extends PureComponent {
     }
   }
 
-  render () {
+  render() {
     return (
       <div>
         <h3>Generic</h3>
 
-        {Object.entries(this.constructor.toggles)
-               .map(([name, { label, example }]) => (
-                 <Checkbox key={name} name={name} checked={this.props[name]} onChange={this.props.toggleGeneric}>
-                   { label } <small>({ example })</small>
-                 </Checkbox>
-               ))}
+        {Object.entries(
+          this.constructor.toggles
+        ).map(([name, { label, example }]) =>
+          <Checkbox
+            key={name}
+            name={name}
+            checked={this.props[name]}
+            onChange={this.props.toggleGeneric}
+          >
+            {label} <small>({example})</small>
+          </Checkbox>
+        )}
       </div>
     )
   }

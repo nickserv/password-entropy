@@ -9,7 +9,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 
 render(
   <Provider store={createStore(reducers, devToolsEnhancer())}>
-    <PasswordEntropy/>
+    <PasswordEntropy />
   </Provider>,
   document.getElementById('root')
 )

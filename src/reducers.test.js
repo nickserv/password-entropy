@@ -1,4 +1,8 @@
-import { createReducer, toggleGenericCallback, toggleGenericInitialState } from './reducers'
+import {
+  createReducer,
+  toggleGenericCallback,
+  toggleGenericInitialState
+} from './reducers'
 
 test('createReducer', () => {
   const reducer = createReducer('ACTION', false)
@@ -7,9 +11,13 @@ test('createReducer', () => {
 })
 
 test('createReducer with callback', () => {
-  const reducer = createReducer('ACTION', 'extra ', { callback: (payload, state) => state + payload})
+  const reducer = createReducer('ACTION', 'extra ', {
+    callback: (payload, state) => state + payload
+  })
   expect(reducer(undefined, {})).toBe('extra ')
-  expect(reducer(undefined, { type: 'ACTION', payload: true })).toBe('extra true')
+  expect(reducer(undefined, { type: 'ACTION', payload: true })).toBe(
+    'extra true'
+  )
 })
 
 test('createReducer with min', () => {
@@ -22,7 +30,12 @@ test('createReducer with min', () => {
 })
 
 test('toggleGenericCallback', () => {
-  expect(toggleGenericCallback({ name: 'letters', checked: false }, toggleGenericInitialState)).toEqual({
+  expect(
+    toggleGenericCallback(
+      { name: 'letters', checked: false },
+      toggleGenericInitialState
+    )
+  ).toEqual({
     capitalLetters: true,
     letters: false,
     numbers: true,

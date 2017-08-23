@@ -3,5 +3,5 @@ import { shallow } from 'enzyme'
 import React from 'react'
 
 it('renders', () => {
-  expect(shallow(<DicewareOptions/>)).toMatchSnapshot()
+  expect(shallow(<DicewareOptions />)).toMatchSnapshot()
 })
