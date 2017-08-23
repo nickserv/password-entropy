@@ -15,15 +15,17 @@
   "devDependencies": {
     "enzyme": "^2.9.1",
     "jest-enzyme": "^3.8.0",
+    "npm-run-all": "^4.0.2",
     "prettier": "^1.5.3",
     "react-test-renderer": "^15.6.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "format": "prettier --write --no-semi --single-quote '!(build|coverage|package)**/*.{css,js,json}'",
-    "pretest": "eslint .",
-    "test": "react-scripts test",
+    "prettier": "prettier --write --no-semi --single-quote '!(build|coverage|package)**/*.{css,js,json}'",
+    "eslint": "eslint .",
+    "jest": "react-scripts test",
+    "test": "npm-run-all prettier eslint 'jest -- {@}'",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
