@@ -21,7 +21,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "format": "prettier --write --no-semi --single-quote '!(build|coverage)**/*.{css,js,json}'",
+    "format": "prettier --write --no-semi --single-quote '!(build|coverage|package)**/*.{css,js,json}'",
     "pretest": "eslint .",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -34,7 +34,10 @@
       "react/prop-types": 2
     }
   },
-  "eslintIgnore": ["build", "coverage"],
+  "eslintIgnore": [
+    "build",
+    "coverage"
+  ],
   "homepage": "http://nickmccurdy.com/password-entropy",
   "jest": {
     "collectCoverageFrom": [
