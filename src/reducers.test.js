@@ -1,4 +1,5 @@
-import { createReducer, toggleGenericCallback, toggleGenericInitialState } from './reducers'
+import { GenericOptions } from './options/GenericOptions'
+import { createReducer, toggleGenericCallback } from './reducers'
 
 test('createReducer', () => {
   const reducer = createReducer('ACTION', false)
@@ -22,7 +23,7 @@ test('createReducer with min', () => {
 })
 
 test('toggleGenericCallback', () => {
-  expect(toggleGenericCallback({ name: 'letters', checked: false }, toggleGenericInitialState)).toEqual({
+  expect(toggleGenericCallback({ name: 'letters', checked: false }, GenericOptions.defaultToggles)).toEqual({
     capitalLetters: true,
     letters: false,
     numbers: true,

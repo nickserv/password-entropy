@@ -1,5 +1,5 @@
 import GenericOptions from './options/GenericOptions'
-import { assoc, identity, map, T } from 'ramda'
+import { assoc, identity } from 'ramda'
 import { combineReducers } from 'redux'
 
 export function createReducer(actionType, initialState, { callback = identity, min } = {}) {
@@ -15,12 +15,10 @@ export function toggleGenericCallback ({ checked, name }, state) {
   return assoc(name, checked, state)
 }
 
-export const toggleGenericInitialState = map(T, GenericOptions.toggles)
-
 const length = createReducer('SET_LENGTH', 6, { min: 1 })
 const custom = createReducer('SET_CUSTOM', 1, { min: 0 })
 const generic = createReducer('TOGGLE_GENERIC',
-                              toggleGenericInitialState,
+                              GenericOptions.defaultToggles,
                               { callback: toggleGenericCallback })
 const optionsKey = createReducer('SET_OPTIONS_KEY', 'diceware')
 
