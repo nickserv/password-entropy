@@ -1,12 +1,12 @@
 import { shallow } from 'enzyme'
-import { GenericOptions, mapStateToProps } from './GenericOptions'
+import { defaultToggles, GenericOptions, mapStateToProps } from './GenericOptions'
 import React from 'react'
 import reducers from '../reducers'
 import { createStore } from 'redux'
 
 it('renders', () => {
   const toggleGeneric = jest.fn()
-  const wrapper = shallow(<GenericOptions toggleGeneric={toggleGeneric} {...GenericOptions.defaultToggles}/>)
+  const wrapper = shallow(<GenericOptions toggleGeneric={toggleGeneric} {...defaultToggles}/>)
   wrapper.find({ name: 'letters' }).simulate('change')
 
   expect(wrapper).toMatchSnapshot()
@@ -15,5 +15,5 @@ it('renders', () => {
 
 test('mapStateToProps', () => {
   const state = createStore(reducers).getState()
-  expect(mapStateToProps(state)).toEqual(GenericOptions.defaultToggles)
+  expect(mapStateToProps(state)).toEqual(defaultToggles)
 })

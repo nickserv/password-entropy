@@ -1,4 +1,4 @@
-import GenericOptions from './options/GenericOptions'
+import { defaultToggles } from './options/GenericOptions'
 import { assoc, identity } from 'ramda'
 import { combineReducers } from 'redux'
 
@@ -18,7 +18,7 @@ export function toggleGenericCallback ({ checked, name }, state) {
 const length = createReducer('SET_LENGTH', 6, { min: 1 })
 const custom = createReducer('SET_CUSTOM', 1, { min: 0 })
 const generic = createReducer('TOGGLE_GENERIC',
-                              GenericOptions.defaultToggles,
+                              defaultToggles,
                               { callback: toggleGenericCallback })
 const optionsKey = createReducer('SET_OPTIONS_KEY', 'diceware')
 

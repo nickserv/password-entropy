@@ -1,11 +1,11 @@
 import { shallow } from 'enzyme'
-import { PasswordEntropy, mapStateToProps } from './PasswordEntropy'
+import { capitalize, PasswordEntropy, mapStateToProps } from './PasswordEntropy'
 import React from 'react'
 import reducers from '../reducers'
 import { createStore } from 'redux'
 
 test('capitalize', () => {
-  expect(PasswordEntropy.capitalize('word')).toEqual('Word')
+  expect(capitalize('word')).toEqual('Word')
 })
 
 it('renders', () => {
