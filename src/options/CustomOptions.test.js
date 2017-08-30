@@ -4,7 +4,7 @@ import React from 'react'
 import reducers from '../reducers'
 import { createStore } from 'redux'
 
-it('renders', () => {
+test('CustomOptions', () => {
   const setCustom = jest.fn()
   const wrapper = shallow(<CustomOptions possibleItems={1} setCustom={setCustom}/>)
   wrapper.find('FormControl').simulate('change')

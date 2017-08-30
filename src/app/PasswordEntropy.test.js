@@ -8,7 +8,7 @@ test('capitalize', () => {
   expect(capitalize('word')).toEqual('Word')
 })
 
-it('renders', () => {
+test('PasswordEntropy', () => {
   const setLength = jest.fn()
   const setOptionsKey = jest.fn()
   const wrapper = shallow(<PasswordEntropy length={6} optionsKey="diceware" setLength={setLength} setOptionsKey={setOptionsKey}/>)

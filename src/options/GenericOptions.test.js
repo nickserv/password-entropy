@@ -4,7 +4,7 @@ import React from 'react'
 import reducers from '../reducers'
 import { createStore } from 'redux'
 
-it('renders', () => {
+test('GenericOptions', () => {
   const toggleGeneric = jest.fn()
   const wrapper = shallow(<GenericOptions toggleGeneric={toggleGeneric} {...defaultToggles}/>)
   wrapper.find({ name: 'letters' }).simulate('change')

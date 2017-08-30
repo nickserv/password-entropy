@@ -4,26 +4,28 @@ import React from 'react'
 import reducers from '../reducers'
 import { createStore } from 'redux'
 
-const getWrapper = length => shallow(<PossiblePasswords length={length} possibleItems={2}/>)
+describe('PossiblePasswords', () => {
+  const getWrapper = length => shallow(<PossiblePasswords length={length} possibleItems={2}/>)
 
-it('renders with invalid possibleItems', () => {
-  expect(shallow(<PossiblePasswords length={1} possibleItems={0}/>)).toMatchSnapshot()
-})
+  test('with invalid possibleItems', () => {
+    expect(shallow(<PossiblePasswords length={1} possibleItems={0}/>)).toMatchSnapshot()
+  })
 
-it('renders with invalid or very weak possiblePasswords', () => {
-  expect(getWrapper(0)).toMatchSnapshot()
-})
+  test('with invalid or very weak possiblePasswords', () => {
+    expect(getWrapper(0)).toMatchSnapshot()
+  })
 
-it('renders with weak possiblePasswords', () => {
-  expect(getWrapper(32)).toMatchSnapshot()
-})
+  test('with weak possiblePasswords', () => {
+    expect(getWrapper(32)).toMatchSnapshot()
+  })
 
-it('renders with strong possiblePasswords', () => {
-  expect(getWrapper(64)).toMatchSnapshot()
-})
+  test('with strong possiblePasswords', () => {
+    expect(getWrapper(64)).toMatchSnapshot()
+  })
 
-it('renders with very strong possiblePasswords', () => {
-  expect(getWrapper(128)).toMatchSnapshot()
+  test('with very strong possiblePasswords', () => {
+    expect(getWrapper(128)).toMatchSnapshot()
+  })
 })
 
 test('mapStateToProps', () => {

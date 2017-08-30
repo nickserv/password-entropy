@@ -2,6 +2,6 @@ import DicewareOptions from './DicewareOptions'
 import { shallow } from 'enzyme'
 import React from 'react'
 
-it('renders', () => {
+test('DicewareOptions', () => {
   expect(shallow(<DicewareOptions/>)).toMatchSnapshot()
 })
