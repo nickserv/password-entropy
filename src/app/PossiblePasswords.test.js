@@ -1,40 +1,70 @@
 import { shallow } from 'enzyme'
 import { PossiblePasswords, mapStateToProps } from './PossiblePasswords'
+import { mergeDeepRight } from 'ramda'
 import React from 'react'
 import reducers from '../reducers'
 import { createStore } from 'redux'
 
 describe('PossiblePasswords', () => {
-  const getWrapper = length => shallow(<PossiblePasswords length={length} possibleItems={2}/>)
+  function getWrapper (approximate) {
+    return shallow(<PossiblePasswords approximate={approximate} entropyBits={77.54887502163469} entropyTip={{ minimum: 64, strength: 'Strong', style: 'info' }} possiblePasswords={2.2107391972073336e+23}/>)
+  }
 
-  test('with invalid possibleItems', () => {
-    expect(shallow(<PossiblePasswords length={1} possibleItems={0}/>)).toMatchSnapshot()
+  test('approximate', () => {
+    expect(getWrapper(true)).toMatchSnapshot()
   })
 
-  test('with invalid or very weak possiblePasswords', () => {
-    expect(getWrapper(0)).toMatchSnapshot()
-  })
-
-  test('with weak possiblePasswords', () => {
-    expect(getWrapper(32)).toMatchSnapshot()
-  })
-
-  test('with strong possiblePasswords', () => {
-    expect(getWrapper(64)).toMatchSnapshot()
-  })
-
-  test('with very strong possiblePasswords', () => {
-    expect(getWrapper(128)).toMatchSnapshot()
+  test('exact', () => {
+    expect(getWrapper(false)).toMatchSnapshot()
   })
 })
 
-test('mapStateToProps', () => {
-  function mapStateToPropsWithKey (optionsKey) {
-    const state = createStore(reducers).getState()
-    return mapStateToProps({ ...state, optionsKey })
+describe('mapStateToProps', () => {
+  function mapMergedStateToProps (state = {}) {
+    return mapStateToProps(mergeDeepRight(createStore(reducers).getState(),
+                                          state))
   }
 
-  expect(mapStateToPropsWithKey('diceware')).toEqual({ length: 6, possibleItems: 7776 })
-  expect(mapStateToPropsWithKey('custom')).toEqual({ length: 6, possibleItems: 1 })
-  expect(mapStateToPropsWithKey('generic')).toEqual({ length: 6, possibleItems: 70 })
+  test('diceware', () => {
+    expect(mapMergedStateToProps()).toMatchSnapshot()
+  })
+
+  test('custom', () => {
+    expect(mapMergedStateToProps({ optionsKey: 'custom' })).toMatchSnapshot()
+  })
+
+  test('custom with invalid possibleItems', () => {
+    expect(mapMergedStateToProps({
+      options: { custom: 0 },
+      optionsKey: 'custom'
+    })).toMatchSnapshot()
+  })
+
+  test('custom with weak possiblePasswords', () => {
+    expect(mapMergedStateToProps({
+      length: 32,
+      options: { custom: 2 },
+      optionsKey: 'custom'
+    })).toMatchSnapshot()
+  })
+
+  test('custom with strong possiblePasswords', () => {
+    expect(mapMergedStateToProps({
+      length: 64,
+      options: { custom: 2 },
+      optionsKey: 'custom'
+    })).toMatchSnapshot()
+  })
+
+  test('custom with very strong possiblePasswords', () => {
+    expect(mapMergedStateToProps({
+      length: 128,
+      options: { custom: 2 },
+      optionsKey: 'custom'
+    })).toMatchSnapshot()
+  })
+
+  test('generic', () => {
+    expect(mapMergedStateToProps({ optionsKey: 'generic' })).toMatchSnapshot()
+  })
 })

@@ -28,25 +28,26 @@ const entropyTips = [
   }
 ]
 
-export function PossiblePasswords ({ length, possibleItems }) {
-  const possiblePasswords = (possibleItems || 1) ** length
-  const approximatePrefix = possiblePasswords > Number.MAX_SAFE_INTEGER && '~ '
-  const entropyBits = Math.log2(possiblePasswords)
-  const entropyTip = findLast(tip => entropyBits >= tip.minimum, entropyTips)
-
+export function PossiblePasswords ({ possiblePasswords, approximate, entropyBits, entropyTip: { strength, style } }) {
   return (
     <dl className="dl-horizontal">
       <dt>Possible Passwords</dt>
-      <dd>{approximatePrefix}{possiblePasswords.toLocaleString()}</dd>
+      <dd>{approximate && '~ '}{possiblePasswords.toLocaleString()}</dd>
       <dt>Entropy</dt>
-      <dd><ProgressBar bsStyle={entropyTip.style} max={128} now={entropyBits} label={`${entropyBits.toFixed(2)} bits (${entropyTip.strength})`}/></dd>
+      <dd><ProgressBar bsStyle={style} max={128} now={entropyBits} label={`${entropyBits.toFixed(2)} bits (${strength})`}/></dd>
     </dl>
   )
 }
 
 PossiblePasswords.propTypes = {
-  length: PropTypes.number.isRequired,
-  possibleItems: PropTypes.number.isRequired
+  approximate: PropTypes.bool.isRequired,
+  entropyBits: PropTypes.number.isRequired,
+  entropyTip: PropTypes.shape({
+    minimum: PropTypes.number.isRequired,
+    strength: PropTypes.string.isRequired,
+    style: PropTypes.string.isRequired
+  }).isRequired,
+  possiblePasswords: PropTypes.number.isRequired
 }
 
 const possibleItems = {
@@ -59,9 +60,14 @@ const possibleItems = {
 }
 
 export function mapStateToProps ({ length, options, optionsKey }) {
+  const possiblePasswords = (possibleItems[optionsKey](options[optionsKey]) || 1) ** length
+  const entropyBits = Math.log2(possiblePasswords)
+
   return {
-    length,
-    possibleItems: possibleItems[optionsKey](options[optionsKey])
+    approximate: possiblePasswords > Number.MAX_SAFE_INTEGER,
+    entropyBits,
+    entropyTip: findLast(tip => entropyBits >= tip.minimum, entropyTips),
+    possiblePasswords
   }
 }
 
