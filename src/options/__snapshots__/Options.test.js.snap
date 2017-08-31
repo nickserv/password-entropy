@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Options 1`] = `
+<Uncontrolled(Tabs)
+  activeKey="diceware"
+  id="options"
+  onSelect={[Function]}
+>
+  <Tab
+    eventKey="diceware"
+    title={
+      <div>
+        <Icon
+          Component="span"
+          name="book"
+        />
+         
+        Diceware
+      </div>
+    }
+  >
+    <DicewareOptions />
+  </Tab>
+  <Tab
+    eventKey="custom"
+    title={
+      <div>
+        <Icon
+          Component="span"
+          name="question-circle"
+        />
+         
+        Custom
+      </div>
+    }
+  >
+    <Connect(CustomOptions) />
+  </Tab>
+  <Tab
+    eventKey="generic"
+    title={
+      <div>
+        <Icon
+          Component="span"
+          name="check-square"
+        />
+         
+        Generic
+      </div>
+    }
+  >
+    <Connect(GenericOptions) />
+  </Tab>
+</Uncontrolled(Tabs)>
+`;

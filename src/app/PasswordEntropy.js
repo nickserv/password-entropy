@@ -1,36 +1,15 @@
-import { setLength, setOptionsKey} from '../actions'
-import CustomOptions from '../options/CustomOptions'
-import DicewareOptions from '../options/DicewareOptions'
+import { setLength } from '../actions'
 import FormGroup from '../ui/FormGroup'
-import GenericOptions from '../options/GenericOptions'
+import Options from '../options/Options'
 import PossiblePasswords from './PossiblePasswords'
 import PropTypes from 'prop-types'
 import { pick } from 'ramda'
 import React from 'react'
-import { Form, FormControl, PageHeader, Tab, Tabs } from 'react-bootstrap'
+import { Form, FormControl, PageHeader } from 'react-bootstrap'
 import Icon from 'react-fa'
 import { connect } from 'react-redux'
 
-const options = {
-  diceware: {
-    Component: DicewareOptions,
-    icon: 'book'
-  },
-  custom: {
-    Component: CustomOptions,
-    icon: 'question-circle'
-  },
-  generic: {
-    Component: GenericOptions,
-    icon: 'check-square'
-  }
-}
-
-export function capitalize (string) {
-  return string.charAt(0).toUpperCase() + string.slice(1)
-}
-
-export function PasswordEntropy ({ length, optionsKey, setLength, setOptionsKey }) {
+export function PasswordEntropy ({ length, setLength }) {
   return (
     <div>
       <PageHeader>
@@ -45,14 +24,7 @@ export function PasswordEntropy ({ length, optionsKey, setLength, setOptionsKey 
         </FormGroup>
 
         <h2><Icon name="cog"/> Options</h2>
-
-        <Tabs activeKey={optionsKey} onSelect={setOptionsKey} id="options">
-          {Object.entries(options).map(([name, { Component, icon }]) => (
-            <Tab key={name} eventKey={name} title={<div><Icon name={icon}/> {capitalize(name)}</div>}>
-              <Component/>
-            </Tab>
-          ))}
-        </Tabs>
+        <Options/>
 
         <FormGroup id="results" label="Results" icon="info-circle">
           <PossiblePasswords length={length}/>
@@ -64,11 +36,9 @@ export function PasswordEntropy ({ length, optionsKey, setLength, setOptionsKey 
 
 PasswordEntropy.propTypes = {
   length: PropTypes.number.isRequired,
-  optionsKey: PropTypes.string.isRequired,
   setLength: PropTypes.func.isRequired,
-  setOptionsKey: PropTypes.func.isRequired
 }
 
-export const mapStateToProps = pick(['length', 'optionsKey'])
+export const mapStateToProps = pick(['length'])
 
-export default connect(mapStateToProps, { setLength, setOptionsKey })(PasswordEntropy)
+export default connect(mapStateToProps, { setLength })(PasswordEntropy)
