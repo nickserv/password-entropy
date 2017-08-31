@@ -19,7 +19,7 @@ exports[`Options 1`] = `
       </div>
     }
   >
-    <DicewareOptions />
+    <Component />
   </Tab>
   <Tab
     eventKey="custom"

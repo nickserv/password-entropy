@@ -33,8 +33,6 @@ export const defaultToggles = map(T, toggles)
 export function GenericOptions (props) {
   return (
     <div>
-      <h3>Generic</h3>
-
       {Object.entries(toggles).map(([name, { label, example }]) => (
         <Checkbox key={name} name={name} checked={props[name]} onChange={props.toggleGeneric}>
           { label } <small>({ example })</small>

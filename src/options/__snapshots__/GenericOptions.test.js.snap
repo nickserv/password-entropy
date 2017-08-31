@@ -2,9 +2,6 @@
 
 exports[`GenericOptions 1`] = `
 <div>
-  <h3>
-    Generic
-  </h3>
   <Checkbox
     bsClass="checkbox"
     checked={true}

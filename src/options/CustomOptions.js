@@ -8,13 +8,9 @@ import { connect } from 'react-redux'
 
 export function CustomOptions ({ possibleItems, setCustom }) {
   return (
-    <div>
-      <h3>Custom</h3>
-
-      <FormGroup id="possibleItems" label="Possible Items" icon="question-circle">
-        <FormControl value={possibleItems} onChange={setCustom} type="number" min="0" required/>
-      </FormGroup>
-    </div>
+    <FormGroup id="possibleItems" label="Possible Items" icon="question-circle">
+      <FormControl value={possibleItems} onChange={setCustom} type="number" min="0" required/>
+    </FormGroup>
   )
 }
 
