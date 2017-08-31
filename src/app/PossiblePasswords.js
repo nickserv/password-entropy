@@ -58,8 +58,9 @@ const possibleItems = {
                 sum)
 }
 
-export function mapStateToProps ({ options, optionsKey }) {
+export function mapStateToProps ({ length, options, optionsKey }) {
   return {
+    length,
     possibleItems: possibleItems[optionsKey](options[optionsKey])
   }
 }

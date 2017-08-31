@@ -34,7 +34,7 @@ test('mapStateToProps', () => {
     return mapStateToProps({ ...state, optionsKey })
   }
 
-  expect(mapStateToPropsWithKey('diceware')).toEqual({ possibleItems: 7776 })
-  expect(mapStateToPropsWithKey('custom')).toEqual({ possibleItems: 1 })
-  expect(mapStateToPropsWithKey('generic')).toEqual({ possibleItems: 70 })
+  expect(mapStateToPropsWithKey('diceware')).toEqual({ length: 6, possibleItems: 7776 })
+  expect(mapStateToPropsWithKey('custom')).toEqual({ length: 6, possibleItems: 1 })
+  expect(mapStateToPropsWithKey('generic')).toEqual({ length: 6, possibleItems: 70 })
 })

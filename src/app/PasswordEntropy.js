@@ -27,7 +27,7 @@ export function PasswordEntropy ({ length, setLength }) {
         <Options/>
 
         <FormGroup id="results" label="Results" icon="info-circle">
-          <PossiblePasswords length={length}/>
+          <PossiblePasswords/>
         </FormGroup>
       </Form>
     </div>
