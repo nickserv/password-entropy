@@ -60,8 +60,8 @@ const possibleItems = {
 }
 
 export function mapStateToProps ({ length, options, optionsKey }) {
-  const possiblePasswords = (possibleItems[optionsKey](options[optionsKey]) || 1) ** length
-  const entropyBits = Math.log2(possiblePasswords)
+  const possiblePasswords = possibleItems[optionsKey](options[optionsKey]) ** length
+  const entropyBits = Math.max(0, Math.log2(possiblePasswords))
 
   return {
     approximate: possiblePasswords > Number.MAX_SAFE_INTEGER,
