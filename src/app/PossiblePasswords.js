@@ -3,8 +3,9 @@ import { toggles } from '../options/GenericOptions'
 import PropTypes from 'prop-types'
 import { always, filter, findLast, identity, keys, map, pipe, sum } from 'ramda'
 import React from 'react'
+import Icon from 'react-fa'
 import { connect } from 'react-redux'
-import { ProgressBar } from 'react-bootstrap'
+import { Panel, ProgressBar } from 'react-bootstrap'
 
 const entropyTips = [
   {
@@ -31,12 +32,14 @@ const entropyTips = [
 
 export function PossiblePasswords ({ possiblePasswords, approximate, entropyBits, entropyTip: { strength, style } }) {
   return (
-    <dl>
-      <dt>Possible Passwords</dt>
-      <dd>{approximate && '~ '}{possiblePasswords.toLocaleString()}</dd>
-      <dt>Entropy</dt>
-      <dd><ProgressBar bsStyle={style} max={128} now={entropyBits} label={`${entropyBits.toFixed(2)} bits (${strength})`}/></dd>
-    </dl>
+    <Panel>
+      <dl>
+        <dt><Icon name="random"/> Possible Passwords</dt>
+        <dd>{approximate && '~ '}{possiblePasswords.toLocaleString()}</dd>
+        <dt><Icon name="list"/> Entropy</dt>
+        <dd><ProgressBar bsStyle={style} max={128} now={entropyBits} label={`${entropyBits.toFixed(2)} bits (${strength})`}/></dd>
+      </dl>
+    </Panel>
   )
 }
 
