@@ -10,6 +10,10 @@ import Icon from 'react-fa'
 import { connect } from 'react-redux'
 
 const options = {
+  generic: {
+    Component: GenericOptions,
+    icon: 'check-square'
+  },
   diceware: {
     Component: DicewareOptions,
     icon: 'book'
@@ -17,10 +21,6 @@ const options = {
   custom: {
     Component: CustomOptions,
     icon: 'question-circle'
-  },
-  generic: {
-    Component: GenericOptions,
-    icon: 'check-square'
   }
 }
 

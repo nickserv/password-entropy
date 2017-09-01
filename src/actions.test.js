@@ -15,9 +15,9 @@ test('setLength', () => {
 })
 
 test('setOptionsKey', () => {
-  expect(setOptionsKey('diceware')).toEqual({
+  expect(setOptionsKey('generic')).toEqual({
     type: 'SET_OPTIONS_KEY',
-    payload: 'diceware'
+    payload: 'generic'
   })
 })
 

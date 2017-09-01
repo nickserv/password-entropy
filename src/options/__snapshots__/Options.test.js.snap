@@ -2,10 +2,31 @@
 
 exports[`Options 1`] = `
 <Uncontrolled(Tabs)
-  activeKey="diceware"
+  activeKey="generic"
   id="options"
   onSelect={[Function]}
 >
+  <Tab
+    eventKey="generic"
+    title={
+      <div>
+        <Icon
+          Component="span"
+          name="check-square"
+        />
+         
+        Generic
+      </div>
+    }
+  >
+    <Panel
+      bsClass="panel"
+      bsStyle="default"
+      defaultExpanded={false}
+    >
+      <Connect(GenericOptions) />
+    </Panel>
+  </Tab>
   <Tab
     eventKey="diceware"
     title={
@@ -46,27 +67,6 @@ exports[`Options 1`] = `
       defaultExpanded={false}
     >
       <Connect(CustomOptions) />
-    </Panel>
-  </Tab>
-  <Tab
-    eventKey="generic"
-    title={
-      <div>
-        <Icon
-          Component="span"
-          name="check-square"
-        />
-         
-        Generic
-      </div>
-    }
-  >
-    <Panel
-      bsClass="panel"
-      bsStyle="default"
-      defaultExpanded={false}
-    >
-      <Connect(GenericOptions) />
     </Panel>
   </Tab>
 </Uncontrolled(Tabs)>

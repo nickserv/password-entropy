@@ -33,12 +33,12 @@ const entropyTips = [
 export function PossiblePasswords ({ possiblePasswords, approximate, entropyBits, entropyTip: { strength, style } }) {
   return (
     <Panel>
-      <FormGroup id="possiblePasswords" label="PossiblePasswords" icon="random">
-        <FormControl.Static>{approximate && '~ '}{possiblePasswords.toLocaleString()}</FormControl.Static>
-      </FormGroup>
-
       <FormGroup id="entropy" label="Entropy" icon="list">
         <ProgressBar bsStyle={style} max={128} now={entropyBits} label={`${entropyBits.toFixed(2)} bits (${strength})`}/>
+      </FormGroup>
+
+      <FormGroup id="possiblePasswords" label="PossiblePasswords" icon="random">
+        <FormControl.Static>{approximate && '~ '}{possiblePasswords.toLocaleString()}</FormControl.Static>
       </FormGroup>
     </Panel>
   )
@@ -56,12 +56,12 @@ PossiblePasswords.propTypes = {
 }
 
 const possibleItems = {
-  diceware: always(dicewareWords),
-  custom: identity,
   generic: pipe(filter(identity),
                 keys,
                 map(key => toggles[key].possibleItems),
-                sum)
+                sum),
+  diceware: always(dicewareWords),
+  custom: identity
 }
 
 export function mapStateToProps ({ length, options, optionsKey }) {

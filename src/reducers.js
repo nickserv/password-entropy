@@ -20,7 +20,7 @@ const custom = createReducer('SET_CUSTOM', 1, { min: 0 })
 const generic = createReducer('TOGGLE_GENERIC',
                               defaultToggles,
                               { callback: toggleGenericCallback })
-const optionsKey = createReducer('SET_OPTIONS_KEY', 'diceware')
+const optionsKey = createReducer('SET_OPTIONS_KEY', 'generic')
 
 export default combineReducers({
   length,

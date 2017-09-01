@@ -10,7 +10,7 @@ test('capitalize', () => {
 
 test('Options', () => {
   const setOptionsKey = jest.fn()
-  const wrapper = shallow(<Options optionsKey="diceware" setOptionsKey={setOptionsKey}/>)
+  const wrapper = shallow(<Options optionsKey="generic" setOptionsKey={setOptionsKey}/>)
   wrapper.find('Uncontrolled(Tabs)').simulate('select')
 
   expect(wrapper).toMatchSnapshot()
@@ -19,5 +19,5 @@ test('Options', () => {
 
 test('mapStateToProps', () => {
   const state = createStore(reducers).getState()
-  expect(mapStateToProps(state)).toEqual({ optionsKey: 'diceware' })
+  expect(mapStateToProps(state)).toEqual({ optionsKey: 'generic' })
 })

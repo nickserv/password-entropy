@@ -25,8 +25,12 @@ describe('mapStateToProps', () => {
                                           state))
   }
 
-  test('diceware', () => {
+  test('generic', () => {
     expect(mapMergedStateToProps()).toMatchSnapshot()
+  })
+
+  test('diceware', () => {
+    expect(mapMergedStateToProps({ optionsKey: 'diceware' })).toMatchSnapshot()
   })
 
   test('custom', () => {
@@ -62,9 +66,5 @@ describe('mapStateToProps', () => {
       options: { custom: 2 },
       optionsKey: 'custom'
     })).toMatchSnapshot()
-  })
-
-  test('generic', () => {
-    expect(mapMergedStateToProps({ optionsKey: 'generic' })).toMatchSnapshot()
   })
 })
