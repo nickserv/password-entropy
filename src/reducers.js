@@ -15,8 +15,8 @@ export function toggleGenericCallback ({ checked, name }, state) {
   return assoc(name, checked, state)
 }
 
-const length = createReducer('SET_LENGTH', 6, { min: 1 })
-const custom = createReducer('SET_CUSTOM', 1, { min: 0 })
+const length = createReducer('SET_LENGTH', 12, { min: 1 })
+const custom = createReducer('SET_CUSTOM', 0, { min: 0 })
 const generic = createReducer('TOGGLE_GENERIC',
                               defaultToggles,
                               { callback: toggleGenericCallback })

@@ -1,16 +1,16 @@
 import { setCustom, setLength, setOptionsKey, toggleGeneric } from './actions'
 
 test('setCustom', () => {
-  expect(setCustom({ target: { value: '1' } })).toEqual({
+  expect(setCustom({ target: { value: '0' } })).toEqual({
     type: 'SET_CUSTOM',
-    payload: 1
+    payload: 0
   })
 })
 
 test('setLength', () => {
-  expect(setLength({ target: { value: '6' } })).toEqual({
+  expect(setLength({ target: { value: '12' } })).toEqual({
     type: 'SET_LENGTH',
-    payload: 6
+    payload: 12
   })
 })
 

@@ -15,5 +15,5 @@ test('CustomOptions', () => {
 
 test('mapStateToProps', () => {
   const state = createStore(reducers).getState()
-  expect(mapStateToProps(state)).toEqual({ possibleItems: 1 })
+  expect(mapStateToProps(state)).toEqual({ possibleItems: 0 })
 })
