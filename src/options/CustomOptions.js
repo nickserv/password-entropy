@@ -8,7 +8,7 @@ import { connect } from 'react-redux'
 
 export function CustomOptions ({ possibleItems, setCustom }) {
   return (
-    <FormGroup id="possibleItems" label="Possible Items" icon="question-circle">
+    <FormGroup id="custom" label="Possible Items" icon="question-circle">
       <FormControl value={possibleItems} onChange={setCustom} type="number" min="0" required/>
     </FormGroup>
   )

@@ -1,5 +1,6 @@
 import { setOptionsKey} from '../actions'
 import CustomOptions from '../options/CustomOptions'
+import DicewareOptions from '../options/DicewareOptions'
 import GenericOptions from '../options/GenericOptions'
 import PropTypes from 'prop-types'
 import { pick } from 'ramda'
@@ -10,7 +11,7 @@ import { connect } from 'react-redux'
 
 const options = {
   diceware: {
-    Component: () => null,
+    Component: DicewareOptions,
     icon: 'book'
   },
   custom: {

@@ -14,7 +14,7 @@ exports[`Options 1`] = `
           Component="span"
           name="book"
         />
-         
+
         Diceware
       </div>
     }
@@ -24,7 +24,7 @@ exports[`Options 1`] = `
       bsStyle="default"
       defaultExpanded={false}
     >
-      <Component />
+      <DicewareOptions />
     </Panel>
   </Tab>
   <Tab
@@ -35,7 +35,7 @@ exports[`Options 1`] = `
           Component="span"
           name="question-circle"
         />
-         
+
         Custom
       </div>
     }
@@ -56,7 +56,7 @@ exports[`Options 1`] = `
           Component="span"
           name="check-square"
         />
-         
+
         Generic
       </div>
     }

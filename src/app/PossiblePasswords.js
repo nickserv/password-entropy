@@ -1,3 +1,4 @@
+import { dicewareWords } from '../options/DicewareOptions'
 import { toggles } from '../options/GenericOptions'
 import PropTypes from 'prop-types'
 import { always, filter, findLast, identity, keys, map, pipe, sum } from 'ramda'
@@ -51,7 +52,7 @@ PossiblePasswords.propTypes = {
 }
 
 const possibleItems = {
-  diceware: always(7776),
+  diceware: always(dicewareWords),
   custom: identity,
   generic: pipe(filter(identity),
                 keys,

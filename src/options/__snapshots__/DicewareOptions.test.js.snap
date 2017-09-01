@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DicewareOptions 1`] = `
+<FormGroup
+  icon="question-circle"
+  id="diceware"
+  label="Possible Items"
+>
+  <FormControlStatic
+    bsClass="form-control-static"
+    componentClass="p"
+  >
+    7776
+  </FormControlStatic>
+</FormGroup>
+`;

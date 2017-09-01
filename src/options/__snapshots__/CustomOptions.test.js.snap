@@ -3,7 +3,7 @@
 exports[`CustomOptions 1`] = `
 <FormGroup
   icon="question-circle"
-  id="possibleItems"
+  id="custom"
   label="Possible Items"
 >
   <FormControl
