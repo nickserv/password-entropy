@@ -24,7 +24,7 @@ export function PasswordEntropy ({ length, setLength }) {
         </FormGroup>
 
         <FormGroup id="length" label="Length" icon="arrows-h">
-          <FormControl value={length} onChange={setLength} type="number" min="1" required/>
+          <FormControl value={length} onChange={setLength} type="number" min="0" required/>
         </FormGroup>
 
         <Options/>
