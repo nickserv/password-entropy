@@ -8,13 +8,13 @@
     "react-dom": "^15.6.1",
     "react-fa": "^4.2.0",
     "react-redux": "^5.0.6",
-    "react-scripts": "1.0.11",
+    "react-scripts": "1.0.12",
     "redux": "^3.7.2",
     "redux-devtools-extension": "^2.13.2"
   },
   "devDependencies": {
     "enzyme": "^2.9.1",
-    "jest-enzyme": "^3.8.0",
+    "jest-enzyme": "^3.8.1",
     "react-test-renderer": "^15.6.1"
   },
   "scripts": {
