@@ -19,7 +19,13 @@ exports[`Options 1`] = `
       </div>
     }
   >
-    <Component />
+    <Panel
+      bsClass="panel"
+      bsStyle="default"
+      defaultExpanded={false}
+    >
+      <Component />
+    </Panel>
   </Tab>
   <Tab
     eventKey="custom"
@@ -34,7 +40,13 @@ exports[`Options 1`] = `
       </div>
     }
   >
-    <Connect(CustomOptions) />
+    <Panel
+      bsClass="panel"
+      bsStyle="default"
+      defaultExpanded={false}
+    >
+      <Connect(CustomOptions) />
+    </Panel>
   </Tab>
   <Tab
     eventKey="generic"
@@ -49,7 +61,13 @@ exports[`Options 1`] = `
       </div>
     }
   >
-    <Connect(GenericOptions) />
+    <Panel
+      bsClass="panel"
+      bsStyle="default"
+      defaultExpanded={false}
+    >
+      <Connect(GenericOptions) />
+    </Panel>
   </Tab>
 </Uncontrolled(Tabs)>
 `;

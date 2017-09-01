@@ -4,7 +4,7 @@ import GenericOptions from '../options/GenericOptions'
 import PropTypes from 'prop-types'
 import { pick } from 'ramda'
 import React from 'react'
-import { Tab, Tabs } from 'react-bootstrap'
+import { Panel, Tab, Tabs } from 'react-bootstrap'
 import Icon from 'react-fa'
 import { connect } from 'react-redux'
 
@@ -32,7 +32,7 @@ export function Options ({ optionsKey, setOptionsKey }) {
     <Tabs activeKey={optionsKey} onSelect={setOptionsKey} id="options">
       {Object.entries(options).map(([name, { Component, icon }]) => (
         <Tab key={name} eventKey={name} title={<div><Icon name={icon}/> {capitalize(name)}</div>}>
-          <Component/>
+          <Panel><Component/></Panel>
         </Tab>
       ))}
     </Tabs>
