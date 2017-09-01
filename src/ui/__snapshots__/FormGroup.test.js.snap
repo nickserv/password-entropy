@@ -5,29 +5,17 @@ exports[`FormGroup 1`] = `
   bsClass="form-group"
   controlId="length"
 >
-  <Col
-    bsClass="col"
-    componentClass="div"
-    sm={2}
+  <ControlLabel
+    bsClass="control-label"
+    srOnly={false}
   >
-    <ControlLabel
-      bsClass="control-label"
-      srOnly={false}
-    >
-      <Icon
-        Component="span"
-        name="arrows-h"
-      />
-       
-      Length
-    </ControlLabel>
-  </Col>
-  <Col
-    bsClass="col"
-    componentClass="div"
-    sm={10}
-  >
-    Redacted
-  </Col>
+    <Icon
+      Component="span"
+      name="arrows-h"
+    />
+     
+    Length
+  </ControlLabel>
+  Redacted
 </FormGroup>
 `;

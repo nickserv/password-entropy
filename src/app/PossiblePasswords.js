@@ -31,7 +31,7 @@ const entropyTips = [
 
 export function PossiblePasswords ({ possiblePasswords, approximate, entropyBits, entropyTip: { strength, style } }) {
   return (
-    <dl className="dl-horizontal">
+    <dl>
       <dt>Possible Passwords</dt>
       <dd>{approximate && '~ '}{possiblePasswords.toLocaleString()}</dd>
       <dt>Entropy</dt>
