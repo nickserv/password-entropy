@@ -1,11 +1,11 @@
 import { dicewareWords } from '../options/DicewareOptions'
+import FormGroup from '../ui/FormGroup'
 import { toggles } from '../options/GenericOptions'
 import PropTypes from 'prop-types'
 import { always, filter, findLast, identity, keys, map, pipe, sum } from 'ramda'
 import React from 'react'
-import Icon from 'react-fa'
 import { connect } from 'react-redux'
-import { Panel, ProgressBar } from 'react-bootstrap'
+import { FormControl, Panel, ProgressBar } from 'react-bootstrap'
 
 const entropyTips = [
   {
@@ -33,12 +33,13 @@ const entropyTips = [
 export function PossiblePasswords ({ possiblePasswords, approximate, entropyBits, entropyTip: { strength, style } }) {
   return (
     <Panel>
-      <dl>
-        <dt><Icon name="random"/> Possible Passwords</dt>
-        <dd>{approximate && '~ '}{possiblePasswords.toLocaleString()}</dd>
-        <dt><Icon name="list"/> Entropy</dt>
-        <dd><ProgressBar bsStyle={style} max={128} now={entropyBits} label={`${entropyBits.toFixed(2)} bits (${strength})`}/></dd>
-      </dl>
+      <FormGroup id="possiblePasswords" label="PossiblePasswords" icon="random">
+        <FormControl.Static>{approximate && '~ '}{possiblePasswords.toLocaleString()}</FormControl.Static>
+      </FormGroup>
+
+      <FormGroup id="entropy" label="Entropy" icon="list">
+        <ProgressBar bsStyle={style} max={128} now={entropyBits} label={`${entropyBits.toFixed(2)} bits (${strength})`}/>
+      </FormGroup>
     </Panel>
   )
 }
