@@ -24,7 +24,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "pretest": "eslint . --ext js,jsx",
+    "pretest": "eslint .",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -43,7 +43,8 @@
         "error",
         "never"
       ],
-      "import/no-named-as-default": "off"
+      "import/no-named-as-default": "off",
+      "react/jsx-filename-extension": "off"
     }
   },
   "eslintIgnore": [
@@ -53,8 +54,8 @@
   "homepage": "http://nickmccurdy.com/password-entropy",
   "jest": {
     "collectCoverageFrom": [
-      "**/*.{js,jsx}",
-      "!src/index.{js,jsx}",
+      "**/*.js",
+      "!src/index.js",
       "!**/coverage/**",
       "!**/build/**"
     ]
