@@ -1,4 +1,4 @@
-import { MuiThemeProvider } from 'material-ui/styles'
+import { MuiThemeProvider } from 'material-ui'
 import React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
