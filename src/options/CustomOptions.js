@@ -1,15 +1,14 @@
-import { TextField } from 'material-ui'
+import { FontIcon, TextField } from 'material-ui'
 import PropTypes from 'prop-types'
 import { path } from 'ramda'
 import React from 'react'
-import Icon from 'react-fa'
 import { connect } from 'react-redux'
 
 import { setCustom } from '../actions'
 
 export function CustomOptions({ possibleItems, setCustom }) {
   return (
-    <TextField floatingLabelText={<div><Icon name="question-circle" /> Possible Items</div>} value={possibleItems} onChange={setCustom} type="number" min="0" required />
+    <TextField floatingLabelText={<div><FontIcon className="question-circle" /> Possible Items</div>} value={possibleItems} onChange={setCustom} type="number" min="0" required />
   )
 }
 

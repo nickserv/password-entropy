@@ -1,8 +1,7 @@
-import { Card, CardText, Tab, Tabs } from 'material-ui'
+import { Card, CardText, FontIcon, Tab, Tabs } from 'material-ui'
 import PropTypes from 'prop-types'
 import { pick } from 'ramda'
 import React from 'react'
-import Icon from 'react-fa'
 import { connect } from 'react-redux'
 
 import { setOptionsKey } from '../actions'
@@ -34,7 +33,7 @@ export function Options({ optionsKey, setOptionsKey }) {
     <Card>
       <Tabs value={optionsKey} onChange={setOptionsKey}>
         {Object.entries(options).map(([name, { Component, icon }]) => (
-          <Tab key={name} label={<div><Icon name={icon} /> {capitalize(name)}</div>} value={name}>
+          <Tab key={name} icon={<FontIcon className={`fa fa-${icon}`} />} label={capitalize(name)} value={name}>
             <CardText><Component /></CardText>
           </Tab>
         ))}

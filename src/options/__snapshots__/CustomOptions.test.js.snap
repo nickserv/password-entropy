@@ -6,9 +6,10 @@ exports[`CustomOptions 1`] = `
   floatingLabelFixed={false}
   floatingLabelText={
     <div>
-      <Icon
-        Component="span"
-        name="question-circle"
+      <FontIcon
+        className="question-circle"
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
       />
        Possible Items
     </div>

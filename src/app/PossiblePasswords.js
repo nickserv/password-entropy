@@ -1,9 +1,8 @@
-import { Card, CardText, LinearProgress } from 'material-ui'
+import { Card, CardText, FontIcon, LinearProgress } from 'material-ui'
 import { colors } from 'material-ui/styles'
 import PropTypes from 'prop-types'
 import { always, filter, findLast, identity, keys, map, pipe, sum } from 'ramda'
 import React from 'react'
-import Icon from 'react-fa'
 import { connect } from 'react-redux'
 
 import { dicewareWords } from '../options/DicewareOptions'
@@ -38,11 +37,11 @@ export function PossiblePasswords({
   return (
     <Card>
       <CardText>
-        <h3><Icon name="list" /> Entropy</h3>
+        <h3><FontIcon className="list" /> Entropy</h3>
         {entropyBits.toFixed(2)} bits ({strength})
         <LinearProgress color={color} max={128} mode="determinate" value={entropyBits} />
 
-        <h3><Icon name="random" /> Possible Passwords</h3>
+        <h3><FontIcon className="random" /> Possible Passwords</h3>
         {approximate && '~ '}{possiblePasswords.toLocaleString()}
       </CardText>
     </Card>

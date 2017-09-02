@@ -12,16 +12,14 @@ exports[`Options 1`] = `
     value="generic"
   >
     <Tab
-      label={
-        <div>
-          <Icon
-            Component="span"
-            name="check-square"
-          />
-           
-          Generic
-        </div>
+      icon={
+        <FontIcon
+          className="fa fa-check-square"
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+        />
       }
+      label="Generic"
       value="generic"
     >
       <CardText>
@@ -29,16 +27,14 @@ exports[`Options 1`] = `
       </CardText>
     </Tab>
     <Tab
-      label={
-        <div>
-          <Icon
-            Component="span"
-            name="book"
-          />
-           
-          Diceware
-        </div>
+      icon={
+        <FontIcon
+          className="fa fa-book"
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+        />
       }
+      label="Diceware"
       value="diceware"
     >
       <CardText>
@@ -46,16 +42,14 @@ exports[`Options 1`] = `
       </CardText>
     </Tab>
     <Tab
-      label={
-        <div>
-          <Icon
-            Component="span"
-            name="question-circle"
-          />
-           
-          Custom
-        </div>
+      icon={
+        <FontIcon
+          className="fa fa-question-circle"
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+        />
       }
+      label="Custom"
       value="custom"
     >
       <CardText>
