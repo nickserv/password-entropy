@@ -6,10 +6,10 @@ import React from 'react'
 import { FormControl } from 'react-bootstrap'
 import { connect } from 'react-redux'
 
-export function CustomOptions ({ possibleItems, setCustom }) {
+export function CustomOptions({ possibleItems, setCustom }) {
   return (
     <FormGroup id="custom" label="Possible Items" icon="question-circle">
-      <FormControl value={possibleItems} onChange={setCustom} type="number" min="0" required/>
+      <FormControl value={possibleItems} onChange={setCustom} type="number" min="0" required />
     </FormGroup>
   )
 }

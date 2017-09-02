@@ -6,7 +6,7 @@ import { createStore } from 'redux'
 
 test('GenericOptions', () => {
   const toggleGeneric = jest.fn()
-  const wrapper = shallow(<GenericOptions toggleGeneric={toggleGeneric} {...defaultToggles}/>)
+  const wrapper = shallow(<GenericOptions toggleGeneric={toggleGeneric} {...defaultToggles} />)
   wrapper.find({ name: 'letters' }).simulate('change')
 
   expect(wrapper).toMatchSnapshot()

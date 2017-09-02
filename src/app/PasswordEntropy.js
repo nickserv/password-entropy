@@ -9,25 +9,25 @@ import { FormControl, PageHeader } from 'react-bootstrap'
 import Icon from 'react-fa'
 import { connect } from 'react-redux'
 
-export function PasswordEntropy ({ length, setLength }) {
+export function PasswordEntropy({ length, setLength }) {
   return (
     <div>
       <PageHeader>
-        <Icon name="lock"/> Password Entropy
-        <br/>
+        <Icon name="lock" /> Password Entropy
+        <br />
         <small>A simple entropy calculator for evaluating password security.</small>
       </PageHeader>
 
       <form>
         <FormGroup id="results" label="Results" icon="info-circle">
-          <PossiblePasswords/>
+          <PossiblePasswords />
         </FormGroup>
 
         <FormGroup id="length" label="Length" icon="arrows-h">
-          <FormControl value={length} onChange={setLength} type="number" min="0" required/>
+          <FormControl value={length} onChange={setLength} type="number" min="0" required />
         </FormGroup>
 
-        <Options/>
+        <Options />
       </form>
     </div>
   )

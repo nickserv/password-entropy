@@ -30,7 +30,7 @@ export const toggles = {
 
 export const defaultToggles = map(T, toggles)
 
-export function GenericOptions (props) {
+export function GenericOptions(props) {
   return (
     <div>
       {Object.entries(toggles).map(([name, { label, example }]) => (

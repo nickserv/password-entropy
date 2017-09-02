@@ -3,10 +3,10 @@ import React from 'react'
 import { ControlLabel, FormGroup as BootstrapFormGroup } from 'react-bootstrap'
 import Icon from 'react-fa'
 
-export default function FormGroup ({ children, id, label, icon }) {
+export default function FormGroup({ children, id, label, icon }) {
   return (
     <BootstrapFormGroup controlId={id}>
-      <ControlLabel><Icon name={icon}/> {label}</ControlLabel>
+      <ControlLabel><Icon name={icon} /> {label}</ControlLabel>
       {children}
     </BootstrapFormGroup>
   )

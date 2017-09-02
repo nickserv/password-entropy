@@ -4,7 +4,7 @@ import { FormControl } from 'react-bootstrap'
 
 export const dicewareWords = 7776
 
-export default function DicewareOptions () {
+export default function DicewareOptions() {
   return (
     <FormGroup id="diceware" label="Possible Items" icon="question-circle">
       <FormControl.Static>{dicewareWords}</FormControl.Static>

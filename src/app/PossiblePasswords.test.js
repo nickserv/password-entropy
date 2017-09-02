@@ -6,8 +6,8 @@ import reducers from '../reducers'
 import { createStore } from 'redux'
 
 describe('PossiblePasswords', () => {
-  function getWrapper (approximate) {
-    return shallow(<PossiblePasswords approximate={approximate} entropyBits={77.54887502163469} entropyTip={{ minimum: 64, strength: 'Strong', style: 'info' }} possiblePasswords={2.2107391972073336e+23}/>)
+  function getWrapper(approximate) {
+    return shallow(<PossiblePasswords approximate={approximate} entropyBits={77.54887502163469} entropyTip={{ minimum: 64, strength: 'Strong', style: 'info' }} possiblePasswords={2.2107391972073336e+23} />)
   }
 
   test('approximate', () => {
@@ -20,7 +20,7 @@ describe('PossiblePasswords', () => {
 })
 
 describe('mapStateToProps', () => {
-  function mapMergedStateToProps (state = {}) {
+  function mapMergedStateToProps(state = {}) {
     return mapStateToProps(mergeDeepRight(
       createStore(reducers).getState(),
       state

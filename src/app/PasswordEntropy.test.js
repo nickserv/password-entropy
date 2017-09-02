@@ -6,7 +6,7 @@ import { createStore } from 'redux'
 
 test('PasswordEntropy', () => {
   const setLength = jest.fn()
-  const wrapper = shallow(<PasswordEntropy length={12} setLength={setLength}/>)
+  const wrapper = shallow(<PasswordEntropy length={12} setLength={setLength} />)
   wrapper.find('FormControl').simulate('change')
 
   expect(wrapper).toMatchSnapshot()

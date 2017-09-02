@@ -30,11 +30,13 @@ const entropyTips = [
   }
 ]
 
-export function PossiblePasswords ({ possiblePasswords, approximate, entropyBits, entropyTip: { strength, style } }) {
+export function PossiblePasswords({
+  possiblePasswords, approximate, entropyBits, entropyTip: { strength, style }
+}) {
   return (
     <Panel>
       <FormGroup id="entropy" label="Entropy" icon="list">
-        <ProgressBar bsStyle={style} max={128} now={entropyBits} label={`${entropyBits.toFixed(2)} bits (${strength})`}/>
+        <ProgressBar bsStyle={style} max={128} now={entropyBits} label={`${entropyBits.toFixed(2)} bits (${strength})`} />
       </FormGroup>
 
       <FormGroup id="possiblePasswords" label="PossiblePasswords" icon="random">
@@ -66,7 +68,7 @@ const possibleItems = {
   custom: identity
 }
 
-export function mapStateToProps ({ length, options, optionsKey }) {
+export function mapStateToProps({ length, options, optionsKey }) {
   const possiblePasswords = possibleItems[optionsKey](options[optionsKey]) ** length
   const entropyBits = Math.max(0, Math.log2(possiblePasswords))
 
