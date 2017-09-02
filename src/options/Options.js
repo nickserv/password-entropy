@@ -1,7 +1,7 @@
+import { Card, CardText, Tab, Tabs } from 'material-ui'
 import PropTypes from 'prop-types'
 import { pick } from 'ramda'
 import React from 'react'
-import { Panel, Tab, Tabs } from 'react-bootstrap'
 import Icon from 'react-fa'
 import { connect } from 'react-redux'
 
@@ -31,13 +31,15 @@ export function capitalize(string) {
 
 export function Options({ optionsKey, setOptionsKey }) {
   return (
-    <Tabs activeKey={optionsKey} onSelect={setOptionsKey} id="options">
-      {Object.entries(options).map(([name, { Component, icon }]) => (
-        <Tab key={name} eventKey={name} title={<div><Icon name={icon} /> {capitalize(name)}</div>}>
-          <Panel><Component /></Panel>
-        </Tab>
-      ))}
-    </Tabs>
+    <Card>
+      <Tabs value={optionsKey} onChange={setOptionsKey}>
+        {Object.entries(options).map(([name, { Component, icon }]) => (
+          <Tab key={name} label={<div><Icon name={icon} /> {capitalize(name)}</div>} value={name}>
+            <CardText><Component /></CardText>
+          </Tab>
+        ))}
+      </Tabs>
+    </Card>
   )
 }
 

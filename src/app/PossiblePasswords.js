@@ -1,49 +1,51 @@
+import { Card, CardText, LinearProgress } from 'material-ui'
+import { colors } from 'material-ui/styles'
 import PropTypes from 'prop-types'
 import { always, filter, findLast, identity, keys, map, pipe, sum } from 'ramda'
 import React from 'react'
+import Icon from 'react-fa'
 import { connect } from 'react-redux'
-import { FormControl, Panel, ProgressBar } from 'react-bootstrap'
 
 import { dicewareWords } from '../options/DicewareOptions'
-import FormGroup from '../ui/FormGroup'
 import { toggles } from '../options/GenericOptions'
 
 const entropyTips = [
   {
+    color: colors.red500,
     minimum: 0,
-    strength: 'Very Weak',
-    style: 'danger'
+    strength: 'Very Weak'
   },
   {
+    color: colors.yellow500,
     minimum: 32,
-    strength: 'Weak',
-    style: 'warning'
+    strength: 'Weak'
   },
   {
+    color: colors.blue500,
     minimum: 64,
-    strength: 'Strong',
-    style: 'info'
+    strength: 'Strong'
   },
   {
+    color: colors.green500,
     minimum: 128,
-    strength: 'Very Strong',
-    style: 'success'
+    strength: 'Very Strong'
   }
 ]
 
 export function PossiblePasswords({
-  possiblePasswords, approximate, entropyBits, entropyTip: { strength, style }
+  possiblePasswords, approximate, entropyBits, entropyTip: { color, strength }
 }) {
   return (
-    <Panel>
-      <FormGroup id="entropy" label="Entropy" icon="list">
-        <ProgressBar bsStyle={style} max={128} now={entropyBits} label={`${entropyBits.toFixed(2)} bits (${strength})`} />
-      </FormGroup>
+    <Card>
+      <CardText>
+        <h3><Icon name="list" /> Entropy</h3>
+        {entropyBits.toFixed(2)} bits ({strength})
+        <LinearProgress color={color} max={128} mode="determinate" value={entropyBits} />
 
-      <FormGroup id="possiblePasswords" label="PossiblePasswords" icon="random">
-        <FormControl.Static>{approximate && '~ '}{possiblePasswords.toLocaleString()}</FormControl.Static>
-      </FormGroup>
-    </Panel>
+        <h3><Icon name="random" /> Possible Passwords</h3>
+        {approximate && '~ '}{possiblePasswords.toLocaleString()}
+      </CardText>
+    </Card>
   )
 }
 
@@ -51,9 +53,9 @@ PossiblePasswords.propTypes = {
   approximate: PropTypes.bool.isRequired,
   entropyBits: PropTypes.number.isRequired,
   entropyTip: PropTypes.shape({
+    color: PropTypes.string.isRequired,
     minimum: PropTypes.number.isRequired,
-    strength: PropTypes.string.isRequired,
-    style: PropTypes.string.isRequired
+    strength: PropTypes.string.isRequired
   }).isRequired,
   possiblePasswords: PropTypes.number.isRequired
 }

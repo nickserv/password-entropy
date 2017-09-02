@@ -1,7 +1,7 @@
+import { Checkbox } from 'material-ui'
 import PropTypes from 'prop-types'
 import { always, map, path, T } from 'ramda'
 import React from 'react'
-import { Checkbox } from 'react-bootstrap'
 import { connect } from 'react-redux'
 
 import { toggleGeneric } from '../actions'
@@ -35,9 +35,13 @@ export function GenericOptions(props) {
   return (
     <div>
       {Object.entries(toggles).map(([name, { label, example }]) => (
-        <Checkbox key={name} name={name} checked={props[name]} onChange={props.toggleGeneric}>
-          { label } <small>({ example })</small>
-        </Checkbox>
+        <Checkbox
+          key={name}
+          name={name}
+          label={<div>{ label } <small>({ example })</small></div>}
+          checked={props[name]}
+          onCheck={props.toggleGeneric}
+        />
       ))}
     </div>
   )

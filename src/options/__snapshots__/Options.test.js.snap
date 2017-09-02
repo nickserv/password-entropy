@@ -1,73 +1,67 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Options 1`] = `
-<Uncontrolled(Tabs)
-  activeKey="generic"
-  id="options"
-  onSelect={[Function]}
+<Card
+  expandable={false}
+  expanded={null}
+  initiallyExpanded={false}
 >
-  <Tab
-    eventKey="generic"
-    title={
-      <div>
-        <Icon
-          Component="span"
-          name="check-square"
-        />
-         
-        Generic
-      </div>
-    }
+  <Tabs
+    initialSelectedIndex={0}
+    onChange={[Function]}
+    value="generic"
   >
-    <Panel
-      bsClass="panel"
-      bsStyle="default"
-      defaultExpanded={false}
+    <Tab
+      label={
+        <div>
+          <Icon
+            Component="span"
+            name="check-square"
+          />
+           
+          Generic
+        </div>
+      }
+      value="generic"
     >
-      <Connect(GenericOptions) />
-    </Panel>
-  </Tab>
-  <Tab
-    eventKey="diceware"
-    title={
-      <div>
-        <Icon
-          Component="span"
-          name="book"
-        />
-         
-        Diceware
-      </div>
-    }
-  >
-    <Panel
-      bsClass="panel"
-      bsStyle="default"
-      defaultExpanded={false}
+      <CardText>
+        <Connect(GenericOptions) />
+      </CardText>
+    </Tab>
+    <Tab
+      label={
+        <div>
+          <Icon
+            Component="span"
+            name="book"
+          />
+           
+          Diceware
+        </div>
+      }
+      value="diceware"
     >
-      <DicewareOptions />
-    </Panel>
-  </Tab>
-  <Tab
-    eventKey="custom"
-    title={
-      <div>
-        <Icon
-          Component="span"
-          name="question-circle"
-        />
-         
-        Custom
-      </div>
-    }
-  >
-    <Panel
-      bsClass="panel"
-      bsStyle="default"
-      defaultExpanded={false}
+      <CardText>
+        <DicewareOptions />
+      </CardText>
+    </Tab>
+    <Tab
+      label={
+        <div>
+          <Icon
+            Component="span"
+            name="question-circle"
+          />
+           
+          Custom
+        </div>
+      }
+      value="custom"
     >
-      <Connect(CustomOptions) />
-    </Panel>
-  </Tab>
-</Uncontrolled(Tabs)>
+      <CardText>
+        <Connect(CustomOptions) />
+      </CardText>
+    </Tab>
+  </Tabs>
+</Card>
 `;

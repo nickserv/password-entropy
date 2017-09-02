@@ -8,7 +8,7 @@ import reducers from '../reducers'
 test('CustomOptions', () => {
   const setCustom = jest.fn()
   const wrapper = shallow(<CustomOptions possibleItems={1} setCustom={setCustom} />)
-  wrapper.find('FormControl').simulate('change')
+  wrapper.find('TextField').simulate('change')
 
   expect(wrapper).toMatchSnapshot()
   expect(setCustom).toHaveBeenCalled()

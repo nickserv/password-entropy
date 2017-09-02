@@ -1,17 +1,15 @@
+import { TextField } from 'material-ui'
 import PropTypes from 'prop-types'
 import { path } from 'ramda'
 import React from 'react'
-import { FormControl } from 'react-bootstrap'
+import Icon from 'react-fa'
 import { connect } from 'react-redux'
 
 import { setCustom } from '../actions'
-import FormGroup from '../ui/FormGroup'
 
 export function CustomOptions({ possibleItems, setCustom }) {
   return (
-    <FormGroup id="custom" label="Possible Items" icon="question-circle">
-      <FormControl value={possibleItems} onChange={setCustom} type="number" min="0" required />
-    </FormGroup>
+    <TextField floatingLabelText={<div><Icon name="question-circle" /> Possible Items</div>} value={possibleItems} onChange={setCustom} type="number" min="0" required />
   )
 }
 

@@ -1,16 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DicewareOptions 1`] = `
-<FormGroup
-  icon="question-circle"
-  id="diceware"
-  label="Possible Items"
->
-  <FormControlStatic
-    bsClass="form-control-static"
-    componentClass="p"
-  >
-    7776
-  </FormControlStatic>
-</FormGroup>
+<TextField
+  disabled={true}
+  floatingLabelFixed={false}
+  floatingLabelText={
+    <div>
+      <Icon
+        Component="span"
+        name="question-circle"
+      />
+       Possible Items
+    </div>
+  }
+  fullWidth={false}
+  multiLine={false}
+  rows={1}
+  type="text"
+  underlineShow={true}
+  value={7776}
+/>
 `;

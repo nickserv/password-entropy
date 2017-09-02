@@ -12,7 +12,7 @@ test('capitalize', () => {
 test('Options', () => {
   const setOptionsKey = jest.fn()
   const wrapper = shallow(<Options optionsKey="generic" setOptionsKey={setOptionsKey} />)
-  wrapper.find('Uncontrolled(Tabs)').simulate('select')
+  wrapper.find('Tabs').simulate('change')
 
   expect(wrapper).toMatchSnapshot()
   expect(setOptionsKey).toHaveBeenCalled()

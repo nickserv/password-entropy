@@ -1,19 +1,26 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`CustomOptions 1`] = `
-<FormGroup
-  icon="question-circle"
-  id="custom"
-  label="Possible Items"
->
-  <FormControl
-    bsClass="form-control"
-    componentClass="input"
-    min="0"
-    onChange={[Function]}
-    required={true}
-    type="number"
-    value={1}
-  />
-</FormGroup>
+<TextField
+  disabled={false}
+  floatingLabelFixed={false}
+  floatingLabelText={
+    <div>
+      <Icon
+        Component="span"
+        name="question-circle"
+      />
+       Possible Items
+    </div>
+  }
+  fullWidth={false}
+  min="0"
+  multiLine={false}
+  onChange={[Function]}
+  required={true}
+  rows={1}
+  type="number"
+  underlineShow={true}
+  value={1}
+/>
 `;

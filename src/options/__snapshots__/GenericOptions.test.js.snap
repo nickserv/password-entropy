@@ -3,72 +3,76 @@
 exports[`GenericOptions 1`] = `
 <div>
   <Checkbox
-    bsClass="checkbox"
     checked={true}
     disabled={false}
-    inline={false}
+    label={
+      <div>
+        Letters
+         
+        <small>
+          (
+          a-z
+          )
+        </small>
+      </div>
+    }
+    labelPosition="right"
     name="letters"
-    onChange={[Function]}
-    title=""
-  >
-    Letters
-     
-    <small>
-      (
-      a-z
-      )
-    </small>
-  </Checkbox>
+    onCheck={[Function]}
+  />
   <Checkbox
-    bsClass="checkbox"
     checked={true}
     disabled={false}
-    inline={false}
+    label={
+      <div>
+        Capital Letters
+         
+        <small>
+          (
+          A-Z
+          )
+        </small>
+      </div>
+    }
+    labelPosition="right"
     name="capitalLetters"
-    onChange={[Function]}
-    title=""
-  >
-    Capital Letters
-     
-    <small>
-      (
-      A-Z
-      )
-    </small>
-  </Checkbox>
+    onCheck={[Function]}
+  />
   <Checkbox
-    bsClass="checkbox"
     checked={true}
     disabled={false}
-    inline={false}
+    label={
+      <div>
+        Numbers
+         
+        <small>
+          (
+          0-9
+          )
+        </small>
+      </div>
+    }
+    labelPosition="right"
     name="numbers"
-    onChange={[Function]}
-    title=""
-  >
-    Numbers
-     
-    <small>
-      (
-      0-9
-      )
-    </small>
-  </Checkbox>
+    onCheck={[Function]}
+  />
   <Checkbox
-    bsClass="checkbox"
     checked={true}
     disabled={false}
-    inline={false}
+    label={
+      <div>
+        Symbols
+         
+        <small>
+          (
+          !@#$%^&*
+          )
+        </small>
+      </div>
+    }
+    labelPosition="right"
     name="symbols"
-    onChange={[Function]}
-    title=""
-  >
-    Symbols
-     
-    <small>
-      (
-      !@#$%^&*
-      )
-    </small>
-  </Checkbox>
+    onCheck={[Function]}
+  />
 </div>
 `;
