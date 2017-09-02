@@ -17,9 +17,11 @@ export function toggleGenericCallback ({ checked, name }, state) {
 
 const length = createReducer('SET_LENGTH', 12)
 const custom = createReducer('SET_CUSTOM', 0)
-const generic = createReducer('TOGGLE_GENERIC',
-                              defaultToggles,
-                              toggleGenericCallback)
+const generic = createReducer(
+  'TOGGLE_GENERIC',
+  defaultToggles,
+  toggleGenericCallback
+)
 const optionsKey = createReducer('SET_OPTIONS_KEY', 'generic')
 
 export default combineReducers({

@@ -21,8 +21,10 @@ describe('PossiblePasswords', () => {
 
 describe('mapStateToProps', () => {
   function mapMergedStateToProps (state = {}) {
-    return mapStateToProps(mergeDeepRight(createStore(reducers).getState(),
-                                          state))
+    return mapStateToProps(mergeDeepRight(
+      createStore(reducers).getState(),
+      state
+    ))
   }
 
   test('generic', () => {

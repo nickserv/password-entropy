@@ -56,10 +56,12 @@ PossiblePasswords.propTypes = {
 }
 
 const possibleItems = {
-  generic: pipe(filter(identity),
-                keys,
-                map(key => toggles[key].possibleItems),
-                sum),
+  generic: pipe(
+    filter(identity),
+    keys,
+    map(key => toggles[key].possibleItems),
+    sum
+  ),
   diceware: always(dicewareWords),
   custom: identity
 }

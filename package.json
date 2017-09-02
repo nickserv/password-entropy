@@ -25,10 +25,23 @@
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": "react-app",
+    "extends": [
+      "eslint:recommended",
+      "react-app"
+    ],
     "rules": {
-      "react/default-props-match-prop-types": "error",
-      "react/forbid-prop-types": "error",
+      "indent": [
+        "error",
+        2
+      ],
+      "quotes": [
+        "error",
+        "single"
+      ],
+      "semi": [
+        "error",
+        "never"
+      ],
       "react/prop-types": "error"
     }
   },
