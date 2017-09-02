@@ -1,9 +1,10 @@
 import { shallow } from 'enzyme'
-import { PossiblePasswords, mapStateToProps } from './PossiblePasswords'
 import { mergeDeepRight } from 'ramda'
 import React from 'react'
-import reducers from '../reducers'
 import { createStore } from 'redux'
+
+import { PossiblePasswords, mapStateToProps } from './PossiblePasswords'
+import reducers from '../reducers'
 
 describe('PossiblePasswords', () => {
   function getWrapper(approximate) {

@@ -1,6 +1,7 @@
-import { defaultToggles } from './options/GenericOptions'
 import { assoc, identity } from 'ramda'
 import { combineReducers } from 'redux'
+
+import { defaultToggles } from './options/GenericOptions'
 
 export function createReducer(actionType, initialState, callback = identity) {
   return (state = initialState, { payload, type }) => {

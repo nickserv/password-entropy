@@ -1,9 +1,10 @@
-import { toggleGeneric } from '../actions'
 import PropTypes from 'prop-types'
 import { always, map, path, T } from 'ramda'
 import React from 'react'
 import { Checkbox } from 'react-bootstrap'
 import { connect } from 'react-redux'
+
+import { toggleGeneric } from '../actions'
 
 export const toggles = {
   letters: {

@@ -1,8 +1,9 @@
 import { shallow } from 'enzyme'
-import { capitalize, mapStateToProps, Options } from './Options'
 import React from 'react'
-import reducers from '../reducers'
 import { createStore } from 'redux'
+
+import { capitalize, mapStateToProps, Options } from './Options'
+import reducers from '../reducers'
 
 test('capitalize', () => {
   expect(capitalize('word')).toEqual('Word')

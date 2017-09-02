@@ -1,13 +1,14 @@
-import { setOptionsKey } from '../actions'
-import CustomOptions from '../options/CustomOptions'
-import DicewareOptions from '../options/DicewareOptions'
-import GenericOptions from '../options/GenericOptions'
 import PropTypes from 'prop-types'
 import { pick } from 'ramda'
 import React from 'react'
 import { Panel, Tab, Tabs } from 'react-bootstrap'
 import Icon from 'react-fa'
 import { connect } from 'react-redux'
+
+import { setOptionsKey } from '../actions'
+import CustomOptions from '../options/CustomOptions'
+import DicewareOptions from '../options/DicewareOptions'
+import GenericOptions from '../options/GenericOptions'
 
 const options = {
   generic: {

@@ -1,8 +1,9 @@
 import { shallow } from 'enzyme'
-import { PasswordEntropy, mapStateToProps } from './PasswordEntropy'
 import React from 'react'
-import reducers from '../reducers'
 import { createStore } from 'redux'
+
+import { PasswordEntropy, mapStateToProps } from './PasswordEntropy'
+import reducers from '../reducers'
 
 test('PasswordEntropy', () => {
   const setLength = jest.fn()

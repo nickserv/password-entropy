@@ -1,6 +1,7 @@
-import FormGroup from '../ui/FormGroup'
 import React from 'react'
 import { FormControl } from 'react-bootstrap'
+
+import FormGroup from '../ui/FormGroup'
 
 export const dicewareWords = 7776
 

@@ -1,8 +1,9 @@
 import { shallow } from 'enzyme'
-import { defaultToggles, GenericOptions, mapStateToProps } from './GenericOptions'
 import React from 'react'
-import reducers from '../reducers'
 import { createStore } from 'redux'
+
+import { defaultToggles, GenericOptions, mapStateToProps } from './GenericOptions'
+import reducers from '../reducers'
 
 test('GenericOptions', () => {
   const toggleGeneric = jest.fn()

@@ -1,11 +1,12 @@
-import { dicewareWords } from '../options/DicewareOptions'
-import FormGroup from '../ui/FormGroup'
-import { toggles } from '../options/GenericOptions'
 import PropTypes from 'prop-types'
 import { always, filter, findLast, identity, keys, map, pipe, sum } from 'ramda'
 import React from 'react'
 import { connect } from 'react-redux'
 import { FormControl, Panel, ProgressBar } from 'react-bootstrap'
+
+import { dicewareWords } from '../options/DicewareOptions'
+import FormGroup from '../ui/FormGroup'
+import { toggles } from '../options/GenericOptions'
 
 const entropyTips = [
   {

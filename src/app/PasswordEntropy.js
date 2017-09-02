@@ -1,13 +1,14 @@
-import { setLength } from '../actions'
-import FormGroup from '../ui/FormGroup'
-import Options from '../options/Options'
-import PossiblePasswords from './PossiblePasswords'
 import PropTypes from 'prop-types'
 import { pick } from 'ramda'
 import React from 'react'
 import { FormControl, PageHeader } from 'react-bootstrap'
 import Icon from 'react-fa'
 import { connect } from 'react-redux'
+
+import { setLength } from '../actions'
+import FormGroup from '../ui/FormGroup'
+import Options from '../options/Options'
+import PossiblePasswords from './PossiblePasswords'
 
 export function PasswordEntropy({ length, setLength }) {
   return (

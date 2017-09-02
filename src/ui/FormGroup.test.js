@@ -1,6 +1,7 @@
 import { shallow } from 'enzyme'
-import FormGroup from './FormGroup'
 import React from 'react'
+
+import FormGroup from './FormGroup'
 
 test('FormGroup', () => {
   const wrapper = shallow(

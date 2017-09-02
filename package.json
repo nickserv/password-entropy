@@ -43,7 +43,6 @@
         "error",
         "never"
       ],
-      "import/first": "off",
       "import/no-named-as-default": "off",
       "react/jsx-filename-extension": "off"
     }
