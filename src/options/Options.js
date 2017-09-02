@@ -1,4 +1,5 @@
-import { Card, CardText, FontIcon, Tab, Tabs } from 'material-ui'
+import { Card, CardText, Tab, Tabs } from 'material-ui'
+import { ActionBook, ImageEdit, NavigationCheck } from 'material-ui/svg-icons'
 import PropTypes from 'prop-types'
 import { pick } from 'ramda'
 import React from 'react'
@@ -12,15 +13,15 @@ import GenericOptions from '../options/GenericOptions'
 const options = {
   generic: {
     Component: GenericOptions,
-    icon: 'check-square'
+    Icon: NavigationCheck
   },
   diceware: {
     Component: DicewareOptions,
-    icon: 'book'
+    Icon: ActionBook
   },
   custom: {
     Component: CustomOptions,
-    icon: 'question-circle'
+    Icon: ImageEdit
   }
 }
 
@@ -32,8 +33,8 @@ export function Options({ optionsKey, setOptionsKey }) {
   return (
     <Card>
       <Tabs value={optionsKey} onChange={setOptionsKey}>
-        {Object.entries(options).map(([name, { Component, icon }]) => (
-          <Tab key={name} icon={<FontIcon className={`fa fa-${icon}`} />} label={capitalize(name)} value={name}>
+        {Object.entries(options).map(([name, { Component, Icon }]) => (
+          <Tab key={name} icon={<Icon />} label={capitalize(name)} value={name}>
             <CardText><Component /></CardText>
           </Tab>
         ))}

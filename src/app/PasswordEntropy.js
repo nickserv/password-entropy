@@ -1,4 +1,5 @@
-import { FontIcon, TextField } from 'material-ui'
+import { TextField } from 'material-ui'
+import { ActionCompareArrows, ActionInfo, ActionLock } from 'material-ui/svg-icons'
 import PropTypes from 'prop-types'
 import { pick } from 'ramda'
 import React from 'react'
@@ -12,16 +13,16 @@ export function PasswordEntropy({ length, setLength }) {
   return (
     <div>
       <h1>
-        <FontIcon className="fa fa-lock" /> Password Entropy
+        <ActionLock /> Password Entropy
         <br />
         <small>A simple entropy calculator for evaluating password security.</small>
       </h1>
 
       <form>
-        <h2><FontIcon className="fa fa-info-circle" /> Results</h2>
+        <h2><ActionInfo /> Results</h2>
         <PossiblePasswords />
 
-        <TextField floatingLabelText={<div><FontIcon className="arrows-h" /> Length</div>} value={length} onChange={setLength} type="number" min="0" required />
+        <TextField floatingLabelText={<div><ActionCompareArrows /> Length</div>} value={length} onChange={setLength} type="number" min="0" required />
 
         <Options />
       </form>

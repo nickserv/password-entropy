@@ -6,11 +6,7 @@ exports[`DicewareOptions 1`] = `
   floatingLabelFixed={false}
   floatingLabelText={
     <div>
-      <FontIcon
-        className="question-circle"
-        onMouseEnter={[Function]}
-        onMouseLeave={[Function]}
-      />
+      <ImageEdit />
        Possible Items
     </div>
   }

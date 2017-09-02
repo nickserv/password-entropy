@@ -1,4 +1,5 @@
-import { Card, CardText, FontIcon, LinearProgress } from 'material-ui'
+import { Card, CardText, LinearProgress } from 'material-ui'
+import { ActionList, AvShuffle } from 'material-ui/svg-icons'
 import { colors } from 'material-ui/styles'
 import PropTypes from 'prop-types'
 import { always, filter, findLast, identity, keys, map, pipe, sum } from 'ramda'
@@ -37,11 +38,11 @@ export function PossiblePasswords({
   return (
     <Card>
       <CardText>
-        <h3><FontIcon className="list" /> Entropy</h3>
+        <h3><ActionList /> Entropy</h3>
         {entropyBits.toFixed(2)} bits ({strength})
         <LinearProgress color={color} max={128} mode="determinate" value={entropyBits} />
 
-        <h3><FontIcon className="random" /> Possible Passwords</h3>
+        <h3><AvShuffle /> Possible Passwords</h3>
         {approximate && '~ '}{possiblePasswords.toLocaleString()}
       </CardText>
     </Card>

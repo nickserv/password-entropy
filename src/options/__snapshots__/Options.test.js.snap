@@ -12,13 +12,7 @@ exports[`Options 1`] = `
     value="generic"
   >
     <Tab
-      icon={
-        <FontIcon
-          className="fa fa-check-square"
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-        />
-      }
+      icon={<NavigationCheck />}
       label="Generic"
       value="generic"
     >
@@ -27,13 +21,7 @@ exports[`Options 1`] = `
       </CardText>
     </Tab>
     <Tab
-      icon={
-        <FontIcon
-          className="fa fa-book"
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-        />
-      }
+      icon={<ActionBook />}
       label="Diceware"
       value="diceware"
     >
@@ -42,13 +30,7 @@ exports[`Options 1`] = `
       </CardText>
     </Tab>
     <Tab
-      icon={
-        <FontIcon
-          className="fa fa-question-circle"
-          onMouseEnter={[Function]}
-          onMouseLeave={[Function]}
-        />
-      }
+      icon={<ImageEdit />}
       label="Custom"
       value="custom"
     >
