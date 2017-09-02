@@ -27,9 +27,9 @@
   "eslintConfig": {
     "extends": "react-app",
     "rules": {
-      "react/default-props-match-prop-types": 2,
-      "react/forbid-prop-types": 2,
-      "react/prop-types": 2
+      "react/default-props-match-prop-types": "error",
+      "react/forbid-prop-types": "error",
+      "react/prop-types": "error"
     }
   },
   "eslintIgnore": [
