@@ -2,7 +2,7 @@ import { defaultToggles } from './options/GenericOptions'
 import { assoc, identity } from 'ramda'
 import { combineReducers } from 'redux'
 
-export function createReducer(actionType, initialState, callback = identity) {
+export function createReducer (actionType, initialState, callback = identity) {
   return (state = initialState, { payload, type }) => {
     const matchesAction = type === actionType
     const isValid = typeof payload !== 'number' || payload >= 0

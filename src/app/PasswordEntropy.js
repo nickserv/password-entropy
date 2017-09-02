@@ -35,7 +35,7 @@ export function PasswordEntropy ({ length, setLength }) {
 
 PasswordEntropy.propTypes = {
   length: PropTypes.number.isRequired,
-  setLength: PropTypes.func.isRequired,
+  setLength: PropTypes.func.isRequired
 }
 
 export const mapStateToProps = pick(['length'])

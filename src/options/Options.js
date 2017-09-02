@@ -1,4 +1,4 @@
-import { setOptionsKey} from '../actions'
+import { setOptionsKey } from '../actions'
 import CustomOptions from '../options/CustomOptions'
 import DicewareOptions from '../options/DicewareOptions'
 import GenericOptions from '../options/GenericOptions'
