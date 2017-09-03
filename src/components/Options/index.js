@@ -14,25 +14,25 @@ import { selector, setOptionsKey } from '../../reducers/optionsKey'
 
 const options = {
   generic: {
-    Component: Generic,
-    icon: 'check-square'
+    component: <Generic />,
+    icon: <Icon name="check-square" />
   },
   diceware: {
-    Component: Diceware,
-    icon: 'book'
+    component: <Diceware />,
+    icon: <Icon name="book" />
   },
   custom: {
-    Component: Custom,
-    icon: 'question-circle'
+    component: <Custom />,
+    icon: <Icon name="question-circle" />
   }
 }
 
 export function Options({ optionsKey, setOptionsKey }) {
   return (
     <Tabs activeKey={optionsKey} onSelect={setOptionsKey} id="options">
-      {Object.entries(options).map(([name, { Component, icon }]) => (
-        <Tab key={name} eventKey={name} title={<div><Icon name={icon} /> {startCase(name)}</div>}>
-          <Panel><Component /></Panel>
+      {Object.entries(options).map(([name, { component, icon }]) => (
+        <Tab key={name} eventKey={name} title={<div>{icon} {startCase(name)}</div>}>
+          <Panel>{component}</Panel>
         </Tab>
       ))}
     </Tabs>
