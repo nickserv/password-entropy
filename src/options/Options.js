@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import { pick } from 'ramda'
+import pick from 'ramda/src/pick'
 import React from 'react'
 import { Panel, Tab, Tabs } from 'react-bootstrap'
 import Icon from 'react-fa'

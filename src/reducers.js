@@ -1,4 +1,5 @@
-import { assoc, identity } from 'ramda'
+import assoc from 'ramda/src/assoc'
+import identity from 'ramda/src/identity'
 import { combineReducers } from 'redux'
 
 import { defaultToggles } from './options/GenericOptions'

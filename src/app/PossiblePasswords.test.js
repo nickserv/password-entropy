@@ -1,5 +1,5 @@
 import { shallow } from 'enzyme'
-import { mergeDeepRight } from 'ramda'
+import mergeDeepRight from 'ramda/src/mergeDeepRight'
 import React from 'react'
 import { createStore } from 'redux'
 

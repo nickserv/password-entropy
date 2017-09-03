@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import { path } from 'ramda'
+import path from 'ramda/src/path'
 import React from 'react'
 import { FormControl } from 'react-bootstrap'
 import { connect } from 'react-redux'
