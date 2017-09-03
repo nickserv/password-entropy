@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types'
 import pick from 'ramda/src/pick'
 import React from 'react'
-import { FormControl, PageHeader } from 'react-bootstrap'
+import FormControl from 'react-bootstrap/lib/FormControl'
+import PageHeader from 'react-bootstrap/lib/PageHeader'
 import Icon from 'react-fa'
 import { connect } from 'react-redux'
 

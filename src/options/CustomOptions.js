@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import path from 'ramda/src/path'
 import React from 'react'
-import { FormControl } from 'react-bootstrap'
+import FormControl from 'react-bootstrap/lib/FormControl'
 import { connect } from 'react-redux'
 
 import { setCustom } from '../actions'

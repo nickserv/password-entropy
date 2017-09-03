@@ -1,7 +1,9 @@
 import PropTypes from 'prop-types'
 import pick from 'ramda/src/pick'
 import React from 'react'
-import { Panel, Tab, Tabs } from 'react-bootstrap'
+import Panel from 'react-bootstrap/lib/Panel'
+import Tab from 'react-bootstrap/lib/Tab'
+import Tabs from 'react-bootstrap/lib/Tabs'
 import Icon from 'react-fa'
 import { connect } from 'react-redux'
 

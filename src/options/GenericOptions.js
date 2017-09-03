@@ -4,7 +4,7 @@ import map from 'ramda/src/map'
 import path from 'ramda/src/path'
 import T from 'ramda/src/T'
 import React from 'react'
-import { Checkbox } from 'react-bootstrap'
+import Checkbox from 'react-bootstrap/lib/Checkbox'
 import { connect } from 'react-redux'
 
 import { toggleGeneric } from '../actions'

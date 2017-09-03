@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import { ControlLabel, FormGroup as BootstrapFormGroup } from 'react-bootstrap'
+import ControlLabel from 'react-bootstrap/lib/ControlLabel'
+import BootstrapFormGroup from 'react-bootstrap/lib/FormGroup'
 import Icon from 'react-fa'
 
 export default function FormGroup({ children, id, label, icon }) {
