@@ -21,11 +21,11 @@ export function PasswordEntropy({ length, setLength }) {
       </PageHeader>
 
       <form>
-        <FormGroup id="results" label="Results" icon="info-circle">
+        <FormGroup label="Results" icon="info-circle">
           <PossiblePasswords />
         </FormGroup>
 
-        <FormGroup id="length" label="Length" icon="arrows-h">
+        <FormGroup label="Length" icon="arrows-h">
           <FormControl value={length} onChange={setLength} type="number" min="0" required />
         </FormGroup>
 

@@ -3,7 +3,6 @@
 exports[`DicewareOptions 1`] = `
 <FormGroup
   icon="question-circle"
-  id="diceware"
   label="Possible Items"
 >
   <FormControlStatic

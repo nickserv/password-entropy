@@ -45,11 +45,11 @@ export function PossiblePasswords({
 }) {
   return (
     <Panel>
-      <FormGroup id="entropy" label="Entropy" icon="list">
+      <FormGroup label="Entropy" icon="list">
         <ProgressBar bsStyle={style} max={128} now={entropyBits} label={`${entropyBits.toFixed(2)} bits (${strength})`} />
       </FormGroup>
 
-      <FormGroup id="possiblePasswords" label="PossiblePasswords" icon="random">
+      <FormGroup label="Possible Passwords" icon="random">
         <FormControl.Static>{approximate && '~ '}{possiblePasswords.toLocaleString()}</FormControl.Static>
       </FormGroup>
     </Panel>

@@ -2,12 +2,8 @@ import { shallow } from 'enzyme'
 import React from 'react'
 import { createStore } from 'redux'
 
-import { capitalize, mapStateToProps, Options } from './Options'
+import { mapStateToProps, Options } from './Options'
 import reducers from '../reducers'
-
-test('capitalize', () => {
-  expect(capitalize('word')).toEqual('Word')
-})
 
 test('Options', () => {
   const setOptionsKey = jest.fn()

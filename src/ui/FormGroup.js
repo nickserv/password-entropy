@@ -1,12 +1,13 @@
+import camelCase from 'lodash/camelCase'
 import PropTypes from 'prop-types'
 import React from 'react'
 import ControlLabel from 'react-bootstrap/lib/ControlLabel'
 import BootstrapFormGroup from 'react-bootstrap/lib/FormGroup'
 import Icon from 'react-fa'
 
-export default function FormGroup({ children, id, label, icon }) {
+export default function FormGroup({ children, label, icon }) {
   return (
-    <BootstrapFormGroup controlId={id}>
+    <BootstrapFormGroup controlId={camelCase(label)}>
       <ControlLabel><Icon name={icon} /> {label}</ControlLabel>
       {children}
     </BootstrapFormGroup>
@@ -15,7 +16,6 @@ export default function FormGroup({ children, id, label, icon }) {
 
 FormGroup.propTypes = {
   children: PropTypes.node.isRequired,
-  id: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
   icon: PropTypes.string.isRequired
 }

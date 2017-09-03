@@ -1,3 +1,4 @@
+import startCase from 'lodash/startCase'
 import PropTypes from 'prop-types'
 import pick from 'ramda/src/pick'
 import React from 'react'
@@ -27,15 +28,11 @@ const options = {
   }
 }
 
-export function capitalize(string) {
-  return string.charAt(0).toUpperCase() + string.slice(1)
-}
-
 export function Options({ optionsKey, setOptionsKey }) {
   return (
     <Tabs activeKey={optionsKey} onSelect={setOptionsKey} id="options">
       {Object.entries(options).map(([name, { Component, icon }]) => (
-        <Tab key={name} eventKey={name} title={<div><Icon name={icon} /> {capitalize(name)}</div>}>
+        <Tab key={name} eventKey={name} title={<div><Icon name={icon} /> {startCase(name)}</div>}>
           <Panel><Component /></Panel>
         </Tab>
       ))}

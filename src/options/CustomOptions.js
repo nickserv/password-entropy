@@ -9,7 +9,7 @@ import FormGroup from '../ui/FormGroup'
 
 export function CustomOptions({ possibleItems, setCustom }) {
   return (
-    <FormGroup id="custom" label="Possible Items" icon="question-circle">
+    <FormGroup label="Possible Items" icon="question-circle">
       <FormControl value={possibleItems} onChange={setCustom} type="number" min="0" required />
     </FormGroup>
   )
