@@ -1,6 +1,5 @@
 import startCase from 'lodash/startCase'
 import PropTypes from 'prop-types'
-import pick from 'ramda/src/pick'
 import React from 'react'
 import Panel from 'react-bootstrap/lib/Panel'
 import Tab from 'react-bootstrap/lib/Tab'
@@ -8,22 +7,22 @@ import Tabs from 'react-bootstrap/lib/Tabs'
 import Icon from 'react-fa'
 import { connect } from 'react-redux'
 
-import { setOptionsKey } from '../actions'
-import CustomOptions from '../options/CustomOptions'
-import DicewareOptions from '../options/DicewareOptions'
-import GenericOptions from '../options/GenericOptions'
+import Custom from './Custom'
+import Diceware from './Diceware'
+import Generic from './Generic'
+import { selector, setOptionsKey } from '../../reducers/optionsKey'
 
 const options = {
   generic: {
-    Component: GenericOptions,
+    Component: Generic,
     icon: 'check-square'
   },
   diceware: {
-    Component: DicewareOptions,
+    Component: Diceware,
     icon: 'book'
   },
   custom: {
-    Component: CustomOptions,
+    Component: Custom,
     icon: 'question-circle'
   }
 }
@@ -45,6 +44,4 @@ Options.propTypes = {
   setOptionsKey: PropTypes.func.isRequired
 }
 
-export const mapStateToProps = pick(['optionsKey'])
-
-export default connect(mapStateToProps, { setOptionsKey })(Options)
+export default connect(selector, { setOptionsKey })(Options)

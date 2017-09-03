@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`GenericOptions 1`] = `
+exports[`Generic 1`] = `
 <div>
   <Checkbox
     bsClass="checkbox"

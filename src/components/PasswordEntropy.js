@@ -1,14 +1,13 @@
 import PropTypes from 'prop-types'
-import pick from 'ramda/src/pick'
 import React from 'react'
 import FormControl from 'react-bootstrap/lib/FormControl'
 import PageHeader from 'react-bootstrap/lib/PageHeader'
 import Icon from 'react-fa'
 import { connect } from 'react-redux'
 
-import { setLength } from '../actions'
-import FormGroup from '../ui/FormGroup'
-import Options from '../options/Options'
+import FormGroup from './FormGroup'
+import { selector, setLength } from '../reducers/length'
+import Options from './Options'
 import PossiblePasswords from './PossiblePasswords'
 
 export function PasswordEntropy({ length, setLength }) {
@@ -40,6 +39,4 @@ PasswordEntropy.propTypes = {
   setLength: PropTypes.func.isRequired
 }
 
-export const mapStateToProps = pick(['length'])
-
-export default connect(mapStateToProps, { setLength })(PasswordEntropy)
+export default connect(selector, { setLength })(PasswordEntropy)

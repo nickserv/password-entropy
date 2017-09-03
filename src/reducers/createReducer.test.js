@@ -1,5 +1,4 @@
-import { defaultToggles } from './options/GenericOptions'
-import { createReducer, toggleGenericCallback } from './reducers'
+import createReducer from './createReducer'
 
 test('createReducer', () => {
   const reducer = createReducer('ACTION', false)
@@ -20,13 +19,4 @@ test('createReducer with number', () => {
   expect(reducer(undefined, { type: 'ACTION', payload: -1 })).toBe(false)
   expect(reducer(undefined, { type: 'ACTION', payload: 0 })).toBe(0)
   expect(reducer(undefined, { type: 'ACTION', payload: 1 })).toBe(1)
-})
-
-test('toggleGenericCallback', () => {
-  expect(toggleGenericCallback({ name: 'letters', checked: false }, defaultToggles)).toEqual({
-    capitalLetters: true,
-    letters: false,
-    numbers: true,
-    symbols: true
-  })
 })

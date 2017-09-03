@@ -5,7 +5,7 @@ import { createStore } from 'redux'
 import { devToolsEnhancer } from 'redux-devtools-extension'
 import 'bootstrap/dist/css/bootstrap.css'
 
-import PasswordEntropy from './app/PasswordEntropy'
+import PasswordEntropy from './components/PasswordEntropy'
 import reducers from './reducers'
 
 render(
