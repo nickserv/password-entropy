@@ -1,4 +1,5 @@
 import startCase from 'lodash/startCase'
+import entries from 'object.entries'
 import PropTypes from 'prop-types'
 import React from 'react'
 import Panel from 'react-bootstrap/lib/Panel'
@@ -30,7 +31,7 @@ const options = {
 export function Options({ optionsKey, setOptionsKey }) {
   return (
     <Tabs activeKey={optionsKey} onSelect={setOptionsKey} id="options">
-      {Object.entries(options).map(([name, { component, icon }]) => (
+      {entries(options).map(([name, { component, icon }]) => (
         <Tab key={name} eventKey={name} title={<div>{icon} {startCase(name)}</div>}>
           <Panel>{component}</Panel>
         </Tab>

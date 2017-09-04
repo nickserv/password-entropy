@@ -4,22 +4,18 @@ import createReducer from './createReducer'
 
 export const toggles = {
   letters: {
-    label: 'Letters',
     example: 'a-z',
     possibleItems: 26
   },
   capitalLetters: {
-    label: 'Capital Letters',
     example: 'A-Z',
     possibleItems: 26
   },
   numbers: {
-    label: 'Numbers',
     example: '0-9',
     possibleItems: 10
   },
   symbols: {
-    label: 'Symbols',
     example: '!@#$%^&*',
     possibleItems: 8
   }
