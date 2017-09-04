@@ -1,4 +1,5 @@
 import startCase from 'lodash/startCase'
+import entries from 'object.entries'
 import PropTypes from 'prop-types'
 import always from 'ramda/src/always'
 import map from 'ramda/src/map'
@@ -34,7 +35,7 @@ export const defaultToggles = map(T, toggles)
 export function GenericOptions(props) {
   return (
     <div>
-      {Object.entries(toggles).map(([name, { example }]) => (
+      {entries(toggles).map(([name, { example }]) => (
         <Checkbox key={name} name={name} checked={props[name]} onChange={props.toggleGeneric}>
           { startCase(name) } <small>({ example })</small>
         </Checkbox>

@@ -3,6 +3,7 @@
   "dependencies": {
     "bootstrap": "^3.3.7",
     "lodash": "^4.17.4",
+    "object.entries": "^1.0.4",
     "prop-types": "^15.5.10",
     "ramda": "^0.24.1",
     "react": "^15.6.1",
