@@ -1,12 +1,11 @@
 import { TextField } from 'material-ui'
 import { ActionCompareArrows, ActionInfo, ActionLock } from 'material-ui/svg-icons'
 import PropTypes from 'prop-types'
-import { pick } from 'ramda'
 import React from 'react'
 import { connect } from 'react-redux'
 
-import { setLength } from '../actions'
-import Options from '../options/Options'
+import { selector, setLength } from '../reducers/length'
+import Options from './Options'
 import PossiblePasswords from './PossiblePasswords'
 
 export function PasswordEntropy({ length, setLength }) {
@@ -35,6 +34,4 @@ PasswordEntropy.propTypes = {
   setLength: PropTypes.func.isRequired
 }
 
-export const mapStateToProps = pick(['length'])
-
-export default connect(mapStateToProps, { setLength })(PasswordEntropy)
+export default connect(selector, { setLength })(PasswordEntropy)

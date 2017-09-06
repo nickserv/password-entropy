@@ -2,7 +2,7 @@ import { TextField } from 'material-ui'
 import { ImageEdit } from 'material-ui/svg-icons'
 import React from 'react'
 
-export const dicewareWords = 7776
+import { dicewareWords } from '../../reducers/possibleItemsSelector'
 
 export default function DicewareOptions() {
   return (

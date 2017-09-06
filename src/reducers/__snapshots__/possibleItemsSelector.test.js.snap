@@ -1,69 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`PossiblePasswords approximate 1`] = `
-<Card
-  expandable={false}
-  expanded={null}
-  initiallyExpanded={false}
->
-  <CardText>
-    <h3>
-      <ActionList />
-       Entropy
-    </h3>
-    77.55
-     bits (
-    Strong
-    )
-    <LinearProgress
-      color="#2196f3"
-      max={128}
-      min={0}
-      mode="determinate"
-      value={77.54887502163469}
-    />
-    <h3>
-      <AvShuffle />
-       Possible Passwords
-    </h3>
-    ~ 
-    221,073,919,720,733,000,000,000
-  </CardText>
-</Card>
-`;
-
-exports[`PossiblePasswords exact 1`] = `
-<Card
-  expandable={false}
-  expanded={null}
-  initiallyExpanded={false}
->
-  <CardText>
-    <h3>
-      <ActionList />
-       Entropy
-    </h3>
-    77.55
-     bits (
-    Strong
-    )
-    <LinearProgress
-      color="#2196f3"
-      max={128}
-      min={0}
-      mode="determinate"
-      value={77.54887502163469}
-    />
-    <h3>
-      <AvShuffle />
-       Possible Passwords
-    </h3>
-    221,073,919,720,733,000,000,000
-  </CardText>
-</Card>
-`;
-
-exports[`mapStateToProps custom 1`] = `
+exports[`selector custom 1`] = `
 Object {
   "approximate": false,
   "entropyBits": 0,
@@ -76,7 +13,7 @@ Object {
 }
 `;
 
-exports[`mapStateToProps custom with invalid possibleItems 1`] = `
+exports[`selector custom with invalid possibleItems 1`] = `
 Object {
   "approximate": false,
   "entropyBits": 0,
@@ -89,7 +26,7 @@ Object {
 }
 `;
 
-exports[`mapStateToProps custom with strong possiblePasswords 1`] = `
+exports[`selector custom with strong possiblePasswords 1`] = `
 Object {
   "approximate": true,
   "entropyBits": 64,
@@ -102,7 +39,7 @@ Object {
 }
 `;
 
-exports[`mapStateToProps custom with very strong possiblePasswords 1`] = `
+exports[`selector custom with very strong possiblePasswords 1`] = `
 Object {
   "approximate": true,
   "entropyBits": 128,
@@ -115,7 +52,7 @@ Object {
 }
 `;
 
-exports[`mapStateToProps custom with weak possiblePasswords 1`] = `
+exports[`selector custom with weak possiblePasswords 1`] = `
 Object {
   "approximate": false,
   "entropyBits": 32,
@@ -128,7 +65,7 @@ Object {
 }
 `;
 
-exports[`mapStateToProps diceware 1`] = `
+exports[`selector diceware 1`] = `
 Object {
   "approximate": true,
   "entropyBits": 155.09775004326937,
@@ -141,7 +78,7 @@ Object {
 }
 `;
 
-exports[`mapStateToProps generic 1`] = `
+exports[`selector generic 1`] = `
 Object {
   "approximate": true,
   "entropyBits": 73.55139620333959,

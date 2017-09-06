@@ -17,7 +17,7 @@ exports[`Options 1`] = `
       value="generic"
     >
       <CardText>
-        <Connect(GenericOptions) />
+        <Connect(Generic) />
       </CardText>
     </Tab>
     <Tab
@@ -35,7 +35,7 @@ exports[`Options 1`] = `
       value="custom"
     >
       <CardText>
-        <Connect(CustomOptions) />
+        <Connect(Custom) />
       </CardText>
     </Tab>
   </Tabs>

@@ -6,7 +6,7 @@ import { createStore } from 'redux'
 import { devToolsEnhancer } from 'redux-devtools-extension'
 import 'roboto-fontface/css/roboto/roboto-fontface.css'
 
-import PasswordEntropy from './app/PasswordEntropy'
+import PasswordEntropy from './components/PasswordEntropy'
 import reducers from './reducers'
 import './index.css'
 
