@@ -1,10 +1,10 @@
-import { MuiThemeProvider } from 'material-ui'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
 import { devToolsEnhancer } from 'redux-devtools-extension'
-import 'roboto-fontface/css/roboto/roboto-fontface.css'
+import 'roboto-fontface'
 
 import PasswordEntropy from './components/PasswordEntropy'
 import reducers from './reducers'

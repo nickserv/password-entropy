@@ -1,8 +1,9 @@
 import startCase from 'lodash/startCase'
-import { Checkbox } from 'material-ui'
+import Checkbox from 'material-ui/Checkbox'
 import entries from 'object.entries'
 import PropTypes from 'prop-types'
-import { always, map } from 'ramda'
+import always from 'ramda/src/always'
+import map from 'ramda/src/map'
 import React from 'react'
 import { connect } from 'react-redux'
 

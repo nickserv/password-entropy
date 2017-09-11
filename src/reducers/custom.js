@@ -1,4 +1,4 @@
-import { path } from 'ramda'
+import path from 'ramda/src/path'
 
 import createReducer from './createReducer'
 

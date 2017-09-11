@@ -1,4 +1,4 @@
-import { pick } from 'ramda'
+import pick from 'ramda/src/pick'
 
 import createReducer from './createReducer'
 

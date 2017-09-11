@@ -1,14 +1,14 @@
-import { TextField } from 'material-ui'
-import { ImageEdit } from 'material-ui/svg-icons'
+import TextField from 'material-ui/TextField'
+import Edit from 'material-ui/svg-icons/image/edit'
 import React from 'react'
 
 import { dicewareWords } from '../../reducers/possibleItemsSelector'
 
-export default function DicewareOptions() {
+export default function Diceware() {
   return (
     <TextField
       disabled
-      floatingLabelText={<div><ImageEdit /> Possible Items</div>}
+      floatingLabelText={<div><Edit /> Possible Items</div>}
       value={dicewareWords}
     />
   )

@@ -1,4 +1,4 @@
-import { identity } from 'ramda'
+import identity from 'ramda/src/identity'
 
 export default function createReducer(actionType, initialState, callback = identity) {
   return (state = initialState, { payload, type }) => {

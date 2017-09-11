@@ -1,4 +1,7 @@
-import { assoc, map, path, T } from 'ramda'
+import assoc from 'ramda/src/assoc'
+import map from 'ramda/src/map'
+import path from 'ramda/src/path'
+import T from 'ramda/src/T'
 
 import createReducer from './createReducer'
 

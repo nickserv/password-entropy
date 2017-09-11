@@ -44,6 +44,14 @@
         "error",
         "never"
       ],
+      "import/extensions": [
+        "error",
+        "always", {
+          "css": "never",
+          "js": "never",
+          "jsx": "never"
+        }
+      ],
       "import/no-named-as-default": "off",
       "react/jsx-filename-extension": "off"
     }

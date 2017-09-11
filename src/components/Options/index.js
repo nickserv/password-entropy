@@ -1,6 +1,9 @@
 import startCase from 'lodash/startCase'
-import { Card, CardText, Tab, Tabs } from 'material-ui'
-import { ActionBook, ImageEdit, NavigationCheck } from 'material-ui/svg-icons'
+import { Card, CardText } from 'material-ui/Card'
+import { Tabs, Tab } from 'material-ui/Tabs'
+import Book from 'material-ui/svg-icons/action/book'
+import Check from 'material-ui/svg-icons/navigation/check'
+import Edit from 'material-ui/svg-icons/image/edit'
 import entries from 'object.entries'
 import PropTypes from 'prop-types'
 import React from 'react'
@@ -14,15 +17,15 @@ import { selector, setOptionsKey } from '../../reducers/optionsKey'
 const options = {
   generic: {
     component: <Generic />,
-    icon: <NavigationCheck />
+    icon: <Check />
   },
   diceware: {
     component: <Diceware />,
-    icon: <ActionBook />
+    icon: <Book />
   },
   custom: {
     component: <Custom />,
-    icon: <ImageEdit />
+    icon: <Edit />
   }
 }
 

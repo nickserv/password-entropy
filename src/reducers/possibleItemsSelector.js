@@ -1,4 +1,4 @@
-import { colors } from 'material-ui/styles'
+import { blue500, green500, red500, yellow500 } from 'material-ui/styles/colors'
 import always from 'ramda/src/always'
 import filter from 'ramda/src/filter'
 import findLast from 'ramda/src/findLast'
@@ -14,22 +14,22 @@ export const dicewareWords = 7776
 
 const entropyTips = [
   {
-    color: colors.red500,
+    color: red500,
     minimum: 0,
     strength: 'Very Weak'
   },
   {
-    color: colors.yellow500,
+    color: yellow500,
     minimum: 32,
     strength: 'Weak'
   },
   {
-    color: colors.blue500,
+    color: blue500,
     minimum: 64,
     strength: 'Strong'
   },
   {
-    color: colors.green500,
+    color: green500,
     minimum: 128,
     strength: 'Very Strong'
   }
