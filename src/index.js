@@ -8,7 +8,6 @@ import 'roboto-fontface'
 
 import PasswordEntropy from './components/PasswordEntropy'
 import reducers from './reducers'
-import './index.css'
 
 render(
   <Provider store={createStore(reducers, devToolsEnhancer())}>

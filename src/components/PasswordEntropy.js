@@ -12,7 +12,7 @@ import PossiblePasswords from './PossiblePasswords'
 
 export function PasswordEntropy({ length, setLength }) {
   return (
-    <div>
+    <div style={{ fontFamily: 'Roboto, sans-serif' }}>
       <h1><Lock /> Password Entropy</h1>
 
       <p>A simple entropy calculator for evaluating password security.</p>
