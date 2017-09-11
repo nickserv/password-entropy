@@ -13,11 +13,9 @@ import PossiblePasswords from './PossiblePasswords'
 export function PasswordEntropy({ length, setLength }) {
   return (
     <div>
-      <h1>
-        <Lock /> Password Entropy
-        <br />
-        <small>A simple entropy calculator for evaluating password security.</small>
-      </h1>
+      <h1><Lock /> Password Entropy</h1>
+
+      A simple entropy calculator for evaluating password security.
 
       <form>
         <h2><Info /> Results</h2>
