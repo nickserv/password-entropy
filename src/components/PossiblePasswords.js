@@ -15,11 +15,11 @@ export function PossiblePasswords({
     <Card>
       <CardText>
         <h3><ActionList /> Entropy</h3>
-        {entropyBits.toFixed(2)} bits ({strength})
+        <p>{entropyBits.toFixed(2)} bits ({strength})</p>
         <LinearProgress color={color} max={128} mode="determinate" value={entropyBits} />
 
         <h3><AvShuffle /> Possible Passwords</h3>
-        {approximate && '~ '}{possiblePasswords.toLocaleString()}
+        <p>{approximate && '~ '}{possiblePasswords.toLocaleString()}</p>
       </CardText>
     </Card>
   )

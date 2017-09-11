@@ -15,7 +15,7 @@ export function PasswordEntropy({ length, setLength }) {
     <div>
       <h1><Lock /> Password Entropy</h1>
 
-      A simple entropy calculator for evaluating password security.
+      <p>A simple entropy calculator for evaluating password security.</p>
 
       <form>
         <h2><Info /> Results</h2>
