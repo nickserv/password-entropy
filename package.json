@@ -46,7 +46,8 @@
       ],
       "import/extensions": [
         "error",
-        "always", {
+        "always",
+        {
           "css": "never",
           "js": "never",
           "jsx": "never"
