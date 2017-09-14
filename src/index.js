@@ -4,7 +4,7 @@ import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
 import { devToolsEnhancer } from 'redux-devtools-extension'
-import 'roboto-fontface'
+import 'typeface-roboto'
 
 import PasswordEntropy from './components/PasswordEntropy'
 import reducers from './reducers'
