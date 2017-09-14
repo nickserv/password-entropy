@@ -1,8 +1,8 @@
-import { shallow } from 'enzyme'
 import React from 'react'
+import Renderer from 'react-test-renderer/shallow'
 
 import { Options } from '.'
 
 test('Options', () => {
-  expect(shallow(<Options optionsKey="generic" setOptionsKey={() => {}} />)).toMatchSnapshot()
+  expect(new Renderer().render(<Options optionsKey="generic" setOptionsKey={() => {}} />)).toMatchSnapshot()
 })

@@ -1,8 +1,10 @@
-import { shallow } from 'enzyme'
 import React from 'react'
+import Renderer from 'react-test-renderer/shallow'
 
 import { PasswordEntropy } from './PasswordEntropy'
 
 test('PasswordEntropy', () => {
-  expect(shallow(<PasswordEntropy length={12} setLength={() => {}} />)).toMatchSnapshot()
+  expect(
+    new Renderer().render(<PasswordEntropy length={12} setLength={() => {}} />)
+  ).toMatchSnapshot()
 })

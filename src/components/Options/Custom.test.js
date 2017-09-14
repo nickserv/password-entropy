@@ -1,8 +1,8 @@
-import { shallow } from 'enzyme'
 import React from 'react'
+import Renderer from 'react-test-renderer/shallow'
 
 import { Custom } from './Custom'
 
 test('Custom', () => {
-  expect(shallow(<Custom possibleItems={1} setCustom={() => {}} />)).toMatchSnapshot()
+  expect(new Renderer().render(<Custom possibleItems={1} setCustom={() => {}} />)).toMatchSnapshot()
 })
