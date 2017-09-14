@@ -1,7 +1,7 @@
 import TextField from 'material-ui/TextField'
-import CompareArrows from 'material-ui/svg-icons/action/compare-arrows'
-import Info from 'material-ui/svg-icons/action/info'
-import Lock from 'material-ui/svg-icons/action/lock'
+import CompareArrows from 'material-ui-icons/CompareArrows'
+import Info from 'material-ui-icons/Info'
+import Lock from 'material-ui-icons/Lock'
 import PropTypes from 'prop-types'
 import React from 'react'
 import { connect } from 'react-redux'
@@ -21,7 +21,7 @@ export function PasswordEntropy({ length, setLength }) {
         <h2><Info /> Results</h2>
         <PossiblePasswords />
 
-        <TextField floatingLabelText={<div><CompareArrows /> Length</div>} value={length} onChange={setLength} type="number" min="0" required />
+        <TextField label={<div><CompareArrows /> Length</div>} value={length} onChange={setLength} type="number" min="0" required />
 
         <Options />
       </form>

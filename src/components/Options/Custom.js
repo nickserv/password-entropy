@@ -1,5 +1,5 @@
 import TextField from 'material-ui/TextField'
-import Edit from 'material-ui/svg-icons/image/edit'
+import Edit from 'material-ui-icons/Edit'
 import PropTypes from 'prop-types'
 import React from 'react'
 import { connect } from 'react-redux'
@@ -8,7 +8,7 @@ import { selector, setCustom } from '../../reducers/custom'
 
 export function Custom({ possibleItems, setCustom }) {
   return (
-    <TextField floatingLabelText={<div><Edit /> Possible Items</div>} value={possibleItems} onChange={setCustom} type="number" min="0" required />
+    <TextField label={<div><Edit /> Possible Items</div>} value={possibleItems} onChange={setCustom} type="number" min="0" required />
   )
 }
 

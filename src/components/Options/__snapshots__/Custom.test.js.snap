@@ -2,22 +2,16 @@
 
 exports[`Custom 1`] = `
 <TextField
-  disabled={false}
-  floatingLabelFixed={false}
-  floatingLabelText={
+  label={
     <div>
-      <ImageEdit />
+      <pure(Edit) />
        Possible Items
     </div>
   }
-  fullWidth={false}
   min="0"
-  multiLine={false}
   onChange={[Function]}
   required={true}
-  rows={1}
   type="number"
-  underlineShow={true}
   value={1}
 />
 `;

@@ -4,10 +4,12 @@ import { defaultToggles, selector, toggleGeneric, toggleGenericCallback } from '
 import reducers from '.'
 
 test('toggleGeneric', () => {
-  const target = { checked: false, name: 'letters' }
-  expect(toggleGeneric({ target })).toEqual({
+  expect(toggleGeneric({ target: { name: 'letters' } }, false)).toEqual({
     type: 'TOGGLE_GENERIC',
-    payload: target
+    payload: {
+      checked: false,
+      name: 'letters'
+    }
   })
 })
 

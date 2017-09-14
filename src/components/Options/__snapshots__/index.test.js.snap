@@ -2,42 +2,30 @@
 
 exports[`Options 1`] = `
 <Card
-  expandable={false}
-  expanded={null}
-  initiallyExpanded={false}
+  raised={false}
 >
-  <Tabs
-    initialSelectedIndex={0}
+  <withStyles(withTheme(withWidth(Tabs)))
     onChange={[Function]}
     value="generic"
   >
-    <Tab
-      icon={<NavigationCheck />}
+    <withStyles(Tab)
+      icon={<pure(Check) />}
       label="Generic"
       value="generic"
-    >
-      <CardText>
-        <Connect(Generic) />
-      </CardText>
-    </Tab>
-    <Tab
-      icon={<ActionBook />}
+    />
+    <withStyles(Tab)
+      icon={<pure(Book) />}
       label="Diceware"
       value="diceware"
-    >
-      <CardText>
-        <Diceware />
-      </CardText>
-    </Tab>
-    <Tab
-      icon={<ImageEdit />}
+    />
+    <withStyles(Tab)
+      icon={<pure(Edit) />}
       label="Custom"
       value="custom"
-    >
-      <CardText>
-        <Connect(Custom) />
-      </CardText>
-    </Tab>
-  </Tabs>
+    />
+  </withStyles(withTheme(withWidth(Tabs)))>
+  <withStyles(CardContent)>
+    <Connect(Generic) />
+  </withStyles(CardContent)>
 </Card>
 `;

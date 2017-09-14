@@ -1,9 +1,9 @@
 import startCase from 'lodash/startCase'
-import { Card, CardText } from 'material-ui/Card'
-import { Tabs, Tab } from 'material-ui/Tabs'
-import Book from 'material-ui/svg-icons/action/book'
-import Check from 'material-ui/svg-icons/navigation/check'
-import Edit from 'material-ui/svg-icons/image/edit'
+import Card, { CardContent } from 'material-ui/Card'
+import Tabs, { Tab } from 'material-ui/Tabs'
+import Book from 'material-ui-icons/Book'
+import Check from 'material-ui-icons/Check'
+import Edit from 'material-ui-icons/Edit'
 import entries from 'object.entries'
 import PropTypes from 'prop-types'
 import React from 'react'
@@ -33,12 +33,11 @@ export function Options({ optionsKey, setOptionsKey }) {
   return (
     <Card>
       <Tabs value={optionsKey} onChange={setOptionsKey}>
-        {entries(options).map(([name, { component, icon }]) => (
-          <Tab key={name} icon={icon} label={startCase(name)} value={name}>
-            <CardText>{component}</CardText>
-          </Tab>
+        {entries(options).map(([name, { icon }]) => (
+          <Tab key={name} icon={icon} label={startCase(name)} value={name} />
         ))}
       </Tabs>
+      <CardContent>{options[optionsKey].component}</CardContent>
     </Card>
   )
 }

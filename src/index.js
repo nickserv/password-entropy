@@ -1,4 +1,4 @@
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles'
 import React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
@@ -11,7 +11,7 @@ import reducers from './reducers'
 
 render(
   <Provider store={createStore(reducers, devToolsEnhancer())}>
-    <MuiThemeProvider>
+    <MuiThemeProvider theme={createMuiTheme()}>
       <PasswordEntropy />
     </MuiThemeProvider>
   </Provider>,

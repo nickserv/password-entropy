@@ -4,7 +4,7 @@ import createReducer from './createReducer'
 
 export default createReducer('SET_OPTIONS_KEY', 'generic')
 
-export function setOptionsKey(key) {
+export function setOptionsKey(event, key) {
   return {
     type: 'SET_OPTIONS_KEY',
     payload: key

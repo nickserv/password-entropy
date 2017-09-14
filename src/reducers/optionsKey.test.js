@@ -4,7 +4,7 @@ import { selector, setOptionsKey } from './optionsKey'
 import reducers from '.'
 
 test('setOptionsKey', () => {
-  expect(setOptionsKey('generic')).toEqual({
+  expect(setOptionsKey(undefined, 'generic')).toEqual({
     type: 'SET_OPTIONS_KEY',
     payload: 'generic'
   })

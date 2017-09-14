@@ -1,12 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Generic 1`] = `
-<div>
-  <Checkbox
-    checked={true}
-    disabled={false}
+<withStyles(FormGroup)>
+  <withStyles(FormControlLabel)
+    control={
+      <withStyles(Checkbox)
+        checked={true}
+        name="letters"
+        onChange={[Function]}
+      />
+    }
     label={
-      <div>
+      <span>
         Letters
          
         <small>
@@ -14,17 +19,19 @@ exports[`Generic 1`] = `
           a-z
           )
         </small>
-      </div>
+      </span>
     }
-    labelPosition="right"
-    name="letters"
-    onCheck={[Function]}
   />
-  <Checkbox
-    checked={true}
-    disabled={false}
+  <withStyles(FormControlLabel)
+    control={
+      <withStyles(Checkbox)
+        checked={true}
+        name="capitalLetters"
+        onChange={[Function]}
+      />
+    }
     label={
-      <div>
+      <span>
         Capital Letters
          
         <small>
@@ -32,17 +39,19 @@ exports[`Generic 1`] = `
           A-Z
           )
         </small>
-      </div>
+      </span>
     }
-    labelPosition="right"
-    name="capitalLetters"
-    onCheck={[Function]}
   />
-  <Checkbox
-    checked={true}
-    disabled={false}
+  <withStyles(FormControlLabel)
+    control={
+      <withStyles(Checkbox)
+        checked={true}
+        name="numbers"
+        onChange={[Function]}
+      />
+    }
     label={
-      <div>
+      <span>
         Numbers
          
         <small>
@@ -50,17 +59,19 @@ exports[`Generic 1`] = `
           0-9
           )
         </small>
-      </div>
+      </span>
     }
-    labelPosition="right"
-    name="numbers"
-    onCheck={[Function]}
   />
-  <Checkbox
-    checked={true}
-    disabled={false}
+  <withStyles(FormControlLabel)
+    control={
+      <withStyles(Checkbox)
+        checked={true}
+        name="symbols"
+        onChange={[Function]}
+      />
+    }
     label={
-      <div>
+      <span>
         Symbols
          
         <small>
@@ -68,11 +79,8 @@ exports[`Generic 1`] = `
           !@#$%^&*
           )
         </small>
-      </div>
+      </span>
     }
-    labelPosition="right"
-    name="symbols"
-    onCheck={[Function]}
   />
-</div>
+</withStyles(FormGroup)>
 `;

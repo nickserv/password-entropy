@@ -3,18 +3,13 @@
 exports[`Diceware 1`] = `
 <TextField
   disabled={true}
-  floatingLabelFixed={false}
-  floatingLabelText={
+  label={
     <div>
-      <ImageEdit />
+      <pure(Edit) />
        Possible Items
     </div>
   }
-  fullWidth={false}
-  multiLine={false}
-  rows={1}
-  type="text"
-  underlineShow={true}
+  required={false}
   value={7776}
 />
 `;

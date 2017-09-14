@@ -36,7 +36,7 @@ export default createReducer(
   toggleGenericCallback
 )
 
-export function toggleGeneric({ target: { checked, name } }) {
+export function toggleGeneric({ target: { name } }, checked) {
   return {
     type: 'TOGGLE_GENERIC',
     payload: {
