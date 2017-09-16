@@ -4,7 +4,6 @@ import Tabs, { Tab } from 'material-ui/Tabs'
 import Book from 'material-ui-icons/Book'
 import Check from 'material-ui-icons/Check'
 import Edit from 'material-ui-icons/Edit'
-import entries from 'object.entries'
 import PropTypes from 'prop-types'
 import React from 'react'
 import { connect } from 'react-redux'
@@ -33,7 +32,7 @@ export function Options({ optionsKey, setOptionsKey }) {
   return (
     <Card>
       <Tabs value={optionsKey} onChange={setOptionsKey}>
-        {entries(options).map(([name, { icon }]) => (
+        {Object.entries(options).map(([name, { icon }]) => (
           <Tab key={name} icon={icon} label={startCase(name)} value={name} />
         ))}
       </Tabs>

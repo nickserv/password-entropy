@@ -1,7 +1,6 @@
 import startCase from 'lodash/startCase'
 import Checkbox from 'material-ui/Checkbox'
 import { FormGroup, FormControlLabel } from 'material-ui/Form'
-import entries from 'object.entries'
 import PropTypes from 'prop-types'
 import always from 'ramda/src/always'
 import map from 'ramda/src/map'
@@ -13,7 +12,7 @@ import { selector, toggleGeneric, toggles } from '../../reducers/generic'
 export function Generic(props) {
   return (
     <FormGroup>
-      {entries(toggles).map(([name, { example }]) => (
+      {Object.entries(toggles).map(([name, { example }]) => (
         <FormControlLabel
           key={name}
           control={<Checkbox name={name} checked={props[name]} onChange={props.toggleGeneric} />}
