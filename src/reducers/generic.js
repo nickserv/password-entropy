@@ -46,4 +46,4 @@ export function toggleGeneric({ target: { name } }, checked) {
   }
 }
 
-export const selector = path(['options', 'Generic'])
+export const selector = path(['options', 'generic'])

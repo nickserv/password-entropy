@@ -12,5 +12,5 @@ export function setCustom({ target: { value } }) {
 }
 
 export const selector = state => ({
-  possibleItems: path(['options', 'Custom'], state)
+  possibleItems: path(['options', 'custom'], state)
 })

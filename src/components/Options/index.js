@@ -13,15 +13,15 @@ import Generic from './Generic'
 import { selector, setOptionsKey } from '../../reducers/optionsKey'
 
 const options = {
-  Generic: {
+  generic: {
     component: <Generic />,
     icon: <Check />
   },
-  Diceware: {
+  diceware: {
     component: <Diceware />,
     icon: <Book />
   },
-  Custom: {
+  custom: {
     component: <Custom />,
     icon: <Edit />
   }
