@@ -4,13 +4,13 @@ import { selector, setOptionsKey } from './optionsKey'
 import reducers from '.'
 
 test('setOptionsKey', () => {
-  expect(setOptionsKey(undefined, 'generic')).toEqual({
+  expect(setOptionsKey(undefined, 'Generic')).toEqual({
     type: 'SET_OPTIONS_KEY',
-    payload: 'generic'
+    payload: 'Generic'
   })
 })
 
 test('selector', () => {
   const state = createStore(reducers).getState()
-  expect(selector(state)).toEqual({ optionsKey: 'generic' })
+  expect(selector(state)).toEqual({ optionsKey: 'Generic' })
 })

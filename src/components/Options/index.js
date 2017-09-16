@@ -1,4 +1,3 @@
-import startCase from 'lodash/startCase'
 import Card, { CardContent } from 'material-ui/Card'
 import Tabs, { Tab } from 'material-ui/Tabs'
 import Book from 'material-ui-icons/Book'
@@ -14,15 +13,15 @@ import Generic from './Generic'
 import { selector, setOptionsKey } from '../../reducers/optionsKey'
 
 const options = {
-  generic: {
+  Generic: {
     component: <Generic />,
     icon: <Check />
   },
-  diceware: {
+  Diceware: {
     component: <Diceware />,
     icon: <Book />
   },
-  custom: {
+  Custom: {
     component: <Custom />,
     icon: <Edit />
   }
@@ -33,7 +32,7 @@ export function Options({ optionsKey, setOptionsKey }) {
     <Card>
       <Tabs value={optionsKey} onChange={setOptionsKey}>
         {Object.entries(options).map(([name, { icon }]) => (
-          <Tab key={name} icon={icon} label={startCase(name)} value={name} />
+          <Tab key={name} icon={icon} label={name} value={name} />
         ))}
       </Tabs>
       <CardContent>{options[optionsKey].component}</CardContent>

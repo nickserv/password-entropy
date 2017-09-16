@@ -12,46 +12,46 @@ describe('selector', () => {
     ))
   }
 
-  test('generic', () => {
+  test('Generic', () => {
     expect(mergedSelector()).toMatchSnapshot()
   })
 
-  test('diceware', () => {
-    expect(mergedSelector({ optionsKey: 'diceware' })).toMatchSnapshot()
+  test('Diceware', () => {
+    expect(mergedSelector({ optionsKey: 'Diceware' })).toMatchSnapshot()
   })
 
-  test('custom', () => {
-    expect(mergedSelector({ optionsKey: 'custom' })).toMatchSnapshot()
+  test('Custom', () => {
+    expect(mergedSelector({ optionsKey: 'Custom' })).toMatchSnapshot()
   })
 
-  test('custom with invalid possibleItems', () => {
+  test('Custom with invalid possibleItems', () => {
     expect(mergedSelector({
-      options: { custom: 0 },
-      optionsKey: 'custom'
+      options: { Custom: 0 },
+      optionsKey: 'Custom'
     })).toMatchSnapshot()
   })
 
-  test('custom with weak possiblePasswords', () => {
+  test('Custom with weak possiblePasswords', () => {
     expect(mergedSelector({
       length: 32,
-      options: { custom: 2 },
-      optionsKey: 'custom'
+      options: { Custom: 2 },
+      optionsKey: 'Custom'
     })).toMatchSnapshot()
   })
 
-  test('custom with strong possiblePasswords', () => {
+  test('Custom with strong possiblePasswords', () => {
     expect(mergedSelector({
       length: 64,
-      options: { custom: 2 },
-      optionsKey: 'custom'
+      options: { Custom: 2 },
+      optionsKey: 'Custom'
     })).toMatchSnapshot()
   })
 
-  test('custom with very strong possiblePasswords', () => {
+  test('Custom with very strong possiblePasswords', () => {
     expect(mergedSelector({
       length: 128,
-      options: { custom: 2 },
-      optionsKey: 'custom'
+      options: { Custom: 2 },
+      optionsKey: 'Custom'
     })).toMatchSnapshot()
   })
 })

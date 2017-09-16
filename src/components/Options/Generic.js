@@ -1,4 +1,3 @@
-import startCase from 'lodash/startCase'
 import Checkbox from 'material-ui/Checkbox'
 import { FormGroup, FormControlLabel } from 'material-ui/Form'
 import PropTypes from 'prop-types'
@@ -16,7 +15,7 @@ export function Generic(props) {
         <FormControlLabel
           key={name}
           control={<Checkbox name={name} checked={props[name]} onChange={props.toggleGeneric} />}
-          label={<span>{ startCase(name) } <small>({ example })</small></span>}
+          label={<span>{name} <small>({ example })</small></span>}
         />
       ))}
     </FormGroup>

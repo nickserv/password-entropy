@@ -4,21 +4,21 @@ import { defaultToggles, selector, toggleGeneric, toggleGenericCallback } from '
 import reducers from '.'
 
 test('toggleGeneric', () => {
-  expect(toggleGeneric({ target: { name: 'letters' } }, false)).toEqual({
+  expect(toggleGeneric({ target: { name: 'Letters' } }, false)).toEqual({
     type: 'TOGGLE_GENERIC',
     payload: {
       checked: false,
-      name: 'letters'
+      name: 'Letters'
     }
   })
 })
 
 test('toggleGenericCallback', () => {
-  expect(toggleGenericCallback({ name: 'letters', checked: false }, defaultToggles)).toEqual({
-    capitalLetters: true,
-    letters: false,
-    numbers: true,
-    symbols: true
+  expect(toggleGenericCallback({ name: 'Letters', checked: false }, defaultToggles)).toEqual({
+    'Capital Letters': true,
+    Letters: false,
+    Numbers: true,
+    Symbols: true
   })
 })
 

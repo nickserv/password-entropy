@@ -39,14 +39,14 @@ const entropyTips = [
 ]
 
 const possibleItems = {
-  generic: pipe(
+  Generic: pipe(
     filter(identity),
     keys,
     map(key => toggles[key].possibleItems),
     sum
   ),
-  diceware: always(dicewareWords),
-  custom: identity
+  Diceware: always(dicewareWords),
+  Custom: identity
 }
 
 export default function possibleItemsSelector({ length, options, optionsKey }) {

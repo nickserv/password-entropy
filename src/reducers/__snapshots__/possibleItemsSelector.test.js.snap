@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`selector custom 1`] = `
+exports[`selector Custom 1`] = `
 Object {
   "approximate": false,
   "entropyBits": 0,
@@ -29,7 +29,7 @@ Object {
 }
 `;
 
-exports[`selector custom with invalid possibleItems 1`] = `
+exports[`selector Custom with invalid possibleItems 1`] = `
 Object {
   "approximate": false,
   "entropyBits": 0,
@@ -58,7 +58,7 @@ Object {
 }
 `;
 
-exports[`selector custom with strong possiblePasswords 1`] = `
+exports[`selector Custom with strong possiblePasswords 1`] = `
 Object {
   "approximate": true,
   "entropyBits": 64,
@@ -87,7 +87,7 @@ Object {
 }
 `;
 
-exports[`selector custom with very strong possiblePasswords 1`] = `
+exports[`selector Custom with very strong possiblePasswords 1`] = `
 Object {
   "approximate": true,
   "entropyBits": 128,
@@ -116,7 +116,7 @@ Object {
 }
 `;
 
-exports[`selector custom with weak possiblePasswords 1`] = `
+exports[`selector Custom with weak possiblePasswords 1`] = `
 Object {
   "approximate": false,
   "entropyBits": 32,
@@ -145,7 +145,7 @@ Object {
 }
 `;
 
-exports[`selector diceware 1`] = `
+exports[`selector Diceware 1`] = `
 Object {
   "approximate": true,
   "entropyBits": 155.09775004326937,
@@ -174,7 +174,7 @@ Object {
 }
 `;
 
-exports[`selector generic 1`] = `
+exports[`selector Generic 1`] = `
 Object {
   "approximate": true,
   "entropyBits": 73.55139620333959,

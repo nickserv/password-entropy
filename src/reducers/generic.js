@@ -6,19 +6,19 @@ import T from 'ramda/src/T'
 import createReducer from './createReducer'
 
 export const toggles = {
-  letters: {
+  Letters: {
     example: 'a-z',
     possibleItems: 26
   },
-  capitalLetters: {
+  'Capital Letters': {
     example: 'A-Z',
     possibleItems: 26
   },
-  numbers: {
+  Numbers: {
     example: '0-9',
     possibleItems: 10
   },
-  symbols: {
+  Symbols: {
     example: '!@#$%^&*',
     possibleItems: 8
   }
@@ -46,4 +46,4 @@ export function toggleGeneric({ target: { name } }, checked) {
   }
 }
 
-export const selector = path(['options', 'generic'])
+export const selector = path(['options', 'Generic'])
