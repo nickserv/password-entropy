@@ -11,27 +11,25 @@ import Options from './Options'
 import PossiblePasswords from './PossiblePasswords'
 
 export function PasswordEntropy({ length, setLength }) {
-  return (
-    <div>
-      <PageHeader>
-        <Icon name="lock" /> Password Entropy
-        <br />
-        <small>A simple entropy calculator for evaluating password security.</small>
-      </PageHeader>
+  return [
+    <PageHeader key={1}>
+      <Icon name="lock" /> Password Entropy
+      <br />
+      <small>A simple entropy calculator for evaluating password security.</small>
+    </PageHeader>,
 
-      <form>
-        <FormGroup label="Results" icon="info-circle">
-          <PossiblePasswords />
-        </FormGroup>
+    <form key={2}>
+      <FormGroup label="Results" icon="info-circle">
+        <PossiblePasswords />
+      </FormGroup>
 
-        <FormGroup label="Length" icon="arrows-h">
-          <FormControl value={length} onChange={setLength} type="number" min="0" required />
-        </FormGroup>
+      <FormGroup label="Length" icon="arrows-h">
+        <FormControl value={length} onChange={setLength} type="number" min="0" required />
+      </FormGroup>
 
-        <Options />
-      </form>
-    </div>
-  )
+      <Options />
+    </form>
+  ]
 }
 
 PasswordEntropy.propTypes = {
