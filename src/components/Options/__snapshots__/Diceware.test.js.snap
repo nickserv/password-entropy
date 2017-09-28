@@ -10,6 +10,7 @@ exports[`Diceware 1`] = `
     </div>
   }
   required={false}
+  select={false}
   value={7776}
 />
 `;

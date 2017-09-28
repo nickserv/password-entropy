@@ -4,7 +4,7 @@ exports[`Options 1`] = `
 <Card
   raised={false}
 >
-  <withStyles(withTheme(withWidth(Tabs)))
+  <withStyles(Tabs)
     onChange={[Function]}
     value="generic"
   >
@@ -23,7 +23,7 @@ exports[`Options 1`] = `
       label="custom"
       value="custom"
     />
-  </withStyles(withTheme(withWidth(Tabs)))>
+  </withStyles(Tabs)>
   <withStyles(CardContent)>
     <Connect(Generic) />
   </withStyles(CardContent)>

@@ -11,6 +11,7 @@ exports[`Custom 1`] = `
   min="0"
   onChange={[Function]}
   required={true}
+  select={false}
   type="number"
   value={1}
 />
