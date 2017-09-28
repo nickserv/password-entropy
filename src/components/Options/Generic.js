@@ -9,11 +9,15 @@ import { connect } from 'react-redux'
 import { selector, toggleGeneric, toggles } from '../../reducers/generic'
 
 export function Generic(props) {
-  return entries(toggles).map(([name, { example }]) => (
-    <Checkbox key={name} name={name} checked={props[name]} onChange={props.toggleGeneric}>
-      { startCase(name) } <small>({ example })</small>
-    </Checkbox>
-  ))
+  return (
+    <div>
+      {entries(toggles).map(([name, { example }]) => (
+        <Checkbox key={name} name={name} checked={props[name]} onChange={props.toggleGeneric}>
+          { startCase(name) } <small>({ example })</small>
+        </Checkbox>
+      ))}
+    </div>
+  )
 }
 
 Generic.propTypes = {
