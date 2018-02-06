@@ -1,3 +1,5 @@
+import list from '@fortawesome/fontawesome-free-solid/faList'
+import random from '@fortawesome/fontawesome-free-solid/faRandom'
 import PropTypes from 'prop-types'
 import React from 'react'
 import { connect } from 'react-redux'
@@ -11,11 +13,11 @@ export function PossiblePasswords({
 }) {
   return (
     <Panel>
-      <FormGroup id="entropy" label="Entropy" icon="list">
+      <FormGroup id="entropy" label="Entropy" icon={list}>
         <ProgressBar bsStyle={style} max={128} now={entropyBits} label={`${entropyBits.toFixed(2)} bits (${strength})`} />
       </FormGroup>
 
-      <FormGroup id="possiblePasswords" label="PossiblePasswords" icon="random">
+      <FormGroup id="possiblePasswords" label="PossiblePasswords" icon={random}>
         <FormControl.Static>{approximate && '~ '}{possiblePasswords.toLocaleString()}</FormControl.Static>
       </FormGroup>
     </Panel>

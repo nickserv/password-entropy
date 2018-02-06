@@ -1,3 +1,7 @@
+import book from '@fortawesome/fontawesome-free-solid/faBook'
+import checkSquare from '@fortawesome/fontawesome-free-solid/faCheckSquare'
+import questionCircle from '@fortawesome/fontawesome-free-solid/faQuestionCircle'
+import Icon from '@fortawesome/react-fontawesome'
 import startCase from 'lodash/startCase'
 import entries from 'object.entries'
 import PropTypes from 'prop-types'
@@ -5,7 +9,6 @@ import React from 'react'
 import Panel from 'react-bootstrap/lib/Panel'
 import Tab from 'react-bootstrap/lib/Tab'
 import Tabs from 'react-bootstrap/lib/Tabs'
-import Icon from 'react-fa'
 import { connect } from 'react-redux'
 
 import Custom from './Custom'
@@ -16,15 +19,15 @@ import { selector, setOptionsKey } from '../../reducers/optionsKey'
 const options = {
   generic: {
     component: <Generic />,
-    icon: <Icon name="check-square" />
+    icon: <Icon icon={checkSquare} />
   },
   diceware: {
     component: <Diceware />,
-    icon: <Icon name="book" />
+    icon: <Icon icon={book} />
   },
   custom: {
     component: <Custom />,
-    icon: <Icon name="question-circle" />
+    icon: <Icon icon={questionCircle} />
   }
 }
 
