@@ -45,13 +45,9 @@ exports[`Options 1`] = `
       </div>
     }
   >
-    <Panel
-      bsClass="panel"
-      bsStyle="default"
-      defaultExpanded={false}
-    >
+    <Uncontrolled(Panel)>
       <Connect(Generic) />
-    </Panel>
+    </Uncontrolled(Panel)>
   </Tab>
   <Tab
     eventKey="diceware"
@@ -92,13 +88,9 @@ exports[`Options 1`] = `
       </div>
     }
   >
-    <Panel
-      bsClass="panel"
-      bsStyle="default"
-      defaultExpanded={false}
-    >
+    <Uncontrolled(Panel)>
       <Diceware />
-    </Panel>
+    </Uncontrolled(Panel)>
   </Tab>
   <Tab
     eventKey="custom"
@@ -139,13 +131,9 @@ exports[`Options 1`] = `
       </div>
     }
   >
-    <Panel
-      bsClass="panel"
-      bsStyle="default"
-      defaultExpanded={false}
-    >
+    <Uncontrolled(Panel)>
       <Connect(Custom) />
-    </Panel>
+    </Uncontrolled(Panel)>
   </Tab>
 </Uncontrolled(Tabs)>
 `;
