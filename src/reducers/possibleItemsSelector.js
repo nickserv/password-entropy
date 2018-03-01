@@ -1,11 +1,4 @@
-import always from 'ramda/src/always'
-import filter from 'ramda/src/filter'
-import findLast from 'ramda/src/findLast'
-import identity from 'ramda/src/identity'
-import keys from 'ramda/src/keys'
-import map from 'ramda/src/map'
-import pipe from 'ramda/src/pipe'
-import sum from 'ramda/src/sum'
+import { always, filter, findLast, identity, keys, map, pipe, sum } from 'ramda'
 
 import { toggles } from './generic'
 
