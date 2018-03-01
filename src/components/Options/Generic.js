@@ -1,5 +1,4 @@
 import startCase from 'lodash/startCase'
-import entries from 'object.entries'
 import PropTypes from 'prop-types'
 import { always, map } from 'ramda'
 import React, { Fragment } from 'react'
@@ -11,7 +10,7 @@ import { selector, toggleGeneric, toggles } from '../../reducers/generic'
 export function Generic(props) {
   return (
     <Fragment>
-      {entries(toggles).map(([name, { example }]) => (
+      {Object.entries(toggles).map(([name, { example }]) => (
         <FormGroup key={name} check>
           <Label check>
             <Input type="checkbox" name={name} checked={props[name]} onChange={props.toggleGeneric} />{' '}

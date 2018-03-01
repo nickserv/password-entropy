@@ -4,7 +4,6 @@ import questionCircle from '@fortawesome/fontawesome-free-solid/faQuestionCircle
 import Icon from '@fortawesome/react-fontawesome'
 import classnames from 'classnames'
 import startCase from 'lodash/startCase'
-import entries from 'object.entries'
 import PropTypes from 'prop-types'
 import React, { Fragment } from 'react'
 import { connect } from 'react-redux'
@@ -34,7 +33,7 @@ export function Options({ optionsKey, setOptionsKey }) {
   return (
     <Fragment>
       <Nav tabs>
-        {entries(options).map(([name, { icon }]) => (
+        {Object.entries(options).map(([name, { icon }]) => (
           <NavItem key={name}>
             <NavLink className={classnames({ active: optionsKey === name })} href="#" onClick={setOptionsKey.bind(null, name)}>
               {icon} {startCase(name)}
@@ -44,7 +43,7 @@ export function Options({ optionsKey, setOptionsKey }) {
       </Nav>
 
       <TabContent activeTab={optionsKey}>
-        {entries(options).map(([name, { component }]) => (
+        {Object.entries(options).map(([name, { component }]) => (
           <TabPane key={name} tabId={name}>
             <Card><CardBody>{component}</CardBody></Card>
           </TabPane>
