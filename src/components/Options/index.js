@@ -13,16 +13,16 @@ import { selector, setOptionsKey } from '../../reducers/optionsKey'
 
 const options = {
   generic: {
-    component: <Generic />,
-    icon: <Icon icon={faCheckSquare} />
+    Component: Generic,
+    icon: faCheckSquare
   },
   diceware: {
-    component: <Diceware />,
-    icon: <Icon icon={faBook} />
+    Component: Diceware,
+    icon: faBook
   },
   custom: {
-    component: <Custom />,
-    icon: <Icon icon={faQuestionCircle} />
+    Component: Custom,
+    icon: faQuestionCircle
   }
 }
 
@@ -33,16 +33,16 @@ export function Options({ optionsKey, setOptionsKey }) {
         {Object.entries(options).map(([name, { icon }]) => (
           <NavItem key={name}>
             <NavLink active={optionsKey === name} href="#" onClick={setOptionsKey.bind(null, name)}>
-              {icon} {startCase(name)}
+              <Icon icon={icon} /> {startCase(name)}
             </NavLink>
           </NavItem>
         ))}
       </Nav>
 
       <TabContent activeTab={optionsKey}>
-        {Object.entries(options).map(([name, { component }]) => (
+        {Object.entries(options).map(([name, { Component }]) => (
           <TabPane key={name} tabId={name}>
-            <Card><CardBody>{component}</CardBody></Card>
+            <Card><CardBody><Component /></CardBody></Card>
           </TabPane>
         ))}
       </TabContent>
