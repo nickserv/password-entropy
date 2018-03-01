@@ -1,16 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Options 1`] = `
-<Uncontrolled(Tabs)
-  activeKey="generic"
-  id="options"
-  onSelect={[Function]}
->
-  <Tab
-    eventKey="generic"
-    key="generic"
-    title={
-      <div>
+<React.Fragment>
+  <Nav
+    tabs={true}
+    tag="ul"
+    vertical={false}
+  >
+    <NavItem
+      key="generic"
+      tag="li"
+    >
+      <NavLink
+        className="active"
+        href="#"
+        onClick={[Function]}
+        tag="a"
+      >
         <FontAwesomeIcon$1
           border={false}
           className=""
@@ -42,18 +48,18 @@ exports[`Options 1`] = `
         />
          
         Generic
-      </div>
-    }
-  >
-    <Uncontrolled(Panel)>
-      <Connect(Generic) />
-    </Uncontrolled(Panel)>
-  </Tab>
-  <Tab
-    eventKey="diceware"
-    key="diceware"
-    title={
-      <div>
+      </NavLink>
+    </NavItem>
+    <NavItem
+      key="diceware"
+      tag="li"
+    >
+      <NavLink
+        className=""
+        href="#"
+        onClick={[Function]}
+        tag="a"
+      >
         <FontAwesomeIcon$1
           border={false}
           className=""
@@ -85,18 +91,18 @@ exports[`Options 1`] = `
         />
          
         Diceware
-      </div>
-    }
-  >
-    <Uncontrolled(Panel)>
-      <Diceware />
-    </Uncontrolled(Panel)>
-  </Tab>
-  <Tab
-    eventKey="custom"
-    key="custom"
-    title={
-      <div>
+      </NavLink>
+    </NavItem>
+    <NavItem
+      key="custom"
+      tag="li"
+    >
+      <NavLink
+        className=""
+        href="#"
+        onClick={[Function]}
+        tag="a"
+      >
         <FontAwesomeIcon$1
           border={false}
           className=""
@@ -128,12 +134,58 @@ exports[`Options 1`] = `
         />
          
         Custom
-      </div>
-    }
+      </NavLink>
+    </NavItem>
+  </Nav>
+  <TabContent
+    activeTab="generic"
+    tag="div"
   >
-    <Uncontrolled(Panel)>
-      <Connect(Custom) />
-    </Uncontrolled(Panel)>
-  </Tab>
-</Uncontrolled(Tabs)>
+    <TabPane
+      key="generic"
+      tabId="generic"
+      tag="div"
+    >
+      <Card
+        tag="div"
+      >
+        <CardBody
+          tag="div"
+        >
+          <Connect(Generic) />
+        </CardBody>
+      </Card>
+    </TabPane>
+    <TabPane
+      key="diceware"
+      tabId="diceware"
+      tag="div"
+    >
+      <Card
+        tag="div"
+      >
+        <CardBody
+          tag="div"
+        >
+          <Diceware />
+        </CardBody>
+      </Card>
+    </TabPane>
+    <TabPane
+      key="custom"
+      tabId="custom"
+      tag="div"
+    >
+      <Card
+        tag="div"
+      >
+        <CardBody
+          tag="div"
+        >
+          <Connect(Custom) />
+        </CardBody>
+      </Card>
+    </TabPane>
+  </TabContent>
+</React.Fragment>
 `;

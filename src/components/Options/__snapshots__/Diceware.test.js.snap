@@ -17,11 +17,11 @@ exports[`Diceware 1`] = `
   }
   label="Possible Items"
 >
-  <FormControlStatic
-    bsClass="form-control-static"
-    componentClass="p"
+  <FormText
+    color="muted"
+    tag="small"
   >
     7776
-  </FormControlStatic>
+  </FormText>
 </FormGroup>
 `;

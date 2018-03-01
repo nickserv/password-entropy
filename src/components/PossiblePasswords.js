@@ -3,7 +3,7 @@ import random from '@fortawesome/fontawesome-free-solid/faRandom'
 import PropTypes from 'prop-types'
 import React from 'react'
 import { connect } from 'react-redux'
-import { FormControl, Panel, ProgressBar } from 'react-bootstrap'
+import { Card, CardBody, FormText, Progress } from 'reactstrap'
 
 import FormGroup from './FormGroup'
 import possibleItemsSelector from '../reducers/possibleItemsSelector'
@@ -12,15 +12,17 @@ export function PossiblePasswords({
   possiblePasswords, approximate, entropyBits, entropyTip: { strength, style }
 }) {
   return (
-    <Panel>
-      <FormGroup id="entropy" label="Entropy" icon={list}>
-        <ProgressBar bsStyle={style} max={128} now={entropyBits} label={`${entropyBits.toFixed(2)} bits (${strength})`} />
-      </FormGroup>
+    <Card>
+      <CardBody>
+        <FormGroup label="Entropy" icon={list}>
+          <FormText><Progress max={128} value={entropyBits}>{entropyBits.toFixed(2)} bits ({strength})</Progress></FormText>
+        </FormGroup>
 
-      <FormGroup id="possiblePasswords" label="PossiblePasswords" icon={random}>
-        <FormControl.Static>{approximate && '~ '}{possiblePasswords.toLocaleString()}</FormControl.Static>
-      </FormGroup>
-    </Panel>
+        <FormGroup id="possiblePasswords" label="PossiblePasswords" icon={random}>
+          <FormText>{approximate && '~ '} {possiblePasswords.toLocaleString()}</FormText>
+        </FormGroup>
+      </CardBody>
+    </Card>
   )
 }
 

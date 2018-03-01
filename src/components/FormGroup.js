@@ -2,13 +2,12 @@ import Icon from '@fortawesome/react-fontawesome'
 import camelCase from 'lodash/camelCase'
 import PropTypes from 'prop-types'
 import React from 'react'
-import ControlLabel from 'react-bootstrap/lib/ControlLabel'
-import BootstrapFormGroup from 'react-bootstrap/lib/FormGroup'
+import { FormGroup as BootstrapFormGroup, Label } from 'reactstrap'
 
 export default function FormGroup({ children, label, icon }) {
   return (
-    <BootstrapFormGroup controlId={camelCase(label)}>
-      <ControlLabel><Icon icon={icon} /> {label}</ControlLabel>
+    <BootstrapFormGroup>
+      <Label for={camelCase(label)}><Icon icon={icon} /> {label}</Label>
       {children}
     </BootstrapFormGroup>
   )

@@ -4,9 +4,8 @@ import lock from '@fortawesome/fontawesome-free-solid/faLock'
 import Icon from '@fortawesome/react-fontawesome'
 import PropTypes from 'prop-types'
 import React from 'react'
-import FormControl from 'react-bootstrap/lib/FormControl'
-import PageHeader from 'react-bootstrap/lib/PageHeader'
 import { connect } from 'react-redux'
+import { Container, Form, Input } from 'reactstrap'
 
 import FormGroup from './FormGroup'
 import { selector, setLength } from '../reducers/length'
@@ -15,25 +14,22 @@ import PossiblePasswords from './PossiblePasswords'
 
 export function PasswordEntropy({ length, setLength }) {
   return (
-    <div>
-      <PageHeader>
-        <Icon icon={lock} /> Password Entropy
-        <br />
-        <small>A simple entropy calculator for evaluating password security.</small>
-      </PageHeader>
+    <Container>
+      <h1 className="mt-3"><Icon icon={lock} /> Password Entropy</h1>
+      <p className="text-muted">A simple entropy calculator for evaluating password security.</p>
 
-      <form>
+      <Form>
         <FormGroup label="Results" icon={infoCircle}>
           <PossiblePasswords />
         </FormGroup>
 
         <FormGroup label="Length" icon={arrowsAltH}>
-          <FormControl value={length} onChange={setLength} type="number" min="0" required />
+          <Input id="length" value={length} onChange={setLength} type="number" min="0" required />
         </FormGroup>
 
         <Options />
-      </form>
-    </div>
+      </Form>
+    </Container>
   )
 }
 

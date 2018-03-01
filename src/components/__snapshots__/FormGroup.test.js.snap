@@ -2,12 +2,20 @@
 
 exports[`FormGroup 1`] = `
 <FormGroup
-  bsClass="form-group"
-  controlId="length"
+  tag="div"
 >
-  <ControlLabel
-    bsClass="control-label"
-    srOnly={false}
+  <Label
+    for="length"
+    tag="label"
+    widths={
+      Array [
+        "xs",
+        "sm",
+        "md",
+        "lg",
+        "xl",
+      ]
+    }
   >
     <FontAwesomeIcon$1
       border={false}
@@ -40,7 +48,7 @@ exports[`FormGroup 1`] = `
     />
      
     Length
-  </ControlLabel>
+  </Label>
   Redacted
 </FormGroup>
 `;

@@ -1,78 +1,142 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Generic 1`] = `
-<div>
-  <Checkbox
-    bsClass="checkbox"
-    checked={true}
-    disabled={false}
-    inline={false}
+<React.Fragment>
+  <FormGroup
+    check={true}
     key="letters"
-    name="letters"
-    onChange={[Function]}
-    title=""
+    tag="div"
   >
-    Letters
-     
-    <small>
-      (
-      a-z
-      )
-    </small>
-  </Checkbox>
-  <Checkbox
-    bsClass="checkbox"
-    checked={true}
-    disabled={false}
-    inline={false}
+    <Label
+      check={true}
+      tag="label"
+      widths={
+        Array [
+          "xs",
+          "sm",
+          "md",
+          "lg",
+          "xl",
+        ]
+      }
+    >
+      <Input
+        checked={true}
+        name="letters"
+        onChange={[Function]}
+        type="checkbox"
+      />
+       
+      Letters
+       
+      <small>
+        (
+        a-z
+        )
+      </small>
+    </Label>
+  </FormGroup>
+  <FormGroup
+    check={true}
     key="capitalLetters"
-    name="capitalLetters"
-    onChange={[Function]}
-    title=""
+    tag="div"
   >
-    Capital Letters
-     
-    <small>
-      (
-      A-Z
-      )
-    </small>
-  </Checkbox>
-  <Checkbox
-    bsClass="checkbox"
-    checked={true}
-    disabled={false}
-    inline={false}
+    <Label
+      check={true}
+      tag="label"
+      widths={
+        Array [
+          "xs",
+          "sm",
+          "md",
+          "lg",
+          "xl",
+        ]
+      }
+    >
+      <Input
+        checked={true}
+        name="capitalLetters"
+        onChange={[Function]}
+        type="checkbox"
+      />
+       
+      Capital Letters
+       
+      <small>
+        (
+        A-Z
+        )
+      </small>
+    </Label>
+  </FormGroup>
+  <FormGroup
+    check={true}
     key="numbers"
-    name="numbers"
-    onChange={[Function]}
-    title=""
+    tag="div"
   >
-    Numbers
-     
-    <small>
-      (
-      0-9
-      )
-    </small>
-  </Checkbox>
-  <Checkbox
-    bsClass="checkbox"
-    checked={true}
-    disabled={false}
-    inline={false}
+    <Label
+      check={true}
+      tag="label"
+      widths={
+        Array [
+          "xs",
+          "sm",
+          "md",
+          "lg",
+          "xl",
+        ]
+      }
+    >
+      <Input
+        checked={true}
+        name="numbers"
+        onChange={[Function]}
+        type="checkbox"
+      />
+       
+      Numbers
+       
+      <small>
+        (
+        0-9
+        )
+      </small>
+    </Label>
+  </FormGroup>
+  <FormGroup
+    check={true}
     key="symbols"
-    name="symbols"
-    onChange={[Function]}
-    title=""
+    tag="div"
   >
-    Symbols
-     
-    <small>
-      (
-      !@#$%^&*
-      )
-    </small>
-  </Checkbox>
-</div>
+    <Label
+      check={true}
+      tag="label"
+      widths={
+        Array [
+          "xs",
+          "sm",
+          "md",
+          "lg",
+          "xl",
+        ]
+      }
+    >
+      <Input
+        checked={true}
+        name="symbols"
+        onChange={[Function]}
+        type="checkbox"
+      />
+       
+      Symbols
+       
+      <small>
+        (
+        !@#$%^&*
+        )
+      </small>
+    </Label>
+  </FormGroup>
+</React.Fragment>
 `;

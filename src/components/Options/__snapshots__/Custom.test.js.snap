@@ -17,9 +17,8 @@ exports[`Custom 1`] = `
   }
   label="Possible Items"
 >
-  <FormControl
-    bsClass="form-control"
-    componentClass="input"
+  <Input
+    id="possibleItems"
     min="0"
     onChange={[Function]}
     required={true}

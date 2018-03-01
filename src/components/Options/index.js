@@ -2,14 +2,13 @@ import book from '@fortawesome/fontawesome-free-solid/faBook'
 import checkSquare from '@fortawesome/fontawesome-free-solid/faCheckSquare'
 import questionCircle from '@fortawesome/fontawesome-free-solid/faQuestionCircle'
 import Icon from '@fortawesome/react-fontawesome'
+import classnames from 'classnames'
 import startCase from 'lodash/startCase'
 import entries from 'object.entries'
 import PropTypes from 'prop-types'
-import React from 'react'
-import Panel from 'react-bootstrap/lib/Panel'
-import Tab from 'react-bootstrap/lib/Tab'
-import Tabs from 'react-bootstrap/lib/Tabs'
+import React, { Fragment } from 'react'
 import { connect } from 'react-redux'
+import { Card, CardBody, Nav, NavItem, NavLink, TabContent, TabPane } from 'reactstrap'
 
 import Custom from './Custom'
 import Diceware from './Diceware'
@@ -33,13 +32,25 @@ const options = {
 
 export function Options({ optionsKey, setOptionsKey }) {
   return (
-    <Tabs activeKey={optionsKey} onSelect={setOptionsKey} id="options">
-      {entries(options).map(([name, { component, icon }]) => (
-        <Tab key={name} eventKey={name} title={<div>{icon} {startCase(name)}</div>}>
-          <Panel>{component}</Panel>
-        </Tab>
-      ))}
-    </Tabs>
+    <Fragment>
+      <Nav tabs>
+        {entries(options).map(([name, { icon }]) => (
+          <NavItem key={name}>
+            <NavLink className={classnames({ active: optionsKey === name })} href="#" onClick={setOptionsKey.bind(null, name)}>
+              {icon} {startCase(name)}
+            </NavLink>
+          </NavItem>
+        ))}
+      </Nav>
+
+      <TabContent activeTab={optionsKey}>
+        {entries(options).map(([name, { component }]) => (
+          <TabPane key={name} tabId={name}>
+            <Card><CardBody>{component}</CardBody></Card>
+          </TabPane>
+        ))}
+      </TabContent>
+    </Fragment>
   )
 }
 

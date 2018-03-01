@@ -6,7 +6,7 @@ import { Options } from '.'
 test('Options', () => {
   const setOptionsKey = jest.fn()
   const wrapper = shallow(<Options optionsKey="generic" setOptionsKey={setOptionsKey} />)
-  wrapper.find('Uncontrolled(Tabs)').simulate('select')
+  wrapper.find('NavLink').first().simulate('click')
 
   expect(wrapper).toMatchSnapshot()
   expect(setOptionsKey).toHaveBeenCalled()
