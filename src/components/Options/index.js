@@ -1,6 +1,4 @@
-import book from '@fortawesome/fontawesome-free-solid/faBook'
-import checkSquare from '@fortawesome/fontawesome-free-solid/faCheckSquare'
-import questionCircle from '@fortawesome/fontawesome-free-solid/faQuestionCircle'
+import { faBook, faCheckSquare, faQuestionCircle } from '@fortawesome/fontawesome-free-solid'
 import Icon from '@fortawesome/react-fontawesome'
 import classnames from 'classnames'
 import startCase from 'lodash/startCase'
@@ -17,15 +15,15 @@ import { selector, setOptionsKey } from '../../reducers/optionsKey'
 const options = {
   generic: {
     component: <Generic />,
-    icon: <Icon icon={checkSquare} />
+    icon: <Icon icon={faCheckSquare} />
   },
   diceware: {
     component: <Diceware />,
-    icon: <Icon icon={book} />
+    icon: <Icon icon={faBook} />
   },
   custom: {
     component: <Custom />,
-    icon: <Icon icon={questionCircle} />
+    icon: <Icon icon={faQuestionCircle} />
   }
 }
 

@@ -1,5 +1,4 @@
-import list from '@fortawesome/fontawesome-free-solid/faList'
-import random from '@fortawesome/fontawesome-free-solid/faRandom'
+import { faList, faRandom } from '@fortawesome/fontawesome-free-solid'
 import Icon from '@fortawesome/react-fontawesome'
 import PropTypes from 'prop-types'
 import React from 'react'
@@ -15,12 +14,12 @@ export function PossiblePasswords({
     <Card>
       <CardBody>
         <FormGroup>
-          <Label><Icon icon={list} /> Entropy</Label>
+          <Label><Icon icon={faList} /> Entropy</Label>
           <FormText><Progress max={128} value={entropyBits}>{entropyBits.toFixed(2)} bits ({strength})</Progress></FormText>
         </FormGroup>
 
         <FormGroup>
-          <Label><Icon icon={random} /> PossiblePasswords</Label>
+          <Label><Icon icon={faRandom} /> PossiblePasswords</Label>
           <FormText>{approximate && '~ '} {possiblePasswords.toLocaleString()}</FormText>
         </FormGroup>
       </CardBody>

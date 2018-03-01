@@ -1,4 +1,4 @@
-import questionCircle from '@fortawesome/fontawesome-free-solid/faQuestionCircle'
+import { faQuestionCircle } from '@fortawesome/fontawesome-free-solid'
 import Icon from '@fortawesome/react-fontawesome'
 import PropTypes from 'prop-types'
 import React from 'react'
@@ -10,7 +10,7 @@ import { selector, setCustom } from '../../reducers/custom'
 export function Custom({ possibleItems, setCustom }) {
   return (
     <FormGroup>
-      <Label for="possibleItems"><Icon icon={questionCircle} /> Possible Items</Label>
+      <Label for="possibleItems"><Icon icon={faQuestionCircle} /> Possible Items</Label>
       <Input id="possibleItems" value={possibleItems} onChange={setCustom} type="number" min="0" required />
     </FormGroup>
   )
