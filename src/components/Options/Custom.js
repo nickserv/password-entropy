@@ -1,15 +1,16 @@
 import questionCircle from '@fortawesome/fontawesome-free-solid/faQuestionCircle'
+import Icon from '@fortawesome/react-fontawesome'
 import PropTypes from 'prop-types'
 import React from 'react'
 import { connect } from 'react-redux'
-import { Input } from 'reactstrap'
+import { FormGroup, Input, Label } from 'reactstrap'
 
 import { selector, setCustom } from '../../reducers/custom'
-import FormGroup from '../FormGroup'
 
 export function Custom({ possibleItems, setCustom }) {
   return (
-    <FormGroup label="Possible Items" icon={questionCircle}>
+    <FormGroup>
+      <Label for="possibleItems"><Icon icon={questionCircle} /> Possible Items</Label>
       <Input id="possibleItems" value={possibleItems} onChange={setCustom} type="number" min="0" required />
     </FormGroup>
   )

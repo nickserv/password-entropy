@@ -5,9 +5,8 @@ import Icon from '@fortawesome/react-fontawesome'
 import PropTypes from 'prop-types'
 import React from 'react'
 import { connect } from 'react-redux'
-import { Container, Form, Input } from 'reactstrap'
+import { Container, Form, FormGroup, Input, Label } from 'reactstrap'
 
-import FormGroup from './FormGroup'
 import { selector, setLength } from '../reducers/length'
 import Options from './Options'
 import PossiblePasswords from './PossiblePasswords'
@@ -19,11 +18,13 @@ export function PasswordEntropy({ length, setLength }) {
       <p className="text-muted">A simple entropy calculator for evaluating password security.</p>
 
       <Form>
-        <FormGroup label="Results" icon={infoCircle}>
+        <FormGroup>
+          <Label><Icon icon={infoCircle} /> Results</Label>
           <PossiblePasswords />
         </FormGroup>
 
-        <FormGroup label="Length" icon={arrowsAltH}>
+        <FormGroup>
+          <Label for="length"><Icon icon={arrowsAltH} /> Length</Label>
           <Input id="length" value={length} onChange={setLength} type="number" min="0" required />
         </FormGroup>
 

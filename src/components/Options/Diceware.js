@@ -1,13 +1,14 @@
 import questionCircle from '@fortawesome/fontawesome-free-solid/faQuestionCircle'
+import Icon from '@fortawesome/react-fontawesome'
 import React from 'react'
-import { FormText } from 'reactstrap'
+import { FormGroup, FormText, Label } from 'reactstrap'
 
-import FormGroup from '../FormGroup'
 import { dicewareWords } from '../../reducers/possibleItemsSelector'
 
 export default function Diceware() {
   return (
-    <FormGroup label="Possible Items" icon={questionCircle}>
+    <FormGroup>
+      <Label><Icon icon={questionCircle} /> Possible Items</Label>
       <FormText>{dicewareWords}</FormText>
     </FormGroup>
   )
