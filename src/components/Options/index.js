@@ -1,6 +1,5 @@
 import { faBook, faCheckSquare, faQuestionCircle } from '@fortawesome/fontawesome-free-solid'
 import Icon from '@fortawesome/react-fontawesome'
-import classnames from 'classnames'
 import startCase from 'lodash/startCase'
 import PropTypes from 'prop-types'
 import React, { Fragment } from 'react'
@@ -33,7 +32,7 @@ export function Options({ optionsKey, setOptionsKey }) {
       <Nav tabs>
         {Object.entries(options).map(([name, { icon }]) => (
           <NavItem key={name}>
-            <NavLink className={classnames({ active: optionsKey === name })} href="#" onClick={setOptionsKey.bind(null, name)}>
+            <NavLink active={optionsKey === name} href="#" onClick={setOptionsKey.bind(null, name)}>
               {icon} {startCase(name)}
             </NavLink>
           </NavItem>
