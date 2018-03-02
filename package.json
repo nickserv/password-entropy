@@ -1,45 +1,40 @@
 {
   "private": true,
   "dependencies": {
-    "bootstrap": "^3.3.7",
-    "ramda": "^0.24.1",
-    "react": "^15.6.1",
-    "react-bootstrap": "^0.31.2",
-    "react-dom": "^15.6.1",
-    "react-fa": "^4.2.0",
-    "react-redux": "^5.0.6",
-    "react-scripts": "1.0.11",
+    "@fortawesome/fontawesome": "^1.1.4",
+    "@fortawesome/fontawesome-free-solid": "^5.0.7",
+    "@fortawesome/react-fontawesome": "^0.0.17",
+    "bootstrap": "^4.0.0",
+    "lodash": "^4.17.5",
+    "prop-types": "^15.6.1",
+    "ramda": "^0.25.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-redux": "^5.0.7",
+    "react-scripts": "^1.1.1",
+    "reactstrap": "5.0.0-beta",
     "redux": "^3.7.2",
     "redux-devtools-extension": "^2.13.2"
   },
   "devDependencies": {
-    "enzyme": "^2.9.1",
-    "jest-enzyme": "^3.8.0",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "jest-enzyme": "^4.1.1",
     "npm-run-all": "^4.0.2",
     "prettier": "^1.5.3",
-    "react-test-renderer": "^15.6.1"
+    "react-test-renderer": "^16.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "prettier": "prettier --write --no-semi --single-quote '!(build|coverage|package)**/*.{css,js,json}'",
-    "eslint": "eslint .",
-    "jest": "react-scripts test",
-    "test": "npm-run-all prettier eslint 'jest -- {@}'",
+    "jest": "react-scripts test --coverage",
+    "test": "npm-run-all prettier jest",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": "react-app",
-    "rules": {
-      "react/default-props-match-prop-types": 2,
-      "react/forbid-prop-types": 2,
-      "react/prop-types": 2
-    }
+    "extends": "react-app"
   },
-  "eslintIgnore": [
-    "build",
-    "coverage"
-  ],
   "homepage": "http://nickmccurdy.com/password-entropy",
   "jest": {
     "collectCoverageFrom": [

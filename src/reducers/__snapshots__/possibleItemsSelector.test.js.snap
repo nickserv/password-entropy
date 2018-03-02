@@ -1,0 +1,92 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`selector custom 1`] = `
+Object {
+  "approximate": false,
+  "entropyBits": 0,
+  "entropyTip": Object {
+    "minimum": 0,
+    "strength": "Very Weak",
+    "style": "danger",
+  },
+  "possiblePasswords": 0,
+}
+`;
+
+exports[`selector custom with invalid possibleItems 1`] = `
+Object {
+  "approximate": false,
+  "entropyBits": 0,
+  "entropyTip": Object {
+    "minimum": 0,
+    "strength": "Very Weak",
+    "style": "danger",
+  },
+  "possiblePasswords": 0,
+}
+`;
+
+exports[`selector custom with strong possiblePasswords 1`] = `
+Object {
+  "approximate": true,
+  "entropyBits": 64,
+  "entropyTip": Object {
+    "minimum": 64,
+    "strength": "Strong",
+    "style": "info",
+  },
+  "possiblePasswords": 18446744073709552000,
+}
+`;
+
+exports[`selector custom with very strong possiblePasswords 1`] = `
+Object {
+  "approximate": true,
+  "entropyBits": 128,
+  "entropyTip": Object {
+    "minimum": 128,
+    "strength": "Very Strong",
+    "style": "success",
+  },
+  "possiblePasswords": 3.402823669209385e+38,
+}
+`;
+
+exports[`selector custom with weak possiblePasswords 1`] = `
+Object {
+  "approximate": false,
+  "entropyBits": 32,
+  "entropyTip": Object {
+    "minimum": 32,
+    "strength": "Weak",
+    "style": "warning",
+  },
+  "possiblePasswords": 4294967296,
+}
+`;
+
+exports[`selector diceware 1`] = `
+Object {
+  "approximate": true,
+  "entropyBits": 155.09775004326937,
+  "entropyTip": Object {
+    "minimum": 128,
+    "strength": "Very Strong",
+    "style": "success",
+  },
+  "possiblePasswords": 4.887367798068926e+46,
+}
+`;
+
+exports[`selector generic 1`] = `
+Object {
+  "approximate": true,
+  "entropyBits": 73.55139620333959,
+  "entropyTip": Object {
+    "minimum": 64,
+    "strength": "Strong",
+    "style": "info",
+  },
+  "possiblePasswords": 1.3841287201e+22,
+}
+`;
