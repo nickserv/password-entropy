@@ -1,4 +1,4 @@
-import startCase from 'lodash/startCase'
+import { startCase } from 'lodash'
 import PropTypes from 'prop-types'
 import { always, map } from 'ramda'
 import React, { Fragment } from 'react'

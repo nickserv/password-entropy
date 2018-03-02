@@ -1,6 +1,6 @@
 import { faBook, faCheckSquare, faQuestionCircle } from '@fortawesome/fontawesome-free-solid'
 import Icon from '@fortawesome/react-fontawesome'
-import startCase from 'lodash/startCase'
+import { startCase } from 'lodash'
 import PropTypes from 'prop-types'
 import React, { Fragment } from 'react'
 import { connect } from 'react-redux'
