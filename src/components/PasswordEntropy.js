@@ -1,4 +1,8 @@
-import { faArrowsAltH, faInfoCircle, faLock } from '@fortawesome/fontawesome-free-solid'
+import {
+  faArrowsAltH,
+  faInfoCircle,
+  faLock
+} from '@fortawesome/fontawesome-free-solid'
 import Icon from '@fortawesome/react-fontawesome'
 import PropTypes from 'prop-types'
 import React from 'react'
@@ -12,18 +16,36 @@ import PossiblePasswords from './PossiblePasswords'
 export function PasswordEntropy({ length, setLength }) {
   return (
     <Container>
-      <h1 className="mt-3"><Icon icon={faLock} /> Password Entropy</h1>
-      <p className="text-muted">A simple entropy calculator for evaluating password security.</p>
+      <h1 className="mt-3">
+        <Icon icon={faLock} /> Password Entropy
+      </h1>
+
+      <p className="text-muted">
+        A simple entropy calculator for evaluating password security.
+      </p>
 
       <Form>
         <FormGroup>
-          <Label><Icon icon={faInfoCircle} /> Results</Label>
+          <Label>
+            <Icon icon={faInfoCircle} /> Results
+          </Label>
+
           <PossiblePasswords />
         </FormGroup>
 
         <FormGroup>
-          <Label for="length"><Icon icon={faArrowsAltH} /> Length</Label>
-          <Input id="length" value={length} onChange={setLength} type="number" min="0" required />
+          <Label for="length">
+            <Icon icon={faArrowsAltH} /> Length
+          </Label>
+
+          <Input
+            id="length"
+            value={length}
+            onChange={setLength}
+            type="number"
+            min="0"
+            required
+          />
         </FormGroup>
 
         <Options />

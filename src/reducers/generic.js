@@ -34,13 +34,7 @@ export default createReducer(
 )
 
 export function toggleGeneric({ target: { checked, name } }) {
-  return {
-    type: 'TOGGLE_GENERIC',
-    payload: {
-      checked,
-      name
-    }
-  }
+  return { type: 'TOGGLE_GENERIC', payload: { checked, name } }
 }
 
 export const selector = path(['options', 'generic'])

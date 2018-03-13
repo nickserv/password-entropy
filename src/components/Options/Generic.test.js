@@ -6,7 +6,9 @@ import { defaultToggles } from '../../reducers/generic'
 
 test('Generic', () => {
   const toggleGeneric = jest.fn()
-  const wrapper = shallow(<Generic toggleGeneric={toggleGeneric} {...defaultToggles} />)
+  const wrapper = shallow(
+    <Generic toggleGeneric={toggleGeneric} {...defaultToggles} />
+  )
   wrapper.find({ name: 'letters' }).simulate('change')
 
   expect(wrapper).toMatchSnapshot()

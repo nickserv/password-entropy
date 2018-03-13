@@ -7,9 +7,15 @@ test('createReducer', () => {
 })
 
 test('createReducer with callback', () => {
-  const reducer = createReducer('ACTION', 'extra ', (payload, state) => state + payload)
+  const reducer = createReducer(
+    'ACTION',
+    'extra ',
+    (payload, state) => state + payload
+  )
   expect(reducer(undefined, {})).toBe('extra ')
-  expect(reducer(undefined, { type: 'ACTION', payload: true })).toBe('extra true')
+  expect(reducer(undefined, { type: 'ACTION', payload: true })).toBe(
+    'extra true'
+  )
 })
 
 test('createReducer with number', () => {

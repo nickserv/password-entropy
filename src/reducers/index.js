@@ -7,9 +7,6 @@ import optionsKey from './optionsKey'
 
 export default combineReducers({
   length,
-  options: combineReducers({
-    custom,
-    generic
-  }),
+  options: combineReducers({ custom, generic }),
   optionsKey
 })

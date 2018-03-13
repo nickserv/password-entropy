@@ -8,7 +8,10 @@ import { dicewareWords } from '../../reducers/possibleItemsSelector'
 export default function Diceware() {
   return (
     <FormGroup>
-      <Label><Icon icon={faQuestionCircle} /> Possible Items</Label>
+      <Label>
+        <Icon icon={faQuestionCircle} /> Possible Items
+      </Label>
+
       <FormText>{dicewareWords}</FormText>
     </FormGroup>
   )

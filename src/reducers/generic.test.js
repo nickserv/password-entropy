@@ -1,6 +1,11 @@
 import { createStore } from 'redux'
 
-import { defaultToggles, selector, toggleGeneric, toggleGenericCallback } from './generic'
+import {
+  defaultToggles,
+  selector,
+  toggleGeneric,
+  toggleGenericCallback
+} from './generic'
 import reducers from '.'
 
 test('toggleGeneric', () => {
@@ -12,7 +17,9 @@ test('toggleGeneric', () => {
 })
 
 test('toggleGenericCallback', () => {
-  expect(toggleGenericCallback({ name: 'letters', checked: false }, defaultToggles)).toEqual({
+  expect(
+    toggleGenericCallback({ name: 'letters', checked: false }, defaultToggles)
+  ).toEqual({
     capitalLetters: true,
     letters: false,
     numbers: true,

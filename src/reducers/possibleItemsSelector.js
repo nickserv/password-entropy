@@ -39,7 +39,8 @@ const possibleItems = {
 }
 
 export default function possibleItemsSelector({ length, options, optionsKey }) {
-  const possiblePasswords = possibleItems[optionsKey](options[optionsKey]) ** length
+  const possiblePasswords =
+    possibleItems[optionsKey](options[optionsKey]) ** length
   const entropyBits = Math.max(0, Math.log2(possiblePasswords))
 
   return {

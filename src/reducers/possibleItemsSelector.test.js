@@ -6,10 +6,7 @@ import reducers from '.'
 
 describe('selector', () => {
   function mergedSelector(state = {}) {
-    return selector(mergeDeepRight(
-      createStore(reducers).getState(),
-      state
-    ))
+    return selector(mergeDeepRight(createStore(reducers).getState(), state))
   }
 
   test('generic', () => {
@@ -25,33 +22,38 @@ describe('selector', () => {
   })
 
   test('custom with invalid possibleItems', () => {
-    expect(mergedSelector({
-      options: { custom: 0 },
-      optionsKey: 'custom'
-    })).toMatchSnapshot()
+    expect(
+      mergedSelector({ options: { custom: 0 }, optionsKey: 'custom' })
+    ).toMatchSnapshot()
   })
 
   test('custom with weak possiblePasswords', () => {
-    expect(mergedSelector({
-      length: 32,
-      options: { custom: 2 },
-      optionsKey: 'custom'
-    })).toMatchSnapshot()
+    expect(
+      mergedSelector({
+        length: 32,
+        options: { custom: 2 },
+        optionsKey: 'custom'
+      })
+    ).toMatchSnapshot()
   })
 
   test('custom with strong possiblePasswords', () => {
-    expect(mergedSelector({
-      length: 64,
-      options: { custom: 2 },
-      optionsKey: 'custom'
-    })).toMatchSnapshot()
+    expect(
+      mergedSelector({
+        length: 64,
+        options: { custom: 2 },
+        optionsKey: 'custom'
+      })
+    ).toMatchSnapshot()
   })
 
   test('custom with very strong possiblePasswords', () => {
-    expect(mergedSelector({
-      length: 128,
-      options: { custom: 2 },
-      optionsKey: 'custom'
-    })).toMatchSnapshot()
+    expect(
+      mergedSelector({
+        length: 128,
+        options: { custom: 2 },
+        optionsKey: 'custom'
+      })
+    ).toMatchSnapshot()
   })
 })

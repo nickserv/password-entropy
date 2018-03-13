@@ -3,24 +3,46 @@ import Icon from '@fortawesome/react-fontawesome'
 import PropTypes from 'prop-types'
 import React from 'react'
 import { connect } from 'react-redux'
-import { Card, CardBody, FormGroup, FormText, Label, Progress } from 'reactstrap'
+import {
+  Card,
+  CardBody,
+  FormGroup,
+  FormText,
+  Label,
+  Progress
+} from 'reactstrap'
 
 import possibleItemsSelector from '../reducers/possibleItemsSelector'
 
 export function PossiblePasswords({
-  possiblePasswords, approximate, entropyBits, entropyTip: { strength, style }
+  possiblePasswords,
+  approximate,
+  entropyBits,
+  entropyTip: { strength, style }
 }) {
   return (
     <Card>
       <CardBody>
         <FormGroup>
-          <Label><Icon icon={faList} /> Entropy</Label>
-          <FormText><Progress max={128} value={entropyBits}>{entropyBits.toFixed(2)} bits ({strength})</Progress></FormText>
+          <Label>
+            <Icon icon={faList} /> Entropy
+          </Label>
+
+          <FormText>
+            <Progress max={128} value={entropyBits}>
+              {entropyBits.toFixed(2)} bits ({strength})
+            </Progress>
+          </FormText>
         </FormGroup>
 
         <FormGroup>
-          <Label><Icon icon={faRandom} /> PossiblePasswords</Label>
-          <FormText>{approximate && '~ '} {possiblePasswords.toLocaleString()}</FormText>
+          <Label>
+            <Icon icon={faRandom} /> PossiblePasswords
+          </Label>
+
+          <FormText>
+            {approximate && '~ '} {possiblePasswords.toLocaleString()}
+          </FormText>
         </FormGroup>
       </CardBody>
     </Card>

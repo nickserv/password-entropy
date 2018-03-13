@@ -13,7 +13,12 @@ export function Generic(props) {
       {Object.entries(toggles).map(([name, { example }]) => (
         <FormGroup key={name} check>
           <Label check>
-            <Input type="checkbox" name={name} checked={props[name]} onChange={props.toggleGeneric} />{' '}
+            <Input
+              type="checkbox"
+              name={name}
+              checked={props[name]}
+              onChange={props.toggleGeneric}
+            />
             {startCase(name)} <small>({example})</small>
           </Label>
         </FormGroup>
