@@ -26,7 +26,6 @@ exports[`Generic 1`] = `
         onChange={[Function]}
         type="checkbox"
       />
-       
       Letters
        
       <small>
@@ -60,7 +59,6 @@ exports[`Generic 1`] = `
         onChange={[Function]}
         type="checkbox"
       />
-       
       Capital Letters
        
       <small>
@@ -94,7 +92,6 @@ exports[`Generic 1`] = `
         onChange={[Function]}
         type="checkbox"
       />
-       
       Numbers
        
       <small>
@@ -128,7 +125,6 @@ exports[`Generic 1`] = `
         onChange={[Function]}
         type="checkbox"
       />
-       
       Symbols
        
       <small>
