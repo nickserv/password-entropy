@@ -27,7 +27,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "prettier": "prettier --write '!(build|coverage|package)**/*.{css,js,json}'",
+    "prettier": "prettier --write '!(build|coverage|package)**/*.{js,json,md}'",
     "jest": "react-scripts test --coverage",
     "test": "npm-run-all prettier jest",
     "eject": "react-scripts eject"
