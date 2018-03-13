@@ -27,7 +27,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "prettier": "prettier --write --no-semi --single-quote '!(build|coverage|package)**/*.{css,js,json}'",
+    "prettier": "prettier --write '!(build|coverage|package)**/*.{css,js,json}'",
     "jest": "react-scripts test --coverage",
     "test": "npm-run-all prettier jest",
     "eject": "react-scripts eject"
@@ -43,5 +43,9 @@
       "!**/coverage/**",
       "!**/build/**"
     ]
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true
   }
 }
