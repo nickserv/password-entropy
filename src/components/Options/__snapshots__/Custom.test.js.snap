@@ -5,7 +5,6 @@ exports[`Custom 1`] = `
   tag="div"
 >
   <Label
-    for="possibleItems"
     tag="label"
     widths={
       Array [
@@ -47,14 +46,13 @@ exports[`Custom 1`] = `
       transform={null}
     />
      Possible Items
+    <Input
+      min="0"
+      onChange={[Function]}
+      required={true}
+      type="number"
+      value={1}
+    />
   </Label>
-  <Input
-    id="possibleItems"
-    min="0"
-    onChange={[Function]}
-    required={true}
-    type="number"
-    value={1}
-  />
 </FormGroup>
 `;

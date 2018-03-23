@@ -34,18 +34,16 @@ export function PasswordEntropy({ length, setLength }) {
         </FormGroup>
 
         <FormGroup>
-          <Label for="length">
+          <Label>
             <Icon icon={faArrowsAltH} /> Length
+            <Input
+              value={length}
+              onChange={setLength}
+              type="number"
+              min="0"
+              required
+            />
           </Label>
-
-          <Input
-            id="length"
-            value={length}
-            onChange={setLength}
-            type="number"
-            min="0"
-            required
-          />
         </FormGroup>
 
         <Options />

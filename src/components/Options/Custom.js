@@ -10,18 +10,16 @@ import { selector, setCustom } from '../../reducers/custom'
 export function Custom({ possibleItems, setCustom }) {
   return (
     <FormGroup>
-      <Label for="possibleItems">
+      <Label>
         <Icon icon={faQuestionCircle} /> Possible Items
+        <Input
+          value={possibleItems}
+          onChange={setCustom}
+          type="number"
+          min="0"
+          required
+        />
       </Label>
-
-      <Input
-        id="possibleItems"
-        value={possibleItems}
-        onChange={setCustom}
-        type="number"
-        min="0"
-        required
-      />
     </FormGroup>
   )
 }
