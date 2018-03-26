@@ -50,7 +50,7 @@ export default function PossiblePasswordsContainer({
   const possiblePasswords =
     possibleItems[optionsKey](options[optionsKey]) ** length
   const approximate = possiblePasswords > Number.MAX_SAFE_INTEGER
-  const entropyBits = Math.log2(possiblePasswords)
+  const entropyBits = Math.max(0, Math.log2(possiblePasswords))
   const entropyTip = findLast(tip => entropyBits >= tip.minimum, entropyTips)
 
   return (

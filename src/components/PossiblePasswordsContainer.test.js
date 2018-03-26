@@ -1,23 +1,26 @@
 import { shallow } from 'enzyme'
+import { mergeDeepRight } from 'ramda'
 import React from 'react'
 
 import PossiblePasswordsContainer from './PossiblePasswordsContainer'
 
-const getWrapper = (optionsKey = 'generic', length = 12) =>
+const initialState = {
+  length: 12,
+  options: {
+    custom: 0,
+    generic: {
+      letters: true,
+      capitalLetters: true,
+      numbers: true,
+      symbols: true
+    }
+  },
+  optionsKey: 'generic'
+}
+
+const getWrapper = (state = {}) =>
   shallow(
-    <PossiblePasswordsContainer
-      length={length}
-      options={{
-        custom: 2,
-        generic: {
-          letters: true,
-          capitalLetters: true,
-          numbers: true,
-          symbols: true
-        }
-      }}
-      optionsKey={optionsKey}
-    />
+    <PossiblePasswordsContainer {...mergeDeepRight(initialState, state)} />
   )
 
 describe('PossiblePasswordsContainer', () => {
@@ -26,26 +29,46 @@ describe('PossiblePasswordsContainer', () => {
   })
 
   test('renders diceware', () => {
-    expect(getWrapper('diceware')).toMatchSnapshot()
+    expect(getWrapper({ optionsKey: 'diceware' })).toMatchSnapshot()
   })
 
   test('renders custom', () => {
-    expect(getWrapper('custom')).toMatchSnapshot()
+    expect(getWrapper({ optionsKey: 'custom' })).toMatchSnapshot()
   })
 
-  test('renders custom with invalid possiblePasswords', () => {
-    expect(getWrapper('custom', 0)).toMatchSnapshot()
+  test('renders custom when invalid', () => {
+    expect(
+      getWrapper({ options: { custom: 0 }, optionsKey: 'custom' })
+    ).toMatchSnapshot()
   })
 
   test('renders custom with weak possiblePasswords', () => {
-    expect(getWrapper('custom', 32)).toMatchSnapshot()
+    expect(
+      getWrapper({
+        length: 32,
+        options: { custom: 2 },
+        optionsKey: 'custom'
+      })
+    ).toMatchSnapshot()
   })
 
   test('renders custom with strong possiblePasswords', () => {
-    expect(getWrapper('custom', 64)).toMatchSnapshot()
+    expect(
+      getWrapper({
+        length: 64,
+        options: { custom: 2 },
+        optionsKey: 'custom'
+      })
+    ).toMatchSnapshot()
   })
 
   test('renders custom with very strong possiblePasswords', () => {
-    expect(getWrapper('custom', 128)).toMatchSnapshot()
+    expect(
+      getWrapper({
+        length: 128,
+        options: { custom: 2 },
+        optionsKey: 'custom'
+      })
+    ).toMatchSnapshot()
   })
 })
