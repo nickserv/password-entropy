@@ -1,13 +1,13 @@
 import { shallow } from 'enzyme'
 import React from 'react'
 
-import { Custom } from './Custom'
+import Custom from './Custom'
 
 test('Custom', () => {
-  const setCustom = jest.fn()
-  const wrapper = shallow(<Custom possibleItems={1} setCustom={setCustom} />)
+  const handleCustom = jest.fn()
+  const wrapper = shallow(<Custom custom={1} onCustom={handleCustom} />)
   wrapper.find('Input').simulate('change')
 
   expect(wrapper).toMatchSnapshot()
-  expect(setCustom).toHaveBeenCalled()
+  expect(handleCustom).toHaveBeenCalled()
 })

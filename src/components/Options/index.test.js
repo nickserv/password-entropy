@@ -1,17 +1,31 @@
 import { shallow } from 'enzyme'
 import React from 'react'
 
-import { Options } from '.'
+import Options from '.'
 
 test('Options', () => {
-  const setOptionsKey = jest.fn()
+  const handleOptionsKey = jest.fn()
   const wrapper = shallow(
-    <Options optionsKey="generic" setOptionsKey={setOptionsKey} />
+    <Options
+      onCustom={() => {}}
+      onGeneric={() => {}}
+      onOptionsKey={handleOptionsKey}
+      options={{
+        custom: 0,
+        generic: {
+          letters: true,
+          capitalLetters: true,
+          numbers: true,
+          symbols: true
+        }
+      }}
+      optionsKey="generic"
+    />
   )
   wrapper
     .find('NavLink')
     .first()
     .simulate('click')
   expect(wrapper).toMatchSnapshot()
-  expect(setOptionsKey).toHaveBeenCalled()
+  expect(handleOptionsKey).toHaveBeenCalled()
 })

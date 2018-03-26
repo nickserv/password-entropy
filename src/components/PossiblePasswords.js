@@ -2,7 +2,6 @@ import { faList, faRandom } from '@fortawesome/fontawesome-free-solid'
 import Icon from '@fortawesome/react-fontawesome'
 import PropTypes from 'prop-types'
 import React from 'react'
-import { connect } from 'react-redux'
 import {
   Card,
   CardBody,
@@ -12,9 +11,7 @@ import {
   Progress
 } from 'reactstrap'
 
-import possibleItemsSelector from '../reducers/possibleItemsSelector'
-
-export function PossiblePasswords({
+export default function PossiblePasswords({
   possiblePasswords,
   approximate,
   entropyBits,
@@ -59,5 +56,3 @@ PossiblePasswords.propTypes = {
   }).isRequired,
   possiblePasswords: PropTypes.number.isRequired
 }
-
-export default connect(possibleItemsSelector)(PossiblePasswords)

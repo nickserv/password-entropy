@@ -3,7 +3,7 @@ import Icon from '@fortawesome/react-fontawesome'
 import React from 'react'
 import { FormGroup, FormText, Label } from 'reactstrap'
 
-import { dicewareWords } from '../../reducers/possibleItemsSelector'
+import { dicewareWords } from '../PossiblePasswordsContainer'
 
 export default function Diceware() {
   return (

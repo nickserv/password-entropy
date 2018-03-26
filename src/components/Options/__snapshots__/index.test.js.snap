@@ -142,7 +142,6 @@ exports[`Options 1`] = `
     tag="div"
   >
     <TabPane
-      key="generic"
       tabId="generic"
       tag="div"
     >
@@ -152,12 +151,17 @@ exports[`Options 1`] = `
         <CardBody
           tag="div"
         >
-          <Connect(Generic) />
+          <Generic
+            capitalLetters={true}
+            letters={true}
+            numbers={true}
+            onGeneric={[Function]}
+            symbols={true}
+          />
         </CardBody>
       </Card>
     </TabPane>
     <TabPane
-      key="diceware"
       tabId="diceware"
       tag="div"
     >
@@ -172,7 +176,6 @@ exports[`Options 1`] = `
       </Card>
     </TabPane>
     <TabPane
-      key="custom"
       tabId="custom"
       tag="div"
     >
@@ -182,7 +185,10 @@ exports[`Options 1`] = `
         <CardBody
           tag="div"
         >
-          <Connect(Custom) />
+          <Custom
+            custom={0}
+            onCustom={[Function]}
+          />
         </CardBody>
       </Card>
     </TabPane>

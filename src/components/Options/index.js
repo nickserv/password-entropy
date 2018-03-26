@@ -7,7 +7,6 @@ import Icon from '@fortawesome/react-fontawesome'
 import { startCase } from 'lodash'
 import PropTypes from 'prop-types'
 import React, { Fragment } from 'react'
-import { connect } from 'react-redux'
 import {
   Card,
   CardBody,
@@ -21,33 +20,29 @@ import {
 import Custom from './Custom'
 import Diceware from './Diceware'
 import Generic from './Generic'
-import { selector, setOptionsKey } from '../../reducers/optionsKey'
 
-const options = {
-  generic: {
-    Component: Generic,
-    icon: faCheckSquare
-  },
-  diceware: {
-    Component: Diceware,
-    icon: faBook
-  },
-  custom: {
-    Component: Custom,
-    icon: faQuestionCircle
-  }
+const icons = {
+  generic: faCheckSquare,
+  diceware: faBook,
+  custom: faQuestionCircle
 }
 
-export function Options({ optionsKey, setOptionsKey }) {
+export default function Options({
+  onCustom,
+  onGeneric,
+  onOptionsKey,
+  options,
+  optionsKey
+}) {
   return (
     <Fragment>
       <Nav tabs>
-        {Object.entries(options).map(([name, { icon }]) => (
+        {Object.entries(icons).map(([name, icon]) => (
           <NavItem key={name}>
             <NavLink
               active={optionsKey === name}
               href="#"
-              onClick={setOptionsKey.bind(null, name)}
+              onClick={onOptionsKey.bind(null, name)}
             >
               <Icon icon={icon} /> {startCase(name)}
             </NavLink>
@@ -56,23 +51,46 @@ export function Options({ optionsKey, setOptionsKey }) {
       </Nav>
 
       <TabContent activeTab={optionsKey}>
-        {Object.entries(options).map(([name, { Component }]) => (
-          <TabPane key={name} tabId={name}>
-            <Card>
-              <CardBody>
-                <Component />
-              </CardBody>
-            </Card>
-          </TabPane>
-        ))}
+        <TabPane tabId="generic">
+          <Card>
+            <CardBody>
+              <Generic {...options.generic} onGeneric={onGeneric} />
+            </CardBody>
+          </Card>
+        </TabPane>
+
+        <TabPane tabId="diceware">
+          <Card>
+            <CardBody>
+              <Diceware />
+            </CardBody>
+          </Card>
+        </TabPane>
+
+        <TabPane tabId="custom">
+          <Card>
+            <CardBody>
+              <Custom custom={options.custom} onCustom={onCustom} />
+            </CardBody>
+          </Card>
+        </TabPane>
       </TabContent>
     </Fragment>
   )
 }
 
 Options.propTypes = {
-  optionsKey: PropTypes.string.isRequired,
-  setOptionsKey: PropTypes.func.isRequired
+  onCustom: PropTypes.func.isRequired,
+  onGeneric: PropTypes.func.isRequired,
+  onOptionsKey: PropTypes.func.isRequired,
+  options: PropTypes.shape({
+    custom: PropTypes.number.isRequired,
+    generic: PropTypes.shape({
+      letters: PropTypes.bool.isRequired,
+      capitalLetters: PropTypes.bool.isRequired,
+      numbers: PropTypes.bool.isRequired,
+      symbols: PropTypes.bool.isRequired
+    }).isRequired
+  }).isRequired,
+  optionsKey: PropTypes.string.isRequired
 }
-
-export default connect(selector, { setOptionsKey })(Options)

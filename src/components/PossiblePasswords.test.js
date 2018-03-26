@@ -1,7 +1,7 @@
 import { shallow } from 'enzyme'
 import React from 'react'
 
-import { PossiblePasswords } from './PossiblePasswords'
+import PossiblePasswords from './PossiblePasswords'
 
 describe('PossiblePasswords', () => {
   function getWrapper(approximate) {

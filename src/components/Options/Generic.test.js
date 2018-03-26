@@ -1,16 +1,21 @@
 import { shallow } from 'enzyme'
 import React from 'react'
 
-import { Generic } from './Generic'
-import { defaultToggles } from '../../reducers/generic'
+import Generic from './Generic'
 
 test('Generic', () => {
-  const toggleGeneric = jest.fn()
+  const handleGeneric = jest.fn()
   const wrapper = shallow(
-    <Generic toggleGeneric={toggleGeneric} {...defaultToggles} />
+    <Generic
+      capitalLetters={true}
+      letters={true}
+      numbers={true}
+      onGeneric={handleGeneric}
+      symbols={true}
+    />
   )
   wrapper.find({ name: 'letters' }).simulate('change')
 
   expect(wrapper).toMatchSnapshot()
-  expect(toggleGeneric).toHaveBeenCalled()
+  expect(handleGeneric).toHaveBeenCalled()
 })

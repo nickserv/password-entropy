@@ -1,23 +1,26 @@
 import { startCase } from 'lodash'
 import PropTypes from 'prop-types'
-import { always, map } from 'ramda'
 import React, { Fragment } from 'react'
-import { connect } from 'react-redux'
 import { Input, FormGroup, Label } from 'reactstrap'
 
-import { selector, toggleGeneric, toggles } from '../../reducers/generic'
+export const toggles = {
+  letters: 'a-z',
+  capitalLetters: 'A-Z',
+  numbers: '0-9',
+  symbols: '!@#$%^&*'
+}
 
-export function Generic(props) {
+export default function Generic(props) {
   return (
     <Fragment>
-      {Object.entries(toggles).map(([name, { example }]) => (
+      {Object.entries(toggles).map(([name, example]) => (
         <FormGroup key={name} check>
           <Label check>
             <Input
               type="checkbox"
               name={name}
               checked={props[name]}
-              onChange={props.toggleGeneric}
+              onChange={props.onGeneric}
             />
             {startCase(name)} <small>({example})</small>
           </Label>
@@ -28,8 +31,9 @@ export function Generic(props) {
 }
 
 Generic.propTypes = {
-  ...map(always(PropTypes.bool.isRequired), toggles),
-  toggleGeneric: PropTypes.func.isRequired
+  capitalLetters: PropTypes.bool.isRequired,
+  letters: PropTypes.bool.isRequired,
+  numbers: PropTypes.bool.isRequired,
+  onGeneric: PropTypes.func.isRequired,
+  symbols: PropTypes.bool.isRequired
 }
-
-export default connect(selector, { toggleGeneric })(Generic)
