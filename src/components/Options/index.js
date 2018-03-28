@@ -5,44 +5,56 @@ import Check from 'material-ui-icons/Check'
 import Edit from 'material-ui-icons/Edit'
 import PropTypes from 'prop-types'
 import React from 'react'
-import { connect } from 'react-redux'
 
 import Custom from './Custom'
 import Diceware from './Diceware'
 import Generic from './Generic'
-import { selector, setOptionsKey } from '../../reducers/optionsKey'
 
-const options = {
-  generic: {
-    component: <Generic />,
-    icon: <Check />
-  },
-  diceware: {
-    component: <Diceware />,
-    icon: <Book />
-  },
-  custom: {
-    component: <Custom />,
-    icon: <Edit />
-  }
+const icons = {
+  generic: <Check />,
+  diceware: <Book />,
+  custom: <Edit />
 }
 
-export function Options({ optionsKey, setOptionsKey }) {
+export default function Options({
+  onCustom,
+  onGeneric,
+  onOptionsKey,
+  options,
+  optionsKey
+}) {
   return (
     <Card>
-      <Tabs value={optionsKey} onChange={setOptionsKey}>
-        {Object.entries(options).map(([name, { icon }]) => (
+      <Tabs value={optionsKey} onChange={onOptionsKey}>
+        {Object.entries(icons).map(([name, icon]) => (
           <Tab key={name} icon={icon} label={name} value={name} />
         ))}
       </Tabs>
-      <CardContent>{options[optionsKey].component}</CardContent>
+      <CardContent>
+        {
+          {
+            generic: <Generic {...options.generic} onGeneric={onGeneric} />,
+            diceware: <Diceware />,
+            custom: <Custom custom={options.custom} onCustom={onCustom} />
+          }[optionsKey]
+        }
+      </CardContent>
     </Card>
   )
 }
 
 Options.propTypes = {
-  optionsKey: PropTypes.string.isRequired,
-  setOptionsKey: PropTypes.func.isRequired
+  onCustom: PropTypes.func.isRequired,
+  onGeneric: PropTypes.func.isRequired,
+  onOptionsKey: PropTypes.func.isRequired,
+  options: PropTypes.shape({
+    custom: PropTypes.number.isRequired,
+    generic: PropTypes.shape({
+      letters: PropTypes.bool.isRequired,
+      capitalLetters: PropTypes.bool.isRequired,
+      numbers: PropTypes.bool.isRequired,
+      symbols: PropTypes.bool.isRequired
+    }).isRequired
+  }).isRequired,
+  optionsKey: PropTypes.string.isRequired
 }
-
-export default connect(selector, { setOptionsKey })(Options)

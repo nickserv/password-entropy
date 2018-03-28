@@ -4,28 +4,37 @@ exports[`Options 1`] = `
 <Card
   raised={false}
 >
-  <withStyles(Tabs)
+  <WithStyles(Tabs)
     onChange={[Function]}
     value="generic"
   >
-    <withStyles(Tab)
+    <WithStyles(Tab)
       icon={<pure(Check) />}
+      key="generic"
       label="generic"
       value="generic"
     />
-    <withStyles(Tab)
+    <WithStyles(Tab)
       icon={<pure(Book) />}
+      key="diceware"
       label="diceware"
       value="diceware"
     />
-    <withStyles(Tab)
+    <WithStyles(Tab)
       icon={<pure(Edit) />}
+      key="custom"
       label="custom"
       value="custom"
     />
-  </withStyles(Tabs)>
-  <withStyles(CardContent)>
-    <Connect(Generic) />
-  </withStyles(CardContent)>
+  </WithStyles(Tabs)>
+  <WithStyles(CardContent)>
+    <Generic
+      capitalLetters={true}
+      letters={true}
+      numbers={true}
+      onGeneric={[Function]}
+      symbols={true}
+    />
+  </WithStyles(CardContent)>
 </Card>
 `;

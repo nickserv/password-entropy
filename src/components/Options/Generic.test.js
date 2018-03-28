@@ -1,11 +1,18 @@
+import { shallow } from 'enzyme'
 import React from 'react'
-import Renderer from 'react-test-renderer/shallow'
 
-import { Generic } from './Generic'
-import { defaultToggles } from '../../reducers/generic'
+import Generic from './Generic'
 
 test('Generic', () => {
-  expect(
-    new Renderer().render(<Generic toggleGeneric={() => {}} {...defaultToggles} />)
-  ).toMatchSnapshot()
+  const wrapper = shallow(
+    <Generic
+      capitalLetters={true}
+      letters={true}
+      numbers={true}
+      onGeneric={() => {}}
+      symbols={true}
+    />
+  )
+
+  expect(wrapper).toMatchSnapshot()
 })

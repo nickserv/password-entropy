@@ -1,8 +1,28 @@
+import { shallow } from 'enzyme'
 import React from 'react'
-import Renderer from 'react-test-renderer/shallow'
 
-import { Options } from '.'
+import Options from '.'
 
 test('Options', () => {
-  expect(new Renderer().render(<Options optionsKey="generic" setOptionsKey={() => {}} />)).toMatchSnapshot()
+  const handleOptionsKey = jest.fn()
+  const wrapper = shallow(
+    <Options
+      onCustom={() => {}}
+      onGeneric={() => {}}
+      onOptionsKey={handleOptionsKey}
+      options={{
+        custom: 0,
+        generic: {
+          letters: true,
+          capitalLetters: true,
+          numbers: true,
+          symbols: true
+        }
+      }}
+      optionsKey="generic"
+    />
+  )
+  wrapper.find('WithStyles(Tabs)').simulate('change')
+  expect(wrapper).toMatchSnapshot()
+  expect(handleOptionsKey).toHaveBeenCalled()
 })

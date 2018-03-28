@@ -1,18 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Generic 1`] = `
-<withStyles(FormGroup)>
-  <withStyles(FormControlLabel)
+<WithStyles(FormGroup)>
+  <WithStyles(FormControlLabel)
     control={
-      <withStyles(Checkbox)
+      <WithStyles(Checkbox)
         checked={true}
-        name="Letters"
+        name="letters"
         onChange={[Function]}
       />
     }
+    key="letters"
     label={
       <span>
-        Letters
+        letters
          
         <small>
           (
@@ -22,17 +23,18 @@ exports[`Generic 1`] = `
       </span>
     }
   />
-  <withStyles(FormControlLabel)
+  <WithStyles(FormControlLabel)
     control={
-      <withStyles(Checkbox)
+      <WithStyles(Checkbox)
         checked={true}
-        name="Capital Letters"
+        name="capitalLetters"
         onChange={[Function]}
       />
     }
+    key="capitalLetters"
     label={
       <span>
-        Capital Letters
+        capitalLetters
          
         <small>
           (
@@ -42,17 +44,18 @@ exports[`Generic 1`] = `
       </span>
     }
   />
-  <withStyles(FormControlLabel)
+  <WithStyles(FormControlLabel)
     control={
-      <withStyles(Checkbox)
+      <WithStyles(Checkbox)
         checked={true}
-        name="Numbers"
+        name="numbers"
         onChange={[Function]}
       />
     }
+    key="numbers"
     label={
       <span>
-        Numbers
+        numbers
          
         <small>
           (
@@ -62,17 +65,18 @@ exports[`Generic 1`] = `
       </span>
     }
   />
-  <withStyles(FormControlLabel)
+  <WithStyles(FormControlLabel)
     control={
-      <withStyles(Checkbox)
+      <WithStyles(Checkbox)
         checked={true}
-        name="Symbols"
+        name="symbols"
         onChange={[Function]}
       />
     }
+    key="symbols"
     label={
       <span>
-        Symbols
+        symbols
          
         <small>
           (
@@ -82,5 +86,5 @@ exports[`Generic 1`] = `
       </span>
     }
   />
-</withStyles(FormGroup)>
+</WithStyles(FormGroup)>
 `;
