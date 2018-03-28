@@ -1,7 +1,14 @@
-import React from 'react'
+import CssBaseline from 'material-ui/CssBaseline'
+import React, { Fragment } from 'react'
 import { render } from 'react-dom'
 import 'typeface-roboto'
 
 import PasswordEntropyContainer from './components/PasswordEntropyContainer'
 
-render(<PasswordEntropyContainer />, document.getElementById('root'))
+render(
+  <Fragment>
+    <CssBaseline />
+    <PasswordEntropyContainer />
+  </Fragment>,
+  document.getElementById('root')
+)
