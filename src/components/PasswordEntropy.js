@@ -3,7 +3,7 @@ import CompareArrows from 'material-ui-icons/CompareArrows'
 import Info from 'material-ui-icons/Info'
 import Lock from 'material-ui-icons/Lock'
 import PropTypes from 'prop-types'
-import React from 'react'
+import React, { Fragment } from 'react'
 
 import Options from './Options'
 import PossiblePasswordsContainer from './PossiblePasswordsContainer'
@@ -37,9 +37,9 @@ export default function PasswordEntropy({
 
         <TextField
           label={
-            <div>
+            <Fragment>
               <CompareArrows /> Length
-            </div>
+            </Fragment>
           }
           value={length}
           onChange={onLength}

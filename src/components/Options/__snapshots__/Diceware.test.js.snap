@@ -4,10 +4,10 @@ exports[`Diceware 1`] = `
 <TextField
   disabled={true}
   label={
-    <div>
+    <Unknown>
       <pure(Edit) />
        Possible Items
-    </div>
+    </Unknown>
   }
   required={false}
   select={false}

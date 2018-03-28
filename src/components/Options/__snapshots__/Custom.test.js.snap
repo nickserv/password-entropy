@@ -3,10 +3,10 @@
 exports[`Custom 1`] = `
 <TextField
   label={
-    <div>
+    <Unknown>
       <pure(Edit) />
        Possible Items
-    </div>
+    </Unknown>
   }
   min="0"
   onChange={[Function]}
