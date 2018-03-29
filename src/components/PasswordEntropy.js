@@ -67,12 +67,12 @@ PasswordEntropy.propTypes = {
   onLength: PropTypes.func.isRequired,
   onOptionsKey: PropTypes.func.isRequired,
   options: PropTypes.shape({
-    custom: PropTypes.number.isRequired,
-    generic: PropTypes.shape({
-      letters: PropTypes.bool.isRequired,
-      capitalLetters: PropTypes.bool.isRequired,
-      numbers: PropTypes.bool.isRequired,
-      symbols: PropTypes.bool.isRequired
+    Custom: PropTypes.number.isRequired,
+    Generic: PropTypes.shape({
+      Letters: PropTypes.bool.isRequired,
+      'Capital Letters': PropTypes.bool.isRequired,
+      Numbers: PropTypes.bool.isRequired,
+      Symbols: PropTypes.bool.isRequired
     }).isRequired
   }).isRequired,
   optionsKey: PropTypes.string.isRequired

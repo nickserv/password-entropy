@@ -11,9 +11,9 @@ import Diceware from './Diceware'
 import Generic from './Generic'
 
 const icons = {
-  generic: <Check />,
-  diceware: <Book />,
-  custom: <Edit />
+  Generic: <Check />,
+  Diceware: <Book />,
+  Custom: <Edit />
 }
 
 export default function Options({
@@ -33,9 +33,11 @@ export default function Options({
       <CardContent>
         {
           {
-            generic: <Generic {...options.generic} onGeneric={onGeneric} />,
-            diceware: <Diceware />,
-            custom: <Custom custom={options.custom} onCustom={onCustom} />
+            Generic: (
+              <Generic onGeneric={onGeneric} toggles={options.Generic} />
+            ),
+            Diceware: <Diceware />,
+            Custom: <Custom custom={options.Custom} onCustom={onCustom} />
           }[optionsKey]
         }
       </CardContent>
@@ -48,12 +50,12 @@ Options.propTypes = {
   onGeneric: PropTypes.func.isRequired,
   onOptionsKey: PropTypes.func.isRequired,
   options: PropTypes.shape({
-    custom: PropTypes.number.isRequired,
-    generic: PropTypes.shape({
-      letters: PropTypes.bool.isRequired,
-      capitalLetters: PropTypes.bool.isRequired,
-      numbers: PropTypes.bool.isRequired,
-      symbols: PropTypes.bool.isRequired
+    Custom: PropTypes.number.isRequired,
+    Generic: PropTypes.shape({
+      Letters: PropTypes.bool.isRequired,
+      'Capital Letters': PropTypes.bool.isRequired,
+      Numbers: PropTypes.bool.isRequired,
+      Symbols: PropTypes.bool.isRequired
     }).isRequired
   }).isRequired,
   optionsKey: PropTypes.string.isRequired

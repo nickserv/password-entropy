@@ -6,34 +6,38 @@ exports[`Options 1`] = `
 >
   <WithStyles(Tabs)
     onChange={[Function]}
-    value="generic"
+    value="Generic"
   >
     <WithStyles(Tab)
       icon={<pure(Check) />}
-      key="generic"
-      label="generic"
-      value="generic"
+      key="Generic"
+      label="Generic"
+      value="Generic"
     />
     <WithStyles(Tab)
       icon={<pure(Book) />}
-      key="diceware"
-      label="diceware"
-      value="diceware"
+      key="Diceware"
+      label="Diceware"
+      value="Diceware"
     />
     <WithStyles(Tab)
       icon={<pure(Edit) />}
-      key="custom"
-      label="custom"
-      value="custom"
+      key="Custom"
+      label="Custom"
+      value="Custom"
     />
   </WithStyles(Tabs)>
   <WithStyles(CardContent)>
     <Generic
-      capitalLetters={true}
-      letters={true}
-      numbers={true}
       onGeneric={[Function]}
-      symbols={true}
+      toggles={
+        Object {
+          "Capital Letters": true,
+          "Letters": true,
+          "Numbers": true,
+          "Symbols": true,
+        }
+      }
     />
   </WithStyles(CardContent)>
 </Card>

@@ -3,24 +3,24 @@ import { FormGroup, FormControlLabel } from 'material-ui/Form'
 import PropTypes from 'prop-types'
 import React from 'react'
 
-export const toggles = {
-  letters: 'a-z',
-  capitalLetters: 'A-Z',
-  numbers: '0-9',
-  symbols: '!@#$%^&*'
+export const examples = {
+  Letters: 'a-z',
+  'Capital Letters': 'A-Z',
+  Numbers: '0-9',
+  Symbols: '!@#$%^&*'
 }
 
-export default function Generic(props) {
+export default function Generic({ onGeneric, toggles }) {
   return (
     <FormGroup>
-      {Object.entries(toggles).map(([name, example]) => (
+      {Object.entries(examples).map(([name, example]) => (
         <FormControlLabel
           key={name}
           control={
             <Checkbox
               name={name}
-              checked={props[name]}
-              onChange={props.onGeneric}
+              checked={toggles[name]}
+              onChange={onGeneric}
             />
           }
           label={
@@ -35,9 +35,11 @@ export default function Generic(props) {
 }
 
 Generic.propTypes = {
-  capitalLetters: PropTypes.bool.isRequired,
-  letters: PropTypes.bool.isRequired,
-  numbers: PropTypes.bool.isRequired,
   onGeneric: PropTypes.func.isRequired,
-  symbols: PropTypes.bool.isRequired
+  toggles: PropTypes.shape({
+    'Capital Letters': PropTypes.bool.isRequired,
+    Letters: PropTypes.bool.isRequired,
+    Numbers: PropTypes.bool.isRequired,
+    Symbols: PropTypes.bool.isRequired
+  }).isRequired
 }

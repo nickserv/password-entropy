@@ -11,15 +11,15 @@ test('Options', () => {
       onGeneric={() => {}}
       onOptionsKey={handleOptionsKey}
       options={{
-        custom: 0,
-        generic: {
-          letters: true,
-          capitalLetters: true,
-          numbers: true,
-          symbols: true
+        Custom: 0,
+        Generic: {
+          Letters: true,
+          'Capital Letters': true,
+          Numbers: true,
+          Symbols: true
         }
       }}
-      optionsKey="generic"
+      optionsKey="Generic"
     />
   )
   wrapper.find('WithStyles(Tabs)').simulate('change')

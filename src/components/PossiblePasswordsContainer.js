@@ -1,6 +1,6 @@
 import { blue, green, red, yellow } from 'material-ui/colors'
 import PropTypes from 'prop-types'
-import { always, filter, findLast, identity, keys, map, pipe, sum } from 'ramda'
+import { filter, findLast, identity, keys, map, pipe, sum } from 'ramda'
 import React from 'react'
 
 import PossiblePasswords from './PossiblePasswords'
@@ -31,25 +31,25 @@ const entropyTips = [
 ]
 
 const toggles = {
-  letters: 26,
-  capitalLetters: 26,
-  numbers: 10,
-  symbols: 8
-}
-
-const possibleItems = {
-  generic: pipe(filter(identity), keys, map(key => toggles[key]), sum),
-  diceware: always(dicewareWords),
-  custom: identity
+  Letters: 26,
+  'Capital Letters': 26,
+  Numbers: 10,
+  Symbols: 8
 }
 
 export default function PossiblePasswordsContainer({
   length,
-  options,
+  options: { Custom, Generic },
   optionsKey
 }) {
-  const possiblePasswords =
-    possibleItems[optionsKey](options[optionsKey]) ** length
+  const possibleItems = {
+    Generic: pipe(filter(identity), keys, map(key => toggles[key]), sum)(
+      Generic
+    ),
+    Diceware: dicewareWords,
+    Custom
+  }
+  const possiblePasswords = possibleItems[optionsKey] ** length
   const approximate = possiblePasswords > Number.MAX_SAFE_INTEGER
   const entropyBits = Math.max(0, Math.log2(possiblePasswords))
   const entropyTip = findLast(tip => entropyBits >= tip.minimum, entropyTips)
@@ -67,12 +67,12 @@ export default function PossiblePasswordsContainer({
 PossiblePasswordsContainer.propTypes = {
   length: PropTypes.number.isRequired,
   options: PropTypes.shape({
-    custom: PropTypes.number.isRequired,
-    generic: PropTypes.shape({
-      letters: PropTypes.bool.isRequired,
-      capitalLetters: PropTypes.bool.isRequired,
-      numbers: PropTypes.bool.isRequired,
-      symbols: PropTypes.bool.isRequired
+    Custom: PropTypes.number.isRequired,
+    Generic: PropTypes.shape({
+      Letters: PropTypes.bool.isRequired,
+      'Capital Letters': PropTypes.bool.isRequired,
+      Numbers: PropTypes.bool.isRequired,
+      Symbols: PropTypes.bool.isRequired
     }).isRequired
   }).isRequired,
   optionsKey: PropTypes.string.isRequired

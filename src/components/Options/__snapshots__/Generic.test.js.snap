@@ -6,14 +6,14 @@ exports[`Generic 1`] = `
     control={
       <WithStyles(Checkbox)
         checked={true}
-        name="letters"
+        name="Letters"
         onChange={[Function]}
       />
     }
-    key="letters"
+    key="Letters"
     label={
       <span>
-        letters
+        Letters
          
         <small>
           (
@@ -27,14 +27,14 @@ exports[`Generic 1`] = `
     control={
       <WithStyles(Checkbox)
         checked={true}
-        name="capitalLetters"
+        name="Capital Letters"
         onChange={[Function]}
       />
     }
-    key="capitalLetters"
+    key="Capital Letters"
     label={
       <span>
-        capitalLetters
+        Capital Letters
          
         <small>
           (
@@ -48,14 +48,14 @@ exports[`Generic 1`] = `
     control={
       <WithStyles(Checkbox)
         checked={true}
-        name="numbers"
+        name="Numbers"
         onChange={[Function]}
       />
     }
-    key="numbers"
+    key="Numbers"
     label={
       <span>
-        numbers
+        Numbers
          
         <small>
           (
@@ -69,14 +69,14 @@ exports[`Generic 1`] = `
     control={
       <WithStyles(Checkbox)
         checked={true}
-        name="symbols"
+        name="Symbols"
         onChange={[Function]}
       />
     }
-    key="symbols"
+    key="Symbols"
     label={
       <span>
-        symbols
+        Symbols
          
         <small>
           (
