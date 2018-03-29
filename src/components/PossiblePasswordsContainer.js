@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import { always, filter, findLast, identity, keys, map, pipe, sum } from 'ramda'
+import { filter, findLast, identity, keys, map, pipe, sum } from 'ramda'
 import React from 'react'
 
 import PossiblePasswords from './PossiblePasswords'
@@ -36,19 +36,19 @@ const toggles = {
   symbols: 8
 }
 
-const possibleItems = {
-  generic: pipe(filter(identity), keys, map(key => toggles[key]), sum),
-  diceware: always(dicewareWords),
-  custom: identity
-}
-
 export default function PossiblePasswordsContainer({
   length,
-  options,
+  options: { custom, generic },
   optionsKey
 }) {
-  const possiblePasswords =
-    possibleItems[optionsKey](options[optionsKey]) ** length
+  const possibleItems = {
+    generic: pipe(filter(identity), keys, map(key => toggles[key]), sum)(
+      generic
+    ),
+    diceware: dicewareWords,
+    custom
+  }
+  const possiblePasswords = possibleItems[optionsKey] ** length
   const approximate = possiblePasswords > Number.MAX_SAFE_INTEGER
   const entropyBits = Math.max(0, Math.log2(possiblePasswords))
   const entropyTip = findLast(tip => entropyBits >= tip.minimum, entropyTips)
