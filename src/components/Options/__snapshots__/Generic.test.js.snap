@@ -12,7 +12,7 @@ exports[`Generic 1`] = `
     }
     key="Letters"
     label={
-      <span>
+      <Unknown>
         Letters
          
         <small>
@@ -20,7 +20,7 @@ exports[`Generic 1`] = `
           a-z
           )
         </small>
-      </span>
+      </Unknown>
     }
   />
   <WithStyles(FormControlLabel)
@@ -33,7 +33,7 @@ exports[`Generic 1`] = `
     }
     key="Capital Letters"
     label={
-      <span>
+      <Unknown>
         Capital Letters
          
         <small>
@@ -41,7 +41,7 @@ exports[`Generic 1`] = `
           A-Z
           )
         </small>
-      </span>
+      </Unknown>
     }
   />
   <WithStyles(FormControlLabel)
@@ -54,7 +54,7 @@ exports[`Generic 1`] = `
     }
     key="Numbers"
     label={
-      <span>
+      <Unknown>
         Numbers
          
         <small>
@@ -62,7 +62,7 @@ exports[`Generic 1`] = `
           0-9
           )
         </small>
-      </span>
+      </Unknown>
     }
   />
   <WithStyles(FormControlLabel)
@@ -75,7 +75,7 @@ exports[`Generic 1`] = `
     }
     key="Symbols"
     label={
-      <span>
+      <Unknown>
         Symbols
          
         <small>
@@ -83,7 +83,7 @@ exports[`Generic 1`] = `
           !@#$%^&*
           )
         </small>
-      </span>
+      </Unknown>
     }
   />
 </WithStyles(FormGroup)>

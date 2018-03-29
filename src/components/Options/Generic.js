@@ -1,7 +1,7 @@
 import Checkbox from 'material-ui/Checkbox'
 import { FormGroup, FormControlLabel } from 'material-ui/Form'
 import PropTypes from 'prop-types'
-import React from 'react'
+import React, { Fragment } from 'react'
 
 export const examples = {
   Letters: 'a-z',
@@ -24,9 +24,9 @@ export default function Generic({ onGeneric, toggles }) {
             />
           }
           label={
-            <span>
+            <Fragment>
               {name} <small>({example})</small>
-            </span>
+            </Fragment>
           }
         />
       ))}
