@@ -7,15 +7,15 @@ import PossiblePasswordsContainer from './PossiblePasswordsContainer'
 const initialState = {
   length: 12,
   options: {
-    custom: 0,
-    generic: {
-      letters: true,
-      capitalLetters: true,
-      numbers: true,
-      symbols: true
+    Custom: 0,
+    Generic: {
+      Letters: true,
+      'Capital Letters': true,
+      Numbers: true,
+      Symbols: true
     }
   },
-  optionsKey: 'generic'
+  optionsKey: 'Generic'
 }
 
 const getWrapper = (state = {}) =>
@@ -29,16 +29,16 @@ describe('PossiblePasswordsContainer', () => {
   })
 
   test('renders diceware', () => {
-    expect(getWrapper({ optionsKey: 'diceware' })).toMatchSnapshot()
+    expect(getWrapper({ optionsKey: 'Diceware' })).toMatchSnapshot()
   })
 
   test('renders custom', () => {
-    expect(getWrapper({ optionsKey: 'custom' })).toMatchSnapshot()
+    expect(getWrapper({ optionsKey: 'Custom' })).toMatchSnapshot()
   })
 
   test('renders custom when invalid', () => {
     expect(
-      getWrapper({ options: { custom: 0 }, optionsKey: 'custom' })
+      getWrapper({ options: { Custom: 0 }, optionsKey: 'Custom' })
     ).toMatchSnapshot()
   })
 
@@ -46,8 +46,8 @@ describe('PossiblePasswordsContainer', () => {
     expect(
       getWrapper({
         length: 32,
-        options: { custom: 2 },
-        optionsKey: 'custom'
+        options: { Custom: 2 },
+        optionsKey: 'Custom'
       })
     ).toMatchSnapshot()
   })
@@ -56,8 +56,8 @@ describe('PossiblePasswordsContainer', () => {
     expect(
       getWrapper({
         length: 64,
-        options: { custom: 2 },
-        optionsKey: 'custom'
+        options: { Custom: 2 },
+        optionsKey: 'Custom'
       })
     ).toMatchSnapshot()
   })
@@ -66,8 +66,8 @@ describe('PossiblePasswordsContainer', () => {
     expect(
       getWrapper({
         length: 128,
-        options: { custom: 2 },
-        optionsKey: 'custom'
+        options: { Custom: 2 },
+        optionsKey: 'Custom'
       })
     ).toMatchSnapshot()
   })

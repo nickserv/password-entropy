@@ -30,23 +30,23 @@ const entropyTips = [
 ]
 
 const toggles = {
-  letters: 26,
-  capitalLetters: 26,
-  numbers: 10,
-  symbols: 8
+  Letters: 26,
+  'Capital Letters': 26,
+  Numbers: 10,
+  Symbols: 8
 }
 
 export default function PossiblePasswordsContainer({
   length,
-  options: { custom, generic },
+  options: { Custom, Generic },
   optionsKey
 }) {
   const possibleItems = {
-    generic: pipe(filter(identity), keys, map(key => toggles[key]), sum)(
-      generic
+    Generic: pipe(filter(identity), keys, map(key => toggles[key]), sum)(
+      Generic
     ),
-    diceware: dicewareWords,
-    custom
+    Diceware: dicewareWords,
+    Custom
   }
   const possiblePasswords = possibleItems[optionsKey] ** length
   const approximate = possiblePasswords > Number.MAX_SAFE_INTEGER
@@ -66,12 +66,12 @@ export default function PossiblePasswordsContainer({
 PossiblePasswordsContainer.propTypes = {
   length: PropTypes.number.isRequired,
   options: PropTypes.shape({
-    custom: PropTypes.number.isRequired,
-    generic: PropTypes.shape({
-      letters: PropTypes.bool.isRequired,
-      capitalLetters: PropTypes.bool.isRequired,
-      numbers: PropTypes.bool.isRequired,
-      symbols: PropTypes.bool.isRequired
+    Custom: PropTypes.number.isRequired,
+    Generic: PropTypes.shape({
+      Letters: PropTypes.bool.isRequired,
+      'Capital Letters': PropTypes.bool.isRequired,
+      Numbers: PropTypes.bool.isRequired,
+      Symbols: PropTypes.bool.isRequired
     }).isRequired
   }).isRequired,
   optionsKey: PropTypes.string.isRequired

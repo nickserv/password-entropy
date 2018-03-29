@@ -11,16 +11,16 @@ test('PasswordEntropyContainer', () => {
 test('handleCustom', () => {
   const wrapper = shallow(<PasswordEntropyContainer />)
   wrapper.find('PasswordEntropy').simulate('custom', { target: { value: '1' } })
-  expect(wrapper.state()).toMatchObject({ options: { custom: 1 } })
+  expect(wrapper.state()).toMatchObject({ options: { Custom: 1 } })
 })
 
 test('handleGeneric', () => {
   const wrapper = shallow(<PasswordEntropyContainer />)
   wrapper
     .find('PasswordEntropy')
-    .simulate('generic', { target: { checked: false, name: 'letters' } })
+    .simulate('generic', { target: { checked: false, name: 'Letters' } })
   expect(wrapper.state()).toMatchObject({
-    options: { generic: { letters: false } }
+    options: { Generic: { Letters: false } }
   })
 })
 
@@ -34,6 +34,6 @@ test('handleLength', () => {
 
 test('handleOptionsKey', () => {
   const wrapper = shallow(<PasswordEntropyContainer />)
-  wrapper.find('PasswordEntropy').simulate('optionsKey', 'diceware')
-  expect(wrapper.state('optionsKey')).toBe('diceware')
+  wrapper.find('PasswordEntropy').simulate('optionsKey', 'Diceware')
+  expect(wrapper.state('optionsKey')).toBe('Diceware')
 })

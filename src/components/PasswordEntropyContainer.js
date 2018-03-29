@@ -6,25 +6,25 @@ export default class PasswordEntropyContainer extends Component {
   state = {
     length: 12,
     options: {
-      custom: 0,
-      generic: {
-        letters: true,
-        capitalLetters: true,
-        numbers: true,
-        symbols: true
+      Custom: 0,
+      Generic: {
+        Letters: true,
+        'Capital Letters': true,
+        Numbers: true,
+        Symbols: true
       }
     },
-    optionsKey: 'generic'
+    optionsKey: 'Generic'
   }
 
   handleCustom = ({ target: { value } }) =>
     this.setState(({ options }) => ({
-      options: { ...options, custom: parseInt(value, 10) }
+      options: { ...options, Custom: parseInt(value, 10) }
     }))
 
   handleGeneric = ({ target: { checked, name } }) =>
-    this.setState(({ options: { custom, generic } }) => ({
-      options: { custom, generic: { ...generic, [name]: checked } }
+    this.setState(({ options: { Custom, Generic } }) => ({
+      options: { Custom, Generic: { ...Generic, [name]: checked } }
     }))
 
   handleLength = ({ target: { value } }) =>

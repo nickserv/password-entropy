@@ -8,7 +8,7 @@ exports[`Options 1`] = `
     vertical={false}
   >
     <NavItem
-      key="generic"
+      key="Generic"
       tag="li"
     >
       <NavLink
@@ -51,7 +51,7 @@ exports[`Options 1`] = `
       </NavLink>
     </NavItem>
     <NavItem
-      key="diceware"
+      key="Diceware"
       tag="li"
     >
       <NavLink
@@ -94,7 +94,7 @@ exports[`Options 1`] = `
       </NavLink>
     </NavItem>
     <NavItem
-      key="custom"
+      key="Custom"
       tag="li"
     >
       <NavLink
@@ -138,11 +138,11 @@ exports[`Options 1`] = `
     </NavItem>
   </Nav>
   <TabContent
-    activeTab="generic"
+    activeTab="Generic"
     tag="div"
   >
     <TabPane
-      tabId="generic"
+      tabId="Generic"
       tag="div"
     >
       <Card
@@ -152,17 +152,21 @@ exports[`Options 1`] = `
           tag="div"
         >
           <Generic
-            capitalLetters={true}
-            letters={true}
-            numbers={true}
             onGeneric={[Function]}
-            symbols={true}
+            toggles={
+              Object {
+                "Capital Letters": true,
+                "Letters": true,
+                "Numbers": true,
+                "Symbols": true,
+              }
+            }
           />
         </CardBody>
       </Card>
     </TabPane>
     <TabPane
-      tabId="diceware"
+      tabId="Diceware"
       tag="div"
     >
       <Card
@@ -176,7 +180,7 @@ exports[`Options 1`] = `
       </Card>
     </TabPane>
     <TabPane
-      tabId="custom"
+      tabId="Custom"
       tag="div"
     >
       <Card

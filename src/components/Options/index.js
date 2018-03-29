@@ -4,7 +4,6 @@ import {
   faQuestionCircle
 } from '@fortawesome/fontawesome-free-solid'
 import Icon from '@fortawesome/react-fontawesome'
-import { startCase } from 'lodash'
 import PropTypes from 'prop-types'
 import React, { Fragment } from 'react'
 import {
@@ -22,9 +21,9 @@ import Diceware from './Diceware'
 import Generic from './Generic'
 
 const icons = {
-  generic: faCheckSquare,
-  diceware: faBook,
-  custom: faQuestionCircle
+  Generic: faCheckSquare,
+  Diceware: faBook,
+  Custom: faQuestionCircle
 }
 
 export default function Options({
@@ -44,22 +43,22 @@ export default function Options({
               href="#"
               onClick={onOptionsKey.bind(null, name)}
             >
-              <Icon icon={icon} /> {startCase(name)}
+              <Icon icon={icon} /> {name}
             </NavLink>
           </NavItem>
         ))}
       </Nav>
 
       <TabContent activeTab={optionsKey}>
-        <TabPane tabId="generic">
+        <TabPane tabId="Generic">
           <Card>
             <CardBody>
-              <Generic {...options.generic} onGeneric={onGeneric} />
+              <Generic onGeneric={onGeneric} toggles={options.Generic} />
             </CardBody>
           </Card>
         </TabPane>
 
-        <TabPane tabId="diceware">
+        <TabPane tabId="Diceware">
           <Card>
             <CardBody>
               <Diceware />
@@ -67,10 +66,10 @@ export default function Options({
           </Card>
         </TabPane>
 
-        <TabPane tabId="custom">
+        <TabPane tabId="Custom">
           <Card>
             <CardBody>
-              <Custom custom={options.custom} onCustom={onCustom} />
+              <Custom custom={options.Custom} onCustom={onCustom} />
             </CardBody>
           </Card>
         </TabPane>
@@ -84,12 +83,12 @@ Options.propTypes = {
   onGeneric: PropTypes.func.isRequired,
   onOptionsKey: PropTypes.func.isRequired,
   options: PropTypes.shape({
-    custom: PropTypes.number.isRequired,
-    generic: PropTypes.shape({
-      letters: PropTypes.bool.isRequired,
-      capitalLetters: PropTypes.bool.isRequired,
-      numbers: PropTypes.bool.isRequired,
-      symbols: PropTypes.bool.isRequired
+    Custom: PropTypes.number.isRequired,
+    Generic: PropTypes.shape({
+      Letters: PropTypes.bool.isRequired,
+      'Capital Letters': PropTypes.bool.isRequired,
+      Numbers: PropTypes.bool.isRequired,
+      Symbols: PropTypes.bool.isRequired
     }).isRequired
   }).isRequired,
   optionsKey: PropTypes.string.isRequired

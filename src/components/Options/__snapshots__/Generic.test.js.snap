@@ -4,7 +4,7 @@ exports[`Generic 1`] = `
 <React.Fragment>
   <FormGroup
     check={true}
-    key="letters"
+    key="Letters"
     tag="div"
   >
     <Label
@@ -22,7 +22,7 @@ exports[`Generic 1`] = `
     >
       <Input
         checked={true}
-        name="letters"
+        name="Letters"
         onChange={[Function]}
         type="checkbox"
       />
@@ -37,7 +37,7 @@ exports[`Generic 1`] = `
   </FormGroup>
   <FormGroup
     check={true}
-    key="capitalLetters"
+    key="Capital Letters"
     tag="div"
   >
     <Label
@@ -55,7 +55,7 @@ exports[`Generic 1`] = `
     >
       <Input
         checked={true}
-        name="capitalLetters"
+        name="Capital Letters"
         onChange={[Function]}
         type="checkbox"
       />
@@ -70,7 +70,7 @@ exports[`Generic 1`] = `
   </FormGroup>
   <FormGroup
     check={true}
-    key="numbers"
+    key="Numbers"
     tag="div"
   >
     <Label
@@ -88,7 +88,7 @@ exports[`Generic 1`] = `
     >
       <Input
         checked={true}
-        name="numbers"
+        name="Numbers"
         onChange={[Function]}
         type="checkbox"
       />
@@ -103,7 +103,7 @@ exports[`Generic 1`] = `
   </FormGroup>
   <FormGroup
     check={true}
-    key="symbols"
+    key="Symbols"
     tag="div"
   >
     <Label
@@ -121,7 +121,7 @@ exports[`Generic 1`] = `
     >
       <Input
         checked={true}
-        name="symbols"
+        name="Symbols"
         onChange={[Function]}
         type="checkbox"
       />

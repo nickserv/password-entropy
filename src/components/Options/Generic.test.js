@@ -7,14 +7,16 @@ test('Generic', () => {
   const handleGeneric = jest.fn()
   const wrapper = shallow(
     <Generic
-      capitalLetters={true}
-      letters={true}
-      numbers={true}
       onGeneric={handleGeneric}
-      symbols={true}
+      toggles={{
+        'Capital Letters': true,
+        Letters: true,
+        Numbers: true,
+        Symbols: true
+      }}
     />
   )
-  wrapper.find({ name: 'letters' }).simulate('change')
+  wrapper.find({ name: 'Letters' }).simulate('change')
 
   expect(wrapper).toMatchSnapshot()
   expect(handleGeneric).toHaveBeenCalled()
