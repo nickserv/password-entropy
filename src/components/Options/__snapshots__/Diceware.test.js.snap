@@ -3,12 +3,7 @@
 exports[`Diceware 1`] = `
 <TextField
   disabled={true}
-  label={
-    <Unknown>
-      <pure(Edit) />
-       Possible Items
-    </Unknown>
-  }
+  label="Possible Items"
   required={false}
   select={false}
   value={7776}

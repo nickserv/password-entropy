@@ -1,17 +1,10 @@
 import { Card, CardContent, Tab, Tabs } from 'material-ui'
-import { Book, Check, Edit } from 'material-ui-icons'
 import PropTypes from 'prop-types'
 import React from 'react'
 
 import Custom from './Custom'
 import Diceware from './Diceware'
 import Generic from './Generic'
-
-const icons = {
-  Generic: <Check />,
-  Diceware: <Book />,
-  Custom: <Edit />
-}
 
 export default function Options({
   onCustom,
@@ -23,8 +16,8 @@ export default function Options({
   return (
     <Card>
       <Tabs value={optionsKey} onChange={onOptionsKey}>
-        {Object.entries(icons).map(([name, icon]) => (
-          <Tab key={name} icon={icon} label={name} value={name} />
+        {['Generic', 'Diceware', 'Custom'].map(name => (
+          <Tab key={name} label={name} value={name} />
         ))}
       </Tabs>
       <CardContent>

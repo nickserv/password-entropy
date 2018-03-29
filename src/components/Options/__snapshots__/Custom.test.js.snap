@@ -2,12 +2,7 @@
 
 exports[`Custom 1`] = `
 <TextField
-  label={
-    <Unknown>
-      <pure(Edit) />
-       Possible Items
-    </Unknown>
-  }
+  label="Possible Items"
   min="0"
   onChange={[Function]}
   required={true}

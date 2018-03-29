@@ -5,7 +5,6 @@ import {
   LinearProgress,
   MuiThemeProvider
 } from 'material-ui'
-import { List, Shuffle } from 'material-ui-icons'
 import PropTypes from 'prop-types'
 import React from 'react'
 
@@ -18,9 +17,7 @@ export default function PossiblePasswords({
   return (
     <Card>
       <CardContent>
-        <h3>
-          <List /> Entropy
-        </h3>
+        <h3>Entropy</h3>
         <p>
           {entropyBits.toFixed(2)} bits ({strength})
         </p>
@@ -33,9 +30,7 @@ export default function PossiblePasswords({
           />
         </MuiThemeProvider>
 
-        <h3>
-          <Shuffle /> Possible Passwords
-        </h3>
+        <h3>Possible Passwords</h3>
         <p>
           {approximate && '~ '}
           {possiblePasswords.toLocaleString()}

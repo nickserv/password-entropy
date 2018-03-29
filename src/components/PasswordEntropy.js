@@ -1,7 +1,6 @@
 import { TextField } from 'material-ui'
-import { CompareArrows, Info, Lock } from 'material-ui-icons'
 import PropTypes from 'prop-types'
-import React, { Fragment } from 'react'
+import React from 'react'
 
 import Options from './Options'
 import PossiblePasswordsContainer from './PossiblePasswordsContainer'
@@ -17,16 +16,12 @@ export default function PasswordEntropy({
 }) {
   return (
     <div style={{ fontFamily: 'Roboto, sans-serif' }}>
-      <h1>
-        <Lock /> Password Entropy
-      </h1>
+      <h1>Password Entropy</h1>
 
       <p>A simple entropy calculator for evaluating password security.</p>
 
       <form>
-        <h2>
-          <Info /> Results
-        </h2>
+        <h2>Results</h2>
         <PossiblePasswordsContainer
           length={length}
           options={options}
@@ -34,11 +29,7 @@ export default function PasswordEntropy({
         />
 
         <TextField
-          label={
-            <Fragment>
-              <CompareArrows /> Length
-            </Fragment>
-          }
+          label="Length"
           value={length}
           onChange={onLength}
           type="number"

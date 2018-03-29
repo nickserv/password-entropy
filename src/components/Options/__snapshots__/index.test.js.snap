@@ -9,19 +9,16 @@ exports[`Options 1`] = `
     value="Generic"
   >
     <WithStyles(Tab)
-      icon={<pure(Check) />}
       key="Generic"
       label="Generic"
       value="Generic"
     />
     <WithStyles(Tab)
-      icon={<pure(Book) />}
       key="Diceware"
       label="Diceware"
       value="Diceware"
     />
     <WithStyles(Tab)
-      icon={<pure(Edit) />}
       key="Custom"
       label="Custom"
       value="Custom"

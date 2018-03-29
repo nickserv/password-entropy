@@ -1,16 +1,11 @@
 import { TextField } from 'material-ui'
-import { Edit } from 'material-ui-icons'
 import PropTypes from 'prop-types'
-import React, { Fragment } from 'react'
+import React from 'react'
 
 export default function Custom({ custom, onCustom }) {
   return (
     <TextField
-      label={
-        <Fragment>
-          <Edit /> Possible Items
-        </Fragment>
-      }
+      label="Possible Items"
       value={custom}
       onChange={onCustom}
       type="number"
