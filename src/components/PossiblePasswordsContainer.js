@@ -1,4 +1,4 @@
-import { blue, green, red, yellow } from 'material-ui/colors'
+import { colors } from 'material-ui'
 import PropTypes from 'prop-types'
 import { filter, findLast, identity, keys, map, pipe, sum } from 'ramda'
 import React from 'react'
@@ -9,22 +9,22 @@ export const dicewareWords = 7776
 
 const entropyTips = [
   {
-    color: red,
+    color: colors.red,
     minimum: 0,
     strength: 'Very Weak'
   },
   {
-    color: yellow,
+    color: colors.yellow,
     minimum: 32,
     strength: 'Weak'
   },
   {
-    color: blue,
+    color: colors.blue,
     minimum: 64,
     strength: 'Strong'
   },
   {
-    color: green,
+    color: colors.green,
     minimum: 128,
     strength: 'Very Strong'
   }

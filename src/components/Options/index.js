@@ -1,8 +1,5 @@
-import Card, { CardContent } from 'material-ui/Card'
-import Tabs, { Tab } from 'material-ui/Tabs'
-import Book from 'material-ui-icons/Book'
-import Check from 'material-ui-icons/Check'
-import Edit from 'material-ui-icons/Edit'
+import { Card, CardContent, Tab, Tabs } from 'material-ui'
+import { Book, Check, Edit } from 'material-ui-icons'
 import PropTypes from 'prop-types'
 import React from 'react'
 

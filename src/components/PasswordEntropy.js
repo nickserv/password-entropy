@@ -1,7 +1,5 @@
-import TextField from 'material-ui/TextField'
-import CompareArrows from 'material-ui-icons/CompareArrows'
-import Info from 'material-ui-icons/Info'
-import Lock from 'material-ui-icons/Lock'
+import { TextField } from 'material-ui'
+import { CompareArrows, Info, Lock } from 'material-ui-icons'
 import PropTypes from 'prop-types'
 import React, { Fragment } from 'react'
 

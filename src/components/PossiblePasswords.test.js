@@ -1,5 +1,5 @@
 import { shallow } from 'enzyme'
-import blue from 'material-ui/colors/blue'
+import { colors } from 'material-ui'
 import React from 'react'
 
 import PossiblePasswords from './PossiblePasswords'
@@ -10,7 +10,7 @@ describe('PossiblePasswords', () => {
       <PossiblePasswords
         approximate={approximate}
         entropyBits={77.54887502163469}
-        entropyTip={{ color: blue, minimum: 64, strength: 'Strong' }}
+        entropyTip={{ color: colors.blue, minimum: 64, strength: 'Strong' }}
         possiblePasswords={2.2107391972073336e23}
       />
     )

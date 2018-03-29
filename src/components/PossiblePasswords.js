@@ -1,8 +1,11 @@
-import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles'
-import Card, { CardContent } from 'material-ui/Card'
-import { LinearProgress } from 'material-ui/Progress'
-import ActionList from 'material-ui-icons/List'
-import AvShuffle from 'material-ui-icons/Shuffle'
+import {
+  Card,
+  CardContent,
+  createMuiTheme,
+  LinearProgress,
+  MuiThemeProvider
+} from 'material-ui'
+import { List, Shuffle } from 'material-ui-icons'
 import PropTypes from 'prop-types'
 import React from 'react'
 
@@ -16,7 +19,7 @@ export default function PossiblePasswords({
     <Card>
       <CardContent>
         <h3>
-          <ActionList /> Entropy
+          <List /> Entropy
         </h3>
         <p>
           {entropyBits.toFixed(2)} bits ({strength})
@@ -31,7 +34,7 @@ export default function PossiblePasswords({
         </MuiThemeProvider>
 
         <h3>
-          <AvShuffle /> Possible Passwords
+          <Shuffle /> Possible Passwords
         </h3>
         <p>
           {approximate && '~ '}
