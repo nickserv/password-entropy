@@ -11,7 +11,3 @@ deploy:
   local_dir: build
   on:
     branch: master
-addons:
-  apt:
-    packages:
-      - language-pack-en
