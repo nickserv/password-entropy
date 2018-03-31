@@ -32,8 +32,7 @@ export default function PossiblePasswords({
 
         <h3>Possible Passwords</h3>
         <p>
-          {approximate && '~ '}
-          {possiblePasswords.toLocaleString()}
+          {approximate && '~ '} {possiblePasswords}
         </p>
       </CardContent>
     </Card>
