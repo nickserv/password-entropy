@@ -1,4 +1,4 @@
-import { Checkbox, FormControlLabel, FormGroup } from 'material-ui'
+import { Checkbox, FormControlLabel, FormGroup, Typography } from 'material-ui'
 import PropTypes from 'prop-types'
 import React, { Fragment } from 'react'
 
@@ -24,7 +24,10 @@ export default function Generic({ onGeneric, toggles }) {
           }
           label={
             <Fragment>
-              {name} <small>({example})</small>
+              {name}
+              <Typography variant="caption" gutterBottom>
+                {example}
+              </Typography>
             </Fragment>
           }
         />

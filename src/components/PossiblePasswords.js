@@ -3,7 +3,8 @@ import {
   CardContent,
   createMuiTheme,
   LinearProgress,
-  MuiThemeProvider
+  MuiThemeProvider,
+  Typography
 } from 'material-ui'
 import PropTypes from 'prop-types'
 import React from 'react'
@@ -17,10 +18,12 @@ export default function PossiblePasswords({
   return (
     <Card>
       <CardContent>
-        <h3>Entropy</h3>
-        <p>
+        <Typography variant="subheading" gutterBottom>
+          Entropy
+        </Typography>
+        <Typography gutterBottom>
           {entropyBits.toFixed(2)} bits ({strength})
-        </p>
+        </Typography>
         <MuiThemeProvider
           theme={createMuiTheme({ palette: { primary: color } })}
         >
@@ -30,10 +33,12 @@ export default function PossiblePasswords({
           />
         </MuiThemeProvider>
 
-        <h3>Possible Passwords</h3>
-        <p>
+        <Typography variant="subheading" gutterBottom>
+          Possible Passwords
+        </Typography>
+        <Typography gutterBottom>
           {approximate && '~ '} {possiblePasswords}
-        </p>
+        </Typography>
       </CardContent>
     </Card>
   )

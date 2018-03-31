@@ -15,11 +15,12 @@ exports[`Generic 1`] = `
       <Unknown>
         Letters
          
-        <small>
-          (
+        <WithStyles(Typography)
+          gutterBottom={true}
+          variant="caption"
+        >
           a-z
-          )
-        </small>
+        </WithStyles(Typography)>
       </Unknown>
     }
   />
@@ -36,11 +37,12 @@ exports[`Generic 1`] = `
       <Unknown>
         Capital Letters
          
-        <small>
-          (
+        <WithStyles(Typography)
+          gutterBottom={true}
+          variant="caption"
+        >
           A-Z
-          )
-        </small>
+        </WithStyles(Typography)>
       </Unknown>
     }
   />
@@ -57,11 +59,12 @@ exports[`Generic 1`] = `
       <Unknown>
         Numbers
          
-        <small>
-          (
+        <WithStyles(Typography)
+          gutterBottom={true}
+          variant="caption"
+        >
           0-9
-          )
-        </small>
+        </WithStyles(Typography)>
       </Unknown>
     }
   />
@@ -78,11 +81,12 @@ exports[`Generic 1`] = `
       <Unknown>
         Symbols
          
-        <small>
-          (
+        <WithStyles(Typography)
+          gutterBottom={true}
+          variant="caption"
+        >
           !@#$%^&*
-          )
-        </small>
+        </WithStyles(Typography)>
       </Unknown>
     }
   />
