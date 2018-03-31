@@ -38,7 +38,7 @@ export default function PossiblePasswords({
           </Label>
 
           <FormText>
-            {approximate && '~ '} {possiblePasswords.toLocaleString()}
+            {approximate && '~ '} {possiblePasswords}
           </FormText>
         </FormGroup>
       </CardBody>
