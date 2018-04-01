@@ -25,15 +25,6 @@ export default function PasswordEntropy({
       </Typography>
 
       <form>
-        <Typography variant="title" gutterBottom>
-          Results
-        </Typography>
-        <PossiblePasswordsContainer
-          length={length}
-          options={options}
-          optionsKey={optionsKey}
-        />
-
         <TextField
           label="Length"
           value={length}
@@ -49,6 +40,15 @@ export default function PasswordEntropy({
           onCustom={onCustom}
           onGeneric={onGeneric}
           onOptionsKey={onOptionsKey}
+        />
+
+        <Typography variant="title" gutterBottom>
+          Results
+        </Typography>
+        <PossiblePasswordsContainer
+          length={length}
+          options={options}
+          optionsKey={optionsKey}
         />
       </form>
     </Fragment>
