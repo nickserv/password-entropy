@@ -40,7 +40,7 @@ export default function PasswordEntropy({
           onChange={onLength}
           type="number"
           min="0"
-          required
+          autoFocus
         />
 
         <Options

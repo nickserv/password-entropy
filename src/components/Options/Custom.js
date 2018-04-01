@@ -10,7 +10,6 @@ export default function Custom({ custom, onCustom }) {
       onChange={onCustom}
       type="number"
       min="0"
-      required
     />
   )
 }
