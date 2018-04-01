@@ -18,6 +18,9 @@ export default function PossiblePasswords({
   return (
     <Card>
       <CardContent>
+        <Typography variant="title" gutterBottom>
+          Results
+        </Typography>
         <Typography variant="subheading" gutterBottom>
           Entropy
         </Typography>

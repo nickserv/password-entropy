@@ -42,9 +42,6 @@ export default function PasswordEntropy({
           onOptionsKey={onOptionsKey}
         />
 
-        <Typography variant="title" gutterBottom>
-          Results
-        </Typography>
         <PossiblePasswordsContainer
           length={length}
           options={options}
