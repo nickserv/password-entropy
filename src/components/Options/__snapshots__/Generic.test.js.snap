@@ -14,7 +14,6 @@ exports[`Generic 1`] = `
     label={
       <Unknown>
         Letters
-         
         <WithStyles(Typography)
           gutterBottom={true}
           variant="caption"
@@ -36,7 +35,6 @@ exports[`Generic 1`] = `
     label={
       <Unknown>
         Capital Letters
-         
         <WithStyles(Typography)
           gutterBottom={true}
           variant="caption"
@@ -58,7 +56,6 @@ exports[`Generic 1`] = `
     label={
       <Unknown>
         Numbers
-         
         <WithStyles(Typography)
           gutterBottom={true}
           variant="caption"
@@ -80,7 +77,6 @@ exports[`Generic 1`] = `
     label={
       <Unknown>
         Symbols
-         
         <WithStyles(Typography)
           gutterBottom={true}
           variant="caption"
