@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import React from 'react'
 
 import Custom from './Custom'
-import Diceware from './Diceware'
 import Generic from './Generic'
 
 export default function Options({
@@ -26,7 +25,7 @@ export default function Options({
             Generic: (
               <Generic onGeneric={onGeneric} toggles={options.Generic} />
             ),
-            Diceware: <Diceware />,
+            Diceware: null,
             Custom: <Custom custom={options.Custom} onCustom={onCustom} />
           }[optionsKey]
         }
