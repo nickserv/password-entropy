@@ -16,14 +16,18 @@ export default function PasswordEntropy({
 }) {
   return (
     <Fragment>
-      <Typography variant="headline" gutterBottom>Password Entropy</Typography>
+      <Typography variant="headline" gutterBottom>
+        Password Entropy
+      </Typography>
 
       <Typography gutterBottom>
         A simple entropy calculator for evaluating password security.
       </Typography>
 
       <form>
-        <Typography variant="title" gutterBottom>Results</Typography>
+        <Typography variant="title" gutterBottom>
+          Results
+        </Typography>
         <PossiblePasswordsContainer
           length={length}
           options={options}
