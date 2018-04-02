@@ -1,6 +1,6 @@
-import { Card, CardContent, Tab, Tabs } from 'material-ui'
+import { CardContent, Tab, Tabs } from 'material-ui'
 import PropTypes from 'prop-types'
-import React from 'react'
+import React, { Fragment } from 'react'
 
 import Custom from './Custom'
 import Generic from './Generic'
@@ -13,7 +13,7 @@ export default function Options({
   optionsKey
 }) {
   return (
-    <Card>
+    <Fragment>
       <Tabs value={optionsKey} onChange={onOptionsKey}>
         {['Generic', 'Diceware', 'Custom'].map(name => (
           <Tab key={name} label={name} value={name} />
@@ -30,7 +30,7 @@ export default function Options({
           }[optionsKey]
         }
       </CardContent>
-    </Card>
+    </Fragment>
   )
 }
 

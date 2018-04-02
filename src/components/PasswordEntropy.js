@@ -1,4 +1,4 @@
-import { TextField, Typography } from 'material-ui'
+import { Card, CardContent, Grid, TextField, Typography } from 'material-ui'
 import PropTypes from 'prop-types'
 import React, { Fragment } from 'react'
 
@@ -25,22 +25,30 @@ export default function PasswordEntropy({
       </Typography>
 
       <form>
-        <TextField
-          label="Length"
-          value={length}
-          onChange={onLength}
-          type="number"
-          min="0"
-          autoFocus
-        />
+        <Card>
+          <CardContent>
+            <Typography variant="title" gutterBottom>
+              Options
+            </Typography>
 
-        <Options
-          options={options}
-          optionsKey={optionsKey}
-          onCustom={onCustom}
-          onGeneric={onGeneric}
-          onOptionsKey={onOptionsKey}
-        />
+            <TextField
+              label="Length"
+              value={length}
+              onChange={onLength}
+              type="number"
+              min="0"
+              autoFocus
+            />
+          </CardContent>
+
+          <Options
+            options={options}
+            optionsKey={optionsKey}
+            onCustom={onCustom}
+            onGeneric={onGeneric}
+            onOptionsKey={onOptionsKey}
+          />
+        </Card>
 
         <PossiblePasswordsContainer
           length={length}
