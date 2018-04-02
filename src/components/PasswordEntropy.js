@@ -41,7 +41,7 @@ export default function PasswordEntropy({
       </AppBar>
 
       <Grid container>
-        <Grid item xs={12} sm={6}>
+        <Grid item xs={12} sm>
           <Card>
             <CardContent>
               <Typography variant="title" gutterBottom>
@@ -68,7 +68,7 @@ export default function PasswordEntropy({
           </Card>
         </Grid>
 
-        <Grid item xs={12} sm={6}>
+        <Grid item xs={12} sm>
           <PossiblePasswordsContainer
             length={length}
             options={options}
