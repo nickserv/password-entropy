@@ -33,7 +33,7 @@ export default function PasswordEntropy({
               </Typography>
 
               <TextField
-                label="Length"
+                label="Number of Items"
                 value={length}
                 onChange={onLength}
                 type="number"
