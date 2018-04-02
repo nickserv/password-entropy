@@ -24,36 +24,42 @@ export default function PasswordEntropy({
         A simple entropy calculator for evaluating password security.
       </Typography>
 
-      <Card>
-        <CardContent>
-          <Typography variant="title" gutterBottom>
-            Options
-          </Typography>
+      <Grid container>
+        <Grid item xs={12} sm={6}>
+          <Card>
+            <CardContent>
+              <Typography variant="title" gutterBottom>
+                Options
+              </Typography>
 
-          <TextField
-            label="Length"
-            value={length}
-            onChange={onLength}
-            type="number"
-            min="0"
-            autoFocus
+              <TextField
+                label="Length"
+                value={length}
+                onChange={onLength}
+                type="number"
+                min="0"
+                autoFocus
+              />
+            </CardContent>
+
+            <Options
+              options={options}
+              optionsKey={optionsKey}
+              onCustom={onCustom}
+              onGeneric={onGeneric}
+              onOptionsKey={onOptionsKey}
+            />
+          </Card>
+        </Grid>
+
+        <Grid item xs={12} sm={6}>
+          <PossiblePasswordsContainer
+            length={length}
+            options={options}
+            optionsKey={optionsKey}
           />
-        </CardContent>
-
-        <Options
-          options={options}
-          optionsKey={optionsKey}
-          onCustom={onCustom}
-          onGeneric={onGeneric}
-          onOptionsKey={onOptionsKey}
-        />
-      </Card>
-
-      <PossiblePasswordsContainer
-        length={length}
-        options={options}
-        optionsKey={optionsKey}
-      />
+        </Grid>
+      </Grid>
     </Fragment>
   )
 }
