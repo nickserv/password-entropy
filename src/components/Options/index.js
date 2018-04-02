@@ -19,6 +19,7 @@ export default function Options({
           <Tab key={name} label={name} value={name} />
         ))}
       </Tabs>
+
       <CardContent>
         {
           {

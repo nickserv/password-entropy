@@ -25,6 +25,7 @@ export default function Generic({ onGeneric, toggles }) {
           label={
             <Fragment>
               {name}
+
               <Typography variant="caption" gutterBottom>
                 {example}
               </Typography>

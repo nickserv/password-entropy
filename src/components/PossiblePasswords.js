@@ -21,6 +21,7 @@ export default function PossiblePasswords({
         <Typography variant="title" gutterBottom>
           Results
         </Typography>
+
         <Typography variant="subheading" gutterBottom>
           Entropy
         </Typography>

@@ -15,6 +15,5 @@ test('Generic', () => {
       }}
     />
   )
-
   expect(wrapper).toMatchSnapshot()
 })

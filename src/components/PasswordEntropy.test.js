@@ -25,7 +25,6 @@ test('PasswordEntropy', () => {
     />
   )
   wrapper.find('TextField').simulate('change')
-
   expect(wrapper).toMatchSnapshot()
   expect(handleLength).toHaveBeenCalled()
 })
