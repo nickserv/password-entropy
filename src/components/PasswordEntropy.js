@@ -1,4 +1,14 @@
-import { Card, CardContent, Grid, TextField, Typography } from 'material-ui'
+import {
+  AppBar,
+  Card,
+  CardContent,
+  Grid,
+  Tab,
+  Tabs,
+  TextField,
+  Toolbar,
+  Typography
+} from 'material-ui'
 import PropTypes from 'prop-types'
 import React, { Fragment } from 'react'
 
@@ -16,13 +26,19 @@ export default function PasswordEntropy({
 }) {
   return (
     <Fragment>
-      <Typography variant="headline" gutterBottom>
-        Password Entropy
-      </Typography>
+      <AppBar position="static">
+        <Toolbar>
+          <Typography variant="headline" color="inherit">
+            Password Entropy
+          </Typography>
+        </Toolbar>
 
-      <Typography gutterBottom>
-        A simple entropy calculator for evaluating password security.
-      </Typography>
+        <Tabs value={optionsKey} onChange={onOptionsKey}>
+          {['Generic', 'Diceware', 'Custom'].map(name => (
+            <Tab key={name} label={name} value={name} />
+          ))}
+        </Tabs>
+      </AppBar>
 
       <Grid container>
         <Grid item xs={12} sm={6}>
@@ -39,16 +55,16 @@ export default function PasswordEntropy({
                 type="number"
                 min="0"
                 autoFocus
+                fullWidth
+              />
+
+              <Options
+                onCustom={onCustom}
+                onGeneric={onGeneric}
+                options={options}
+                optionsKey={optionsKey}
               />
             </CardContent>
-
-            <Options
-              options={options}
-              optionsKey={optionsKey}
-              onCustom={onCustom}
-              onGeneric={onGeneric}
-              onOptionsKey={onOptionsKey}
-            />
           </Card>
         </Grid>
 

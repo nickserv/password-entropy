@@ -2,6 +2,7 @@
 
 exports[`Custom 1`] = `
 <TextField
+  fullWidth={true}
   label="Possible Items"
   min="0"
   onChange={[Function]}

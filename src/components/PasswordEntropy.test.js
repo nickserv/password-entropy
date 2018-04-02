@@ -5,13 +5,14 @@ import PasswordEntropy from './PasswordEntropy'
 
 test('PasswordEntropy', () => {
   const handleLength = jest.fn()
+  const handleOptionsKey = jest.fn()
   const wrapper = shallow(
     <PasswordEntropy
       length={12}
       onCustom={() => {}}
       onGeneric={() => {}}
       onLength={handleLength}
-      onOptionsKey={() => {}}
+      onOptionsKey={handleOptionsKey}
       options={{
         Custom: 0,
         Generic: {
@@ -25,6 +26,8 @@ test('PasswordEntropy', () => {
     />
   )
   wrapper.find('TextField').simulate('change')
+  wrapper.find('WithStyles(Tabs)').simulate('change')
   expect(wrapper).toMatchSnapshot()
   expect(handleLength).toHaveBeenCalled()
+  expect(handleOptionsKey).toHaveBeenCalled()
 })

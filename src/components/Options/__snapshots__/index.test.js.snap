@@ -1,39 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Options 1`] = `
-<React.Fragment>
-  <WithStyles(Tabs)
-    onChange={[Function]}
-    value="Generic"
-  >
-    <WithStyles(Tab)
-      key="Generic"
-      label="Generic"
-      value="Generic"
-    />
-    <WithStyles(Tab)
-      key="Diceware"
-      label="Diceware"
-      value="Diceware"
-    />
-    <WithStyles(Tab)
-      key="Custom"
-      label="Custom"
-      value="Custom"
-    />
-  </WithStyles(Tabs)>
-  <WithStyles(CardContent)>
-    <Generic
-      onGeneric={[Function]}
-      toggles={
-        Object {
-          "Lowercase Letters": true,
-          "Numbers": true,
-          "Symbols": true,
-          "Uppercase Letters": true,
-        }
-      }
-    />
-  </WithStyles(CardContent)>
-</React.Fragment>
+<Generic
+  onGeneric={[Function]}
+  toggles={
+    Object {
+      "Lowercase Letters": true,
+      "Numbers": true,
+      "Symbols": true,
+      "Uppercase Letters": true,
+    }
+  }
+/>
 `;
