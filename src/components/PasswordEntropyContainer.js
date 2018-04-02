@@ -8,8 +8,8 @@ export default class PasswordEntropyContainer extends Component {
     options: {
       Custom: 0,
       Generic: {
-        Letters: true,
-        'Capital Letters': true,
+        'Lowercase Letters': true,
+        'Uppercase Letters': true,
         Numbers: true,
         Symbols: true
       }

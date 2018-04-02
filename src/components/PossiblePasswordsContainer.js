@@ -31,8 +31,8 @@ const entropyTips = [
 ]
 
 const toggles = {
-  Letters: 26,
-  'Capital Letters': 26,
+  'Lowercase Letters': 26,
+  'Uppercase Letters': 26,
   Numbers: 10,
   Symbols: 8
 }
@@ -70,8 +70,8 @@ PossiblePasswordsContainer.propTypes = {
   options: PropTypes.shape({
     Custom: PropTypes.number.isRequired,
     Generic: PropTypes.shape({
-      Letters: PropTypes.bool.isRequired,
-      'Capital Letters': PropTypes.bool.isRequired,
+      'Lowercase Letters': PropTypes.bool.isRequired,
+      'Uppercase Letters': PropTypes.bool.isRequired,
       Numbers: PropTypes.bool.isRequired,
       Symbols: PropTypes.bool.isRequired
     }).isRequired

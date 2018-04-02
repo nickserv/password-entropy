@@ -8,8 +8,8 @@ test('Generic', () => {
     <Generic
       onGeneric={() => {}}
       toggles={{
-        'Capital Letters': true,
-        Letters: true,
+        'Lowercase Letters': true,
+        'Uppercase Letters': true,
         Numbers: true,
         Symbols: true
       }}

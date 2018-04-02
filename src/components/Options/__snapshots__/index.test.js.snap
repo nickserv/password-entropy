@@ -27,10 +27,10 @@ exports[`Options 1`] = `
       onGeneric={[Function]}
       toggles={
         Object {
-          "Capital Letters": true,
-          "Letters": true,
+          "Lowercase Letters": true,
           "Numbers": true,
           "Symbols": true,
+          "Uppercase Letters": true,
         }
       }
     />

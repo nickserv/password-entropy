@@ -42,8 +42,8 @@ Options.propTypes = {
   options: PropTypes.shape({
     Custom: PropTypes.number.isRequired,
     Generic: PropTypes.shape({
-      Letters: PropTypes.bool.isRequired,
-      'Capital Letters': PropTypes.bool.isRequired,
+      'Lowercase Letters': PropTypes.bool.isRequired,
+      'Uppercase Letters': PropTypes.bool.isRequired,
       Numbers: PropTypes.bool.isRequired,
       Symbols: PropTypes.bool.isRequired
     }).isRequired

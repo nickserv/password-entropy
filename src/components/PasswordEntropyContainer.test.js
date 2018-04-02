@@ -16,11 +16,11 @@ test('handleCustom', () => {
 
 test('handleGeneric', () => {
   const wrapper = shallow(<PasswordEntropyContainer />)
-  wrapper
-    .find('PasswordEntropy')
-    .simulate('generic', { target: { checked: false, name: 'Letters' } })
+  wrapper.find('PasswordEntropy').simulate('generic', {
+    target: { checked: false, name: 'Lowercase Letters' }
+  })
   expect(wrapper.state()).toMatchObject({
-    options: { Generic: { Letters: false } }
+    options: { Generic: { 'Lowercase Letters': false } }
   })
 })
 
