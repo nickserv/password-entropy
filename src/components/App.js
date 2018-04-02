@@ -13,9 +13,9 @@ import PropTypes from 'prop-types'
 import React, { Fragment } from 'react'
 
 import Options from './Options'
-import PossiblePasswordsContainer from './PossiblePasswordsContainer'
+import ResultsContainer from './ResultsContainer'
 
-export default function PasswordEntropy({
+export default function App({
   length,
   onCustom,
   onGeneric,
@@ -69,7 +69,7 @@ export default function PasswordEntropy({
         </Grid>
 
         <Grid item xs={12} sm>
-          <PossiblePasswordsContainer
+          <ResultsContainer
             length={length}
             options={options}
             optionsKey={optionsKey}
@@ -80,7 +80,7 @@ export default function PasswordEntropy({
   )
 }
 
-PasswordEntropy.propTypes = {
+App.propTypes = {
   length: PropTypes.number.isRequired,
   onCustom: PropTypes.func.isRequired,
   onGeneric: PropTypes.func.isRequired,

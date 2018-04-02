@@ -2,7 +2,7 @@ import { shallow } from 'enzyme'
 import { mergeDeepRight } from 'ramda'
 import React from 'react'
 
-import PossiblePasswordsContainer from './PossiblePasswordsContainer'
+import ResultsContainer from './ResultsContainer'
 
 const initialState = {
   length: 12,
@@ -19,11 +19,9 @@ const initialState = {
 }
 
 const getWrapper = (state = {}) =>
-  shallow(
-    <PossiblePasswordsContainer {...mergeDeepRight(initialState, state)} />
-  )
+  shallow(<ResultsContainer {...mergeDeepRight(initialState, state)} />)
 
-describe('PossiblePasswordsContainer', () => {
+describe('ResultsContainer', () => {
   test('renders generic', () => {
     expect(getWrapper()).toMatchSnapshot()
   })

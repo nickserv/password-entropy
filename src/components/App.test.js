@@ -1,13 +1,13 @@
 import { shallow } from 'enzyme'
 import React from 'react'
 
-import PasswordEntropy from './PasswordEntropy'
+import App from './App'
 
-test('PasswordEntropy', () => {
+test('App', () => {
   const handleLength = jest.fn()
   const handleOptionsKey = jest.fn()
   const wrapper = shallow(
-    <PasswordEntropy
+    <App
       length={12}
       onCustom={() => {}}
       onGeneric={() => {}}

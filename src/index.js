@@ -3,12 +3,12 @@ import React, { Fragment } from 'react'
 import { render } from 'react-dom'
 import 'typeface-roboto'
 
-import PasswordEntropyContainer from './components/PasswordEntropyContainer'
+import AppContainer from './components/AppContainer'
 
 render(
   <Fragment>
     <CssBaseline />
-    <PasswordEntropyContainer />
+    <AppContainer />
   </Fragment>,
   document.getElementById('root')
 )

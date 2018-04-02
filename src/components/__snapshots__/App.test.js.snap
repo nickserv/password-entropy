@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`PasswordEntropy 1`] = `
+exports[`App 1`] = `
 <React.Fragment>
   <WithStyles(AppBar)
     position="static"
@@ -87,7 +87,7 @@ exports[`PasswordEntropy 1`] = `
       sm={true}
       xs={12}
     >
-      <PossiblePasswordsContainer
+      <ResultsContainer
         length={12}
         options={
           Object {

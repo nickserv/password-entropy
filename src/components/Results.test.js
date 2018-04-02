@@ -2,12 +2,12 @@ import { shallow } from 'enzyme'
 import { colors } from 'material-ui'
 import React from 'react'
 
-import PossiblePasswords from './PossiblePasswords'
+import Results from './Results'
 
-describe('PossiblePasswords', () => {
+describe('Results', () => {
   function getWrapper(approximate) {
     return shallow(
-      <PossiblePasswords
+      <Results
         approximate={approximate}
         entropyBits={77.54887502163469}
         entropyTip={{ color: colors.blue, minimum: 64, strength: 'Strong' }}

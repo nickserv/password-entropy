@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`PossiblePasswords approximate 1`] = `
+exports[`Results approximate 1`] = `
 <Card
   raised={false}
 >
@@ -312,7 +312,7 @@ exports[`PossiblePasswords approximate 1`] = `
 </Card>
 `;
 
-exports[`PossiblePasswords exact 1`] = `
+exports[`Results exact 1`] = `
 <Card
   raised={false}
 >

@@ -9,7 +9,7 @@ import {
 import PropTypes from 'prop-types'
 import React from 'react'
 
-export default function PossiblePasswords({
+export default function Results({
   possiblePasswords,
   approximate,
   entropyBits,
@@ -48,7 +48,7 @@ export default function PossiblePasswords({
   )
 }
 
-PossiblePasswords.propTypes = {
+Results.propTypes = {
   approximate: PropTypes.bool.isRequired,
   entropyBits: PropTypes.number.isRequired,
   entropyTip: PropTypes.shape({

@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 
-import PasswordEntropy from './PasswordEntropy'
+import App from './App'
 
-export default class PasswordEntropyContainer extends Component {
+export default class AppContainer extends Component {
   state = {
     length: 12,
     options: {
@@ -34,7 +34,7 @@ export default class PasswordEntropyContainer extends Component {
 
   render() {
     return (
-      <PasswordEntropy
+      <App
         length={this.state.length}
         onCustom={this.handleCustom}
         onGeneric={this.handleGeneric}
