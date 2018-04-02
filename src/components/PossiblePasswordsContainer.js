@@ -49,7 +49,7 @@ export default function PossiblePasswordsContainer({
     Diceware: dicewareWords,
     Custom
   }
-  
+
   const possiblePasswords = possibleItems[optionsKey] ** length
   const approximate = possiblePasswords > Number.MAX_SAFE_INTEGER
   const entropyBits = Math.max(0, Math.log2(possiblePasswords))
