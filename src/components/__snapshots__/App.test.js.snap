@@ -42,45 +42,24 @@ exports[`App 1`] = `
       sm={true}
       xs={12}
     >
-      <Card
-        raised={false}
-      >
-        <WithStyles(CardContent)>
-          <WithStyles(Typography)
-            gutterBottom={true}
-            variant="title"
-          >
-            Options
-          </WithStyles(Typography)>
-          <TextField
-            autoFocus={true}
-            fullWidth={true}
-            label="Number of Items"
-            min="0"
-            onChange={[Function]}
-            required={false}
-            select={false}
-            type="number"
-            value={12}
-          />
-          <Options
-            onCustom={[Function]}
-            onGeneric={[Function]}
-            options={
-              Object {
-                "Custom": 0,
-                "Generic": Object {
-                  "Lowercase Letters": true,
-                  "Numbers": true,
-                  "Symbols": true,
-                  "Uppercase Letters": true,
-                },
-              }
-            }
-            optionsKey="Generic"
-          />
-        </WithStyles(CardContent)>
-      </Card>
+      <Options
+        length={12}
+        onCustom={[Function]}
+        onGeneric={[Function]}
+        onLength={[Function]}
+        options={
+          Object {
+            "Custom": 0,
+            "Generic": Object {
+              "Lowercase Letters": true,
+              "Numbers": true,
+              "Symbols": true,
+              "Uppercase Letters": true,
+            },
+          }
+        }
+        optionsKey="Generic"
+      />
     </WithStyles(GridWrapper)>
     <WithStyles(GridWrapper)
       item={true}

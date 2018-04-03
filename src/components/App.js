@@ -1,14 +1,4 @@
-import {
-  AppBar,
-  Card,
-  CardContent,
-  Grid,
-  Tab,
-  Tabs,
-  TextField,
-  Toolbar,
-  Typography
-} from 'material-ui'
+import { AppBar, Grid, Tab, Tabs, Toolbar, Typography } from 'material-ui'
 import PropTypes from 'prop-types'
 import React, { Fragment } from 'react'
 
@@ -42,30 +32,14 @@ export default function App({
 
       <Grid container>
         <Grid item xs={12} sm>
-          <Card>
-            <CardContent>
-              <Typography variant="title" gutterBottom>
-                Options
-              </Typography>
-
-              <TextField
-                label="Number of Items"
-                value={length}
-                onChange={onLength}
-                type="number"
-                min="0"
-                autoFocus
-                fullWidth
-              />
-
-              <Options
-                onCustom={onCustom}
-                onGeneric={onGeneric}
-                options={options}
-                optionsKey={optionsKey}
-              />
-            </CardContent>
-          </Card>
+          <Options
+            length={length}
+            onCustom={onCustom}
+            onGeneric={onGeneric}
+            onLength={onLength}
+            options={options}
+            optionsKey={optionsKey}
+          />
         </Grid>
 
         <Grid item xs={12} sm>

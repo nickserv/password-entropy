@@ -4,14 +4,13 @@ import React from 'react'
 import App from './App'
 
 test('App', () => {
-  const handleLength = jest.fn()
   const handleOptionsKey = jest.fn()
   const wrapper = shallow(
     <App
       length={12}
       onCustom={() => {}}
       onGeneric={() => {}}
-      onLength={handleLength}
+      onLength={() => {}}
       onOptionsKey={handleOptionsKey}
       options={{
         Custom: 0,
@@ -25,9 +24,7 @@ test('App', () => {
       optionsKey="Generic"
     />
   )
-  wrapper.find('TextField').simulate('change')
   wrapper.find('WithStyles(Tabs)').simulate('change')
   expect(wrapper).toMatchSnapshot()
-  expect(handleLength).toHaveBeenCalled()
   expect(handleOptionsKey).toHaveBeenCalled()
 })
