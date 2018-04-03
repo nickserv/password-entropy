@@ -3,7 +3,7 @@ import React, { Fragment } from 'react'
 import { render } from 'react-dom'
 import 'typeface-roboto'
 
-import AppContainer from './components/AppContainer'
+import AppContainer from './AppContainer'
 
 render(
   <Fragment>
