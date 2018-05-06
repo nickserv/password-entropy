@@ -1,7 +1,8 @@
+import 'bootstrap/dist/css/bootstrap.css'
 import React from 'react'
 import { render } from 'react-dom'
-import 'bootstrap/dist/css/bootstrap.css'
-
 import PasswordEntropyContainer from './components/PasswordEntropyContainer'
+import registerServiceWorker from './registerServiceWorker'
 
 render(<PasswordEntropyContainer />, document.getElementById('root'))
+registerServiceWorker()
