@@ -1,9 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Results approximate 1`] = `
-<Card
-  raised={false}
->
+<WithStyles(Card)>
   <WithStyles(CardContent)>
     <WithStyles(Typography)
       gutterBottom={true}
@@ -69,8 +67,10 @@ exports[`Results approximate 1`] = `
               "disabled": "rgba(0, 0, 0, 0.26)",
               "disabledBackground": "rgba(0, 0, 0, 0.12)",
               "hover": "rgba(0, 0, 0, 0.08)",
+              "hoverOpacity": 0.08,
               "selected": "rgba(0, 0, 0, 0.14)",
             },
+            "augmentColor": [Function],
             "background": Object {
               "default": "#fafafa",
               "paper": "#fff",
@@ -205,6 +205,7 @@ exports[`Results approximate 1`] = `
               "lineHeight": "1.71429em",
             },
             "button": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
               "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
               "fontSize": "0.875rem",
               "fontWeight": 500,
@@ -309,13 +310,11 @@ exports[`Results approximate 1`] = `
       2.2107391972073336e+23
     </WithStyles(Typography)>
   </WithStyles(CardContent)>
-</Card>
+</WithStyles(Card)>
 `;
 
 exports[`Results exact 1`] = `
-<Card
-  raised={false}
->
+<WithStyles(Card)>
   <WithStyles(CardContent)>
     <WithStyles(Typography)
       gutterBottom={true}
@@ -381,8 +380,10 @@ exports[`Results exact 1`] = `
               "disabled": "rgba(0, 0, 0, 0.26)",
               "disabledBackground": "rgba(0, 0, 0, 0.12)",
               "hover": "rgba(0, 0, 0, 0.08)",
+              "hoverOpacity": 0.08,
               "selected": "rgba(0, 0, 0, 0.14)",
             },
+            "augmentColor": [Function],
             "background": Object {
               "default": "#fafafa",
               "paper": "#fff",
@@ -517,6 +518,7 @@ exports[`Results exact 1`] = `
               "lineHeight": "1.71429em",
             },
             "button": Object {
+              "color": "rgba(0, 0, 0, 0.87)",
               "fontFamily": "\\"Roboto\\", \\"Helvetica\\", \\"Arial\\", sans-serif",
               "fontSize": "0.875rem",
               "fontWeight": 500,
@@ -620,5 +622,5 @@ exports[`Results exact 1`] = `
       2.2107391972073336e+23
     </WithStyles(Typography)>
   </WithStyles(CardContent)>
-</Card>
+</WithStyles(Card)>
 `;
