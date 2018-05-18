@@ -1,4 +1,4 @@
-import { colors } from 'material-ui'
+import { colors } from '@material-ui/core'
 import PropTypes from 'prop-types'
 import React from 'react'
 

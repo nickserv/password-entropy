@@ -1,4 +1,4 @@
-import { CssBaseline } from 'material-ui'
+import { CssBaseline } from '@material-ui/core'
 import React, { Fragment } from 'react'
 import { render } from 'react-dom'
 import 'typeface-roboto'

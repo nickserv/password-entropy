@@ -1,5 +1,5 @@
 import { shallow } from 'enzyme'
-import { colors } from 'material-ui'
+import { colors } from '@material-ui/core'
 import React from 'react'
 
 import Results from './Results'

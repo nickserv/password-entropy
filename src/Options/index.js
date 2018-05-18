@@ -1,4 +1,4 @@
-import { Card, CardContent, TextField, Typography } from 'material-ui'
+import { Card, CardContent, TextField, Typography } from '@material-ui/core'
 import PropTypes from 'prop-types'
 import React from 'react'
 

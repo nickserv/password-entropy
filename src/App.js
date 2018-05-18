@@ -1,4 +1,4 @@
-import { AppBar, Grid, Tab, Tabs, Toolbar, Typography } from 'material-ui'
+import { AppBar, Grid, Tab, Tabs, Toolbar, Typography } from '@material-ui/core'
 import PropTypes from 'prop-types'
 import React, { Fragment } from 'react'
 

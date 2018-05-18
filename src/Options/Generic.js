@@ -1,4 +1,9 @@
-import { Checkbox, FormControlLabel, FormGroup, Typography } from 'material-ui'
+import {
+  Checkbox,
+  FormControlLabel,
+  FormGroup,
+  Typography
+} from '@material-ui/core'
 import PropTypes from 'prop-types'
 import React, { Fragment } from 'react'
 

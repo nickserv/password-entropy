@@ -5,7 +5,7 @@ import {
   LinearProgress,
   MuiThemeProvider,
   Typography
-} from 'material-ui'
+} from '@material-ui/core'
 import PropTypes from 'prop-types'
 import React from 'react'
 
