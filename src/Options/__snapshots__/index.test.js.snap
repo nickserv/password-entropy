@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Options 1`] = `
+<WithStyles(Card)>
+  <WithStyles(CardContent)>
+    <WithStyles(Typography)
+      gutterBottom={true}
+      variant="title"
+    >
+      Options
+    </WithStyles(Typography)>
+    <TextField
+      autoFocus={true}
+      fullWidth={true}
+      label="Number of Items"
+      min="0"
+      onChange={[Function]}
+      required={false}
+      select={false}
+      type="number"
+      value={12}
+    />
+    <Generic
+      onGeneric={[Function]}
+      toggles={
+        Object {
+          "Lowercase Letters": true,
+          "Numbers": true,
+          "Symbols": true,
+          "Uppercase Letters": true,
+        }
+      }
+    />
+  </WithStyles(CardContent)>
+</WithStyles(Card)>
+`;

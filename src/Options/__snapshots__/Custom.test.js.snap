@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Custom 1`] = `
+<TextField
+  fullWidth={true}
+  label="Possible Items"
+  min="0"
+  onChange={[Function]}
+  required={false}
+  select={false}
+  type="number"
+  value={1}
+/>
+`;

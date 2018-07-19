@@ -1,15 +1,15 @@
 import { shallow } from 'enzyme'
 import React from 'react'
 
-import PossiblePasswordsContainer from './PossiblePasswordsContainer'
+import ResultsContainer from './ResultsContainer'
 
 const initialState = {
   length: 12,
   options: {
     Custom: 0,
     Generic: {
-      Letters: true,
-      'Capital Letters': true,
+      'Lowercase Letters': true,
+      'Uppercase Letters': true,
       Numbers: true,
       Symbols: true
     }
@@ -17,9 +17,9 @@ const initialState = {
   optionsKey: 'Generic'
 }
 
-const getWrapper = state => shallow(<PossiblePasswordsContainer {...state} />)
+const getWrapper = state => shallow(<ResultsContainer {...state} />)
 
-describe('PossiblePasswordsContainer', () => {
+describe('ResultsContainer', () => {
   test('renders generic', () => {
     expect(getWrapper(initialState)).toMatchSnapshot()
   })

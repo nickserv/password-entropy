@@ -1,9 +1,16 @@
-import 'bootstrap/dist/css/bootstrap.css'
-import React from 'react'
+import { CssBaseline } from '@material-ui/core'
+import React, { Fragment } from 'react'
 import { render } from 'react-dom'
-import PasswordEntropyContainer from './components/PasswordEntropyContainer'
+import 'typeface-roboto'
+import AppContainer from './AppContainer'
 import registerServiceWorker from './registerServiceWorker'
 
-render(<PasswordEntropyContainer />, document.getElementById('root'))
+render(
+  <Fragment>
+    <CssBaseline />
+    <AppContainer />
+  </Fragment>,
+  document.getElementById('root')
+)
 registerServiceWorker()
 module.hot && module.hot.accept()

@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`PasswordEntropyContainer 1`] = `
-<PasswordEntropy
+exports[`AppContainer 1`] = `
+<App
   length={12}
   onCustom={[Function]}
   onGeneric={[Function]}
@@ -11,10 +11,10 @@ exports[`PasswordEntropyContainer 1`] = `
     Object {
       "Custom": 0,
       "Generic": Object {
-        "Capital Letters": true,
-        "Letters": true,
+        "Lowercase Letters": true,
         "Numbers": true,
         "Symbols": true,
+        "Uppercase Letters": true,
       },
     }
   }

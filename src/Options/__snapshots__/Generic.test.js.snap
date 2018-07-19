@@ -1,0 +1,90 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Generic 1`] = `
+<WithStyles(FormGroup)>
+  <WithStyles(FormControlLabel)
+    control={
+      <WithStyles(Checkbox)
+        checked={true}
+        name="Lowercase Letters"
+        onChange={[Function]}
+      />
+    }
+    key="Lowercase Letters"
+    label={
+      <Unknown>
+        Lowercase Letters
+        <WithStyles(Typography)
+          gutterBottom={true}
+          variant="caption"
+        >
+          a-z
+        </WithStyles(Typography)>
+      </Unknown>
+    }
+  />
+  <WithStyles(FormControlLabel)
+    control={
+      <WithStyles(Checkbox)
+        checked={true}
+        name="Uppercase Letters"
+        onChange={[Function]}
+      />
+    }
+    key="Uppercase Letters"
+    label={
+      <Unknown>
+        Uppercase Letters
+        <WithStyles(Typography)
+          gutterBottom={true}
+          variant="caption"
+        >
+          A-Z
+        </WithStyles(Typography)>
+      </Unknown>
+    }
+  />
+  <WithStyles(FormControlLabel)
+    control={
+      <WithStyles(Checkbox)
+        checked={true}
+        name="Numbers"
+        onChange={[Function]}
+      />
+    }
+    key="Numbers"
+    label={
+      <Unknown>
+        Numbers
+        <WithStyles(Typography)
+          gutterBottom={true}
+          variant="caption"
+        >
+          0-9
+        </WithStyles(Typography)>
+      </Unknown>
+    }
+  />
+  <WithStyles(FormControlLabel)
+    control={
+      <WithStyles(Checkbox)
+        checked={true}
+        name="Symbols"
+        onChange={[Function]}
+      />
+    }
+    key="Symbols"
+    label={
+      <Unknown>
+        Symbols
+        <WithStyles(Typography)
+          gutterBottom={true}
+          variant="caption"
+        >
+          !@#$%^&*
+        </WithStyles(Typography)>
+      </Unknown>
+    }
+  />
+</WithStyles(FormGroup)>
+`;

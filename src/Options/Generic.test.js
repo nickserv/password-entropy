@@ -4,20 +4,16 @@ import React from 'react'
 import Generic from './Generic'
 
 test('Generic', () => {
-  const handleGeneric = jest.fn()
   const wrapper = shallow(
     <Generic
-      onGeneric={handleGeneric}
+      onGeneric={() => {}}
       toggles={{
-        'Capital Letters': true,
-        Letters: true,
+        'Lowercase Letters': true,
+        'Uppercase Letters': true,
         Numbers: true,
         Symbols: true
       }}
     />
   )
-  wrapper.find({ name: 'Letters' }).simulate('change')
-
   expect(wrapper).toMatchSnapshot()
-  expect(handleGeneric).toHaveBeenCalled()
 })

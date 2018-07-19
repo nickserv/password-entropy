@@ -4,17 +4,18 @@ import React from 'react'
 import Options from '.'
 
 test('Options', () => {
-  const handleOptionsKey = jest.fn()
+  const handleLength = jest.fn()
   const wrapper = shallow(
     <Options
+      length={12}
       onCustom={() => {}}
       onGeneric={() => {}}
-      onOptionsKey={handleOptionsKey}
+      onLength={handleLength}
       options={{
         Custom: 0,
         Generic: {
-          Letters: true,
-          'Capital Letters': true,
+          'Lowercase Letters': true,
+          'Uppercase Letters': true,
           Numbers: true,
           Symbols: true
         }
@@ -22,10 +23,7 @@ test('Options', () => {
       optionsKey="Generic"
     />
   )
-  wrapper
-    .find('NavLink')
-    .first()
-    .simulate('click')
+  wrapper.find('TextField').simulate('change')
   expect(wrapper).toMatchSnapshot()
-  expect(handleOptionsKey).toHaveBeenCalled()
+  expect(handleLength).toHaveBeenCalled()
 })

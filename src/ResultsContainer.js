@@ -1,41 +1,42 @@
+import { colors } from '@material-ui/core'
 import PropTypes from 'prop-types'
 import React from 'react'
 
-import PossiblePasswords from './PossiblePasswords'
+import Results from './Results'
 
 export const dicewareWords = 7776
 
 const entropyTips = [
   {
+    color: colors.red,
     minimum: 0,
-    strength: 'Very Weak',
-    style: 'danger'
+    strength: 'Very Weak'
   },
   {
+    color: colors.yellow,
     minimum: 32,
-    strength: 'Weak',
-    style: 'warning'
+    strength: 'Weak'
   },
   {
+    color: colors.blue,
     minimum: 64,
-    strength: 'Strong',
-    style: 'info'
+    strength: 'Strong'
   },
   {
+    color: colors.green,
     minimum: 128,
-    strength: 'Very Strong',
-    style: 'success'
+    strength: 'Very Strong'
   }
 ]
 
 const toggles = {
-  Letters: 26,
-  'Capital Letters': 26,
+  'Lowercase Letters': 26,
+  'Uppercase Letters': 26,
   Numbers: 10,
   Symbols: 8
 }
 
-export default function PossiblePasswordsContainer({
+export default function ResultsContainer({
   length,
   options: { Custom, Generic },
   optionsKey
@@ -48,6 +49,7 @@ export default function PossiblePasswordsContainer({
     Diceware: dicewareWords,
     Custom
   }
+
   const possiblePasswords = possibleItems[optionsKey] ** length
   const approximate = possiblePasswords > Number.MAX_SAFE_INTEGER
   const entropyBits = Math.max(0, Math.log2(possiblePasswords))
@@ -56,7 +58,7 @@ export default function PossiblePasswordsContainer({
     .find(tip => entropyBits >= tip.minimum, entropyTips)
 
   return (
-    <PossiblePasswords
+    <Results
       possiblePasswords={possiblePasswords}
       approximate={approximate}
       entropyBits={entropyBits}
@@ -65,13 +67,13 @@ export default function PossiblePasswordsContainer({
   )
 }
 
-PossiblePasswordsContainer.propTypes = {
+ResultsContainer.propTypes = {
   length: PropTypes.number.isRequired,
   options: PropTypes.shape({
     Custom: PropTypes.number.isRequired,
     Generic: PropTypes.shape({
-      Letters: PropTypes.bool.isRequired,
-      'Capital Letters': PropTypes.bool.isRequired,
+      'Lowercase Letters': PropTypes.bool.isRequired,
+      'Uppercase Letters': PropTypes.bool.isRequired,
       Numbers: PropTypes.bool.isRequired,
       Symbols: PropTypes.bool.isRequired
     }).isRequired

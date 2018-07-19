@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App 1`] = `
+<React.Fragment>
+  <WithStyles(AppBar)
+    position="static"
+  >
+    <WithStyles(Toolbar)>
+      <WithStyles(Typography)
+        color="inherit"
+        variant="headline"
+      >
+        Password Entropy
+      </WithStyles(Typography)>
+    </WithStyles(Toolbar)>
+    <WithStyles(Tabs)
+      onChange={[Function]}
+      value="Generic"
+    >
+      <WithStyles(Tab)
+        key="Generic"
+        label="Generic"
+        value="Generic"
+      />
+      <WithStyles(Tab)
+        key="Diceware"
+        label="Diceware"
+        value="Diceware"
+      />
+      <WithStyles(Tab)
+        key="Custom"
+        label="Custom"
+        value="Custom"
+      />
+    </WithStyles(Tabs)>
+  </WithStyles(AppBar)>
+  <WithStyles(GridWrapper)
+    container={true}
+  >
+    <WithStyles(GridWrapper)
+      item={true}
+      sm={true}
+      xs={12}
+    >
+      <Options
+        length={12}
+        onCustom={[Function]}
+        onGeneric={[Function]}
+        onLength={[Function]}
+        options={
+          Object {
+            "Custom": 0,
+            "Generic": Object {
+              "Lowercase Letters": true,
+              "Numbers": true,
+              "Symbols": true,
+              "Uppercase Letters": true,
+            },
+          }
+        }
+        optionsKey="Generic"
+      />
+    </WithStyles(GridWrapper)>
+    <WithStyles(GridWrapper)
+      item={true}
+      sm={true}
+      xs={12}
+    >
+      <ResultsContainer
+        length={12}
+        options={
+          Object {
+            "Custom": 0,
+            "Generic": Object {
+              "Lowercase Letters": true,
+              "Numbers": true,
+              "Symbols": true,
+              "Uppercase Letters": true,
+            },
+          }
+        }
+        optionsKey="Generic"
+      />
+    </WithStyles(GridWrapper)>
+  </WithStyles(GridWrapper)>
+</React.Fragment>
+`;

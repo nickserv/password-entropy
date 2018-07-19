@@ -1,22 +1,22 @@
 import { shallow } from 'enzyme'
 import React from 'react'
 
-import PasswordEntropy from './PasswordEntropy'
+import App from './App'
 
-test('PasswordEntropy', () => {
-  const handleLength = jest.fn()
+test('App', () => {
+  const handleOptionsKey = jest.fn()
   const wrapper = shallow(
-    <PasswordEntropy
+    <App
       length={12}
       onCustom={() => {}}
       onGeneric={() => {}}
-      onLength={handleLength}
-      onOptionsKey={() => {}}
+      onLength={() => {}}
+      onOptionsKey={handleOptionsKey}
       options={{
         Custom: 0,
         Generic: {
-          Letters: true,
-          'Capital Letters': true,
+          'Lowercase Letters': true,
+          'Uppercase Letters': true,
           Numbers: true,
           Symbols: true
         }
@@ -24,8 +24,7 @@ test('PasswordEntropy', () => {
       optionsKey="Generic"
     />
   )
-  wrapper.find('Input').simulate('change')
-
+  wrapper.find('WithStyles(Tabs)').simulate('change')
   expect(wrapper).toMatchSnapshot()
-  expect(handleLength).toHaveBeenCalled()
+  expect(handleOptionsKey).toHaveBeenCalled()
 })
