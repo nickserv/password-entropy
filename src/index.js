@@ -13,3 +13,4 @@ render(
   document.getElementById('root')
 )
 registerServiceWorker()
+module.hot && module.hot.accept()
