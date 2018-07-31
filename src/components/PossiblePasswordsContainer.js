@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-
 import PossiblePasswords from './PossiblePasswords'
 
 export const dicewareWords = 7776
@@ -42,7 +41,7 @@ export default function PossiblePasswordsContainer({
 }) {
   const possibleItems = {
     Generic: Object.entries(Generic)
-      .filter(([key, value]) => value)
+      .filter(([, value]) => value)
       .map(([key]) => toggles[key])
       .reduce((x, y) => x + y),
     Diceware: dicewareWords,

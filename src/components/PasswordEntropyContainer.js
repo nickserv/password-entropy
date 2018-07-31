@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-
 import PasswordEntropy from './PasswordEntropy'
 
 export default class PasswordEntropyContainer extends Component {
@@ -33,15 +32,17 @@ export default class PasswordEntropyContainer extends Component {
   handleOptionsKey = optionsKey => this.setState({ optionsKey })
 
   render() {
+    const { length, options, optionsKey } = this.state
+
     return (
       <PasswordEntropy
-        length={this.state.length}
+        length={length}
         onCustom={this.handleCustom}
         onGeneric={this.handleGeneric}
         onLength={this.handleLength}
         onOptionsKey={this.handleOptionsKey}
-        options={this.state.options}
-        optionsKey={this.state.optionsKey}
+        options={options}
+        optionsKey={optionsKey}
       />
     )
   }

@@ -15,7 +15,7 @@ export default function PossiblePasswords({
   possiblePasswords,
   approximate,
   entropyBits,
-  entropyTip: { strength, style }
+  entropyTip: { strength }
 }) {
   return (
     <Card>

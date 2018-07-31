@@ -15,7 +15,6 @@ import {
   TabContent,
   TabPane
 } from 'reactstrap'
-
 import Custom from './Custom'
 import Diceware from './Diceware'
 import Generic from './Generic'
@@ -41,7 +40,7 @@ export default function Options({
             <NavLink
               active={optionsKey === name}
               href="#"
-              onClick={onOptionsKey.bind(null, name)}
+              onClick={() => onOptionsKey(name)}
             >
               <Icon icon={icon} /> {name}
             </NavLink>

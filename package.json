@@ -12,9 +12,16 @@
     "reactstrap": "^5.0.0"
   },
   "devDependencies": {
+    "babel-eslint": "^7.2.3",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "enzyme-to-json": "^3.3.3",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^17.0.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-react": "^7.10.0",
     "prettier": "^1.11.1"
   },
   "scripts": {
@@ -28,8 +35,37 @@
     "prepare": "npm run format:check && npm run lint && npm run build"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": [
+      "react-app",
+      "airbnb",
+      "prettier"
+    ],
+    "env": {
+      "browser": true,
+      "jest": true
+    },
+    "parser": "babel-eslint",
+    "rules": {
+      "import/no-extraneous-dependencies": [
+        "error",
+        {
+          "devDependencies": true
+        }
+      ],
+      "react/jsx-filename-extension": [
+        "error",
+        {
+          "extensions": [
+            ".js"
+          ]
+        }
+      ],
+      "react/jsx-one-expression-per-line": "off"
+    }
   },
+  "eslintIgnore": [
+    "registerServiceWorker.js"
+  ],
   "homepage": ".",
   "jest": {
     "collectCoverageFrom": [
