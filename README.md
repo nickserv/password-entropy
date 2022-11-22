@@ -8,4 +8,4 @@ A simple entropy calculator for evaluating password security.
 * ISC
 * **Icon:** `glyphicons-204-lock.png` from [Glyphicons Free](https://glyphicons.com/)
 
-## [`create-react-app` User Guide](https://github.com/facebookincubator/create-react-app/blob/main/packages/react-scripts/template/README.md)
+## [`create-react-app` User Guide](https://github.com/facebook/create-react-app/blob/main/packages/cra-template/template/README.md)
