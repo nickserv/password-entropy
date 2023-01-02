@@ -1,8 +1,7 @@
 {
   "short_name": "Entropy",
   "name": "Password Entropy",
-  "description":
-    "A simple entropy calculator for evaluating password security.",
+  "description": "A simple entropy calculator for evaluating password security.",
   "icons": [
     {
       "src": "favicon.png",
