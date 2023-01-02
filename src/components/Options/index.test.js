@@ -16,16 +16,13 @@ test('Options', () => {
           Letters: true,
           'Capital Letters': true,
           Numbers: true,
-          Symbols: true
-        }
+          Symbols: true,
+        },
       }}
       optionsKey="Generic"
     />
   )
-  wrapper
-    .find('NavLink')
-    .first()
-    .simulate('click')
+  wrapper.find('NavLink').first().simulate('click')
   expect(wrapper).toMatchSnapshot()
   expect(handleOptionsKey).toHaveBeenCalled()
 })

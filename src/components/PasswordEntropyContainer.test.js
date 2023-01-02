@@ -20,7 +20,7 @@ test('handleGeneric', () => {
     .find('PasswordEntropy')
     .simulate('generic', { target: { checked: false, name: 'Letters' } })
   expect(wrapper.state()).toMatchObject({
-    options: { Generic: { Letters: false } }
+    options: { Generic: { Letters: false } },
   })
 })
 

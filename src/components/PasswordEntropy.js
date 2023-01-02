@@ -1,7 +1,7 @@
 import {
   faArrowsAltH,
   faInfoCircle,
-  faLock
+  faLock,
 } from '@fortawesome/fontawesome-free-solid'
 import Icon from '@fortawesome/react-fontawesome'
 import PropTypes from 'prop-types'
@@ -18,7 +18,7 @@ export default function PasswordEntropy({
   onLength,
   onOptionsKey,
   options,
-  optionsKey
+  optionsKey,
 }) {
   return (
     <Container>
@@ -79,8 +79,8 @@ PasswordEntropy.propTypes = {
       Letters: PropTypes.bool.isRequired,
       'Capital Letters': PropTypes.bool.isRequired,
       Numbers: PropTypes.bool.isRequired,
-      Symbols: PropTypes.bool.isRequired
-    }).isRequired
+      Symbols: PropTypes.bool.isRequired,
+    }).isRequired,
   }).isRequired,
-  optionsKey: PropTypes.string.isRequired
+  optionsKey: PropTypes.string.isRequired,
 }

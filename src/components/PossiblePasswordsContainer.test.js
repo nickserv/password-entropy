@@ -11,13 +11,13 @@ const initialState = {
       Letters: true,
       'Capital Letters': true,
       Numbers: true,
-      Symbols: true
-    }
+      Symbols: true,
+    },
   },
-  optionsKey: 'Generic'
+  optionsKey: 'Generic',
 }
 
-const getWrapper = state => shallow(<PossiblePasswordsContainer {...state} />)
+const getWrapper = (state) => shallow(<PossiblePasswordsContainer {...state} />)
 
 describe('PossiblePasswordsContainer', () => {
   test('renders generic', () => {
@@ -41,7 +41,7 @@ describe('PossiblePasswordsContainer', () => {
       getWrapper({
         ...initialState,
         options: { ...initialState.options, Custom: 0 },
-        optionsKey: 'Custom'
+        optionsKey: 'Custom',
       })
     ).toMatchSnapshot()
   })
@@ -52,7 +52,7 @@ describe('PossiblePasswordsContainer', () => {
         ...initialState,
         length: 32,
         options: { ...initialState.options, Custom: 2 },
-        optionsKey: 'Custom'
+        optionsKey: 'Custom',
       })
     ).toMatchSnapshot()
   })
@@ -63,7 +63,7 @@ describe('PossiblePasswordsContainer', () => {
         ...initialState,
         length: 64,
         options: { ...initialState.options, Custom: 2 },
-        optionsKey: 'Custom'
+        optionsKey: 'Custom',
       })
     ).toMatchSnapshot()
   })
@@ -74,7 +74,7 @@ describe('PossiblePasswordsContainer', () => {
         ...initialState,
         length: 128,
         options: { ...initialState.options, Custom: 2 },
-        optionsKey: 'Custom'
+        optionsKey: 'Custom',
       })
     ).toMatchSnapshot()
   })

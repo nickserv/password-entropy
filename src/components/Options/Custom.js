@@ -23,5 +23,5 @@ export default function Custom({ custom, onCustom }) {
 
 Custom.propTypes = {
   custom: PropTypes.number.isRequired,
-  onCustom: PropTypes.func.isRequired
+  onCustom: PropTypes.func.isRequired,
 }

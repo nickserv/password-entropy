@@ -6,7 +6,7 @@ export const examples = {
   Letters: 'a-z',
   'Capital Letters': 'A-Z',
   Numbers: '0-9',
-  Symbols: '!@#$%^&*'
+  Symbols: '!@#$%^&*',
 }
 
 export default function Generic({ onGeneric, toggles }) {
@@ -35,6 +35,6 @@ Generic.propTypes = {
     'Capital Letters': PropTypes.bool.isRequired,
     Letters: PropTypes.bool.isRequired,
     Numbers: PropTypes.bool.isRequired,
-    Symbols: PropTypes.bool.isRequired
-  }).isRequired
+    Symbols: PropTypes.bool.isRequired,
+  }).isRequired,
 }

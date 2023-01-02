@@ -8,14 +8,14 @@ import {
   FormGroup,
   FormText,
   Label,
-  Progress
+  Progress,
 } from 'reactstrap'
 
 export default function PossiblePasswords({
   possiblePasswords,
   approximate,
   entropyBits,
-  entropyTip: { strength }
+  entropyTip: { strength },
 }) {
   return (
     <Card>
@@ -52,7 +52,7 @@ PossiblePasswords.propTypes = {
   entropyTip: PropTypes.shape({
     minimum: PropTypes.number.isRequired,
     strength: PropTypes.string.isRequired,
-    style: PropTypes.string.isRequired
+    style: PropTypes.string.isRequired,
   }).isRequired,
-  possiblePasswords: PropTypes.number.isRequired
+  possiblePasswords: PropTypes.number.isRequired,
 }

@@ -18,8 +18,8 @@ test('PasswordEntropy', () => {
           Letters: true,
           'Capital Letters': true,
           Numbers: true,
-          Symbols: true
-        }
+          Symbols: true,
+        },
       }}
       optionsKey="Generic"
     />

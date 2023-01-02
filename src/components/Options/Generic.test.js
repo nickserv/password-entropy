@@ -12,7 +12,7 @@ test('Generic', () => {
         'Capital Letters': true,
         Letters: true,
         Numbers: true,
-        Symbols: true
+        Symbols: true,
       }}
     />
   )

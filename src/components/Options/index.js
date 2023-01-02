@@ -1,7 +1,7 @@
 import {
   faBook,
   faCheckSquare,
-  faQuestionCircle
+  faQuestionCircle,
 } from '@fortawesome/fontawesome-free-solid'
 import Icon from '@fortawesome/react-fontawesome'
 import PropTypes from 'prop-types'
@@ -13,7 +13,7 @@ import {
   NavItem,
   NavLink,
   TabContent,
-  TabPane
+  TabPane,
 } from 'reactstrap'
 import Custom from './Custom'
 import Diceware from './Diceware'
@@ -22,7 +22,7 @@ import Generic from './Generic'
 const icons = {
   Generic: faCheckSquare,
   Diceware: faBook,
-  Custom: faQuestionCircle
+  Custom: faQuestionCircle,
 }
 
 export default function Options({
@@ -30,7 +30,7 @@ export default function Options({
   onGeneric,
   onOptionsKey,
   options,
-  optionsKey
+  optionsKey,
 }) {
   return (
     <Fragment>
@@ -87,8 +87,8 @@ Options.propTypes = {
       Letters: PropTypes.bool.isRequired,
       'Capital Letters': PropTypes.bool.isRequired,
       Numbers: PropTypes.bool.isRequired,
-      Symbols: PropTypes.bool.isRequired
-    }).isRequired
+      Symbols: PropTypes.bool.isRequired,
+    }).isRequired,
   }).isRequired,
-  optionsKey: PropTypes.string.isRequired
+  optionsKey: PropTypes.string.isRequired,
 }
