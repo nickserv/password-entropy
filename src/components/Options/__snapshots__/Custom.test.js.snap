@@ -48,7 +48,19 @@ exports[`Custom 1`] = `
      Possible Items
     <Input
       min="0"
-      onChange={[Function]}
+      onChange={
+        [MockFunction] {
+          "calls": Array [
+            Array [],
+          ],
+          "results": Array [
+            Object {
+              "type": "return",
+              "value": undefined,
+            },
+          ],
+        }
+      }
       required={true}
       type="number"
       value={1}

@@ -5,7 +5,7 @@ import {
 } from '@fortawesome/fontawesome-free-solid'
 import Icon from '@fortawesome/react-fontawesome'
 import PropTypes from 'prop-types'
-import React, { Fragment } from 'react'
+import React from 'react'
 import {
   Card,
   CardBody,
@@ -33,7 +33,7 @@ export default function Options({
   optionsKey,
 }) {
   return (
-    <Fragment>
+    <>
       <Nav tabs>
         {Object.entries(icons).map(([name, icon]) => (
           <NavItem key={name}>
@@ -73,7 +73,7 @@ export default function Options({
           </Card>
         </TabPane>
       </TabContent>
-    </Fragment>
+    </>
   )
 }
 

@@ -23,7 +23,19 @@ exports[`Generic 1`] = `
       <Input
         checked={true}
         name="Letters"
-        onChange={[Function]}
+        onChange={
+          [MockFunction] {
+            "calls": Array [
+              Array [],
+            ],
+            "results": Array [
+              Object {
+                "type": "return",
+                "value": undefined,
+              },
+            ],
+          }
+        }
         type="checkbox"
       />
       Letters
@@ -56,7 +68,19 @@ exports[`Generic 1`] = `
       <Input
         checked={true}
         name="Capital Letters"
-        onChange={[Function]}
+        onChange={
+          [MockFunction] {
+            "calls": Array [
+              Array [],
+            ],
+            "results": Array [
+              Object {
+                "type": "return",
+                "value": undefined,
+              },
+            ],
+          }
+        }
         type="checkbox"
       />
       Capital Letters
@@ -89,7 +113,19 @@ exports[`Generic 1`] = `
       <Input
         checked={true}
         name="Numbers"
-        onChange={[Function]}
+        onChange={
+          [MockFunction] {
+            "calls": Array [
+              Array [],
+            ],
+            "results": Array [
+              Object {
+                "type": "return",
+                "value": undefined,
+              },
+            ],
+          }
+        }
         type="checkbox"
       />
       Numbers
@@ -122,7 +158,19 @@ exports[`Generic 1`] = `
       <Input
         checked={true}
         name="Symbols"
-        onChange={[Function]}
+        onChange={
+          [MockFunction] {
+            "calls": Array [
+              Array [],
+            ],
+            "results": Array [
+              Object {
+                "type": "return",
+                "value": undefined,
+              },
+            ],
+          }
+        }
         type="checkbox"
       />
       Symbols

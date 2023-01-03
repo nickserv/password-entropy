@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import React, { Fragment } from 'react'
+import React from 'react'
 import { Input, FormGroup, Label } from 'reactstrap'
 
 export const examples = {
@@ -11,7 +11,7 @@ export const examples = {
 
 export default function Generic({ onGeneric, toggles }) {
   return (
-    <Fragment>
+    <>
       {Object.entries(examples).map(([name, example]) => (
         <FormGroup key={name} check>
           <Label check>
@@ -25,7 +25,7 @@ export default function Generic({ onGeneric, toggles }) {
           </Label>
         </FormGroup>
       ))}
-    </Fragment>
+    </>
   )
 }
 
