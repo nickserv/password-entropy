@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Generic 1`] = `
-<React.Fragment>
+<Fragment>
   <FormGroup
     check={true}
     key="Letters"
@@ -182,5 +182,5 @@ exports[`Generic 1`] = `
       </small>
     </Label>
   </FormGroup>
-</React.Fragment>
+</Fragment>
 `;
