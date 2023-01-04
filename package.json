@@ -25,9 +25,9 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "lint": "eslint src",
+    "pretest": "npm run format:check && npm run lint && npm run build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "prepare": "npm run format:check && npm run lint && npm run build"
+    "eject": "react-scripts eject"
   },
   "browserslist": {
     "production": [
