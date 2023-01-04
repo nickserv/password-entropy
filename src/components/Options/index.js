@@ -2,8 +2,8 @@ import {
   faBook,
   faCheckSquare,
   faQuestionCircle,
-} from '@fortawesome/fontawesome-free-solid'
-import Icon from '@fortawesome/react-fontawesome'
+} from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import PropTypes from 'prop-types'
 import React from 'react'
 import {
@@ -42,7 +42,7 @@ export default function Options({
               href="#"
               onClick={() => onOptionsKey(name)}
             >
-              <Icon icon={icon} /> {name}
+              <FontAwesomeIcon icon={icon} /> {name}
             </NavLink>
           </NavItem>
         ))}

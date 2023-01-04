@@ -1,5 +1,5 @@
-import { faList, faRandom } from '@fortawesome/fontawesome-free-solid'
-import Icon from '@fortawesome/react-fontawesome'
+import { faList, faRandom } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import PropTypes from 'prop-types'
 import React from 'react'
 import {
@@ -22,7 +22,7 @@ export default function PossiblePasswords({
       <CardBody>
         <FormGroup>
           <Label>
-            <Icon icon={faList} /> Entropy
+            <FontAwesomeIcon icon={faList} /> Entropy
           </Label>
 
           <FormText>
@@ -34,7 +34,7 @@ export default function PossiblePasswords({
 
         <FormGroup>
           <Label>
-            <Icon icon={faRandom} /> PossiblePasswords
+            <FontAwesomeIcon icon={faRandom} /> PossiblePasswords
           </Label>
 
           <FormText>
