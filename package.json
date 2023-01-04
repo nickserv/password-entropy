@@ -3,12 +3,12 @@
   "dependencies": {
     "@fortawesome/free-solid-svg-icons": "^6.2.1",
     "@fortawesome/react-fontawesome": "^0.2.0",
-    "bootstrap": "^4.0.0",
+    "bootstrap": "^5.2.3",
     "prop-types": "^15.6.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-scripts": "^5.0.1",
-    "reactstrap": "^8.10.1"
+    "reactstrap": "^9.1.5"
   },
   "devDependencies": {
     "enzyme": "^3.3.0",

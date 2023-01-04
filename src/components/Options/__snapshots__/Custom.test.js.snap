@@ -13,6 +13,7 @@ exports[`Custom 1`] = `
         "md",
         "lg",
         "xl",
+        "xxl",
       ]
     }
   >
