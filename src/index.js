@@ -1,14 +1,13 @@
 import 'bootstrap/dist/css/bootstrap.css'
-import React, { StrictMode } from 'react'
-import { render } from 'react-dom'
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
 import PasswordEntropyContainer from './components/PasswordEntropyContainer'
 import registerServiceWorker from './registerServiceWorker'
 
-render(
+createRoot(document.getElementById('root')).render(
   <StrictMode>
     <PasswordEntropyContainer />
-  </StrictMode>,
-  document.getElementById('root')
+  </StrictMode>
 )
 registerServiceWorker()
 if (import.meta.webpackHot) import.meta.webpackHot.accept()

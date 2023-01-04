@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types'
-import React from 'react'
 import PossiblePasswords from './PossiblePasswords'
 
 export const dicewareWords = 7776
