@@ -34,7 +34,7 @@ export default function PossiblePasswords({
 
         <FormGroup>
           <Label>
-            <FontAwesomeIcon icon={faRandom} /> PossiblePasswords
+            <FontAwesomeIcon icon={faRandom} /> Possible Passwords
           </Label>
 
           <FormText>
